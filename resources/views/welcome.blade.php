@@ -1,4 +1,16 @@
-<div>Fox Valley Live</div>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
+</style>
+<div
+    style="padding: 1rem; height: 100%; width: 100%; background-color:lightgray; display:flex; flex-direction: column; justify-content: center; align-content: center; text-align: center;">
+    <div>Fox Valley Live</div>
+</div>
+
 
 
 {{-- <!DOCTYPE html>
