@@ -49,6 +49,7 @@
         </section>
         <section class="main-content p-4 mx-auto max-w-2xl">
             <h2>Fox Valley Live is back!</h2>
+            <p>Follow us on Facebook for news of the launch</p>
         </section>
 
     </main>
