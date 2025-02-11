@@ -50,8 +50,105 @@
     <main class="min-h-[calc(100vh-400px)] bg-violet-50">
 
         <section class="main-content p-4 mx-auto max-w-2xl">
-            <h2>Fox Valley Live is back!</h2>
-            <p>Follow us on Facebook for news of the launch</p>
+            <div class=" p-4 max-w-4xl mx-auto">
+                <h2 class="text-4xl text-center mb-12">Where to see live music this week</h2>
+
+                <ul class="text-base md:text-xl">
+                    <li class="py-4 border-b-2">
+                        <div>
+                            <img src="" alt="" class="w-full">
+                        </div>
+                        <div>
+                            <span class="font-semibold"><a href="#">Johnny Wad</a></span>
+                            <span class="mx-2">at</span>
+                            <span class="font-semibold"><a href="#">Pub 55</a></span>
+                            <span class="mx-2">in</span>
+                            <span class="font-semibold"><a href="#">Kaukauna</a></span>
+                            <span class="mx-2">at</span>
+                            <span>8:00 PM</span>
+                        </div>
+                    </li>
+
+                    <li class="py-4 border-b-2">
+                        <div>
+                            <img src="" alt="" class="w-full">
+                        </div>
+                        <div>
+                            <span class="font-semibold"><a href="#">Ask Your Mother</a></span>
+                            <span class="mx-1">at</span>
+                            <span class="font-semibold"><a href="#">Stone Brew Pub</a></span>
+                            <span class="mx-1">in</span>
+                            <span class="font-semibold"><a href="#">Appleton</a></span>
+                            <span class="mx-1">at</span>
+                            <span>8:00 PM</span>
+                        </div>
+                    </li>
+
+                    <li class="py-4 border-b-2">
+                        <div>
+                            <img src="" alt="" class="w-full">
+                        </div>
+                        <div>
+                            <span class="font-semibold"><a href="#">Star Sixty Nine</a></span>
+                            <span class="mx-2">at</span>
+                            <span class="font-semibold"><a href="#">Slugger's Bar</a></span>
+                            <span class="mx-2">in</span>
+                            <span class="font-semibold"><a href="#">Appleton</a></span>
+                            <span class="mx-2">at</span>
+                            <span>8:00 PM</span>
+                        </div>
+                    </li>
+
+                    <li class="py-4 border-b-2">
+                        <div>
+                            <img src="" alt="" class="w-full">
+                        </div>
+                        <div>
+                            <span class="font-semibold"><a href="#">Spandex Nation</a></span>
+                            <span class="mx-2">at</span>
+                            <span class="font-semibold"><a href="#">The Kountry Bar</a></span>
+                            <span class="mx-2">in</span>
+                            <span class="font-semibold"><a href="#">Appleton</a></span>
+                            <span class="mx-2">at</span>
+                            <span>8:00 PM</span>
+                        </div>
+                    </li>
+
+                    <li class="py-4 border-b-2">
+                        <div>
+                            <img src="" alt="" class="w-full">
+                        </div>
+                        <div>
+                            <span class="font-semibold"><a href="#">Brad Allen</a></span>
+                            <span class="mx-2">at</span>
+                            <span class="font-semibold"><a href="#">The Wheel House</a></span>
+                            <span class="mx-2">in</span>
+                            <span class="font-semibold"><a href="#">King</a></span>
+                            <span class="mx-2">at</span>
+                            <span>8:00 PM</span>
+                        </div>
+                    </li>
+
+                    <li class="py-4 border-b-2">
+                        <div>
+                            <img src="" alt="" class="w-full">
+                        </div>
+                        <div>
+                            <span class="font-semibold"><a href="#">The Grand Band</a></span>
+                            <span class="mx-2">at</span>
+                            <span class="font-semibold"><a href="#">Fat Joe's</a></span>
+                            <span class="mx-2">in</span>
+                            <span class="font-semibold"><a href="#">Fond du Lac</a></span>
+                            <span class="mx-2">at</span>
+                            <span>8:00 PM</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <a href=""
+                    class="mt-8 px-5 py-3 rounded inline-block bg-gradient-to-b  from-indigo-700  to-fuchsia-800 hover:bg-indigo-900 active:bg-indigo-900  text-white">See
+                    all upcoming events</a>
+            </div>
         </section>
 
     </main>
