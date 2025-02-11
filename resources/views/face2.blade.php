@@ -27,9 +27,9 @@
 
 <body class="bg-violet-50">
     <header class="bg-slate-900">
-        <nav class="max-w-2xl mx-auto pr-4 flex justify-end gap-2 p-0">
+        <nav class="max-w-3xl mx-auto pr-4 flex justify-end gap-2 p-0">
             <a href="#"
-                class="site-branding inline-block  px-4 pt-2 pb-2 mr-auto text-orange-500 hover:text-slate-400 hover:underline text-xl font-bold small-caps">
+                class="site-branding inline-block  px-4 pt-2 pb-2 mr-auto text-slate-300 hover:text-slate-400 hover:underline text-xl font-bold small-caps">
                 Fox Valley Live
             </a>
             <div class="nav-menu mt-3">
@@ -49,9 +49,9 @@
         <section class="hero mb-12 px-8 py-12 min-h-2xl text-center text-white relative concert-image">
             <div data-hero-overlay
                 class="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-tr from-fuchsia-800 via-indigo-800  to-amber-500 opacity-85 flex flex-col justify-center align-middle">
-                <section class="px-8 py-4 mx-auto w-full md:max-w-4xl">
+                <section class="px-8 py-4 mx-auto w-full md:max-w-3xl">
                     <h1
-                        class="text-4xl sm:text-5xl md:text-7xl mb-16 text-center font-semibold [text-shadow:_1px_1px_3px_rgb(0_0_0_/_40%)]  tracking-wide">
+                        class="text-3xl sm:text-4xl md:text-5xl mb-16 text-center font-semibold [text-shadow:_1px_1px_3px_rgb(0_0_0_/_40%)]  tracking-wide">
                         The hottest live music in the Fox Valley
                         <div
                             class="-m-7 text-xl sm:text-2xl italic text-amber-500 [text-shadow:_1px_1px_3px_rgb(0_0_0_/_40%)] ">
@@ -67,7 +67,7 @@
     </header>
     <main class="min-h-[calc(100vh-400px)] bg-violet-50">
 
-        <section class="main-content p-4 mx-auto max-w-2xl">
+        <section class="main-content p-4 mx-auto max-w-3xl">
             <div class=" p-4 max-w-4xl mx-auto">
                 <h2 class="text-4xl text-center mb-12">Where to see live music this week</h2>
 
