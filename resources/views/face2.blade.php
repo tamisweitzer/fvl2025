@@ -26,8 +26,8 @@
 </head>
 
 <body class="bg-violet-50">
-    <header class="p-4 bg-slate-900"></header>
-    <main class="min-h-[calc(100vh-200px)] bg-violet-50">
+    <header class="bg-slate-900">
+        <nav class="p-4 ">...</nav>
         <section class="hero mb-12 px-8 py-12 min-h-2xl text-center text-white relative concert-image">
             <div data-hero-overlay
                 class="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-tr from-fuchsia-800 via-indigo-800  to-amber-500 opacity-85 flex flex-col justify-center align-middle">
@@ -46,6 +46,9 @@
                 </section>
             </div>
         </section>
+    </header>
+    <main class="min-h-[calc(100vh-400px)] bg-violet-50">
+
         <section class="main-content p-4 mx-auto max-w-2xl">
             <h2>Fox Valley Live is back!</h2>
             <p>Follow us on Facebook for news of the launch</p>
