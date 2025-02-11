@@ -31,7 +31,6 @@
         <section class="hero mb-12 px-8 py-12 min-h-2xl text-center text-white relative concert-image">
             <div data-hero-overlay
                 class="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-tr from-fuchsia-800 via-indigo-800  to-amber-500 opacity-85 flex flex-col justify-center align-middle">
-
                 <section class="px-8 py-4 mx-auto w-full md:max-w-4xl">
                     <h1
                         class="text-4xl sm:text-5xl md:text-7xl mb-16 text-center font-semibold [text-shadow:_1px_1px_3px_rgb(0_0_0_/_40%)]  tracking-wide">
