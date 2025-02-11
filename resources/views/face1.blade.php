@@ -23,7 +23,7 @@ $events = [['bandName' => 'Band one', 'venueName' => 'Old Mill', 'city' => 'Appl
 
 <body class="font-sans antialiased bg-slate-50">
     <header class="bg-slate-700 text-slate-400">
-        <nav class="max-w-6xl mx-auto pr-4 flex justify-end gap-2 p-0">
+        <nav class="max-w-2xl mx-auto pr-4 flex justify-end gap-2 p-0">
             <a href="./index.php"
                 class="site-branding inline-block  px-4 pt-2 pb-2 mr-auto text-orange-500 hover:text-slate-400 hover:underline text-xl font-bold small-caps">
                 Fox Valley Live
@@ -64,14 +64,14 @@ $events = [['bandName' => 'Band one', 'venueName' => 'Old Mill', 'city' => 'Appl
                     <span class="text-lg font-semibold text-gray-700">
                         <?php echo $event['bandName']; ?>
                     </span>
+                    <br>
+                    {{-- <span class="mx-2 font-semibold text-gray-700"> - </span> --}}
 
-                    <span class="mx-2 font-semibold text-gray-700"> - </span>
-
-                    <span class="text-lg font-semibold text-gray-700">
+                    <span class="text-gray-700">
                         <?php echo $event['venueName']; ?>,
                     </span>
-                    <br>
-                    <span class="font-semibold text-gray-700 text-sm">
+
+                    <span class="text-gray-700">
                         <?php echo $event['city']; ?>
                     </span>
 
@@ -91,7 +91,34 @@ $events = [['bandName' => 'Band one', 'venueName' => 'Old Mill', 'city' => 'Appl
     </main>
 
     <footer class="bg-slate-700 text-slate-400 py-16 text-center text-sm dark:text-white/70">
-        footer
+        <div class="wrapper max-w-2xl mx-auto ">
+            <div class="flex flex-col sm:flex-row gap-4">
+                <div class="col flex-1">
+                    <a href="#" class="block p-4">link</a>
+                    <a href="#" class="block p-4">link</a>
+                    <a href="#" class="block p-4">link</a>
+                    <a href="#" class="block p-4">link</a>
+                </div>
+
+                <div class="mt-4 border-b border-b-slate-600 sm:hidden"></div>
+
+                <div class="col flex-1">
+                    <a href="#" class="block p-4">link</a>
+                    <a href="#" class="block p-4">link</a>
+                    <a href="#" class="block p-4">link</a>
+                    <a href="#" class="block p-4">link</a>
+                </div>
+
+                <div class="mt-4 border-b border-b-slate-600 sm:hidden"></div>
+
+                <div class="col flex-1">
+                    <a href="#" class="block p-4">link</a>
+                    <a href="#" class="block p-4">link</a>
+                    <a href="#" class="block p-4">link</a>
+                    <a href="#" class="block p-4">link</a>
+                </div>
+            </div>
+        </div>
     </footer>
     <script>
         const hamburger = document.querySelector(".hamburger");
