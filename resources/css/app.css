@@ -11,7 +11,7 @@ body {
 .hero {
   height: 400px;
   /* background-image: url('./public/images/lita.jpg'); */
-  background-image: url('../../images/lita.jpg');
+  background-image: url('../images/lita.jpg');
   background-position: center;
   background-size: cover;
   position: relative;
@@ -60,4 +60,49 @@ body {
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+    @apply bg-slate-700;
+    z-index: 1;
+    position: fixed;
+    left: -100%;
+    top: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    flex-direction: column;
+    opacity: 0.95;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow:
+      0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-menu a {
+    @apply text-slate-400 block font-bold active:bg-slate-800;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 }

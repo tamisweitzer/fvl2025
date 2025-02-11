@@ -1,3 +1,7 @@
+<?php
+$events = [['bandName' => 'Band one', 'venueName' => 'Old Mill', 'city' => 'Appleton', 'date' => '2-15-2025', 'time' => '8:00 pm'], ['bandName' => 'Band two', 'venueName' => 'Reggie\'s', 'city' => 'Oshkosh', 'date' => '2-15-2025', 'time' => '8:00 pm'], ['bandName' => 'Band three', 'venueName' => 'Fat Joe\'s', 'city' => 'Appleton', 'date' => '2-22-2025', 'time' => '8:00 pm'], ['bandName' => 'Band four', 'venueName' => 'Gentleman Jack\'s', 'city' => 'Grand Chute', 'date' => '2-23-2025', 'time' => '8:00 pm'], ['bandName' => 'Band five', 'venueName' => 'Happy Frog', 'city' => 'Green Bay', 'date' => '2-23-2025', 'time' => '8:00 pm']];
+?>
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -17,7 +21,7 @@
     @endif
 </head>
 
-<body class="font-sans antialiased" style="background-color: #e8eaf6;">
+<body class="font-sans antialiased bg-slate-50">
     <header class="bg-slate-700 text-slate-400">
         <nav class="max-w-6xl mx-auto pr-4 flex justify-end gap-2 p-0">
             <a href="./index.php"
@@ -50,11 +54,56 @@
         <div class="px-4 py-1 text-right text-sm">Lita Ford, The Watering Hole, Green Bay</div>
     </header>
 
-    <main class="py-16 text-center text-black dark:text-white/70"">main</main>
+    <main class="min-h-[calc(100vh-200px)]">
+        <div class="container-narrow max-w-2xl mx-auto p-4 mt-8 mb-8">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl text-center mb-8">Where to See Live Music This Week</h1>
+
+            <section class="mb-8">
+                <?php foreach ($events as $event) : ?>
+                <div class=" px-1 py-4 border-b  border-b-slate-200">
+                    <span class="text-lg font-semibold text-gray-700">
+                        <?php echo $event['bandName']; ?>
+                    </span>
+
+                    <span class="mx-2 font-semibold text-gray-700"> - </span>
+
+                    <span class="text-lg font-semibold text-gray-700">
+                        <?php echo $event['venueName']; ?>,
+                    </span>
+                    <br>
+                    <span class="font-semibold text-gray-700 text-sm">
+                        <?php echo $event['city']; ?>
+                    </span>
+
+                    <br>
+                    <span class="text-gray-500 text-sm">
+                        <?php echo $event['date']; ?>,
+                        <?php echo $event['time']; ?>,
+                    </span>
+                </div>
+                <?php endforeach; ?>
+            </section>
+
+            <a href="./events.php"
+                class="btn mt-4 inline-block bg-orange-500 hover:bg-orange-600 active:bg-orange-700 rounded px-4 py-2 text-white">See
+                all upcoming shows.</a>
+        </div>
+    </main>
 
     <footer class="bg-slate-700 text-slate-400 py-16 text-center text-sm dark:text-white/70">
         footer
     </footer>
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", mobileMenu);
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+    </script>
 </body>
 
 </html>
