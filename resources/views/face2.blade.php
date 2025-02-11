@@ -27,7 +27,25 @@
 
 <body class="bg-violet-50">
     <header class="bg-slate-900">
-        <nav class="p-4 ">...</nav>
+        <nav class="max-w-2xl mx-auto pr-4 flex justify-end gap-2 p-0">
+            <a href="#"
+                class="site-branding inline-block  px-4 pt-2 pb-2 mr-auto text-orange-500 hover:text-slate-400 hover:underline text-xl font-bold small-caps">
+                Fox Valley Live
+            </a>
+            <div class="nav-menu mt-3">
+                <a href="#" class="text-slate-400 hover:text-orange-500 p-4 pb-2">events</a>
+                <a href="#" class="text-slate-400 hover:text-orange-500 p-4 pb-2">bands</a>
+                <a href="#" class="text-slate-400 hover:text-orange-500 p-4 pb-2">cities</a>
+                <a href="#" class="text-slate-400 hover:text-orange-500 p-4 pb-2">venues</a>
+                <!-- <a href="./gallery.php" class="hover:text-orange-500 p-4 pb-2">gallery</a> -->
+                <!-- <a href="#" class="hover:text-orange-500 p-4 pb-2">members</a> -->
+            </div>
+            <div class="hamburger mt-3">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
         <section class="hero mb-12 px-8 py-12 min-h-2xl text-center text-white relative concert-image">
             <div data-hero-overlay
                 class="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-tr from-fuchsia-800 via-indigo-800  to-amber-500 opacity-85 flex flex-col justify-center align-middle">
@@ -145,7 +163,7 @@
                     </li>
                 </ul>
 
-                <a href=""
+                <a href="#"
                     class="mt-8 px-5 py-3 rounded inline-block bg-gradient-to-b  from-indigo-700  to-fuchsia-800 hover:bg-indigo-900 active:bg-indigo-900  text-white">See
                     all upcoming events</a>
             </div>
@@ -153,6 +171,17 @@
 
     </main>
     <footer class="p-4 min-h-64 bg-slate-900"> </footer>
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", mobileMenu);
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+    </script>
 </body>
 
 </html>
