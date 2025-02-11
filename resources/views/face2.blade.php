@@ -66,7 +66,6 @@
         </section>
     </header>
     <main class="min-h-[calc(100vh-400px)] bg-violet-50">
-
         <section class="main-content p-4 mx-auto max-w-3xl">
             <div class=" p-4 max-w-4xl mx-auto">
                 <h2 class="text-4xl text-center mb-12">Where to see live music this week</h2>
