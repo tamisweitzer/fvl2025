@@ -27,7 +27,7 @@
 
 <body class="bg-violet-50">
     <header class="bg-slate-900">
-        <nav class="max-w-3xl mx-auto pr-4 flex justify-end gap-2 p-0">
+        <nav class="w-full md:max-w-3xl mx-auto pr-4 flex justify-end gap-2 p-0">
             <a href="#"
                 class="site-branding inline-block  px-4 pt-2 pb-2 mr-auto text-slate-300 hover:text-slate-400 hover:underline text-xl font-bold small-caps">
                 Fox Valley Live
@@ -66,102 +66,36 @@
         </section>
     </header>
     <main class="min-h-[calc(100vh-400px)] bg-violet-50">
-        <section class="main-content p-4 mx-auto max-w-3xl">
+        <section class="main-content p-4 mx-auto w-full md:max-w-3xl">
             <div class=" p-4 max-w-4xl mx-auto">
                 <h2 class="text-4xl text-center mb-12">Where to see live music this week</h2>
 
-                <ul class="text-base md:text-xl">
-                    <li class="py-4 border-b-2">
-                        <div>
-                            <img src="" alt="" class="w-full">
-                        </div>
-                        <div>
-                            <span class="font-semibold"><a href="#">Johnny Wad</a></span>
-                            <span class="mx-2">at</span>
-                            <span class="font-semibold"><a href="#">Pub 55</a></span>
-                            <span class="mx-2">in</span>
-                            <span class="font-semibold"><a href="#">Kaukauna</a></span>
-                            <span class="mx-2">at</span>
-                            <span>8:00 PM</span>
-                        </div>
-                    </li>
 
-                    <li class="py-4 border-b-2">
-                        <div>
-                            <img src="" alt="" class="w-full">
-                        </div>
-                        <div>
-                            <span class="font-semibold"><a href="#">Ask Your Mother</a></span>
-                            <span class="mx-1">at</span>
-                            <span class="font-semibold"><a href="#">Stone Brew Pub</a></span>
-                            <span class="mx-1">in</span>
-                            <span class="font-semibold"><a href="#">Appleton</a></span>
-                            <span class="mx-1">at</span>
-                            <span>8:00 PM</span>
-                        </div>
-                    </li>
+                <section class="mb-8">
+                    <?php foreach ($events as $event) : ?>
+                    <div class=" px-1 py-4 border-b  border-b-slate-200">
+                        <span class="text-lg font-semibold text-gray-700">
+                            <?php echo $event['bandName']; ?>
+                        </span>
+                        <br>
+                        {{-- <span class="mx-2 font-semibold text-gray-700"> - </span> --}}
 
-                    <li class="py-4 border-b-2">
-                        <div>
-                            <img src="" alt="" class="w-full">
-                        </div>
-                        <div>
-                            <span class="font-semibold"><a href="#">Star Sixty Nine</a></span>
-                            <span class="mx-2">at</span>
-                            <span class="font-semibold"><a href="#">Slugger's Bar</a></span>
-                            <span class="mx-2">in</span>
-                            <span class="font-semibold"><a href="#">Appleton</a></span>
-                            <span class="mx-2">at</span>
-                            <span>8:00 PM</span>
-                        </div>
-                    </li>
+                        <span class="text-gray-700">
+                            <?php echo $event['venueName']; ?>,
+                        </span>
 
-                    <li class="py-4 border-b-2">
-                        <div>
-                            <img src="" alt="" class="w-full">
-                        </div>
-                        <div>
-                            <span class="font-semibold"><a href="#">Spandex Nation</a></span>
-                            <span class="mx-2">at</span>
-                            <span class="font-semibold"><a href="#">The Kountry Bar</a></span>
-                            <span class="mx-2">in</span>
-                            <span class="font-semibold"><a href="#">Appleton</a></span>
-                            <span class="mx-2">at</span>
-                            <span>8:00 PM</span>
-                        </div>
-                    </li>
+                        <span class="text-gray-700">
+                            <?php echo $event['city']; ?>
+                        </span>
 
-                    <li class="py-4 border-b-2">
-                        <div>
-                            <img src="" alt="" class="w-full">
-                        </div>
-                        <div>
-                            <span class="font-semibold"><a href="#">Brad Allen</a></span>
-                            <span class="mx-2">at</span>
-                            <span class="font-semibold"><a href="#">The Wheel House</a></span>
-                            <span class="mx-2">in</span>
-                            <span class="font-semibold"><a href="#">King</a></span>
-                            <span class="mx-2">at</span>
-                            <span>8:00 PM</span>
-                        </div>
-                    </li>
-
-                    <li class="py-4 border-b-2">
-                        <div>
-                            <img src="" alt="" class="w-full">
-                        </div>
-                        <div>
-                            <span class="font-semibold"><a href="#">The Grand Band</a></span>
-                            <span class="mx-2">at</span>
-                            <span class="font-semibold"><a href="#">Fat Joe's</a></span>
-                            <span class="mx-2">in</span>
-                            <span class="font-semibold"><a href="#">Fond du Lac</a></span>
-                            <span class="mx-2">at</span>
-                            <span>8:00 PM</span>
-                        </div>
-                    </li>
-                </ul>
-
+                        <br>
+                        <span class="text-gray-500 text-sm">
+                            <?php echo $event['date']; ?>,
+                            <?php echo $event['time']; ?>,
+                        </span>
+                    </div>
+                    <?php endforeach; ?>
+                </section>
                 <a href="#"
                     class="mt-8 px-5 py-3 rounded inline-block bg-gradient-to-b  from-indigo-700  to-fuchsia-800 hover:bg-indigo-900 active:bg-indigo-900  text-white">See
                     all upcoming events</a>
