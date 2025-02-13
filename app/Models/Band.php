@@ -19,6 +19,9 @@ class Band extends Model {
         'proper_name',
         'tagline',
         'bio',
+        'city_id',
+        'state_id',
+        'website_url',
         'thumbnail_img',
         'banner_img'
     ];
