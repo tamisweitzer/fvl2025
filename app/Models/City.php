@@ -5,26 +5,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Band extends Model {
+class City extends Model {
     use HasFactory;
 
+    protected $table = 'cities';
     protected $fillable = [
         'name',
         'fullname',
         'excerpt',
         'bio',
-        'city_id',
-        'state_id',
         'website_url',
+        'lat',
+        'long',
         'thumbnail_img',
         'banner_img'
     ];
 
-    public function city() {
-        return $this->belongsTo(City::class);
+    public function bands() {
+        return $this->hasMany(Band::class);
     }
 
-    public function state() {
-        return $this->belongsTo(State::class);
+    public function venues() {
+        return $this->hasMany(Venue::class);
     }
 }

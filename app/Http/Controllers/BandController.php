@@ -8,18 +8,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class BandController extends Controller {
-    public function show(): View {
-        return view('bands', ['bands' => Band::all()]);
+    public function index(): View {
+        $bands = Band::with(['city', 'state'])->get();
+
+        return view('bands.index', ['bands' => $bands]);
     }
 
-    public function find($id): View {
+    public function show($id): View {
         $band = Band::find($id);
-        return view('band', ['band' => $band]);
-    }
-
-    public function insertMany() {
-        DB::table('bands')->insert([
-            ['key' => 'value', 'key2' => 'val2'],
-        ]);
+        return view('bands.show', ['band' => $band]);
     }
 }
