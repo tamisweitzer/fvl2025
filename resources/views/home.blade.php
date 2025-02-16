@@ -28,7 +28,7 @@
             <?php endforeach; ?>
         </section>
 
-        <a href="./events.php"
+        <a href="/events"
             class="btn mt-4 inline-block bg-orange-500 hover:bg-orange-600 active:bg-orange-700 rounded px-4 py-2 text-white">See
             all upcoming shows.</a>
     </div>
