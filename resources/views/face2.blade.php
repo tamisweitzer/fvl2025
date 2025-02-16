@@ -32,13 +32,11 @@
                 class="site-branding inline-block  px-4 pt-2 pb-2 mr-auto text-slate-300 hover:text-slate-400 hover:underline text-xl font-bold small-caps">
                 Fox Valley Live
             </a>
-            <div class="nav-menu mt-3">
-                <a href="#" class="text-slate-400 hover:text-orange-500 p-4 pb-2">events</a>
-                <a href="#" class="text-slate-400 hover:text-orange-500 p-4 pb-2">bands</a>
-                <a href="#" class="text-slate-400 hover:text-orange-500 p-4 pb-2">cities</a>
-                <a href="#" class="text-slate-400 hover:text-orange-500 p-4 pb-2">venues</a>
-                <!-- <a href="./gallery.php" class="hover:text-orange-500 p-4 pb-2">gallery</a> -->
-                <!-- <a href="#" class="hover:text-orange-500 p-4 pb-2">members</a> -->
+            <div class="nav-menu mt-3 text-slate-400">
+                <x-nav-link href="/events" :active="request()->is('events')">events</x-nav-link>
+                <x-nav-link href="/bands" :active="request()->is('bands')">bands</x-nav-link>
+                <x-nav-link href="/cities" :active="request()->is('cities')">cities</x-nav-link>
+                <x-nav-link href="/venues" :active="request()->is('venues')">venues</x-nav-link>
             </div>
             <div class="hamburger mt-3">
                 <span class="bar"></span>
