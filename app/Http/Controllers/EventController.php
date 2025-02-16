@@ -7,12 +7,12 @@ use App\Models\Event;
 
 class EventController extends Controller {
   public function index() {
-    return view('events', ['events' => Event::all()]);
+    return view('events.index', ['events' => Event::all()]);
   }
 
   public function show($id) {
     $event = Event::find($id);
-    return view('event', ['event' => $event]);
+    return view('events.show', ['event' => $event]);
   }
 
   public function archivemonth() {
@@ -20,6 +20,6 @@ class EventController extends Controller {
     // $events = Event::all()->where();
 
     // For now:
-    return view('events-month', ['events' => Event::all(), 'year' => $year, 'mon' => $mon]);
+    return view('events.events-month', ['events' => Event::all(), 'year' => $year, 'mon' => $mon]);
   }
 }
