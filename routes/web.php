@@ -30,6 +30,7 @@ Route::get('/face2', function () {
 
 
 Route::get('/bands', [BandController::class, 'index']);
+Route::get('/bands/create', [BandController::class, 'create']);
 Route::get('/bands/{id}', [BandController::class, 'show']);
 
 Route::get('/cities', [CityController::class, 'index']);
