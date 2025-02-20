@@ -1,10 +1,12 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BandController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\VenueController;
+use App\Http\Controllers\EmailSignupController;
 
 
 Route::get('/', function () {
@@ -40,3 +42,7 @@ Route::get('venues/{id}', [VenueController::class, 'show']);
 Route::get('/events', [EventController::class, 'index']);
 Route::get('/events/{id}', [EventController::class, 'show']);
 Route::get('/events/{year}/{mon}', [EventController::class, 'archivemonth']);
+
+
+Route::get('email-signup', [EmailSignupController::class, 'index']);
+Route::post('/email-signup', [EmailSignupController::class, 'store']);
