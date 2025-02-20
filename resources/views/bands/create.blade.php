@@ -28,8 +28,9 @@
             </x-form-group>
 
             <x-form-group>
-                <x-label-default for="city_id">city</x-label-default>
+                <x-label-default for="city_id">City</x-label-default>
                 <select name="city_id" id="city_id" class="block w-full border shadow-inner p-1">
+                    <option id="null" value="null">Choose your city</option>
                     @foreach ($cities as $city)
                         <option id="city_{{ $city->id }}" value="{{ $city->id }}">{{ $city->name }}</option>
                     @endforeach
@@ -37,7 +38,7 @@
             </x-form-group>
 
             <x-form-group>
-                <x-label-default for="state_id">state</x-label-default>
+                <x-label-default for="state_id">State</x-label-default>
                 <select name="state_id" id="state_id" class="block w-full border shadow-inner p-1">
                     @foreach ($states as $state)
                         <option value="{{ $state->id }}">{{ $state->name }}</option>
@@ -46,19 +47,19 @@
             </x-form-group>
 
             <x-form-group>
-                <x-label-default for="website_url">website url</x-label-default>
+                <x-label-default for="website_url">Website url</x-label-default>
                 <x-input-text name="website_url" id="website_url"></x-input-text>
             </x-form-group>
 
             <x-form-group>
-                <x-label-default for="thumbnail_img">thumbnail</x-label-default>
+                <x-label-default for="thumbnail_img">Thumbnail</x-label-default>
                 {{-- <x-input-text id="xxx" name="xxx"></x-input-text> --}}
                 <input type="file" accept=".jpg,.jpeg,.png,.webp" name="thumbnail_img" id="thumbnail_img"
                     class="block w-full border shadow-inner p-1">
             </x-form-group>
 
             <x-form-group>
-                <x-label-default for="banner_img">banner img</x-label-default>
+                <x-label-default for="banner_img">Banner img</x-label-default>
                 <input type="file" accept=".jpg,.jpeg,.png,.webp" name="banner_img" id="banner_img"
                     class="block w-full border shadow-inner p-1">
             </x-form-group>
