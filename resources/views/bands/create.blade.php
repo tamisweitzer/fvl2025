@@ -1,29 +1,72 @@
 <x-layout>
     <x-wrapper-narrow>
+        @csrf
         <x-page-title>Add a Band</x-page-title>
 
-        <form action="/bands/create" method="post">
+        <form action="/bands/create" method="post" class="mb-12">
+            @csrf
+            <x-form-group>
+                <x-label-default for="name">Name</x-label-default>
+                <x-input-text id="name" name="name"></x-input-text>
+            </x-form-group>
 
-            <div class="form-group mb-4">
-                <label for="name" class="block w-full">Name</label>
-                <input type="text" id="name" class="block w-full" name="name">
-            </div>
-
-            <div class="form-group mb-4">
-                <label for="fullname" class="block w-full">FullName</label>
+            <x-form-group>
+                <x-label-default for="fullname">FullName</x-label-default>
                 <x-input-text id="fullname" name="fullname"></x-input-text>
-            </div>
+            </x-form-group>
 
-            <div class="form-group mb-4">
-                <label for="xxx" class="block w-full">Xxx</label>
-                <x-input-text id="xxx" name="xxx"></x-input-text>
-            </div>
+            <x-form-group>
+                <x-label-default for="excerpt">Excerpt</x-label-default>
+                <x-input-text-area name="excerpt" id="excerpt"
+                    placeholder="A sentence or two about you..."></x-input-text-area>
+            </x-form-group>
 
-            <div class="form-group">
-                <label for="excerpt" class="block w-full">Excerpt</label>
-                <textarea name="excerpt" id="excerpt" class="block w-full" placeholder="A sentence or two about you..."></textarea>
+            <x-form-group>
+                <x-label-default for="bio">Bio</x-label-default>
+                <x-input-text-area name="bio" id="bio"
+                    placeholder="A few more sentences about you..."></x-input-text-area>
+            </x-form-group>
+
+            <x-form-group>
+                <x-label-default for="city_id">city</x-label-default>
+                <select name="city_id" id="city_id" class="block w-full border shadow-inner p-1">
+                    @foreach ($cities as $city)
+                        <option id="city_{{ $city->id }}" value="{{ $city->id }}">{{ $city->name }}</option>
+                    @endforeach
+                </select>
+            </x-form-group>
+
+            <x-form-group>
+                <x-label-default for="state_id">state</x-label-default>
+                <select name="state_id" id="state_id" class="block w-full border shadow-inner p-1">
+                    @foreach ($states as $state)
+                        <option value="{{ $state->id }}">{{ $state->name }}</option>
+                    @endforeach
+                </select>
+            </x-form-group>
+
+            <x-form-group>
+                <x-label-default for="website_url">website url</x-label-default>
+                <x-input-text name="website_url" id="website_url"></x-input-text>
+            </x-form-group>
+
+            <x-form-group>
+                <x-label-default for="thumbnail_img">thumbnail</x-label-default>
+                {{-- <x-input-text id="xxx" name="xxx"></x-input-text> --}}
+                <input type="file" accept=".jpg,.jpeg,.png,.webp" name="thumbnail_img" id="thumbnail_img"
+                    class="block w-full border shadow-inner p-1">
+            </x-form-group>
+
+            <x-form-group>
+                <x-label-default for="banner_img">banner img</x-label-default>
+                <input type="file" accept=".jpg,.jpeg,.png,.webp" name="banner_img" id="banner_img"
+                    class="block w-full border shadow-inner p-1">
+            </x-form-group>
+
+            <div class="mt-6 flex items-center justify-end gap-x-6">
+                <x-form-button-cancel>Cancel</x-form-button-cancel>
+                <x-form-button-submit>Submit</x-form-button-submit>
             </div>
         </form>
-
     </x-wrapper-narrow>
 </x-layout>
