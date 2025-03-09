@@ -19,7 +19,7 @@
     @endif
 </head>
 
-<body class="font-sans antialiased bg-slate-50">
+<body class="font-sans antialiased bg-slate-100">
     <header class="bg-slate-700 text-slate-400">
         <nav class="max-w-3xl mx-auto pr-4 flex justify-end gap-2 p-0">
             <a href="/"
