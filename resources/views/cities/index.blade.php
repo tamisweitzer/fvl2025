@@ -1,14 +1,15 @@
 <x-layout>
-    <x-wrapper-narrow>
+    <x-wrapper-narrow class="mt-8 mb-8">
         <x-page-title>Cities</x-page-title>
-        <ul class="my-8">
+
+        <section class="mb-8">
             @foreach ($cities as $city)
-                <li class="p-4 my-2 bg-slate-50 border b-slate-100 hover:shadow hover:b-slate-500">
+                <x-card-wrapper>
                     <a href="/cities/{{ $city->id }}">
-                        {{ $city['name'] }}
+                        {{ $city->name }}
                     </a>
-                </li>
+                </x-card-wrapper>
             @endforeach
-        </ul>
+        </section>
     </x-wrapper-narrow>
 </x-layout>
