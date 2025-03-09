@@ -14,12 +14,4 @@ class EventController extends Controller {
     $event = Event::find($id);
     return view('events.show', ['event' => $event]);
   }
-
-  public function archivemonth() {
-    // where event date year = $year AND event date mon = $mon
-    // $events = Event::all()->where();
-
-    // For now:
-    return view('events.archivemonth', ['events' => Event::all(), 'year' => 2025, 'mon' => 03]);
-  }
 }

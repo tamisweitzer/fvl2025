@@ -50,7 +50,6 @@ Route::get('venues/{id}', [VenueController::class, 'show']);
 
 Route::get('/events', [EventController::class, 'index']);
 Route::get('/events/{id}', [EventController::class, 'show']);
-Route::get('/events/{year}/{mon}', [EventController::class, 'archivemonth']);
 
 
 Route::get('/email-signup', [EmailSignupController::class, 'index']);

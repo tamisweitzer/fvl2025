@@ -1,24 +1,29 @@
 <x-layout>
-    <x-slot:heading>Events</x-slot:heading>
+    <x-wrapper-narrow class="mt-8 mb-8">
+        <x-page-title>All Upcoming Live Music</x-page-title>
 
-    <ul>
-        @foreach ($events as $event)
-            <li class="p-4 mb-2 bg-slate-50 border b-slate-100">
-                <h2 class="mb-2 text-lg">
-                    <a href="/events/{{ $event->id }}"
-                        class="border-b border-dotted border-gray-300 hover:bg-gray-300">{{ $event->band->name }}</a>
-                    at
-                    <a href="venues/{{ $event->venue->id }}">{{ $event->venue->name }}</a>
-                </h2>
+        <section class="mb-8">
+            @foreach ($events as $event)
+                <div class="pb-2 border-b  border-b-slate-200">
+                    <div class="text-lg font-semibold text-gray-700">
+                        <a href="/events/{{ $event->id }}"
+                            class="py-2 inline-block hover:bg-orange-300">{{ $event->name }}</a>
+                    </div>
 
-                <div class="text-sm">
-                    <a href="cities/{{ $event->band->city->id }}" class="">{{ $event->band->city->name }}</a>,
-                    <a href="events/{{ date('Y/m', strtotime($event->event_time)) }}"
-                        class="">{{ date('m/d/Y', strtotime($event->event_time)) }}</a>
-                    at 8:00 pm
+                    <div class="text-gray-700">
+                        <a href="/venues/{{ $event->venue->id }}"
+                            class="py-2 inline-block hover:bg-orange-300">{{ $event->venue->name }}</a>
+                        <span> in </span>
+                        <a href="/cities/{{ $event->venue->city->id }}"
+                            class="py-2 inline-block hover:bg-orange-300">{{ $event->venue->city->name }}</a>
+                    </div>
+
+                    <div class="text-gray-500 text-sm">
+                        {{ $event->event_date }}
+                        {{ $event->event_time }}
+                    </div>
                 </div>
-
-            </li>
-        @endforeach
-    </ul>
+            @endforeach
+        </section>
+    </x-wrapper-narrow>
 </x-layout>
