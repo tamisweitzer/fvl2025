@@ -4,15 +4,13 @@
 
         <section class="mb-8">
             @foreach ($venues as $venue)
-                <div
-                    class="p-2 bg-slate-50 border border-slate-200 hover:border hover:border-b-slate-300 hover:shadow-lg">
+                <div class="px-2 py-4 bg-slate-50 border border-slate-200 hover:shadow-lg">
                     <a href="/venues/{{ $venue->id }}" class="block">
-                        <span class=" text-gray-700 text-lg font-semibold">
+                        <div class="text-lg font-semibold text-gray-700">
                             {{ $venue->name }}
-                        </span>
-                        <br>
-                        <span class="text-sm">{{ $venue->city->name }}, {{ $venue->state->name }}</span>
+                        </div>
 
+                        <div class="text-gray-500 text-sm">{{ $venue->city->name }}, {{ $venue->state->name }}</div>
                     </a>
                 </div>
             @endforeach
