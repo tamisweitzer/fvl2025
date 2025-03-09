@@ -20,6 +20,6 @@ class EventController extends Controller {
     // $events = Event::all()->where();
 
     // For now:
-    return view('events.events-month', ['events' => Event::all(), 'year' => $year, 'mon' => $mon]);
+    return view('events.archivemonth', ['events' => Event::all(), 'year' => 2025, 'mon' => 03]);
   }
 }

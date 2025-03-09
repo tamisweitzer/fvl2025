@@ -1,29 +1,27 @@
 <x-layout>
-    <div class="max-w-3xl mx-auto p-4 mt-8 mb-8">
-        <h1 class="text-2xl sm:text-3xl md:text-4xl text-center mb-8">See Live Music This Week</h1>
+    <x-wrapper-narrow class="mt-8 mb-8">
+        <x-page-title>See Live Music This Week</x-page-title>
 
         <section class="mb-8">
             @foreach ($events as $event)
-                <div class=" px-1 py-4 border-b  border-b-slate-200">
-                    <span class="text-lg font-semibold text-gray-700">
-                        <?php echo $event->name; ?>
-                    </span>
-                    <br>
-                    {{-- <span class="mx-2 font-semibold text-gray-700"> - </span> --}}
+                <div class="pb-2 border-b  border-b-slate-200">
+                    <div class="text-lg font-semibold text-gray-700">
+                        <a href="/events/{{ $event->id }}"
+                            class="py-2 inline-block hover:bg-orange-300">{{ $event->name }}</a>
+                    </div>
 
-                    <span class="text-gray-700">
-                        <?php echo $event->venue->name; ?>,
-                    </span>
+                    <div class="text-gray-700">
+                        <a href="/venues/{{ $event->venue->id }}"
+                            class="py-2 inline-block hover:bg-orange-300">{{ $event->venue->name }}</a>
+                        <span> in </span>
+                        <a href="/cities/{{ $event->venue->city->id }}"
+                            class="py-2 inline-block hover:bg-orange-300">{{ $event->venue->city->name }}</a>
+                    </div>
 
-                    <span class="text-gray-700">
-                        <?php echo $event->venue->city->name; ?>
-                    </span>
-
-                    <br>
-                    <span class="text-gray-500 text-sm">
-                        <?php echo $event->event_date; ?>,
-                        <?php echo $event->event_time; ?>,
-                    </span>
+                    <div class="text-gray-500 text-sm">
+                        {{ $event->event_date }}
+                        {{ $event->event_time }}
+                    </div>
                 </div>
             @endforeach
         </section>
@@ -31,5 +29,5 @@
         <a href="/events"
             class="btn mt-4 inline-block bg-orange-500 hover:bg-orange-600 active:bg-orange-700 rounded px-4 py-2 text-white">See
             all upcoming shows.</a>
-    </div>
+    </x-wrapper-narrow>
 </x-layout>
