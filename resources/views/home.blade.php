@@ -3,29 +3,29 @@
         <h1 class="text-2xl sm:text-3xl md:text-4xl text-center mb-8">See Live Music This Week</h1>
 
         <section class="mb-8">
-            <?php foreach ($events as $event) : ?>
-            <div class=" px-1 py-4 border-b  border-b-slate-200">
-                <span class="text-lg font-semibold text-gray-700">
-                    <?php echo $event['bandName']; ?>
-                </span>
-                <br>
-                {{-- <span class="mx-2 font-semibold text-gray-700"> - </span> --}}
+            @foreach ($events as $event)
+                <div class=" px-1 py-4 border-b  border-b-slate-200">
+                    <span class="text-lg font-semibold text-gray-700">
+                        <?php echo $event->name; ?>
+                    </span>
+                    <br>
+                    {{-- <span class="mx-2 font-semibold text-gray-700"> - </span> --}}
 
-                <span class="text-gray-700">
-                    <?php echo $event['venueName']; ?>,
-                </span>
+                    <span class="text-gray-700">
+                        <?php echo $event->venue->name; ?>,
+                    </span>
 
-                <span class="text-gray-700">
-                    <?php echo $event['city']; ?>
-                </span>
+                    <span class="text-gray-700">
+                        <?php echo $event->venue->city->name; ?>
+                    </span>
 
-                <br>
-                <span class="text-gray-500 text-sm">
-                    <?php echo $event['date']; ?>,
-                    <?php echo $event['time']; ?>,
-                </span>
-            </div>
-            <?php endforeach; ?>
+                    <br>
+                    <span class="text-gray-500 text-sm">
+                        <?php echo $event->event_date; ?>,
+                        <?php echo $event->event_time; ?>,
+                    </span>
+                </div>
+            @endforeach
         </section>
 
         <a href="/events"

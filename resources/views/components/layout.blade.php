@@ -39,14 +39,15 @@
             </div>
         </nav>
 
-        <div class="hero_ p-8 min-h-96 flex flex-col justify-center items-center align-middle">
-            <div class="max-w-3xl mx-auto h-full border">
-                <div class="content max-w-fit px-4 sm:px-10 pt-4 pb-6 font-extrabold text-center">
-                    <p class="text-slate-300 font-semibold text-3xl ">The best live music in the Fox Valley<span
-                            class="text-orange-500 italic font-bold text-stroke"><br>...and beyond!</span></p>
+        <div class="hero p-8">
+            <div class="flex flex-col justify-center items-center align-middle max-w-6xl mx-auto h-full">
+                <div class="content bg-white opacity-85 max-w-fit px-4 sm:px-10 pt-4 pb-6 font-extrabold text-center">
+                    <p class="text-slate-500 font-semibold text-3xl ">The best live music in the Fox Valley <span
+                            class="text-orange-600 italic font-bold text-stroke"><br>...and beyond!</span></p>
                 </div>
             </div>
         </div>
+        <div class="px-4 py-1 text-right text-sm">Lita Ford, The Watering Hole, Green Bay</div>
     </header>
 
     <main class="min-h-[calc(100vh-200px)]">
