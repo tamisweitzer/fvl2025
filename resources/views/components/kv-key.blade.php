@@ -1,1 +1,1 @@
-<span {{ $attributes->merge(['class' => 'inline-block w-20 font-semibold']) }}>{{ $slot }}</span>
+<div {{ $attributes->merge(['class' => 'font-semibold']) }}>{{ $slot }}</div>

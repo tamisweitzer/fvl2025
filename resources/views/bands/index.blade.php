@@ -5,7 +5,7 @@
         <section class="mb-8">
             @foreach ($bands as $band)
                 <x-card-wrapper>
-                    <a href="/cities/{{ $band->id }}">
+                    <a href="/bands/{{ $band->id }}" class="block">
                         {{ $band->name }}
                     </a>
                 </x-card-wrapper>
