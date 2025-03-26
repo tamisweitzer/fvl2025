@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Band;
 use App\Models\City;
+use App\Models\Event;
 use App\Models\State;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
@@ -40,6 +41,7 @@ class BandController extends Controller {
 
     public function show($id): View {
         $band = Band::find($id);
-        return view('bands.show', ['band' => $band]);
+        $events = Event::all()->where('band_id', $band->id);
+        return view('bands.show', ['band' => $band, 'events' => $events]);
     }
 }
