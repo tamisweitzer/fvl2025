@@ -106,3 +106,7 @@ body {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
+
+.default-inline-link {
+  @apply underline underline-offset-2 decoration-slate-200 hover:text-orange-600 hover:decoration-orange-600;
+}
