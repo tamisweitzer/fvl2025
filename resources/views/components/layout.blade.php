@@ -7,7 +7,7 @@
 
     <title>Fox Valley Live - The best live music in the Fox Valley and beyond.</title>
 
-    <link rel="icon" href="{{ asset('fvl.ico') }}">
+    <link rel="icon" href="{{ asset('/images/favicon.ico') }}">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
