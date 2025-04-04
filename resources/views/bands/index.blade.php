@@ -6,7 +6,11 @@
             @foreach ($bands as $band)
                 <x-card-wrapper>
                     <a href="/bands/{{ $band->id }}" class="block">
-                        {{ $band->name }}
+                        <div class="text-lg font-semibold text-gray-700">
+                            {{ $band->name }}
+                        </div>
+
+                        <div class="text-gray-500 text-sm">{{ $band->excerpt }}</div>
                     </a>
                 </x-card-wrapper>
             @endforeach
