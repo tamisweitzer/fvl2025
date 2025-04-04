@@ -2,7 +2,7 @@
     <x-wrapper-narrow class="mt-8 mb-8">
         <x-page-title>{{ $event->name }}</x-page-title>
 
-        <section data-event-details>
+        <section class="mb-8">
             <x-kv-group class="grid grid-cols-12">
                 <x-kv-key class="col-span-3 sm:col-span-2">Band:</x-kv-key>
                 <x-kv-value class="col-span-9 sm:col-span-10">
@@ -11,7 +11,6 @@
                     </a>
                 </x-kv-value>
             </x-kv-group>
-
             <x-kv-group class="grid grid-cols-12">
                 <x-kv-key class="col-span-3 sm:col-span-2">Venue:</x-kv-key>
                 <x-kv-value class="col-span-9 sm:col-span-10">
@@ -20,7 +19,6 @@
                     </a>
                 </x-kv-value>
             </x-kv-group>
-
             <x-kv-group class="grid grid-cols-12">
                 <x-kv-key class="col-span-3 sm:col-span-2">Location:</x-kv-key>
                 <x-kv-value class="col-span-9 sm:col-span-10">
@@ -30,13 +28,11 @@
                     {{ $event->venue->state->name }}
                 </x-kv-value>
             </x-kv-group>
-
             <x-kv-group class="grid grid-cols-12">
                 <x-kv-key class="col-span-3 sm:col-span-2">Date:</x-kv-key>
                 <x-kv-value
                     class="col-span-9 sm:col-span-10">{{ date('M d, Y', strtotime($event->event_date)) }}</x-kv-value>
             </x-kv-group>
-
             <x-kv-group class="grid grid-cols-12">
                 <x-kv-key class="col-span-3 sm:col-span-2">Time:</x-kv-key>
                 <x-kv-value

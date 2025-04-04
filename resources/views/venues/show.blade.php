@@ -1,6 +1,6 @@
 <x-layout>
     <x-wrapper-narrow class="mt-8 mb-8">
-        <x-page-title class="">{{ $venue->fullname }}</x-page-title>
+        <x-page-title>{{ $venue->fullname }}</x-page-title>
         <div class="-mt-4 mb-12 text-center">{{ $venue->excerpt }}</div>
 
         <section class="mb-8">
