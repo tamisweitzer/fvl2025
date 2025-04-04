@@ -13,7 +13,7 @@ return new class extends Migration {
             $table->id();
             $table->string('name');
             $table->string('fullname')->nullable();
-            $table->text('excerpt');
+            $table->text('excerpt')->nullable();
             $table->text('bio')->nullable();
             $table->string('website_url')->nullable();
             $table->float('lat')->nullable();
