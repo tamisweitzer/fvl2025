@@ -19,8 +19,8 @@ return new class extends Migration {
             $table->text('bio')->nullable();
             $table->string('address1')->nullable();
             $table->string('address2')->nullable();
-            $table->foreignIdFor(City::class);
-            $table->foreignIdFor(State::class);
+            $table->foreignIdFor(City::class)->nullable();
+            $table->foreignIdFor(State::class)->nullable();
             $table->string('zip')->nullable();
             $table->string('neighborhood')->nullable();
             $table->string('phone')->nullable();
