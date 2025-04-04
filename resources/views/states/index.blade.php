@@ -6,7 +6,9 @@
             @foreach ($states as $state)
                 <x-card-wrapper>
                     <a href="/states/{{ $state->id }}">
-                        {{ $state->name }}
+                        <div class="mb-2 text-lg font-semibold text-gray-700">
+                            {{ $state->name }}
+                        </div>
                     </a>
                 </x-card-wrapper>
             @endforeach

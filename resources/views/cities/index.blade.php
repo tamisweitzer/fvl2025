@@ -6,7 +6,7 @@
             @foreach ($cities as $city)
                 <x-card-wrapper>
                     <a href="/cities/{{ $city->id }}">
-                        <div class="text-lg font-semibold text-gray-700">
+                        <div class="mb-2 text-lg font-semibold text-gray-700">
                             {{ $city->name }}
                         </div>
 
