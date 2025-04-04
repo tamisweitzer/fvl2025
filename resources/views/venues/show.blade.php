@@ -4,22 +4,33 @@
         <div class="-mt-4 mb-12 text-center">{{ $venue->excerpt }}</div>
 
         <section class="mb-8">
-            <div class="mb-4">
-                <x-kv-key>About:</x-kv-key>
-                <x-kv-value>{{ $venue->bio }}</x-kv-value>
-            </div>
-            <div class="mb-4">
-                <x-kv-key>City:</x-kv-key>
-                <x-kv-value>{{ $venue->city->name }}</x-kv-value>
-            </div>
-            <div class="mb-4">
-                <x-kv-key>Website:</x-kv-key>
-                <x-kv-value>{{ $venue->website }}</x-kv-value>
-            </div>
+            <x-kv-group class="grid grid-cols-12">
+                <x-kv-key class="col-span-3 sm:col-span-2">Venue:</x-kv-key>
+                <x-kv-value class="col-span-9 sm:col-span-10">
+                    {{ $venue->name }}
+                </x-kv-value>
+            </x-kv-group>
+
+            <x-kv-group class="grid grid-cols-12">
+                <x-kv-key class="col-span-3 sm:col-span-2">About:</x-kv-key>
+                <x-kv-value class="col-span-9 sm:col-span-10">{{ $venue->bio }}</x-kv-value>
+            </x-kv-group>
+
+            <x-kv-group class="grid grid-cols-12">
+                <x-kv-key class="col-span-3 sm:col-span-2">City:</x-kv-key>
+                <x-kv-value class="col-span-9 sm:col-span-10">{{ $venue->city->name }}</x-kv-value>
+            </x-kv-group>
+
+            <x-kv-group class="grid grid-cols-12">
+                <x-kv-key class="col-span-3 sm:col-span-2">Website:</x-kv-key>
+                <x-kv-value class="col-span-9 sm:col-span-10">{{ $venue->website }}</x-kv-value>
+            </x-kv-group>
         </section>
+
         <hr>
+
         <section class="mt-8 mb-8">
-            <h2 class="mb-4 text-xl sm:text-2xl md:text-3xl">Upcoming Shows</h2>
+            <x-page-subtitle>Upcoming Shows</x-page-subtitle>
             TODO
             {{-- @foreach ($events as $event)
                 <x-card-wrapper-secondary>
