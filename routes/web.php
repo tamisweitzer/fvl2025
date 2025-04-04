@@ -7,8 +7,10 @@ use App\Http\Controllers\BandController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\StateController;
 use App\Http\Controllers\VenueController;
 use App\Http\Controllers\EmailSignupController;
+
 
 
 /// test data
@@ -44,6 +46,9 @@ Route::get('/bands/{id}',   [BandController::class, 'show']);
 
 Route::get('/cities', [CityController::class, 'index']);
 Route::get('/cities/{id}', [CityController::class, 'show']);
+
+Route::get('/states', [StateController::class, 'index']);
+Route::get('/states/{id}', [StateController::class, 'show']);
 
 Route::get('venues', [VenueController::class, 'index']);
 Route::get('venues/{id}', [VenueController::class, 'show']);
