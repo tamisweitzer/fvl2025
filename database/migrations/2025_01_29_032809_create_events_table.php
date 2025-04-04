@@ -14,11 +14,11 @@ return new class extends Migration {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('admin_name');
-            $table->foreignIdFor(Band::class);
-            $table->foreignIdFor(Venue::class);
-            $table->date('event_date');
-            $table->time('event_time');
+            $table->string('admin_name')->nullable();
+            $table->foreignIdFor(Band::class)->nullable();
+            $table->foreignIdFor(Venue::class)->nullable();
+            $table->date('event_date')->nullable();
+            $table->time('event_time')->nullable();
             $table->text('event_details')->nullable();
             $table->timestamps();
         });
