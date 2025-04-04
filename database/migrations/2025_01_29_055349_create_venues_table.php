@@ -22,6 +22,7 @@ return new class extends Migration {
             $table->foreignIdFor(City::class);
             $table->foreignIdFor(State::class);
             $table->string('zip')->nullable();
+            $table->string('neighborhood')->nullable();
             $table->string('phone')->nullable();
             $table->string('website_url')->nullable();
             $table->float('lat')->nullable();

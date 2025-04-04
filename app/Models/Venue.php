@@ -18,6 +18,7 @@ class Venue extends Model {
     'city_id',
     'state_id',
     'zip',
+    'neighborhood',
     'phone',
     'website_url',
     'lat',
