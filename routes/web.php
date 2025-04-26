@@ -25,19 +25,23 @@ $events = [
 
 Route::get('/', [HomeController::class, 'index']);
 
-
-
 Route::get('/home', function () {
     return view('home', ['events' => Event::all()]);
 });
 
+// The Lita page.
 Route::get('/face1', function () {
     return view('face1', ['events' => Event::all()]);
 });
 
+// The colorful page.
 Route::get('/face2', function () {
     return view('face2', ['events' => Event::all()]);
 });
+
+
+
+
 
 Route::get('/bands',        [BandController::class, 'index']);
 Route::get('/bands/create', [BandController::class, 'create']);
