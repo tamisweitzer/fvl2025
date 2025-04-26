@@ -1,7 +1,8 @@
 <x-layout>
     <x-wrapper-narrow class="mt-8 mb-8">
         <x-page-title>{{ $band->fullname }}</x-page-title>
-        <div class="-mt-4 mb-12 text-center">{{ $band->excerpt }}</div>
+        <x-banner-image></x-banner-image>
+        <div class="mt-4 mb-12 text-center">{{ $band->excerpt }}</div>
 
         <section class="mb-8">
             <x-kv-group class="grid grid-cols-12">
@@ -21,7 +22,7 @@
         <hr>
 
         <section class="mt-8 mb-8">
-            <h2 class="mb-4 text-xl sm:text-2xl md:text-3xl">Upcoming Shows</h2>
+            <x-page-subtitle>Upcoming Shows</x-page-subtitle>
             @foreach ($events as $event)
                 <x-card-wrapper-secondary>
                     <a href="/events/{{ $event->id }}" class="block">
