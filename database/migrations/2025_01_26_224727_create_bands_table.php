@@ -20,7 +20,8 @@ return new class extends Migration {
             $table->string('website_url')->nullable();
             $table->string('thumbnail_img')->nullable();
             $table->string('banner_img')->nullable();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
         });
     }
 
