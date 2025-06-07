@@ -9,7 +9,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\StateController;
 use App\Http\Controllers\VenueController;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\EmailSignupController;
+use App\Http\Controllers\RegisteredUserController;
 
 
 
@@ -60,6 +62,14 @@ Route::get('venues/{id}', [VenueController::class, 'show']);
 Route::get('/events', [EventController::class, 'index']);
 Route::get('/events/{id}', [EventController::class, 'show']);
 
+// Auth
+Route::get('/register', [RegisteredUserController::class, 'create']);
+Route::post('/register', [RegisteredUserController::class, 'store']);
 
+// Login
+Route::get('/login', [SessionController::class, 'create']);
+Route::post('/login', [SessionController::class, 'store']);
+
+// Email list.
 Route::get('/email-signup', [EmailSignupController::class, 'index']);
 Route::post('/email-signup', [EmailSignupController::class, 'store']);
