@@ -1,16 +1,16 @@
 <x-layout>
     <x-wrapper-narrow>
-        <x-page-title>Login</x-page-title>
+        <x-page-title>Log in</x-page-title>
 
         <form action="/login" method="post" class="mb-12 max-w-lg mx-auto">
             @csrf
 
             <x-form-group>
-                <x-label-default for="email-address">Email Address<span class="text-red-500">*</span></x-label-default>
-                <x-input-text id="email-address" name="email-address" required></x-input-text>
+                <x-label-default for="email">Email Address<span class="text-red-500">*</span></x-label-default>
+                <x-input-text id="email" name="email" :value="old('email')" required></x-input-text>
             </x-form-group>
             <x-form-group>
-                <x-label-default for="email-address">Password<span class="text-red-500">*</span></x-label-default>
+                <x-label-default for="password">Password<span class="text-red-500">*</span></x-label-default>
                 <x-input-password id="password" name="password" required></x-input-password>
             </x-form-group>
 

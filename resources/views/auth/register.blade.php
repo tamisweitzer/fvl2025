@@ -10,12 +10,17 @@
             </x-form-group>
 
             <x-form-group>
-                <x-label-default for="email-address">Email Address<span class="text-red-500">*</span></x-label-default>
-                <x-input-text id="email-address" name="email-address" required></x-input-text>
+                <x-label-default for="email">Email Address<span class="text-red-500">*</span></x-label-default>
+                <x-input-text id="email" name="email" required></x-input-text>
             </x-form-group>
             <x-form-group>
-                <x-label-default for="email-address">Password<span class="text-red-500">*</span></x-label-default>
-                <x-input-text id="password" name="password" required></x-input-text>
+                <x-label-default for="password">Password<span class="text-red-500">*</span></x-label-default>
+                <x-input-password id="password" name="password" required></x-input-password>
+            </x-form-group>
+            <x-form-group>
+                <x-label-default for="password_confirmation">Retype Password<span
+                        class="text-red-500">*</span></x-label-default>
+                <x-input-password id="password_confirmation" name="password_confirmation" required></x-input-password>
                 <details class="mt-1 text-gray-400 hover:text-gray-600 open:text-gray-600">
                     <summary class="text-sm  block cursor-pointer underline-offset-2">View password
                         requirements.
@@ -26,7 +31,6 @@
                     </small>
                 </details>
             </x-form-group>
-
 
             <div class="mt-6 mb-8 flex items-center justify-between gap-x-6">
                 <x-form-button-cancel>Cancel</x-form-button-cancel>

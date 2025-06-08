@@ -31,11 +31,20 @@
                 <x-nav-link href="/bands" :active="request()->is('bands')">bands</x-nav-link>
                 <x-nav-link href="/cities" :active="request()->is('cities')">cities</x-nav-link>
                 <x-nav-link href="/venues" :active="request()->is('venues')">venues</x-nav-link>
-                <div class="pb-4 sm:hidden border-b-2 sm:border-none border-b-slate-600 w-1/2 mx-auto"></div>
-                @guest
-                    <x-nav-link href="/login" :active="request()->is('login')">Login</x-nav-link>
-                    {{-- <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link> --}}
-                @endguest
+
+                <span class="inline-block mt-8 sm:mt-0 sm:ml-8">
+                    @guest
+                        <x-nav-link href="/login" :active="request()->is('login')">Log in</x-nav-link>
+                        <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link>
+                    @endguest
+                    @auth
+                        <form action="/logout" method="POST" class="inline">
+                            @csrf
+                            <input type="submit" value="Log out"
+                                class="btn inline  hover:text-orange-600 active:text-orange-700 rounded px-4"></input>
+                        </form>
+                    @endauth
+                </span>
             </div>
             <div class="hamburger mt-3">
                 <span class="bar"></span>
