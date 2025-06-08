@@ -13,8 +13,6 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\EmailSignupController;
 use App\Http\Controllers\RegisteredUserController;
 
-
-
 /// test data
 $events = [
     ['bandName' => 'Band one', 'venueName' => 'Old Mill', 'city' => 'Appleton', 'date' => '2-15-2025', 'time' => '8:00 pm'],
@@ -41,26 +39,27 @@ Route::get('/face2', function () {
     return view('face2', ['events' => Event::all()]);
 });
 
-
-
-
-
+// Bands
 Route::get('/bands',        [BandController::class, 'index']);
 Route::get('/bands/create', [BandController::class, 'create']);
 Route::post('/bands/create', [BandController::class, 'store']);
 Route::get('/bands/{id}',   [BandController::class, 'show']);
 
-Route::get('/cities', [CityController::class, 'index']);
-Route::get('/cities/{id}', [CityController::class, 'show']);
-
-Route::get('/states', [StateController::class, 'index']);
-Route::get('/states/{id}', [StateController::class, 'show']);
-
+// Venues
 Route::get('venues', [VenueController::class, 'index']);
 Route::get('venues/{id}', [VenueController::class, 'show']);
 
+// Events
 Route::get('/events', [EventController::class, 'index']);
 Route::get('/events/{id}', [EventController::class, 'show']);
+
+// Cities
+Route::get('/cities', [CityController::class, 'index']);
+Route::get('/cities/{id}', [CityController::class, 'show']);
+
+// States
+Route::get('/states', [StateController::class, 'index']);
+Route::get('/states/{id}', [StateController::class, 'show']);
 
 // Auth
 Route::get('/register', [RegisteredUserController::class, 'create']);
@@ -69,7 +68,8 @@ Route::post('/register', [RegisteredUserController::class, 'store']);
 // Login
 Route::get('/login', [SessionController::class, 'create']);
 Route::post('/login', [SessionController::class, 'store']);
+Route::post('/logout', [SessionController::class, 'destroy']);
 
-// Email list.
+// Form on front page to get added to email list.
 Route::get('/email-signup', [EmailSignupController::class, 'index']);
 Route::post('/email-signup', [EmailSignupController::class, 'store']);
