@@ -2,7 +2,7 @@
     <x-wrapper-narrow>
         <x-page-title>Add a Band</x-page-title>
         @auth
-            <form action="/bands/create" method="post" class="mb-12">
+            <form action="/bands/create" method="post" class="mb-12" enctype="multipart/form-data">
                 @csrf
                 <x-form-group>
                     <x-label-default for="name">Nickname</x-label-default>

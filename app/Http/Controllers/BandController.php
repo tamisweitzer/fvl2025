@@ -23,7 +23,38 @@ class BandController extends Controller {
         return view('bands.create', ['cities' => $cities, 'states' => $states]);
     }
 
-    public function store() {
+    public function store(Request $request) {
+
+        $request->validate([
+            'name' => 'required|max:255|string',
+            'fullname' => 'nullable|max:255|string',
+            'excerpt' => 'nullable|max:255|string',
+            'bio' => 'nullable|max:2000|string',
+            'city_id' => 'nullable',
+            'state_id' => 'nullable',
+            'website_url' => 'nullable|max:255|string',
+            'thumbnail_img' => 'nullable|mimes:jpg,jpeg,png,webp',
+            'banner_img' => 'nullable|mimes:jpg,jpeg,png,webp'
+        ]);
+
+        if ($request->has('thumbnail_img')) {
+            $thumbnailFile = $request->file('thumbnail_img');
+            $ext = $thumbnailFile->getClientOriginalExtension();
+            $thumbnailFilename = time() . "-band_thumbnail" . $ext;
+            $thumbnailPath = 'uploads/bands/';
+            $thumbnailFile->move($thumbnailPath, $thumbnailFilename);
+        }
+
+        if ($request->has('banner_img')) {
+            $bannerFile = $request->file('banner_img');
+            $ext = $bannerFile->getClientOriginalExtension();
+            $bannerFilename = time() . "-band_banner" . $ext;
+            $bannerPath = 'uploads/bands/';
+            $bannerFile->move($bannerPath, $bannerFilename);
+        }
+
+
+
         Band::create([
             'name' => request('name'),
             'fullname' => request('fullname'),
@@ -32,9 +63,11 @@ class BandController extends Controller {
             'city_id' => request('city_id'),
             'state_id' => request('state_id'),
             'website_url' => request('website_url'),
-            'thumbnail_img' => request('thumbnail_img'),
-            'banner_img' => request('banner_img')
+            'thumbnail_img' => $thumbnailPath . $thumbnailFilename,
+            'banner_img' => $bannerPath . $bannerFilename
         ]);
+
+
 
         return redirect('/bands');
     }
