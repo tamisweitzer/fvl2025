@@ -52,9 +52,7 @@ class BandController extends Controller {
             $bannerPath = 'uploads/bands/';
             $bannerFile->move($bannerPath, $bannerFilename);
         }
-
-
-
+s
         Band::create([
             'name' => request('name'),
             'fullname' => request('fullname'),
@@ -66,8 +64,6 @@ class BandController extends Controller {
             'thumbnail_img' => $thumbnailPath . $thumbnailFilename,
             'banner_img' => $bannerPath . $bannerFilename
         ]);
-
-
 
         return redirect('/bands');
     }
