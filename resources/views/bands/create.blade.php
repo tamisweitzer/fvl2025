@@ -5,13 +5,13 @@
             <form action="/bands/create" method="post" class="mb-12">
                 @csrf
                 <x-form-group>
-                    <x-label-default for="name">Name</x-label-default>
-                    <x-input-text id="name" name="name"></x-input-text>
+                    <x-label-default for="name">Nickname</x-label-default>
+                    <x-input-text id="name" name="name" placeholder="Nick Jones"></x-input-text>
                 </x-form-group>
 
                 <x-form-group>
-                    <x-label-default for="fullname">FullName</x-label-default>
-                    <x-input-text id="fullname" name="fullname"></x-input-text>
+                    <x-label-default for="fullname">Full or Proper Name</x-label-default>
+                    <x-input-text id="fullname" name="fullname" placeholder="The Nick Jones Experience"></x-input-text>
                 </x-form-group>
 
                 <x-form-group>
@@ -28,8 +28,8 @@
 
                 <x-form-group>
                     <x-label-default for="city_id">City</x-label-default>
-                    <select name="city_id" id="city_id" class="block w-full border shadow-inner p-1">
-                        <option id="null" value="null">Choose your city</option>
+                    <select name="city_id" id="city_id" class="block w-full border shadow-inner p-1 text-gray-500">
+                        <option id="select-cite" value="null">Select your city</option>
                         @foreach ($cities as $city)
                             <option id="city_{{ $city->id }}" value="{{ $city->id }}">{{ $city->name }}</option>
                         @endforeach
@@ -38,7 +38,8 @@
 
                 <x-form-group>
                     <x-label-default for="state_id">State</x-label-default>
-                    <select name="state_id" id="state_id" class="block w-full border shadow-inner p-1">
+                    <select name="state_id" id="state_id" class="block w-full border shadow-inner p-1 text-gray-500">
+
                         @foreach ($states as $state)
                             <option value="{{ $state->id }}">{{ $state->name }}</option>
                         @endforeach
@@ -47,23 +48,31 @@
 
                 <x-form-group>
                     <x-label-default for="website_url">Website url</x-label-default>
-                    <x-input-text name="website_url" id="website_url"></x-input-text>
+                    <x-input-text name="website_url" id="website_url" placeholder="https://yourwebsite.com"></x-input-text>
                 </x-form-group>
 
                 <x-form-group>
-                    <x-label-default for="thumbnail_img">Thumbnail</x-label-default>
+                    <x-label-default for="thumbnail_img">Thumbnail image</x-label-default>
                     {{-- <x-input-text id="xxx" name="xxx"></x-input-text> --}}
                     <input type="file" accept=".jpg,.jpeg,.png,.webp" name="thumbnail_img" id="thumbnail_img"
-                        class="block w-full border shadow-inner p-1">
+                        class="block w-full p-1 text-gray-500">
+                    <details class="text-gray-400 hover:cursor-pointer hover:text-gray-700">
+                        <summary>Preferred image has a 4x3 ratio. Min size ~400x300.</summary>
+                        <div class="bg-gray-300 w-[400px] h-[300px]">.</div>
+                    </details>
                 </x-form-group>
 
                 <x-form-group>
-                    <x-label-default for="banner_img">Banner img</x-label-default>
+                    <x-label-default for="banner_img">Banner image</x-label-default>
                     <input type="file" accept=".jpg,.jpeg,.png,.webp" name="banner_img" id="banner_img"
-                        class="block w-full border shadow-inner p-1">
+                        class="block w-full p-1 text-gray-500">
+                    <details class="text-gray-400 hover:cursor-pointer hover:text-gray-700">
+                        <summary>Preferred image has a 16x9 ratio. Min size ~400x225.</summary>
+                        <div class="bg-gray-300 w-[400px] h-[225px]">.</div>
+                    </details>
                 </x-form-group>
 
-                <div class="mt-6 flex items-center justify-end gap-x-6">
+                <div class="mt-8 flex items-center justify-between gap-x-6 border-t border-t-slate-200">
                     <x-form-button-cancel>Cancel</x-form-button-cancel>
                     <x-form-button-submit>Submit</x-form-button-submit>
                 </div>
