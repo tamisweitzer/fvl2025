@@ -9,7 +9,8 @@ use Illuminate\Validation\Rules\Password;
 
 class RegisteredUserController extends Controller {
     public function create() {
-        return view('auth.register');
+        return redirect('/home');
+        // return view('auth.register');
     }
 
     public function store() {
