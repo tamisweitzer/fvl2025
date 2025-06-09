@@ -21,6 +21,15 @@
 
 <body class="font-sans antialiased bg-slate-100">
     <header class="bg-slate-700 text-slate-400">
+        @auth
+            <nav class=" bg-slate-900 p-0 text-sm">
+                <div class="secondary-nav-menu max-w-3xl mx-auto flex justify-end gap-2 p-0">
+                    <x-nav-link href="/bands/create" :active="request()->is('events')">Add Band</x-nav-link>
+                    <x-nav-link href="/venues" :active="request()->is('events')">Add Venue</x-nav-link>
+                    <x-nav-link href="/events" :active="request()->is('events')">Add Event</x-nav-link>
+                </div>
+            </nav>
+        @endauth
         <nav class="max-w-3xl mx-auto pr-4 flex justify-end gap-2 p-0">
             <a href="/"
                 class="site-branding inline-block  px-4 pt-2 pb-2 mr-auto text-orange-500 hover:text-slate-400 hover:underline text-xl font-bold small-caps">
@@ -69,7 +78,7 @@
     </main>
 
     <footer class="bg-slate-700 text-slate-400 py-16 text-center text-sm dark:text-white/70">
-        <div class="wrapper max-w-3xl mx-auto ">
+        {{-- <div class="wrapper max-w-3xl mx-auto ">
             <div class="flex flex-col sm:flex-row gap-4">
                 <div class="col flex-1">
                     <a href="#" class="block p-4">link</a>
@@ -96,7 +105,7 @@
                     <a href="#" class="block p-4">link</a>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </footer>
     <script>
         const hamburger = document.querySelector(".hamburger");
