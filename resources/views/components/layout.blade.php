@@ -43,8 +43,8 @@
 
                 <span class="inline-block mt-8 sm:mt-0 sm:ml-8">
                     @guest
-                        <x-nav-link href="/login" :active="request()->is('login')">Log in</x-nav-link>
-                        <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link>
+                        {{-- <x-nav-link href="/login" :active="request()->is('login')">Log in</x-nav-link>
+                        <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link> --}}
                     @endguest
                     @auth
                         <form action="/logout" method="POST" class="inline">
