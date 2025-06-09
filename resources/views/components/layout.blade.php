@@ -41,7 +41,7 @@
                         <form action="/logout" method="POST" class="inline">
                             @csrf
                             <input type="submit" value="Log out"
-                                class="btn inline  hover:text-orange-600 active:text-orange-700 rounded px-4"></input>
+                                class="btn inline text-inherit  hover:text-orange-600 active:text-orange-700 rounded px-4"></input>
                         </form>
                     @endauth
                 </span>
