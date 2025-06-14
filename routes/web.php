@@ -43,6 +43,11 @@ Route::get('/face2', function () {
 Route::get('/bands',        [BandController::class, 'index']);
 Route::get('/bands/create', [BandController::class, 'create']);
 Route::post('/bands/create', [BandController::class, 'store']);
+Route::get('/bands/{id}/edit',   [BandController::class, 'edit']);
+Route::patch('/bands/{id}/profile', [BandController::class, 'patch_profile']);
+Route::patch('/bands/{id}/thumbnail', [BandController::class, 'patch_thumbnail']);
+Route::patch('/bands/{id}/banner', [BandController::class, 'patch_banner']);
+Route::delete('/bands/{id}', [BandController::class, 'delete']);
 Route::get('/bands/{id}',   [BandController::class, 'show']);
 
 // Venues
