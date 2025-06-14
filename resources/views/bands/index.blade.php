@@ -7,7 +7,7 @@
                 <x-card-wrapper class="w-full sm:max-w-48 ">
                     <a href="/bands/{{ $band->id }}" class="">
                         <div class="flex flex-row gap-x-4 sm:flex-col">
-                            <div class="mb-2 text-lg font-semibold text-gray-700 max-w-40 sm:h-24 overflow-hidden">
+                            <div class="mb-2 text-lg font-semibold text-gray-700 w-40 h-32  overflow-hidden sm:mx-auto">
                                 <img class="object-contain object-middle " src="{{ asset($band->banner_img) }}"
                                     alt="">
                             </div>
