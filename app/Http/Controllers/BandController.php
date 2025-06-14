@@ -37,20 +37,24 @@ class BandController extends Controller {
             'banner_img' => 'nullable|mimes:jpg,jpeg,png,webp'
         ]);
 
+        $thumb = 'images/concert.jpg';
         if ($request->has('thumbnail_img')) {
             $thumbnailFile = $request->file('thumbnail_img');
             $ext = $thumbnailFile->getClientOriginalExtension();
-            $thumbnailFilename = time() . "_thumbnail" . $ext;
+            $thumbnailFilename = "band_" .  "_thumbnail_" . time() . $ext;
             $thumbnailPath = 'uploads/bands/';
             $thumbnailFile->move($thumbnailPath, $thumbnailFilename);
+            $thumb = $thumbnailPath . $thumbnailFilename;
         }
 
+        $banner = 'images/hijinks_banner.jpg';
         if ($request->has('banner_img')) {
             $bannerFile = $request->file('banner_img');
             $ext = $bannerFile->getClientOriginalExtension();
-            $bannerFilename = time() . "_banner" . $ext;
+            $bannerFilename = "band_" . "_banner_" . time() . $ext;
             $bannerPath = 'uploads/bands/';
             $bannerFile->move($bannerPath, $bannerFilename);
+            $banner = $bannerPath . $bannerFilename;
         }
 
         Band::create([
@@ -61,8 +65,8 @@ class BandController extends Controller {
             'city_id' => request('city_id'),
             'state_id' => request('state_id'),
             'website_url' => request('website_url'),
-            'thumbnail_img' => $thumbnailPath . $thumbnailFilename,
-            'banner_img' => $bannerPath . $bannerFilename
+            'thumbnail_img' => $thumb,
+            'banner_img' => $banner
         ]);
 
         return redirect('/bands');
@@ -117,7 +121,7 @@ class BandController extends Controller {
         if (request()->has('thumbnail_img')) {
             $thumbnailFile = request()->file('thumbnail_img');
             $ext = $thumbnailFile->getClientOriginalExtension();
-            $thumbnailFilename = time() . "_thumbnailupdated." . $ext;
+            $thumbnailFilename = "band_" . $id . "_thumbnail_" . time() . $ext;
             $thumbnailPath = 'uploads/bands/';
             $thumbnailFile->move($thumbnailPath, $thumbnailFilename);
             $thumbnail = $thumbnailPath . $thumbnailFilename;
@@ -141,7 +145,7 @@ class BandController extends Controller {
         if (request()->has('banner_img')) {
             $bannerFile = request()->file('banner_img');
             $ext = $bannerFile->getClientOriginalExtension();
-            $bannerFilename = time() . "_bannerupdated." . $ext;
+            $bannerFilename = "band_" . $id . "_banner_" . time()  . $ext;
             $bannerPath = 'uploads/bands/';
             $bannerFile->move($bannerPath, $bannerFilename);
             $banner = $bannerPath . $bannerFilename;
