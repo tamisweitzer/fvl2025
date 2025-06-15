@@ -130,6 +130,22 @@
                     <x-form-button-submit>Update Banner</x-form-button-submit>
                 </div>
             </form>
+
+
+            <hr class="py-4 mt-36 border-red-600">
+            <div class="px-8 py-12 rounded bg-red-100 text-red-600">
+                <h2 class="text-2xl mb-4">Delete Band</h2>
+                <form action="/bands/{{ $band->id }}" method="post"
+                    class="mb-12 flex flex-col sm:flex-row sm:justify-between" enctype="multipart/form-data">
+                    @csrf
+                    @method('DELETE')
+                    <p class="text-red-500 text-bold">Caution: Action cannot be undone.</p>
+                    <div class="flex items-center justify-end gap-x-6">
+                        <x-form-button-submit>Delete Band</x-form-button-submit>
+                    </div>
+                </form>
+            </div>
+
         @endauth
         @guest
             <p>Email <a href="mailto:foxvalleylive@gmail.com"

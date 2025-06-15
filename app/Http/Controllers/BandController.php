@@ -140,7 +140,7 @@ class BandController extends Controller {
             'banner_img' => 'nullable|mimes:jpg,jpeg,png,webp'
         ]);
 
-        $band = Band::find($id);
+        $band = Band::findOrFail($id);
 
         $banner = '';
         if (request()->has('banner_img')) {
@@ -160,7 +160,9 @@ class BandController extends Controller {
         return view('bands.show', ['band' => $band, 'events' => $events]);
     }
 
-    public function delete($id): View {
-        //
+    public function delete($id) {
+        $band = Band::findOrFail($id);
+        $band->delete();
+        return redirect('/bands');
     }
 }
