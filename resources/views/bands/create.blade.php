@@ -29,7 +29,8 @@
                 <x-form-group>
                     <x-label-default for="city_id">City</x-label-default>
                     <select name="city_id" id="city_id" class="block w-full border shadow-inner p-1 text-gray-500">
-                        <option id="select-cite" value="null">Select your city</option>
+
+                        <option id="select-city" value="1">Select your city</option>
                         @foreach ($cities as $city)
                             <option id="city_{{ $city->id }}" value="{{ $city->id }}">{{ $city->name }}</option>
                         @endforeach
