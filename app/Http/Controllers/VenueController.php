@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class VenueController extends Controller {
   public function index() {
-    return view('venues.index', ['venues' => Venue::all()]);
+    return view('venues.index', ['venues' => Venue::all()->sortBy('name')]);
   }
 
   public function show($id) {
