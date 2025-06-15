@@ -37,7 +37,7 @@ class BandController extends Controller {
             'banner_img' => 'nullable|mimes:jpg,jpeg,png,webp'
         ]);
 
-        $thumb = 'images/concert.jpg';
+        $thumb = 'images/default-images/deepai-concert-1.jpg';
         if ($request->has('thumbnail_img')) {
             $thumbnailFile = $request->file('thumbnail_img');
             $ext = $thumbnailFile->getClientOriginalExtension();
@@ -47,7 +47,7 @@ class BandController extends Controller {
             $thumb = $thumbnailPath . $thumbnailFilename;
         }
 
-        $banner = 'images/hijinks_banner.jpg';
+        $banner = 'images/default-images/deepai-concert-banner-6.jpg';
         if ($request->has('banner_img')) {
             $bannerFile = $request->file('banner_img');
             $ext = $bannerFile->getClientOriginalExtension();
