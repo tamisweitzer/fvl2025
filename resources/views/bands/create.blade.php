@@ -58,7 +58,7 @@
                     <input type="file" accept=".jpg,.jpeg,.png,.webp" name="thumbnail_img" id="thumbnail_img"
                         class="block w-full p-1 text-gray-500">
                     <details class="text-gray-400 hover:cursor-pointer hover:text-gray-700">
-                        <summary>Preferred image has a 4x3 ratio. Min size ~400x300.</summary>
+                        <summary>Preferred image has a 4x3 ratio. Size 160x120..</summary>
                         <div class="bg-gray-300 w-[400px] h-[300px]">.</div>
                     </details>
                 </x-form-group>
@@ -68,7 +68,7 @@
                     <input type="file" accept=".jpg,.jpeg,.png,.webp" name="banner_img" id="banner_img"
                         class="block w-full p-1 text-gray-500">
                     <details class="text-gray-400 hover:cursor-pointer hover:text-gray-700">
-                        <summary>Preferred image has a 16x9 ratio. Min size ~400x225.</summary>
+                        <summary>Preferred image has a 16x9 ratio. Sized 896x504.</summary>
                         <div class="bg-gray-300 w-[400px] h-[225px]">.</div>
                     </details>
                 </x-form-group>
