@@ -75,20 +75,27 @@
 
             <hr>
 
-            <h2 class="text-3xl mt-12 mb-2">Edit the Thumbnail Image</h2>
+            <h2 class="text-2xl mt-12 mb-4">Edit the Thumbnail Image</h2>
             <form action="/bands/{{ $band->id }}/thumbnail" method="post"
                 class="mb-12 flex flex-col sm:flex-row sm:justify-between" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
-                <x-form-group class="w-fit mb-0">
-                    <x-label-default for="thumbnail_img">Select new thumbnail image</x-label-default>
-                    <input type="file" accept=".jpg,.jpeg,.png,.webp" name="thumbnail_img" id="thumbnail_img"
-                        class="block w-full p-1 text-gray-500" value="{{ $band->thumbnail_img }}">
-                    <details class="text-gray-400 hover:cursor-pointer hover:text-gray-700">
-                        <summary>Preferred image has a 4x3 ratio. Min size ~400x300.</summary>
-                        <div class="bg-gray-300 w-[400px] h-[300px]">.</div>
-                    </details>
-                </x-form-group>
+                <div>
+                    <x-form-group class="w-fit mb-0">
+                        <x-label-default for="thumbnail_img">Select new thumbnail image</x-label-default>
+                        <input type="file" accept=".jpg,.jpeg,.png,.webp" name="thumbnail_img" id="thumbnail_img"
+                            class="block w-full p-1 text-gray-500" value="{{ $band->thumbnail_img }}">
+                        <details class="text-gray-400 hover:cursor-pointer hover:text-gray-700">
+                            <summary>Preferred image has a 4x3 ratio. Min size ~400x300.</summary>
+                            <div class="bg-gray-300 w-[400px] h-[300px]">.</div>
+                        </details>
+                    </x-form-group>
+                    {{-- <x-form-group>
+                        <x-label-default for="thumbnail-alt-text">Alt text</x-label-default>
+                        <x-input-text id="thumbnail-alt-text"></x-input-text>
+                    </x-form-group> --}}
+                </div>
+
                 <div class="flex items-center justify-end gap-x-6">
                     <x-form-button-cancel>Cancel</x-form-button-cancel>
                     <x-form-button-submit>Update Thumb</x-form-button-submit>
@@ -97,20 +104,27 @@
 
             <hr>
 
-            <h2 class="text-3xl mt-12 mb-2">Edit the Banner Image</h2>
+            <h2 class="text-2xl mt-12 mb-4">Edit the Banner Image</h2>
             <form action="/bands/{{ $band->id }}/banner" method="post"
                 class="mb-12 flex flex-col sm:flex-row sm:justify-between" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
-                <x-form-group class="w-fit mb-0">
-                    <x-label-default for="banner_img">Select new banner image</x-label-default>
-                    <input type="file" accept=".jpg,.jpeg,.png,.webp" name="banner_img" id="banner_img"
-                        class="block w-full p-1 text-gray-500" value="{{ $band->banner_img }}">
-                    <details class="text-gray-400 hover:cursor-pointer hover:text-gray-700">
-                        <summary>Preferred image has a 16x9 ratio. Min size ~400x225.</summary>
-                        <div class="bg-gray-300 w-[400px] h-[225px]">.</div>
-                    </details>
-                </x-form-group>
+                <div>
+                    <x-form-group class="w-fit mb-0">
+                        <x-label-default for="banner_img">Select new banner image</x-label-default>
+                        <input type="file" accept=".jpg,.jpeg,.png,.webp" name="banner_img" id="banner_img"
+                            class="block w-full p-1 text-gray-500" value="{{ $band->banner_img }}">
+                        <details class="text-gray-400 hover:cursor-pointer hover:text-gray-700">
+                            <summary>Preferred image has a 16x9 ratio. Min size ~400x225.</summary>
+                            <div class="bg-gray-300 w-[400px] h-[225px]">.</div>
+                        </details>
+                    </x-form-group>
+                    {{-- <x-form-group>
+                        <x-label-default for="banner-alt-text">Alt text</x-label-default>
+                        <x-input-text id="banner-alt-text"></x-input-text>
+                    </x-form-group> --}}
+                </div>
+
                 <div class="flex items-center justify-end gap-x-6">
                     <x-form-button-cancel>Cancel</x-form-button-cancel>
                     <x-form-button-submit>Update Banner</x-form-button-submit>
