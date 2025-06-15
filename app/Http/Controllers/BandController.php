@@ -107,7 +107,8 @@ class BandController extends Controller {
             'website_url' => request('website_url'),
         ]);
 
-        return redirect('/bands');
+        $events = Event::all()->where('band_id', $band->id);
+        return view('bands.show', ['band' => $band, 'events' => $events]);
     }
 
     public function patch_thumbnail($id) {
@@ -155,7 +156,8 @@ class BandController extends Controller {
             'banner_img' => $banner
         ]);
 
-        return redirect('/bands');
+        $events = Event::all()->where('band_id', $band->id);
+        return view('bands.show', ['band' => $band, 'events' => $events]);
     }
 
     public function delete($id): View {
