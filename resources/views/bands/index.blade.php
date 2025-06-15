@@ -13,7 +13,7 @@
                             </div>
                             <div class="flex flex-col justify-end">
                                 <div class="mb-2">{{ $band->name }}</div>
-                                <div class="text-gray-500 text-sm">genre, tag1, tag2</div>
+                                {{-- <div class="text-gray-500 text-sm">genre, tag1, tag2</div> --}}
                             </div>
                         </div>
                         {{-- <div class="text-gray-500 text-sm">{{ $band->excerpt }}</div> --}}
