@@ -79,7 +79,7 @@ class BandController extends Controller {
     }
 
     public function edit($id): View {
-        $band = Band::find($id);
+        $band = Band::findOrFail($id);
         $cities = City::all();
         $states = State::all();
         return view('bands.edit', ['band' => $band, 'cities' => $cities, 'states' => $states]);
@@ -95,7 +95,7 @@ class BandController extends Controller {
             'state_id' => 'nullable',
             'website_url' => 'nullable|max:255|string',
         ]);
-        $band = Band::find($id);
+        $band = Band::findOrFail($id);
 
         $band->update([
             'name' => request('name'),
@@ -115,7 +115,7 @@ class BandController extends Controller {
             'thumbnail_img' => 'nullable|mimes:jpg,jpeg,png,webp'
         ]);
 
-        $band = Band::find($id);
+        $band = Band::findOrFail($id);
 
         $thumbnail = '';
         if (request()->has('thumbnail_img')) {
