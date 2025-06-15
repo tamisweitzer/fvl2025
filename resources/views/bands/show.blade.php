@@ -7,7 +7,8 @@
     <x-wrapper-narrow class="mt-8 mb-8">
         @if ($band->banner_img)
             <div class="bg-slate-200 max-h-[506px] mb-8 overflow-hidden">
-                <img class="object-contain object-center w-full" src="{{ asset($band->banner_img) }}" alt="banner img ">
+                <img class="object-contain object-center w-full" src="{{ asset($band->banner_img) }}"
+                    alt="Banner image for {{ $band->name }}">
             </div>
         @endif
 

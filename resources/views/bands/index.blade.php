@@ -9,7 +9,7 @@
                         <div class="flex flex-row gap-x-4 sm:flex-col">
                             <div class="mb-2 text-lg font-semibold text-gray-700 w-40 h-32  overflow-hidden sm:mx-auto">
                                 <img class="object-contain object-middle " src="{{ asset($band->thumbnail_img) }}"
-                                    alt="">
+                                    alt="Thumbnail for {{ $band->name }}">
                             </div>
                             <div class="flex flex-col justify-end">
                                 <div class="mb-2">{{ $band->name }}</div>
