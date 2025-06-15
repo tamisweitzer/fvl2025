@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 
 class BandController extends Controller {
     public function index(): View {
-        $bands = Band::with(['city', 'state'])->get()->sortBy('name');
+        $bands = Band::with(['state'])->get()->sortBy('name');
 
         return view('bands.index', ['bands' => $bands]);
     }
