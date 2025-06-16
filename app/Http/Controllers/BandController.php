@@ -41,7 +41,7 @@ class BandController extends Controller {
         if ($request->has('thumbnail_img')) {
             $thumbnailFile = $request->file('thumbnail_img');
             $ext = $thumbnailFile->getClientOriginalExtension();
-            $thumbnailFilename = "band_" .  "_thumbnail_" . time() . $ext;
+            $thumbnailFilename = "band_" .  "_thumbnail_" . time() . "." . $ext;
             $thumbnailPath = 'uploads/bands/';
             $thumbnailFile->move($thumbnailPath, $thumbnailFilename);
             $thumb = $thumbnailPath . $thumbnailFilename;
@@ -51,7 +51,7 @@ class BandController extends Controller {
         if ($request->has('banner_img')) {
             $bannerFile = $request->file('banner_img');
             $ext = $bannerFile->getClientOriginalExtension();
-            $bannerFilename = "band_" . "_banner_" . time() . $ext;
+            $bannerFilename = "band_" . "_banner_" . time() . "." . $ext;
             $bannerPath = 'uploads/bands/';
             $bannerFile->move($bannerPath, $bannerFilename);
             $banner = $bannerPath . $bannerFilename;
@@ -122,7 +122,7 @@ class BandController extends Controller {
         if (request()->has('thumbnail_img')) {
             $thumbnailFile = request()->file('thumbnail_img');
             $ext = $thumbnailFile->getClientOriginalExtension();
-            $thumbnailFilename = "band_" . $id . "_thumbnail_" . time() . $ext;
+            $thumbnailFilename = "band_" . $id . "_thumbnail_" . time() . "." .  $ext;
             $thumbnailPath = 'uploads/bands/';
             $thumbnailFile->move($thumbnailPath, $thumbnailFilename);
             $thumbnail = $thumbnailPath . $thumbnailFilename;
@@ -146,7 +146,7 @@ class BandController extends Controller {
         if (request()->has('banner_img')) {
             $bannerFile = request()->file('banner_img');
             $ext = $bannerFile->getClientOriginalExtension();
-            $bannerFilename = "band_" . $id . "_banner_" . time()  . $ext;
+            $bannerFilename = "band_" . $id . "_banner_" . time()  . "." .  $ext;
             $bannerPath = 'uploads/bands/';
             $bannerFile->move($bannerPath, $bannerFilename);
             $banner = $bannerPath . $bannerFilename;
