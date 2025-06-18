@@ -52,7 +52,6 @@ Route::get('/face2', function () {
 
 // Events - standard bars and restaurants
 Route::get('/summer/events', [SummerEventsController::class, 'index']);
-
 Route::get('/summer/events/create', [SummerEventsController::class, 'create']);
 Route::post('/summer/events/create', [SummerEventsController::class, 'store']);
 Route::get('/summer/events/{id}', [SummerEventsController::class, 'show']);
