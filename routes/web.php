@@ -58,14 +58,6 @@ Route::post('/summer/events/create', [SummerEventsController::class, 'store']);
 Route::get('/summer/events/{id}/edit', [SummerEventsController::class, 'edit']);
 Route::patch('/summer/events/{id}/edit', [SummerEventsController::class, 'patch']);
 Route::delete('/summer/events/{id}/delete', [SummerEventsController::class, 'delete']);
-// Outdoor concerts and fairs.
-Route::get('/summer/concerts', [SummerConcertsController::class, 'index']);
-Route::get('/summer/concerts/{id}', [SummerConcertsController::class, 'show']);
-Route::get('/summer/concerts/create', [SummerConcertsController::class, 'create']);
-Route::post('/summer/concerts/create', [SummerConcertsController::class, 'store']);
-Route::get('/summer/concerts/{id}/edit', [SummerConcertsController::class, 'edit']);
-Route::patch('/summer/concerts/{id}/edit', [SummerConcertsController::class, 'patch']);
-Route::delete('/summer/concerts/{id}/delete', [SummerConcertsController::class, 'delete']);
 
 // End temporary routes.
 
