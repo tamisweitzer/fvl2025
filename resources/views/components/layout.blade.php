@@ -37,6 +37,9 @@
                 Fox Valley Live
             </a>
             <div class="nav-menu mt-3">
+                @auth
+                    <x-nav-link href="/summer/events" :active="request()->is('summer/events')">summer events</x-nav-link>
+                @endauth
                 <x-nav-link href="/events" :active="request()->is('events')">events</x-nav-link>
                 <x-nav-link href="/bands" :active="request()->is('bands')">bands</x-nav-link>
                 <x-nav-link href="/cities" :active="request()->is('cities')">cities</x-nav-link>
