@@ -13,6 +13,9 @@ class SummerEvents extends Model {
         'band',
         'venue',
         'city',
-        'concert_url'
+        'concert_url',
+        'is_bar_gig',
+        'is_lunch_gig',
+        'notes'
     ];
 }
