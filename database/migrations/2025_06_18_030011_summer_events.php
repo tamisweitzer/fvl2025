@@ -20,10 +20,7 @@ return new class extends Migration {
             $table->string('city');
             $table->string('url')->nullable();
             $table->string('notes')->nullable();
-            $table->boolean('is_bar_gig');
-            $table->boolean('is_lunch_gig');
-            $table->boolean('is_series');
-            $table->boolean('is_fair');
+            $table->string('event_type')->nullable();
             $table->timestamps();
         });
     }

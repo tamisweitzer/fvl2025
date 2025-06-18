@@ -17,7 +17,7 @@
 
                 <x-form-group>
                     <x-label-default for="start_time">Start time</x-label-default>
-                    <x-input-time name="start_time" id="start_time"></x-input-time>
+                    <x-input-text name="start_time" id="start_time"></x-input-text>
                 </x-form-group>
 
                 <x-form-group>
