@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 class SummerEventsController extends Controller {
 
     public function index() {
-        $events = SummerEvents::all()->where('event_type', '=', 'is_bar_gig');
-        $lunches = SummerEvents::all()->where('event_type', '=', 'is_lunch_gig');
-        $series = SummerEvents::all()->where('event_type', '=', 'is_series');
-        $fairs = SummerEvents::all()->where('event_type', '=', 'is_fairs');
+        $events = SummerEvents::all()->where('event_type', '=', 'is_bar_gig')->sortBy('start_date');
+        $lunches = SummerEvents::all()->where('event_type', '=', 'is_lunch_gig')->sortBy('start_date');
+        $series = SummerEvents::all()->where('event_type', '=', 'is_series')->sortBy('start_date');
+        $fairs = SummerEvents::all()->where('event_type', '=', 'is_fairs')->sortBy('start_date');
 
         return view('summer.events.index', [
             'events' => $events,
