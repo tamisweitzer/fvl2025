@@ -1,4 +1,3 @@
-summers events template.
 <x-layout>
     <x-wrapper-narrow class="mt-8 mb-8 mx-auto">
         <x-page-title>All Summer Events</x-page-title>
