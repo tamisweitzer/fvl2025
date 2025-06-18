@@ -13,8 +13,10 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TempFairsController;
 use App\Http\Controllers\TempEventsController;
 use App\Http\Controllers\EmailSignupController;
+use App\Http\Controllers\SummerEventsController;
 use App\Http\Controllers\TempConcertsController;
 use App\Http\Controllers\RegisteredUserController;
+use App\Http\Controllers\SummerConcertsController;
 use App\Http\Controllers\TempDayConcertsController;
 
 /// test data
@@ -47,38 +49,24 @@ Route::get('/face2', function () {
 
 
 // Temporary routes to use to quickly add events while the rest of the site if being built out.
-// Summer Concerts
-Route::get('/tempconcerts', [TempConcertsController::class, 'index']);
-Route::get('/tempconcerts/{id}', [TempConcertsController::class, 'show']);
-Route::get('/tempconcerts/create', [TempConcertsController::class, 'create']);
-Route::post('/tempconcerts/create', [TempConcertsController::class, 'store']);
-Route::get('/tempconcerts/{id}/edit', [TempConcertsController::class, 'edit']);
-Route::patch('/tempconcerts/{id}/edit', [TempConcertsController::class, 'patch']);
-Route::delete('/tempconcerts/{id}/delete', [TempConcertsController::class, 'delete']);
-// Summer Day Concerts
-Route::get('/tempdayconcerts', [TempDayConcertsController::class, 'index']);
-Route::get('/tempdayconcerts/{id}', [TempDayConcertsController::class, 'show']);
-Route::get('/tempdayconcerts/create', [TempDayConcertsController::class, 'create']);
-Route::post('/tempdayconcerts/create', [TempDayConcertsController::class, 'store']);
-Route::get('/tempdayconcerts/{id}/edit', [TempDayConcertsController::class, 'edit']);
-Route::patch('/tempdayconcerts/{id}/edit', [TempDayConcertsController::class, 'patch']);
-Route::delete('/tempdayconcerts/{id}/delete', [TempDayConcertsController::class, 'delete']);
+
 // Events - standard bars and restaurants
-Route::get('/tempevents', [TempEventsController::class, 'index']);
-Route::get('/tempevents/{id}', [TempEventsController::class, 'show']);
-Route::get('/tempevents/create', [TempEventsController::class, 'create']);
-Route::post('/tempevents/create', [TempEventsController::class, 'store']);
-Route::get('/tempevents/{id}/edit', [TempEventsController::class, 'edit']);
-Route::patch('/tempevents/{id}/edit', [TempEventsController::class, 'patch']);
-Route::delete('/tempevents/{id}/delete', [TempEventsController::class, 'delete']);
-// Fairs
-Route::get('/tempfairs', [TempFairsController::class, 'index']);
-Route::get('/tempfairs/{id}', [TempFairsController::class, 'show']);
-Route::get('/tempfairs/create', [TempFairsController::class, 'create']);
-Route::post('/tempfairs/create', [TempFairsController::class, 'store']);
-Route::get('/tempfairs/{id}/edit', [TempFairsController::class, 'edit']);
-Route::patch('/tempfairs/{id}/edit', [TempFairsController::class, 'patch']);
-Route::delete('/tempfairs/{id}/delete', [TempFairsController::class, 'delete']);
+Route::get('/summer/events', [SummerEventsController::class, 'index']);
+Route::get('/summer/events/{id}', [SummerEventsController::class, 'show']);
+Route::get('/summer/events/create', [SummerEventsController::class, 'create']);
+Route::post('/summer/events/create', [SummerEventsController::class, 'store']);
+Route::get('/summer/events/{id}/edit', [SummerEventsController::class, 'edit']);
+Route::patch('/summer/events/{id}/edit', [SummerEventsController::class, 'patch']);
+Route::delete('/summer/events/{id}/delete', [SummerEventsController::class, 'delete']);
+// Outdoor concerts and fairs.
+Route::get('/summer/concerts', [SummerConcertsController::class, 'index']);
+Route::get('/summer/concerts/{id}', [SummerConcertsController::class, 'show']);
+Route::get('/summer/concerts/create', [SummerConcertsController::class, 'create']);
+Route::post('/summer/concerts/create', [SummerConcertsController::class, 'store']);
+Route::get('/summer/concerts/{id}/edit', [SummerConcertsController::class, 'edit']);
+Route::patch('/summer/concerts/{id}/edit', [SummerConcertsController::class, 'patch']);
+Route::delete('/summer/concerts/{id}/delete', [SummerConcertsController::class, 'delete']);
+
 // End temporary routes.
 
 
