@@ -9,14 +9,17 @@ return new class extends Migration {
      * Run the migrations.
      */
     public function up(): void {
-        Schema::create('temp_concerts', function (Blueprint $table) {
+        Schema::create('summer_events', function (Blueprint $table) {
             $table->id();
             $table->date('concert_date');
             $table->time('concert_time');
-            $table->string('band_list');
-            $table->string('location_name');
+            $table->string('band');
+            $table->string('venue');
             $table->string('city');
             $table->string('concert_url')->nullable();
+            $table->boolean('bar_gig');
+            $table->boolean('lunch_gig');
+            $table->boolean('notes');
             $table->timestamps();
         });
     }
@@ -25,6 +28,6 @@ return new class extends Migration {
      * Reverse the migrations.
      */
     public function down(): void {
-        Schema::dropIfExists('temp_concerts');
+        Schema::dropIfExists('summer_events');
     }
 };
