@@ -68,9 +68,9 @@ Route::delete('/summer/events/{id}/delete', [SummerEventsController::class, 'del
 
 // Bands
 Route::get('/bands',        [BandController::class, 'index']);
-Route::get('/bands/{id}',   [BandController::class, 'show']);
 Route::get('/bands/create', [BandController::class, 'create']);
 Route::post('/bands/create', [BandController::class, 'store']);
+Route::get('/bands/{id}',   [BandController::class, 'show']);
 Route::get('/bands/{id}/edit',   [BandController::class, 'edit']);
 Route::patch('/bands/{id}/profile', [BandController::class, 'patch_profile']);
 Route::patch('/bands/{id}/thumbnail', [BandController::class, 'patch_thumbnail']);
