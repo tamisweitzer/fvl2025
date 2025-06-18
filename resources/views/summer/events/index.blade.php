@@ -186,7 +186,6 @@
             @endforeach
         </section>
 
-        <hr>
 
         <!-- Summer Concert Series -->
         <x-page-title>Summer Concert Series</x-page-title>
