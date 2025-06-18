@@ -186,6 +186,7 @@
             @endforeach
         </section>
 
+        <hr>
 
         <!-- Summer Concert Series -->
         <x-page-title>Summer Concert Series</x-page-title>
@@ -193,40 +194,32 @@
             @foreach ($series as $serie)
                 <x-card-wrapper class="w-full">
                     <a href="/summer/events/{{ $serie->id }}" class="">
-                        <div class="flex flex-row gap-x-4 sm:flex-col">
-                            <div class="flex flex-col justify-end">
-                                @if ($serie->band)
-                                    <div class="mb-0">
-                                        <span class="font-extrabold text-xl">{{ $serie->band }}</span>
-                                    </div>
-                                @endif
+                        <div class="">
+                            <div class="">
+                                <div>
+                                    @if ($serie->band)
+                                        <span class="font-bold text-xl">{{ $serie->band }}</span>
+                                    @endif
+                                </div>
 
+                                <div>
+                                    @if ($serie->event_name)
+                                        <span class="">{{ $serie->event_name }}</span>
+                                    @endif
+                                </div>
 
-                                @if ($serie->event_name)
-                                    <div class="mb-0">
-                                        <span class="font-bold">{{ $serie->event_name }}</span>
-                                    </div>
-                                @endif
-
-                                <div class="mb-0">
+                                <div>
                                     @if ($serie->start_date)
                                         <span>{{ $serie->start_date->format('M d, Y') }}</span>
                                     @endif
                                     @if ($serie->end_date)
                                         <span> - {{ $serie->end_date }}</span>
                                     @endif
-
-
                                 </div>
-
-                                @if ($serie->start_time)
-                                    <span>{{ $serie->start_time }}</span>
                             </div>
-            @endif
-            </div>
-            </div>
-            </a>
-            </x-card-wrapper>
+                        </div>
+                    </a>
+                </x-card-wrapper>
             @endforeach
         </section>
     </x-wrapper-narrow>
