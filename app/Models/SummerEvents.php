@@ -17,9 +17,13 @@ class SummerEvents extends Model {
         'city',
         'url',
         'notes',
-        'is_bar_gig',
-        'is_lunch_gig',
-        'is_series',
-        'is_fair'
+        'event_type'
     ];
+
+    protected function casts() {
+        return [
+            'start_date' => 'datetime:m-d-YYYY',
+            'end_date' => 'datetime:m-d-YYYY'
+        ];
+    }
 }
