@@ -52,11 +52,6 @@
                                 <span class="inline-block w-28">Notes: </span>
                                 <span>{{ $event->notes }}</span>
                             </div>
-                            <div class="mb-2">
-                                <span class="inline-block w-28">Type: </span>
-                                <span>{{ $event->event_type }}</span>
-                            </div>
-
                         </div>
                     </div>
                     {{-- <div class="text-gray-500 text-sm">{{ $event->excerpt }}</div> --}}
