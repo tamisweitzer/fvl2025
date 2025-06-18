@@ -11,15 +11,19 @@ return new class extends Migration {
     public function up(): void {
         Schema::create('summer_events', function (Blueprint $table) {
             $table->id();
-            $table->date('concert_date');
-            $table->time('concert_time');
+            $table->date('start_date');
+            $table->date('end_date')->nullable();
+            $table->time('start_time')->nullable();
             $table->string('band');
+            $table->string('event_name')->nullable();
             $table->string('venue');
             $table->string('city');
-            $table->string('concert_url')->nullable();
-            $table->boolean('bar_gig');
-            $table->boolean('lunch_gig');
-            $table->boolean('notes');
+            $table->string('url')->nullable();
+            $table->string('notes')->nullable();
+            $table->boolean('is_bar_gig');
+            $table->boolean('is_lunch_gig');
+            $table->boolean('is_series');
+            $table->boolean('is_fair');
             $table->timestamps();
         });
     }

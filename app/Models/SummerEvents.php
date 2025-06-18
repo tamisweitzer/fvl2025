@@ -8,14 +8,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class SummerEvents extends Model {
     use HasFactory;
     protected $fillable = [
-        'concert_date',
-        'concert_time',
+        'start_date',
+        'end_date',
+        'start_time',
         'band',
+        'event_name',
         'venue',
         'city',
-        'concert_url',
+        'url',
+        'notes',
         'is_bar_gig',
         'is_lunch_gig',
-        'notes'
+        'is_series',
+        'is_fair'
     ];
 }
