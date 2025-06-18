@@ -8,8 +8,17 @@ use Illuminate\Http\Request;
 class SummerEventsController extends Controller {
 
     public function index() {
-        $events = SummerEvents::all();
-        return view('summer.events.index', ['events' => $events]);
+        $events = SummerEvents::all()->where('event_type', '=', 'is_bar_gig');
+        $lunches = SummerEvents::all()->where('event_type', '=', 'is_lunch_gig');
+        $series = SummerEvents::all()->where('event_type', '=', 'is_series');
+        $fairs = SummerEvents::all()->where('event_type', '=', 'is_fairs');
+
+        return view('summer.events.index', [
+            'events' => $events,
+            'lunches' => $lunches,
+            'series' => $series,
+            'fairs' => $fairs
+        ]);
     }
 
     public function show($id) {
@@ -22,7 +31,9 @@ class SummerEventsController extends Controller {
     }
 
     public function store(Request $request) {
+
         // dd($request->all());
+
         $request->validate([
             'start_date' => 'required|date',
             'end_date' => 'nullable|date',
