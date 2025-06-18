@@ -24,6 +24,7 @@
         @auth
             <nav class=" bg-slate-900 p-0 text-sm">
                 <div class="secondary-nav-menu max-w-5xl mx-auto flex justify-end gap-2 p-0">
+                    <x-nav-link href="/summer/events/create" :active="request()->is('/summer/events/create/')">Add Summer Event</x-nav-link>
                     <x-nav-link href="/bands/create" :active="request()->is('/bands/create/')">Add Band</x-nav-link>
                     <x-nav-link href="/venues" :active="request()->is('/venues')">Add Venue</x-nav-link>
                     <x-nav-link href="/events" :active="request()->is('events')">Add Event</x-nav-link>
