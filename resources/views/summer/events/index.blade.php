@@ -74,14 +74,6 @@
                                             <span>{{ $event->notes }}</span>
                                         </div>
                                     @endif
-
-                                    @if ($event->event_type)
-                                        <div class="mb-2">
-                                            <span class="inline-block w-28">Type: </span>
-                                            <span>{{ $event->event_type }}</span>
-                                        </div>
-                                    @endif
-
                                 </div>
                             </div>
                             {{-- <div class="text-gray-500 text-sm">{{ $event->excerpt }}</div> --}}
@@ -169,14 +161,6 @@
                                             <span>{{ $lunch->notes }}</span>
                                         </div>
                                     @endif
-
-                                    {{-- @if ($lunch->lunch_type)
-                                    <div class="mb-2">
-                                        <span class="inline-block w-28">Type: </span>
-                                        <span>{{ $lunch->event_type }}</span>
-                                    </div>
-                                @endif --}}
-
                                 </div>
                             </div>
                         </a>
