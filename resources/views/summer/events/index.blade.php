@@ -6,15 +6,6 @@
         <section class="mb-8 flex flex-wrap gap-2 mx-auto">
             @if (count($events) > 0)
                 @foreach ($events as $event)
-                    <x-kv-group class="grid grid-cols-12">
-                        <x-kv-key class="col-span-3 sm:col-span-2">Event Name:</x-kv-key>
-                        <x-kv-value class="col-span-9 sm:col-span-10">
-                            <a href="/summer/events{{ $event->band->id }}" class="default-inline-link">
-                                {{ $event->band->fullname }}
-                            </a>
-                        </x-kv-value>
-                    </x-kv-group>
-
                     <x-card-wrapper class="w-full ">
                         <a href="/summer/events/{{ $event->id }}" class="">
                             <div class="flex flex-row gap-x-4 sm:flex-col">
