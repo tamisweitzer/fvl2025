@@ -57,10 +57,12 @@
                     {{-- <div class="text-gray-500 text-sm">{{ $event->excerpt }}</div> --}}
                 </a>
 
-                <div class="mt-8 ">
-                    <a href="/summer/events/{{ $event->id }}/edit"
-                        class="bg-orange-300 border border-orange-400 px-3 py-2 rounded ">Edit Event</a>
-                </div>
+                @auth
+                    <div class="mt-8 ">
+                        <a href="/summer/events/{{ $event->id }}/edit"
+                            class="bg-orange-300 border border-orange-400 px-3 py-2 rounded ">Edit Event</a>
+                    </div>
+                @endauth
             </x-card-wrapper>
 
         </section>
