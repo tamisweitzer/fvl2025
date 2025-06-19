@@ -8,75 +8,26 @@
                 @foreach ($events as $event)
                     <x-card-wrapper class="w-full ">
                         <a href="/summer/events/{{ $event->id }}" class="">
-                            <div class="flex flex-row gap-x-4 sm:flex-col">
-                                <div class="flex flex-col justify-end">
-                                    @if ($event->event_name)
-                                        <div class="mb-2">
-                                            <span class="inline-block w-28">Event name</span>
-                                            <span class="font-bold text-2xl">{{ $event->event_name }}</span>
-                                        </div>
-                                    @endif
-
-                                    @if ($event->venue)
-                                        <div class="mb-2">
-                                            <span class="inline-block w-28">Venue:</span>
-                                            <span class="">{{ $event->venue }}</span>
-                                        </div>
-                                    @endif
-
-                                    @if ($event->city)
-                                        <div class="mb-2">
-                                            <span class="inline-block w-28">City: </span>
-                                            <span>{{ $event->city }}</span>
-                                        </div>
-                                    @endif
-
-                                    @if ($event->band)
-                                        <div class="mb-2">
-                                            <span class="inline-block w-28">Band(s):</span>
-                                            <span class="font-extrabold">{{ $event->band }}</span>
-                                        </div>
-                                    @endif
-
-
-                                    @if ($event->start_date)
-                                        <div class="mb-2">
-                                            <span class="inline-block w-28">Start Date:</span>
-                                            <span>{{ $event->start_date }}</span>
-                                        </div>
-                                    @endif
-
-                                    @if ($event->end_date)
-                                        <div class="mb-2">
-                                            <span class="inline-block w-28">End date:</span>
-                                            <span>{{ $event->end_date }}</span>
-                                        </div>
-                                    @endif
-
-                                    @if ($event->start_time)
-                                        <div class="mb-2">
-                                            <span class="inline-block w-28">Time:</span>
-                                            <span>{{ $event->start_time }}</span>
-                                        </div>
-                                    @endif
-
-
-                                    @if ($event->url)
-                                        <div class="mb-2">
-                                            <span class="inline-block w-28">URL: </span>
-                                            <span>{{ $event->url }}</span>
-                                        </div>
-                                    @endif
-
-                                    @if ($event->notes)
-                                        <div class="mb-2">
-                                            <span class="inline-block w-28">Notes: </span>
-                                            <span>{{ $event->notes }}</span>
-                                        </div>
-                                    @endif
-                                </div>
+                            <div>
+                                @if ($event->band)
+                                    <span class="font-bold text-xl">{{ $event->band }}</span>
+                                @endif
                             </div>
-                            {{-- <div class="text-gray-500 text-sm">{{ $event->excerpt }}</div> --}}
+
+                            <div>
+                                @if ($event->event_name)
+                                    <span class="">{{ $event->event_name }}</span>
+                                @endif
+                            </div>
+
+                            <div>
+                                @if ($event->start_date)
+                                    <span>{{ $event->start_date->format('M d, Y') }}</span>
+                                @endif
+                                @if ($event->end_date)
+                                    <span> - {{ $event->end_date->format('M d, Y') }}</span>
+                                @endif
+                            </div>
                         </a>
                     </x-card-wrapper>
                 @endforeach
@@ -95,73 +46,25 @@
                 @foreach ($lunches as $lunch)
                     <x-card-wrapper class="w-full ">
                         <a href="/summer/events/{{ $lunch->id }}" class="">
-                            <div class="flex flex-row gap-x-4 sm:flex-col">
-                                <div class="flex flex-col justify-end">
-                                    @if ($lunch->event_name)
-                                        <div class="mb-2">
-                                            <span class="inline-block w-28">lunch name</span>
-                                            <span class="font-bold text-2xl">{{ $lunch->event_name }}</span>
-                                        </div>
-                                    @endif
+                            <div>
+                                @if ($lunch->band)
+                                    <span class="font-bold text-xl">{{ $lunch->band }}</span>
+                                @endif
+                            </div>
 
-                                    @if ($lunch->venue)
-                                        <div class="mb-2">
-                                            <span class="inline-block w-28">Venue:</span>
-                                            <span class="">{{ $lunch->venue }}</span>
-                                        </div>
-                                    @endif
+                            <div>
+                                @if ($lunch->event_name)
+                                    <span class="">{{ $lunch->event_name }}</span>
+                                @endif
+                            </div>
 
-                                    @if ($lunch->city)
-                                        <div class="mb-2">
-                                            <span class="inline-block w-28">City: </span>
-                                            <span>{{ $lunch->city }}</span>
-                                        </div>
-                                    @endif
-
-                                    @if ($lunch->band)
-                                        <div class="mb-2">
-                                            <span class="inline-block w-28">Band(s):</span>
-                                            <span class="font-extrabold">{{ $lunch->band }}</span>
-                                        </div>
-                                    @endif
-
-
-                                    @if ($lunch->start_date)
-                                        <div class="mb-2">
-                                            <span class="inline-block w-28">Start Date:</span>
-                                            <span>{{ $lunch->start_date }}</span>
-                                        </div>
-                                    @endif
-
-                                    @if ($lunch->end_date)
-                                        <div class="mb-2">
-                                            <span class="inline-block w-28">End date:</span>
-                                            <span>{{ $lunch->end_date }}</span>
-                                        </div>
-                                    @endif
-
-                                    @if ($lunch->start_time)
-                                        <div class="mb-2">
-                                            <span class="inline-block w-28">Time:</span>
-                                            <span>{{ $lunch->start_time }}</span>
-                                        </div>
-                                    @endif
-
-
-                                    @if ($lunch->url)
-                                        <div class="mb-2">
-                                            <span class="inline-block w-28">URL: </span>
-                                            <span>{{ $lunch->url }}</span>
-                                        </div>
-                                    @endif
-
-                                    @if ($lunch->notes)
-                                        <div class="mb-2">
-                                            <span class="inline-block w-28">Notes: </span>
-                                            <span>{{ $lunch->notes }}</span>
-                                        </div>
-                                    @endif
-                                </div>
+                            <div>
+                                @if ($lunch->start_date)
+                                    <span>{{ $lunch->start_date->format('M d, Y') }}</span>
+                                @endif
+                                @if ($lunch->end_date)
+                                    <span> - {{ $lunch->end_date->format('M d, Y') }}</span>
+                                @endif
                             </div>
                         </a>
                     </x-card-wrapper>
@@ -181,29 +84,25 @@
                 @foreach ($series as $serie)
                     <x-card-wrapper class="w-full">
                         <a href="/summer/events/{{ $serie->id }}" class="">
-                            <div class="">
-                                <div class="">
-                                    <div>
-                                        @if ($serie->band)
-                                            <span class="font-bold text-xl">{{ $serie->band }}</span>
-                                        @endif
-                                    </div>
+                            <div>
+                                @if ($serie->band)
+                                    <span class="font-bold text-xl">{{ $serie->band }}</span>
+                                @endif
+                            </div>
 
-                                    <div>
-                                        @if ($serie->event_name)
-                                            <span class="">{{ $serie->event_name }}</span>
-                                        @endif
-                                    </div>
+                            <div>
+                                @if ($serie->event_name)
+                                    <span class="">{{ $serie->event_name }}</span>
+                                @endif
+                            </div>
 
-                                    <div>
-                                        @if ($serie->start_date)
-                                            <span>{{ $serie->start_date->format('M d, Y') }}</span>
-                                        @endif
-                                        @if ($serie->end_date)
-                                            <span> - {{ $serie->end_date }}</span>
-                                        @endif
-                                    </div>
-                                </div>
+                            <div>
+                                @if ($serie->start_date)
+                                    <span>{{ $serie->start_date->format('M d, Y') }}</span>
+                                @endif
+                                @if ($serie->end_date)
+                                    <span> - {{ $serie->end_date->format('M d, Y') }}</span>
+                                @endif
                             </div>
                         </a>
                     </x-card-wrapper>
@@ -242,7 +141,7 @@
                                             <span>{{ $fair->start_date->format('M d, Y') }}</span>
                                         @endif
                                         @if ($fair->end_date)
-                                            <span> - {{ $fair->end_date }}</span>
+                                            <span> - {{ $fair->end_date->format('M d, Y') }}</span>
                                         @endif
                                     </div>
                                 </div>
