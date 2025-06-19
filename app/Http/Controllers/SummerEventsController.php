@@ -31,9 +31,7 @@ class SummerEventsController extends Controller {
     }
 
     public function store(Request $request) {
-
         // dd($request->all());
-
         $request->validate([
             'start_date' => 'required|date',
             'end_date' => 'nullable|date',
@@ -61,5 +59,43 @@ class SummerEventsController extends Controller {
         ]);
 
         return redirect('/summer/events');
+    }
+
+
+    public function edit($id) {
+        $event = SummerEvents::findOrFail($id);
+        return view('summer.events.edit', ['event' => $event]);
+    }
+
+    public function patch($id) {
+        request()->validate([
+            'start_date' => 'required|date',
+            'end_date' => 'nullable|date',
+            'start_time' => 'nullable|string',
+            'band' => 'required|max:1024|string',
+            'event_name' => 'nullable|max:1024|string',
+            'venue' => 'required|max:1024|string',
+            'city' => 'required|max:100|string',
+            'url' => 'nullable|max:255|string',
+            'notes' => 'nullable|max:1024|string',
+            'event_type' => 'nullable|string'
+        ]);
+
+        $event = SummerEvents::findOrFail($id);
+
+        $event->update([
+            'start_date' => request('start_date'),
+            'end_date' => request('end_date'),
+            'start_time' => request('start_time'),
+            'band' => request('band'),
+            'event_name' => request('event_name'),
+            'venue' => request('venue'),
+            'city' => request('city'),
+            'url' => request('url'),
+            'notes' => request('notes'),
+            'event_type' => request('event_type'),
+        ]);
+
+        return view('summer.events.show', ['event' => $event]);
     }
 }

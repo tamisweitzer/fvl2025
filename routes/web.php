@@ -55,8 +55,8 @@ Route::get('/summer/events', [SummerEventsController::class, 'index']);
 Route::get('/summer/events/create', [SummerEventsController::class, 'create']);
 Route::post('/summer/events/create', [SummerEventsController::class, 'store']);
 Route::get('/summer/events/{id}', [SummerEventsController::class, 'show']);
+Route::patch('/summer/events/{id}/patch', [SummerEventsController::class, 'patch']);
 Route::get('/summer/events/{id}/edit', [SummerEventsController::class, 'edit']);
-Route::patch('/summer/events/{id}/edit', [SummerEventsController::class, 'patch']);
 Route::delete('/summer/events/{id}/delete', [SummerEventsController::class, 'delete']);
 
 // End temporary routes.
