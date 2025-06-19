@@ -63,7 +63,7 @@
                 <x-form-group>
                     <input type="radio" name="event_type" id="is_bar_gig" class="" value="is_bar_gig"
                         {{ $event->event_type == 'is_bar_gig' ? 'checked' : '' }}>
-                    <label for="is_bar_gig" class="ml-2"">Is a bar gig</label>
+                    <label for="is_bar_gig" class="ml-2">Is a bar gig</label>
                 </x-form-group>
 
                 <x-form-group>
