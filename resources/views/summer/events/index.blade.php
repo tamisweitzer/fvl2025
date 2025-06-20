@@ -1,158 +1,20 @@
 <x-layout>
     <x-wrapper-narrow class="mt-8 mb-8 mx-auto">
-
-        <!-- Regular Bar Events -->
-        <x-page-title>Live Music at Bars and Restaurants</x-page-title>
-        <section class="mb-8 flex flex-wrap gap-2 mx-auto">
-            @if (count($events) > 0)
-                @foreach ($events as $event)
-                    <x-card-wrapper class="w-full ">
-                        <a href="/summer/events/{{ $event->id }}" class="">
-                            <div>
-                                @if ($event->band)
-                                    <span class="font-bold text-xl">{{ $event->band }}</span>
-                                @endif
-                            </div>
-
-                            <div>
-                                @if ($event->event_name)
-                                    <span class="">{{ $event->event_name }}</span>
-                                @endif
-                            </div>
-
-                            <div>
-                                @if ($event->start_date)
-                                    <span>{{ $event->start_date->format('M d, Y') }}</span>
-                                @endif
-                                @if ($event->end_date)
-                                    <span> - {{ $event->end_date->format('M d, Y') }}</span>
-                                @endif
-                            </div>
-                        </a>
-                    </x-card-wrapper>
-                @endforeach
-            @else
-                <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
-                </div>
-            @endif
-        </section>
-
-        <hr class="mb-8">
-
-        <!-- Lunchtime Concert Series -->
-        <x-page-title>Lunchtime and Day Concerts</x-page-title>
-        <section class="mb-8 flex flex-wrap gap-2 mx-auto">
-            @if (count($lunches) > 0)
-                @foreach ($lunches as $lunch)
-                    <x-card-wrapper class="w-full ">
-                        <a href="/summer/events/{{ $lunch->id }}" class="">
-                            <div>
-                                @if ($lunch->band)
-                                    <span class="font-bold text-xl">{{ $lunch->band }}</span>
-                                @endif
-                            </div>
-
-                            <div>
-                                @if ($lunch->event_name)
-                                    <span class="">{{ $lunch->event_name }}</span>
-                                @endif
-                            </div>
-
-                            <div>
-                                @if ($lunch->start_date)
-                                    <span>{{ $lunch->start_date->format('M d, Y') }}</span>
-                                @endif
-                                @if ($lunch->end_date)
-                                    <span> - {{ $lunch->end_date->format('M d, Y') }}</span>
-                                @endif
-                            </div>
-                        </a>
-                    </x-card-wrapper>
-                @endforeach
-            @else
-                <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
-                </div>
-            @endif
-        </section>
-
-        <hr class="mb-8">
-
-        <!-- Summer Concert Series e.g. Heid Summer Concert Series -->
-        <x-page-title>Summer Concert Series</x-page-title>
-        <section class="mb-8 flex flex-wrap gap-2 mx-auto">
-            @if (count($series) > 0)
-                @foreach ($series as $serie)
-                    <x-card-wrapper class="w-full">
-                        <a href="/summer/events/{{ $serie->id }}" class="">
-                            <div>
-                                @if ($serie->band)
-                                    <span class="font-bold text-xl">{{ $serie->band }}</span>
-                                @endif
-                            </div>
-
-                            <div>
-                                @if ($serie->event_name)
-                                    <span class="">{{ $serie->event_name }}</span>
-                                @endif
-                            </div>
-
-                            <div>
-                                @if ($serie->start_date)
-                                    <span>{{ $serie->start_date->format('M d, Y') }}</span>
-                                @endif
-                                @if ($serie->end_date)
-                                    <span> - {{ $serie->end_date->format('M d, Y') }}</span>
-                                @endif
-                            </div>
-                        </a>
-                    </x-card-wrapper>
-                @endforeach
-            @else
-                <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
-                </div>
-            @endif
-        </section>
-
-        <hr class="mb-8">
-
-        <!-- Fairs and Standalone Concerts e.g. Rockfest, Winnebago County Fair -->
-        <x-page-title>Fairs and Regular Outdoor Concerts</x-page-title>
-        <section class="mb-8 flex flex-wrap gap-2 mx-auto">
-            @if (count($fairs) > 0)
-                @foreach ($fairs as $fair)
-                    <x-card-wrapper class="w-full">
-                        <a href="/summer/events/{{ $fair->id }}" class="">
-                            <div class="">
-                                <div class="">
-                                    <div>
-                                        @if ($fair->band)
-                                            <span class="font-bold text-xl">{{ $fair->band }}</span>
-                                        @endif
-                                    </div>
-
-                                    <div>
-                                        @if ($fair->event_name)
-                                            <span class="">{{ $fair->event_name }}</span>
-                                        @endif
-                                    </div>
-
-                                    <div>
-                                        @if ($fair->start_date)
-                                            <span>{{ $fair->start_date->format('M d, Y') }}</span>
-                                        @endif
-                                        @if ($fair->end_date)
-                                            <span> - {{ $fair->end_date->format('M d, Y') }}</span>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </x-card-wrapper>
-                @endforeach
-            @else
-                <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
-                </div>
-            @endif
-        </section>
+        <x-page-title>Summer Events</x-page-title>
+        <p class="-mt-4 mb-12 text-center">The complete list of summer events around the Fox Valley this summer.</p>
+        <p class="text-center mb-2">Click on any listing for more information.</p>
+        <div class="p-4 sm:p-8 bg-slate-50 border border-slate-300 shadow rounded">
+            @foreach ($events as $event)
+                <a href="/summer/events/{{ $event->id }}" class="block">
+                    <div class="my-4">
+                        <div class="text-lg font-bold">{{ $event->band }} at {{ $event->venue }}</div>
+                        <div>{{ $event->start_date->format('M d, Y') }} at {{ $event->start_time }}</div>
+                    </div>
+                    @if (!$loop->last)
+                        <hr>
+                    @endif
+                </a>
+            @endforeach
+        </div>
     </x-wrapper-narrow>
 </x-layout>

@@ -29,7 +29,9 @@ $events = [
 ];
 
 
+// Route::get('/', [HomeController::class, 'index']);
 Route::get('/', [HomeController::class, 'index']);
+
 
 Route::get('/home', function () {
     return view('home', ['events' => Event::all()]);
