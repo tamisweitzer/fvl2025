@@ -89,4 +89,9 @@ class SummerEventsController extends Controller {
 
         return view('summer.events.show', ['event' => $event]);
     }
+
+    public function destroy($id) {
+        // return ("to do");
+        dd(request()->all());
+    }
 }
