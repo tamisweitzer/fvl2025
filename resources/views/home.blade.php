@@ -1,15 +1,17 @@
 <x-layout>
     <x-wrapper-narrow class="mt-8 mb-8">
-        <x-page-title>See Live Music This Week</x-page-title>
+        <x-page-title>Live Music This Week in the Fox Valley</x-page-title>
+        <p class="text-center -mt-4 mb-12">Click on any listing for more information.</p>
 
         <!-- Start summer events -->
         <!-- Regular Bar Events -->
-        <x-page-title>Live Music at Bars and Restaurants</x-page-title>
-        <section class="mb-8 flex flex-wrap gap-2 mx-auto">
-            @if (count($events) > 0)
-                @foreach ($events as $event)
-                    <x-card-wrapper class="w-full ">
-                        <a href="/summer/events/{{ $event->id }}" class="">
+        <x-page-subtitle class="mb-4">Live Music at Bars and Restaurants</x-page-subtitle>
+        <section class="mb-12 mx-auto">
+            <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-auto">
+                @if (count($events) > 0)
+                    @foreach ($events as $event)
+                        <a href="/summer/events/{{ $event->id }}"
+                            class="block p-4 sm:p-8 border-b  hover:bg-violet-50">
                             <div>
                                 @if ($event->band)
                                     <span class="font-bold text-xl">{{ $event->band }}</span>
@@ -30,24 +32,26 @@
                                     <span> - {{ $event->end_date->format('M d, Y') }}</span>
                                 @endif
                             </div>
+                            @if (!$loop->last)
+                                {{-- <hr> --}}
+                            @endif
                         </a>
-                    </x-card-wrapper>
-                @endforeach
-            @else
-                <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
-                </div>
-            @endif
+                    @endforeach
+                @else
+                    <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
+                    </div>
+                @endif
+            </div>
         </section>
 
-        <hr class="mb-8">
-
         <!-- Lunchtime Concert Series -->
-        <x-page-title>Lunchtime and Day Concerts</x-page-title>
-        <section class="mb-8 flex flex-wrap gap-2 mx-auto">
-            @if (count($lunches) > 0)
-                @foreach ($lunches as $lunch)
-                    <x-card-wrapper class="w-full ">
-                        <a href="/summer/events/{{ $lunch->id }}" class="">
+        <x-page-subtitle class="mb-4">Lunchtime and Day Concerts</x-page-subtitle>
+        <section class="mb-12 mx-auto">
+            <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-auto">
+                @if (count($lunches) > 0)
+                    @foreach ($lunches as $lunch)
+                        <a href="/summer/events/{{ $lunch->id }}"
+                            class="block p-4 sm:p-8 border-b  hover:bg-violet-50">
                             <div>
                                 @if ($lunch->band)
                                     <span class="font-bold text-xl">{{ $lunch->band }}</span>
@@ -68,24 +72,26 @@
                                     <span> - {{ $lunch->end_date->format('M d, Y') }}</span>
                                 @endif
                             </div>
+                            @if (!$loop->last)
+                                {{-- <hr> --}}
+                            @endif
                         </a>
-                    </x-card-wrapper>
-                @endforeach
-            @else
-                <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
-                </div>
-            @endif
+                    @endforeach
+                @else
+                    <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
+                    </div>
+                @endif
+            </div>
         </section>
 
-        <hr class="mb-8">
-
         <!-- Summer Concert Series e.g. Heid Summer Concert Series -->
-        <x-page-title>Summer Concert Series</x-page-title>
-        <section class="mb-8 flex flex-wrap gap-2 mx-auto">
-            @if (count($series) > 0)
-                @foreach ($series as $serie)
-                    <x-card-wrapper class="w-full">
-                        <a href="/summer/events/{{ $serie->id }}" class="">
+        <x-page-subtitle class="mb-4">Summer Concert Series</x-page-subtitle>
+        <section class="mb-12 mx-auto">
+            <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-auto">
+                @if (count($series) > 0)
+                    @foreach ($series as $serie)
+                        <a href="/summer/events/{{ $serie->id }}"
+                            class="block p-4 sm:p-8 border-b  hover:bg-violet-50">
                             <div>
                                 @if ($serie->band)
                                     <span class="font-bold text-xl">{{ $serie->band }}</span>
@@ -106,83 +112,60 @@
                                     <span> - {{ $serie->end_date->format('M d, Y') }}</span>
                                 @endif
                             </div>
+                            @if (!$loop->last)
+                                {{-- <hr> --}}
+                            @endif
                         </a>
-                    </x-card-wrapper>
-                @endforeach
-            @else
-                <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
-                </div>
-            @endif
+                    @endforeach
+                @else
+                    <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
+                    </div>
+                @endif
+            </div>
         </section>
 
-        <hr class="mb-8">
+        {{-- <hr class="mb-8"> --}}
 
         <!-- Fairs and Standalone Concerts e.g. Rockfest, Winnebago County Fair -->
-        <x-page-title>Fairs and Regular Outdoor Concerts</x-page-title>
-        <section class="mb-8 flex flex-wrap gap-2 mx-auto">
-            @if (count($fairs) > 0)
-                @foreach ($fairs as $fair)
-                    <x-card-wrapper class="w-full">
-                        <a href="/summer/events/{{ $fair->id }}" class="">
-                            <div class="">
-                                <div class="">
-                                    <div>
-                                        @if ($fair->band)
-                                            <span class="font-bold text-xl">{{ $fair->band }}</span>
-                                        @endif
-                                    </div>
-
-                                    <div>
-                                        @if ($fair->event_name)
-                                            <span class="">{{ $fair->event_name }}</span>
-                                        @endif
-                                    </div>
-
-                                    <div>
-                                        @if ($fair->start_date)
-                                            <span>{{ $fair->start_date->format('M d, Y') }}</span>
-                                        @endif
-                                        @if ($fair->end_date)
-                                            <span> - {{ $fair->end_date->format('M d, Y') }}</span>
-                                        @endif
-                                    </div>
-                                </div>
+        <x-page-subtitle class="mb-4">Fairs and Regular Outdoor Concerts</x-page-subtitle>
+        <section class="mb-12 mx-auto">
+            <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-auto">
+                @if (count($fairs) > 0)
+                    @foreach ($fairs as $fair)
+                        <a href="/summer/events/{{ $fair->id }}"
+                            class="block p-4 sm:p-8 border-b  hover:bg-violet-50">
+                            <div>
+                                @if ($fair->band)
+                                    <span class="font-bold text-xl">{{ $fair->band }}</span>
+                                @endif
                             </div>
+
+                            <div>
+                                @if ($fair->event_name)
+                                    <span class="">{{ $fair->event_name }}</span>
+                                @endif
+                            </div>
+
+                            <div>
+                                @if ($fair->start_date)
+                                    <span>{{ $fair->start_date->format('M d, Y') }}</span>
+                                @endif
+                                @if ($fair->end_date)
+                                    <span> - {{ $fair->end_date->format('M d, Y') }}</span>
+                                @endif
+                            </div>
+                            @if (!$loop->last)
+                                {{-- <hr> --}}
+                            @endif
                         </a>
-                    </x-card-wrapper>
-                @endforeach
-            @else
-                <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
-                </div>
-            @endif
+                    @endforeach
+                @else
+                    <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
+                    </div>
+                @endif
+            </div>
         </section>
         <!-- End summer events -->
 
-        {{-- <section class="mb-8">
-            @foreach ($events as $event)
-                <x-card-wrapper>
-                    <a href="/events/{{ $event->id }}" class="block">
-                        <div class="text-lg font-semibold text-gray-700">
-                            {{ $event->name }}
-                        </div>
-
-                        <div class="text-gray-700">
-                            {{ $event->venue->name }}
-                            <span> in </span>
-                            {{ $event->venue->city->name }}
-                        </div>
-
-                        <div class="text-gray-500 text-sm">
-                            {{ $event->event_date }}
-                            {{ $event->event_time }}
-                        </div>
-                    </a>
-                </x-card-wrapper>
-            @endforeach
-        </section>
-
-        <a href="/events"
-            class="btn mt-4 inline-block bg-orange-500 hover:bg-orange-600 active:bg-orange-700 rounded px-4 py-2 text-white">See
-            all upcoming shows.</a> --}}
     </x-wrapper-narrow>
 </x-layout>
