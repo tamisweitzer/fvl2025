@@ -7,7 +7,7 @@
             @foreach ($events as $event)
                 <a href="/summer/events/{{ $event->id }}" class="block">
                     <div class="my-4">
-                        <div class="text-lg font-bold">{{ $event->band }} at {{ $event->venue }}</div>
+                        <div class="font-bold">{{ $event->band }} at {{ $event->venue }}</div>
                         <div>{{ $event->start_date->format('M d, Y') }} at {{ $event->start_time }}</div>
                     </div>
                     @if (!$loop->last)

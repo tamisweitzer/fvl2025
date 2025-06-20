@@ -14,7 +14,7 @@
                             class="block p-4 sm:p-8 border-b  hover:bg-violet-50">
                             <div>
                                 @if ($event->band)
-                                    <span class="font-bold text-xl">{{ $event->band }}</span>
+                                    <span class="font-bold">{{ $event->band }}</span>
                                 @endif
                             </div>
 
@@ -54,7 +54,7 @@
                             class="block p-4 sm:p-8 border-b  hover:bg-violet-50">
                             <div>
                                 @if ($lunch->band)
-                                    <span class="font-bold text-xl">{{ $lunch->band }}</span>
+                                    <span class="font-bold">{{ $lunch->band }}</span>
                                 @endif
                             </div>
 
@@ -94,7 +94,7 @@
                             class="block p-4 sm:p-8 border-b  hover:bg-violet-50">
                             <div>
                                 @if ($serie->band)
-                                    <span class="font-bold text-xl">{{ $serie->band }}</span>
+                                    <span class="font-bold">{{ $serie->band }}</span>
                                 @endif
                             </div>
 
@@ -136,7 +136,7 @@
                             class="block p-4 sm:p-8 border-b  hover:bg-violet-50">
                             <div>
                                 @if ($fair->band)
-                                    <span class="font-bold text-xl">{{ $fair->band }}</span>
+                                    <span class="font-bold">{{ $fair->band }}</span>
                                 @endif
                             </div>
 
