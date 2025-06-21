@@ -50,23 +50,20 @@
                         <a href="/summer/events/{{ $lunch->id }}"
                             class="block p-4 sm:p-8 border-b  hover:bg-violet-50">
                             <div>
-                                @if ($lunch->band)
-                                    <span class="font-bold">{{ $lunch->band }}</span>
-                                @endif
-                            </div>
-
-                            <div>
                                 @if ($lunch->event_name)
-                                    <span class="">{{ $lunch->event_name }}</span>
+                                    <span class="font-bold">{{ $lunch->event_name }}</span>
                                 @endif
                             </div>
 
-                            <div>
+                            <div class="text-gray-500">
                                 @if ($lunch->start_date)
                                     <span>{{ $lunch->start_date->format('M d, Y') }}</span>
                                 @endif
                                 @if ($lunch->end_date)
                                     <span> - {{ $lunch->end_date->format('M d, Y') }}</span>
+                                @endif
+                                @if ($lunch->start_time)
+                                    - {{ $lunch->start_time }}
                                 @endif
                             </div>
                             @if (!$loop->last)
@@ -93,23 +90,20 @@
                         <a href="/summer/events/{{ $fair->id }}"
                             class="block p-4 sm:p-8 border-b  hover:bg-violet-50">
                             <div>
-                                @if ($fair->band)
-                                    <span class="font-bold">{{ $fair->band }}</span>
-                                @endif
-                            </div>
-
-                            <div>
                                 @if ($fair->event_name)
-                                    <span class="">{{ $fair->event_name }}</span>
+                                    <span class="font-bold">{{ $fair->event_name }}</span>
                                 @endif
                             </div>
 
-                            <div>
+                            <div class="text-gray-500">
                                 @if ($fair->start_date)
                                     <span>{{ $fair->start_date->format('M d, Y') }}</span>
                                 @endif
                                 @if ($fair->end_date)
                                     <span> - {{ $fair->end_date->format('M d, Y') }}</span>
+                                @endif
+                                @if ($fair->start_time)
+                                    - {{ $fair->start_time }}
                                 @endif
                             </div>
                             @if (!$loop->last)
@@ -133,23 +127,20 @@
                         <a href="/summer/events/{{ $act->id }}"
                             class="block p-4 sm:p-8 border-b  hover:bg-violet-50">
                             <div>
-                                @if ($act->band)
-                                    <span class="font-bold">{{ $act->band }}</span>
-                                @endif
-                            </div>
-
-                            <div>
                                 @if ($act->event_name)
-                                    <span class="">{{ $act->event_name }}</span>
+                                    <span class="font-bold">{{ $act->event_name }}</span>
                                 @endif
                             </div>
 
-                            <div>
+                            <div class="text-gray-500">
                                 @if ($act->start_date)
                                     <span>{{ $act->start_date->format('M d, Y') }}</span>
                                 @endif
                                 @if ($act->end_date)
                                     <span> - {{ $act->end_date->format('M d, Y') }}</span>
+                                @endif
+                                @if ($act->start_time)
+                                    - {{ $act->start_time }}
                                 @endif
                             </div>
                             @if (!$loop->last)
