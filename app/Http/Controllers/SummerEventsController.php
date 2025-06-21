@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\SummerEvents;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Date;
 
 class SummerEventsController extends Controller {
 
     public function index() {
-        $events = SummerEvents::all();
+        $events = SummerEvents::all()->where('start_date', '>=', Date::today())->sortBy('start_date');
         return view('summer.events.index', ['events' => $events]);
     }
 
