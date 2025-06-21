@@ -75,7 +75,10 @@
                     <label for="is_fair" class="ml-2">Is a fair, fest, or outdoor concert</label>
                 </x-form-group>
 
-
+                <x-form-group>
+                    <input type="radio" name="event_type" id="is_national_act" class="" value="is_national_act">
+                    <label for="is_national_act" class="ml-2">Is a national act</label>
+                </x-form-group>
 
                 <div class="mt-8 flex items-center justify-between gap-x-6 border-t border-t-slate-200">
                     <x-form-button-cancel>Cancel</x-form-button-cancel>

@@ -165,6 +165,46 @@
                 @endif
             </div>
         </section>
+
+        <!-- National Acts -->
+        <x-page-subtitle class="mb-4">National Acts</x-page-subtitle>
+        <section class="mb-12 mx-auto">
+            <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-auto">
+                @if (count($nationalActs) > 0)
+                    @foreach ($nationalActs as $act)
+                        <a href="/summer/events/{{ $act->id }}"
+                            class="block p-4 sm:p-8 border-b  hover:bg-violet-50">
+                            <div>
+                                @if ($act->band)
+                                    <span class="font-bold">{{ $act->band }}</span>
+                                @endif
+                            </div>
+
+                            <div>
+                                @if ($act->event_name)
+                                    <span class="">{{ $act->event_name }}</span>
+                                @endif
+                            </div>
+
+                            <div>
+                                @if ($act->start_date)
+                                    <span>{{ $act->start_date->format('M d, Y') }}</span>
+                                @endif
+                                @if ($act->end_date)
+                                    <span> - {{ $act->end_date->format('M d, Y') }}</span>
+                                @endif
+                            </div>
+                            @if (!$loop->last)
+                                {{-- <hr> --}}
+                            @endif
+                        </a>
+                    @endforeach
+                @else
+                    <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
+                    </div>
+                @endif
+            </div>
+        </section>
         <!-- End summer events -->
 
     </x-wrapper-narrow>
