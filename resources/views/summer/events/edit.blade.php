@@ -1,6 +1,6 @@
 <x-layout>
     <x-wrapper-narrow>
-        <x-page-title>Edit Event {{ $event->id }}</x-page-title>
+        <x-page-title>Edit Event: {{ $event->event_name }}</x-page-title>
         @auth
             <form action="/summer/events/{{ $event->id }}/patch" method="post" class="mb-12">
                 @csrf
@@ -89,6 +89,21 @@
                     <x-form-button-submit>Submit</x-form-button-submit>
                 </div>
             </form>
+
+            <hr class="py-4 mt-36 border-red-600">
+            <div class="px-8 py-12 rounded bg-red-100 text-red-600">
+                <h2 class="text-2xl mb-4">Delete {{ $event->event_name }}</h2>
+                <form action="/summer/events/{{ $event->id }}/delete" method="post"
+                    class="mb-12 flex flex-col sm:flex-row sm:justify-between border">
+                    @csrf
+                    @method('DELETE')
+
+                    <div class="flex items-center justify-between gap-x-6 w-full">
+                        <p class="text-red-500 text-bold">Caution: This action cannot be undone.</p>
+                        <x-form-button-submit>Delete Event</x-form-button-submit>
+                    </div>
+                </form>
+            </div>
         @endauth
         @guest
             <p>Email <a href="mailto:foxvalleylive@gmail.com"

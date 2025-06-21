@@ -93,6 +93,8 @@ class SummerEventsController extends Controller {
 
     public function destroy($id) {
         // return ("to do");
-        dd(request()->all());
+        $event = SummerEvents::findOrFail($id);
+        $event->delete();
+        return redirect('/summer/events');
     }
 }
