@@ -7,7 +7,7 @@
         <!-- Regular Bar Events -->
         <x-page-subtitle class="mb-4">Live Music at Bars and Restaurants</x-page-subtitle>
         <section class="mb-12 mx-auto">
-            <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-auto">
+            <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-y-scroll">
                 @if (count($events) > 0)
                     @foreach ($events as $event)
                         <a href="/summer/events/{{ $event->id }}"
@@ -47,7 +47,7 @@
         <!-- Lunchtime Concert Series -->
         <x-page-subtitle class="mb-4">Lunchtime Concerts</x-page-subtitle>
         <section class="mb-12 mx-auto">
-            <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-auto">
+            <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll">
                 @if (count($lunches) > 0)
                     @foreach ($lunches as $lunch)
                         <a href="/summer/events/{{ $lunch->id }}"
@@ -90,7 +90,7 @@
         <!-- Fairs, Fests, and Outdoor Concerts e.g. Rockfest, Winnebago County Fair -->
         <x-page-subtitle class="mb-4">Fairs, Fests, and Outdoor Concerts</x-page-subtitle>
         <section class="mb-12 mx-auto">
-            <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-auto">
+            <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll">
                 @if (count($fairs) > 0)
                     @foreach ($fairs as $fair)
                         <a href="/summer/events/{{ $fair->id }}"
@@ -130,7 +130,7 @@
         <!-- National Acts -->
         <x-page-subtitle class="mb-4">National Acts</x-page-subtitle>
         <section class="mb-12 mx-auto">
-            <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-auto">
+            <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll">
                 @if (count($nationalActs) > 0)
                     @foreach ($nationalActs as $act)
                         <a href="/summer/events/{{ $act->id }}"
