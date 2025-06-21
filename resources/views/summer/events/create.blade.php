@@ -62,12 +62,6 @@
                 <x-form-group>
                     <input type="radio" name="event_type" id="is_lunch_gig" class="" value="is_lunch_gig">
                     <label for="is_lunch_gig" class="ml-2">Is a lunch show</label>
-
-                </x-form-group>
-
-                <x-form-group>
-                    <input type="radio" name="event_type" id="is_series" class="" value="is_series">
-                    <label for="is_series" class="ml-2">Is a series</label>
                 </x-form-group>
 
                 <x-form-group>

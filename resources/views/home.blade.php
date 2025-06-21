@@ -84,50 +84,11 @@
             </div>
         </section>
 
-        <!-- Summer Concert Series e.g. Heid Summer Concert Series -->
-        <x-page-subtitle class="mb-4">Summer Concert Series</x-page-subtitle>
-        <section class="mb-12 mx-auto">
-            <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-auto">
-                @if (count($series) > 0)
-                    @foreach ($series as $serie)
-                        <a href="/summer/events/{{ $serie->id }}"
-                            class="block p-4 sm:p-8 border-b  hover:bg-violet-50">
-                            <div>
-                                @if ($serie->band)
-                                    <span class="font-bold">{{ $serie->band }}</span>
-                                @endif
-                            </div>
-
-                            <div>
-                                @if ($serie->event_name)
-                                    <span class="">{{ $serie->event_name }}</span>
-                                @endif
-                            </div>
-
-                            <div>
-                                @if ($serie->start_date)
-                                    <span>{{ $serie->start_date->format('M d, Y') }}</span>
-                                @endif
-                                @if ($serie->end_date)
-                                    <span> - {{ $serie->end_date->format('M d, Y') }}</span>
-                                @endif
-                            </div>
-                            @if (!$loop->last)
-                                {{-- <hr> --}}
-                            @endif
-                        </a>
-                    @endforeach
-                @else
-                    <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
-                    </div>
-                @endif
-            </div>
-        </section>
 
         {{-- <hr class="mb-8"> --}}
 
-        <!-- Fairs and Standalone Concerts e.g. Rockfest, Winnebago County Fair -->
-        <x-page-subtitle class="mb-4">Fairs and Regular Outdoor Concerts</x-page-subtitle>
+        <!-- Fairs, Fests, and Outdoor Concerts e.g. Rockfest, Winnebago County Fair -->
+        <x-page-subtitle class="mb-4">Fairs, Fests, and Outdoor Concerts</x-page-subtitle>
         <section class="mb-12 mx-auto">
             <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-auto">
                 @if (count($fairs) > 0)
