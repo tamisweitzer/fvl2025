@@ -45,7 +45,7 @@
         </section>
 
         <!-- Lunchtime Concert Series -->
-        <x-page-subtitle class="mb-4">Lunchtime and Day Concerts</x-page-subtitle>
+        <x-page-subtitle class="mb-4">Lunchtime Concerts</x-page-subtitle>
         <section class="mb-12 mx-auto">
             <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-auto">
                 @if (count($lunches) > 0)

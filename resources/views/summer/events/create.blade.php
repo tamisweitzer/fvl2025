@@ -72,7 +72,7 @@
 
                 <x-form-group>
                     <input type="radio" name="event_type" id="is_fair" class="" value="is_fair">
-                    <label for="is_fair" class="ml-2">Is a fair</label>
+                    <label for="is_fair" class="ml-2">Is a fair, fest, or outdoor concert</label>
                 </x-form-group>
 
 
