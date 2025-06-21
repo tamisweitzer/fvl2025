@@ -8,7 +8,15 @@
                 <a href="/summer/events/{{ $event->id }}" class="block">
                     <div class="my-4">
                         <div class="font-bold">{{ $event->band }} at {{ $event->venue }}</div>
-                        <div>{{ $event->start_date->format('M d, Y') }} at {{ $event->start_time }}</div>
+
+                        <div>
+                            @if ($event->start_date)
+                                {{ $event->start_date->format('M d, Y') }}
+                            @endif
+                            @if ($event->start_time)
+                                at {{ $event->start_time }}
+                            @endif
+                        </div>
                     </div>
                     @if (!$loop->last)
                         <hr>
