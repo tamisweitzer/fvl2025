@@ -13,23 +13,20 @@
                         <a href="/summer/events/{{ $event->id }}"
                             class="block p-4 sm:p-8 border-b  hover:bg-violet-50">
                             <div>
-                                @if ($event->band)
-                                    <span class="font-bold">{{ $event->band }}</span>
-                                @endif
-                            </div>
-
-                            <div>
                                 @if ($event->event_name)
-                                    <span class="">{{ $event->event_name }}</span>
+                                    <span class="font-bold">{{ $event->event_name }}</span>
                                 @endif
                             </div>
 
-                            <div>
+                            <div class="text-gray-500">
                                 @if ($event->start_date)
                                     <span>{{ $event->start_date->format('M d, Y') }}</span>
                                 @endif
                                 @if ($event->end_date)
                                     <span> - {{ $event->end_date->format('M d, Y') }}</span>
+                                @endif
+                                @if ($event->start_time)
+                                    - {{ $event->start_time }}
                                 @endif
                             </div>
                             @if (!$loop->last)
