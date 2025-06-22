@@ -1,22 +1,27 @@
 <x-layout>
     <x-wrapper-narrow class="mt-8 mb-8">
-        <x-page-title>Live Music This Week in the Fox Valley</x-page-title>
-        <p class="text-center -mt-4 mb-12">Click on any listing for more information.</p>
+        <x-page-title>Live Music in the Fox Valley</x-page-title>
+        <p class="text-center -mt-4 mb-12 italic text-gray-600">Click on any listing below for more information.</p>
+    </x-wrapper-narrow>
 
-        <!-- Start summer events -->
+    <!-- Start summer events -->
+    <section class="mb-16 mr-4">
         <!-- Regular Bar Events -->
-        <x-page-subtitle class="mb-4">Live Music at Bars and Restaurants</x-page-subtitle>
-        <section class="mb-12 mx-auto">
+        <x-wrapper-narrow>
+            <x-page-subtitle class="mb-4 mt-8 tracking-wide">Live Bands at Bars and Restaurants</x-page-subtitle>
             <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-y-scroll">
                 @if (count($events) > 0)
                     @foreach ($events as $event)
                         <a href="/summer/events/{{ $event->id }}" class="block p-4 border-b  hover:bg-violet-50">
                             <div>
-                                <span class="font-bold">{{ $event->band }}</span>
-                                @if ($event->event_name)
-                                    <span class="font-bold">at {{ $event->event_name }}</span>
-                                @endif
-                                <div class="text-gray-500">{{ $event->venue }}</div>
+                                <div class="font-bold">{{ $event->band }}</div>
+
+                                <div class="text-gray-500">
+                                    @if ($event->event_name)
+                                        <div class="">{{ $event->event_name }}</div>
+                                    @endif
+                                    {{ $event->venue }}, {{ $event->city }}
+                                </div>
                             </div>
                             <div class="text-gray-500">
                                 @if ($event->start_date)
@@ -39,21 +44,26 @@
                     </div>
                 @endif
             </div>
-        </section>
+        </x-wrapper-narrow>
+    </section>
 
-        <!-- Lunchtime Concert Series -->
-        <x-page-subtitle class="mb-4">Lunchtime Concerts</x-page-subtitle>
-        <section class="mb-12 mx-auto">
+
+    <section class="mb-16 mr-4">
+        <x-wrapper-narrow>
+            <!-- Lunchtime Concert Series -->
+            <x-page-subtitle class="mb-4">Lunchtime Concerts</x-page-subtitle>
             <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll">
                 @if (count($lunches) > 0)
                     @foreach ($lunches as $lunch)
                         <a href="/summer/events/{{ $lunch->id }}" class="block p-4 border-b  hover:bg-violet-50">
                             <div>
-                                <span class="font-bold">{{ $lunch->band }}</span>
-                                @if ($lunch->event_name)
-                                    <span class="font-bold">at {{ $lunch->event_name }}</span>
-                                @endif
-                                <div class="text-gray-500">{{ $lunch->venue }}</div>
+                                <div class="font-bold">{{ $lunch->band }}</div>
+                                <div class="text-gray-500">
+                                    @if ($lunch->event_name)
+                                        <div>{{ $lunch->event_name }}</div>
+                                    @endif
+                                    {{ $lunch->venue }} - {{ $lunch->city }}
+                                </div>
                             </div>
                             <div class="text-gray-500">
                                 @if ($lunch->start_date)
@@ -76,24 +86,28 @@
                     </div>
                 @endif
             </div>
-        </section>
+        </x-wrapper-narrow>
+    </section>
 
 
-        {{-- <hr class="mb-8"> --}}
+    {{-- <hr class="mb-8"> --}}
 
-        <!-- Fairs, Fests, and Outdoor Concerts e.g. Rockfest, Winnebago County Fair -->
-        <x-page-subtitle class="mb-4">Fairs, Fests, and Outdoor Concerts</x-page-subtitle>
-        <section class="mb-12 mx-auto">
+    <section class="mb-16 mr-4">
+        <x-wrapper-narrow>
+            <!-- Fairs, Fests, and Outdoor Concerts e.g. Rockfest, Winnebago County Fair -->
+            <x-page-subtitle class="mb-4">Fairs, Fests, and Outdoor Concerts</x-page-subtitle>
             <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll">
                 @if (count($fairs) > 0)
                     @foreach ($fairs as $fair)
                         <a href="/summer/events/{{ $fair->id }}" class="block p-4 border-b  hover:bg-violet-50">
                             <div>
-                                <span class="font-bold">{{ $fair->band }}</span>
-                                @if ($fair->event_name)
-                                    <span class="font-bold">at {{ $fair->event_name }}</span>
-                                @endif
-                                <div class="text-gray-500">{{ $fair->venue }}</div>
+                                <div class="font-bold">{{ $fair->band }}</div>
+                                <div class="text-gray-500">
+                                    @if ($fair->event_name)
+                                        <div>{{ $fair->event_name }}, </div>
+                                    @endif
+                                    {{ $fair->venue }}, {{ $event->city }}
+                                </div>
                             </div>
                             <div class="text-gray-500">
                                 @if ($fair->start_date)
@@ -116,11 +130,13 @@
                     </div>
                 @endif
             </div>
-        </section>
+        </x-wrapper-narrow>
+    </section>
 
-        <!-- National Acts -->
-        <x-page-subtitle class="mb-4">National Acts</x-page-subtitle>
-        <section class="mb-12 mx-auto">
+    <!-- National Acts -->
+    <section class="mb-16 mr-4">
+        <x-wrapper-narrow>
+            <x-page-subtitle class="mb-4">National Acts</x-page-subtitle>
             <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll">
                 @if (count($nationalActs) > 0)
                     @foreach ($nationalActs as $act)
@@ -153,8 +169,8 @@
                     </div>
                 @endif
             </div>
-        </section>
-        <!-- End summer events -->
+        </x-wrapper-narrow>
+    </section>
+    <!-- End summer events -->
 
-    </x-wrapper-narrow>
 </x-layout>
