@@ -10,8 +10,7 @@
             <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-y-scroll">
                 @if (count($events) > 0)
                     @foreach ($events as $event)
-                        <a href="/summer/events/{{ $event->id }}"
-                            class="block p-4 sm:p-8 border-b  hover:bg-violet-50">
+                        <a href="/summer/events/{{ $event->id }}" class="block p-4 border-b  hover:bg-violet-50">
                             <div>
                                 @if ($event->event_name)
                                     <span class="font-bold">{{ $event->event_name }}</span>
@@ -47,8 +46,7 @@
             <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll">
                 @if (count($lunches) > 0)
                     @foreach ($lunches as $lunch)
-                        <a href="/summer/events/{{ $lunch->id }}"
-                            class="block p-4 sm:p-8 border-b  hover:bg-violet-50">
+                        <a href="/summer/events/{{ $lunch->id }}" class="block p-4 border-b  hover:bg-violet-50">
                             <div>
                                 @if ($lunch->event_name)
                                     <span class="font-bold">{{ $lunch->event_name }}</span>
@@ -87,8 +85,7 @@
             <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll">
                 @if (count($fairs) > 0)
                     @foreach ($fairs as $fair)
-                        <a href="/summer/events/{{ $fair->id }}"
-                            class="block p-4 sm:p-8 border-b  hover:bg-violet-50">
+                        <a href="/summer/events/{{ $fair->id }}" class="block p-4 border-b  hover:bg-violet-50">
                             <div>
                                 @if ($fair->event_name)
                                     <span class="font-bold">{{ $fair->event_name }}</span>
@@ -124,8 +121,7 @@
             <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll">
                 @if (count($nationalActs) > 0)
                     @foreach ($nationalActs as $act)
-                        <a href="/summer/events/{{ $act->id }}"
-                            class="block p-4 sm:p-8 border-b  hover:bg-violet-50">
+                        <a href="/summer/events/{{ $act->id }}" class="block p-4 border-b  hover:bg-violet-50">
                             <div>
                                 @if ($act->event_name)
                                     <span class="font-bold">{{ $act->event_name }}</span>
