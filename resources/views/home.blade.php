@@ -12,11 +12,12 @@
                     @foreach ($events as $event)
                         <a href="/summer/events/{{ $event->id }}" class="block p-4 border-b  hover:bg-violet-50">
                             <div>
+                                <span class="font-bold">{{ $event->band }}</span>
                                 @if ($event->event_name)
-                                    <span class="font-bold">{{ $event->event_name }}</span>
+                                    <span class="font-bold">at {{ $event->event_name }}</span>
                                 @endif
+                                <div class="text-gray-500">{{ $event->venue }}</div>
                             </div>
-
                             <div class="text-gray-500">
                                 @if ($event->start_date)
                                     <span>{{ $event->start_date->format('M d, Y') }}</span>
@@ -25,7 +26,7 @@
                                     <span> - {{ $event->end_date->format('M d, Y') }}</span>
                                 @endif
                                 @if ($event->start_time)
-                                    - {{ $event->start_time }}
+                                    --- {{ $event->start_time }}
                                 @endif
                             </div>
                             @if (!$loop->last)
@@ -48,11 +49,12 @@
                     @foreach ($lunches as $lunch)
                         <a href="/summer/events/{{ $lunch->id }}" class="block p-4 border-b  hover:bg-violet-50">
                             <div>
+                                <span class="font-bold">{{ $lunch->band }}</span>
                                 @if ($lunch->event_name)
-                                    <span class="font-bold">{{ $lunch->event_name }}</span>
+                                    <span class="font-bold">at {{ $lunch->event_name }}</span>
                                 @endif
+                                <div class="text-gray-500">{{ $lunch->venue }}</div>
                             </div>
-
                             <div class="text-gray-500">
                                 @if ($lunch->start_date)
                                     <span>{{ $lunch->start_date->format('M d, Y') }}</span>
@@ -87,11 +89,12 @@
                     @foreach ($fairs as $fair)
                         <a href="/summer/events/{{ $fair->id }}" class="block p-4 border-b  hover:bg-violet-50">
                             <div>
+                                <span class="font-bold">{{ $fair->band }}</span>
                                 @if ($fair->event_name)
-                                    <span class="font-bold">{{ $fair->event_name }}</span>
+                                    <span class="font-bold">at {{ $fair->event_name }}</span>
                                 @endif
+                                <div class="text-gray-500">{{ $fair->venue }}</div>
                             </div>
-
                             <div class="text-gray-500">
                                 @if ($fair->start_date)
                                     <span>{{ $fair->start_date->format('M d, Y') }}</span>
@@ -123,11 +126,12 @@
                     @foreach ($nationalActs as $act)
                         <a href="/summer/events/{{ $act->id }}" class="block p-4 border-b  hover:bg-violet-50">
                             <div>
+                                <span class="font-bold">{{ $act->band }}</span>
                                 @if ($act->event_name)
-                                    <span class="font-bold">{{ $act->event_name }}</span>
+                                    <span class="font-bold">at {{ $act->event_name }}</span>
                                 @endif
+                                <div class="text-gray-500">{{ $act->venue }}</div>
                             </div>
-
                             <div class="text-gray-500">
                                 @if ($act->start_date)
                                     <span>{{ $act->start_date->format('M d, Y') }}</span>
