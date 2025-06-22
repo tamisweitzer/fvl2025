@@ -98,7 +98,7 @@
                                 <div class="font-bold">{{ $fair->band }}</div>
                                 <div class="text-gray-500">
                                     @if ($fair->event_name)
-                                        <div>{{ $fair->event_name }}, </div>
+                                        <div>{{ $fair->event_name }} </div>
                                     @endif
                                     {{ $fair->venue }}, {{ $event->city }}
                                 </div>
