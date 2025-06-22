@@ -1,5 +1,5 @@
 <x-layout>
-    <x-wrapper-narrow class="mt-8 mb-8 mx-auto">
+    <x-wrapper-narrow class="mt-8 mb-8 mr-4">
         <x-page-title>Summer Events</x-page-title>
         <p class="-mt-4 mb-12 text-center">The complete list of summer events around the Fox Valley this summer.</p>
         <p class="text-center mb-2">Click on any listing for more information.</p>
