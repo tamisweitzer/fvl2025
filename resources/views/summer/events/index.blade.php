@@ -14,21 +14,20 @@
                             @endif
                             {{ $event->venue }}
                         </div>
-            @endif
-            <div>
-                @if ($event->start_date)
-                    {{ $event->start_date->format('M d, Y') }}
-                @endif
-                @if ($event->start_time)
-                    - {{ $event->start_time }}
-                @endif
-            </div>
-        </div>
-        @if (!$loop->last)
-            <hr>
-        @endif
-        </a>
-        @endforeach
+                        <div>
+                            @if ($event->start_date)
+                                {{ $event->start_date->format('M d, Y') }}
+                            @endif
+                            @if ($event->start_time)
+                                - {{ $event->start_time }}
+                            @endif
+                        </div>
+                    </div>
+                    @if (!$loop->last)
+                        <hr>
+                    @endif
+                </a>
+            @endforeach
         </div>
     </x-wrapper-narrow>
 </x-layout>
