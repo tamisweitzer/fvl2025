@@ -8,11 +8,14 @@
                 <a href="/summer/events/{{ $event->id }}" class="block">
                     <div class="my-4">
                         <div class="font-bold">
-                            {{ $event->band }} at
+                            {{ $event->band }}
+                        </div>
+                        <div>
                             @if ($event->event_name)
-                                {{ $event->event_name }},
+                                {{ $event->event_name }}
+                            @else
+                                {{ $event->venue }}
                             @endif
-                            {{ $event->venue }}
                         </div>
                         <div>
                             @if ($event->start_date)
