@@ -7,26 +7,28 @@
             @foreach ($events as $event)
                 <a href="/summer/events/{{ $event->id }}" class="block">
                     <div class="my-4">
-                        @if ($event->event_type == 'is_bar_gig')
-                            <div class="font-bold">{{ $event->band }} at {{ $event->venue }}</div>
-                        @else
-                            <div class="font-bold">{{ $event->band }} at {{ $event->event_name }}, {{ $event->venue }}
-                            </div>
-                        @endif
-                        <div>
-                            @if ($event->start_date)
-                                {{ $event->start_date->format('M d, Y') }}
+                        <div class="font-bold">
+                            {{ $event->band }} at
+                            @if ($event->event_name)
+                                {{ $event->event_name }},
                             @endif
-                            @if ($event->start_time)
-                                - {{ $event->start_time }}
-                            @endif
+                            {{ $event->venue }}
                         </div>
-                    </div>
-                    @if (!$loop->last)
-                        <hr>
-                    @endif
-                </a>
-            @endforeach
+            @endif
+            <div>
+                @if ($event->start_date)
+                    {{ $event->start_date->format('M d, Y') }}
+                @endif
+                @if ($event->start_time)
+                    - {{ $event->start_time }}
+                @endif
+            </div>
+        </div>
+        @if (!$loop->last)
+            <hr>
+        @endif
+        </a>
+        @endforeach
         </div>
     </x-wrapper-narrow>
 </x-layout>
