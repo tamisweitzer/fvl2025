@@ -27,9 +27,6 @@
                                 @if ($event->start_date)
                                     <span>{{ $event->start_date->format('M d, Y') }}</span>
                                 @endif
-                                @if ($event->end_date)
-                                    <span> - {{ $event->end_date->format('M d, Y') }}</span>
-                                @endif
                                 @if ($event->start_time)
                                     --- {{ $event->start_time }}
                                 @endif
@@ -69,11 +66,8 @@
                                 @if ($lunch->start_date)
                                     <span>{{ $lunch->start_date->format('M d, Y') }}</span>
                                 @endif
-                                @if ($lunch->end_date)
-                                    <span> - {{ $lunch->end_date->format('M d, Y') }}</span>
-                                @endif
                                 @if ($lunch->start_time)
-                                    - {{ $lunch->start_time }}
+                                    --- {{ $lunch->start_time }}
                                 @endif
                             </div>
                             @if (!$loop->last)
@@ -113,11 +107,8 @@
                                 @if ($fair->start_date)
                                     <span>{{ $fair->start_date->format('M d, Y') }}</span>
                                 @endif
-                                @if ($fair->end_date)
-                                    <span> - {{ $fair->end_date->format('M d, Y') }}</span>
-                                @endif
                                 @if ($fair->start_time)
-                                    - {{ $fair->start_time }}
+                                    --- {{ $fair->start_time }}
                                 @endif
                             </div>
                             @if (!$loop->last)
@@ -152,11 +143,8 @@
                                 @if ($act->start_date)
                                     <span>{{ $act->start_date->format('M d, Y') }}</span>
                                 @endif
-                                @if ($act->end_date)
-                                    <span> - {{ $act->end_date->format('M d, Y') }}</span>
-                                @endif
                                 @if ($act->start_time)
-                                    - {{ $act->start_time }}
+                                    --- {{ $act->start_time }}
                                 @endif
                             </div>
                             @if (!$loop->last)
