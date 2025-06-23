@@ -3,7 +3,7 @@
         <x-page-title>Summer Events</x-page-title>
         <p class="-mt-4 mb-12 text-center">The complete list of summer events around the Fox Valley this summer.</p>
         <p class="text-center mb-2">Click on any listing for more information.</p>
-        <div class="mr-8 sm:mr-0 bg-slate-50 border border-slate-300 shadow rounded">
+        <div class="bg-slate-50 border border-slate-300 shadow rounded">
             @foreach ($events as $event)
                 <a href="/summer/events/{{ $event->id }}" class="block ">
                     <div class="px-4 py-4 hover:bg-orange-50">
