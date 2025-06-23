@@ -5,7 +5,7 @@
     </x-wrapper-narrow>
 
     <!-- Start summer events -->
-    <section class="mb-16 mr-4">
+    <section class="mb-16">
         <!-- Regular Bar Events -->
         <x-wrapper-narrow>
             <x-page-subtitle class="mb-4 mt-8 tracking-wide">Live Bands at Bars and Restaurants</x-page-subtitle>
@@ -45,7 +45,7 @@
     </section>
 
 
-    <section class="mb-16 mr-4">
+    <section class="mb-16">
         <x-wrapper-narrow>
             <!-- Lunchtime Concert Series -->
             <x-page-subtitle class="mb-4">Lunchtime Concerts</x-page-subtitle>
@@ -86,7 +86,7 @@
 
     {{-- <hr class="mb-8"> --}}
 
-    <section class="mb-16 mr-4">
+    <section class="mb-16">
         <x-wrapper-narrow>
             <!-- Fairs, Fests, and Outdoor Concerts e.g. Rockfest, Winnebago County Fair -->
             <x-page-subtitle class="mb-4">Fairs, Fests, and Outdoor Concerts</x-page-subtitle>
@@ -125,7 +125,7 @@
     </section>
 
     <!-- National Acts -->
-    <section class="mb-16 mr-4">
+    <section class="mb-16">
         <x-wrapper-narrow>
             <x-page-subtitle class="mb-4">National Acts</x-page-subtitle>
             <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll">
