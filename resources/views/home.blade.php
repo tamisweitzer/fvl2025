@@ -101,7 +101,7 @@
                                     @if ($fair->event_name)
                                         <div>{{ $fair->event_name }}, </div>
                                     @endif
-                                    {{ $fair->venue }}, {{ $event->city }}
+                                    {{ $fair->venue }}, {{ $fair->city }}
                                 </div>
                             </div>
                             <div class="text-gray-500">
@@ -139,7 +139,7 @@
                                 @if ($act->event_name)
                                     <span class="font-bold">at {{ $act->event_name }}</span>
                                 @endif
-                                <div class="text-gray-500">{{ $act->venue }}</div>
+                                <div class="text-gray-500">{{ $act->venue }}, {{ $act->city }}</div>
                             </div>
                             <div class="text-gray-500">
                                 @if ($act->start_date)
