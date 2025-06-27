@@ -1,14 +1,16 @@
 <x-layout>
-    <x-wrapper-narrow class="mt-8 mb-8">
-        <x-page-title>Live Music in the Fox Valley</x-page-title>
-        <p class="text-center -mt-4 mb-12 italic text-gray-600">Click on any listing below for more information.</p>
-    </x-wrapper-narrow>
+    <section class="pb-8">
+        <x-wrapper-narrow>
+            <x-page-title>Live Music in the Fox Valley</x-page-title>
+            <p class="text-center -mt-4 italic text-gray-600">Click on any listing below for more information.</p>
+        </x-wrapper-narrow>
+    </section>
 
     <!-- Start summer events -->
-    <section class="mb-16">
+    <section class="pb-8">
         <!-- Regular Bar Events -->
         <x-wrapper-narrow>
-            <x-page-subtitle class="mb-4 mt-8 tracking-wide">Live Bands at Bars and Restaurants</x-page-subtitle>
+            <x-page-subtitle class="mb-4 tracking-wide">Live Bands at Bars and Restaurants</x-page-subtitle>
             <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-y-scroll">
                 @if (count($events) > 0)
                     @foreach ($events as $event)
@@ -44,8 +46,7 @@
         </x-wrapper-narrow>
     </section>
 
-
-    <section class="mb-16">
+    <section class="pb-8">
         <x-wrapper-narrow>
             <!-- Lunchtime Concert Series -->
             <x-page-subtitle class="mb-4">Lunchtime Concerts</x-page-subtitle>
@@ -83,10 +84,7 @@
         </x-wrapper-narrow>
     </section>
 
-
-    {{-- <hr class="mb-8"> --}}
-
-    <section class="mb-16">
+    <section class="pb-8">
         <x-wrapper-narrow>
             <!-- Fairs, Fests, and Outdoor Concerts e.g. Rockfest, Winnebago County Fair -->
             <x-page-subtitle class="mb-4">Fairs, Fests, and Outdoor Concerts</x-page-subtitle>
@@ -124,9 +122,9 @@
         </x-wrapper-narrow>
     </section>
 
-    <!-- National Acts -->
-    <section class="mb-16">
+    <section class="pb-8">
         <x-wrapper-narrow>
+            <!-- National Acts -->
             <x-page-subtitle class="mb-4">National Acts</x-page-subtitle>
             <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll">
                 @if (count($nationalActs) > 0)
@@ -160,5 +158,4 @@
         </x-wrapper-narrow>
     </section>
     <!-- End summer events -->
-
 </x-layout>

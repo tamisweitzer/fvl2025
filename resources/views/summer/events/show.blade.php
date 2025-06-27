@@ -1,6 +1,11 @@
 <x-layout>
     <x-wrapper-narrow class="mt-8 mb-8 mx-auto">
-        <x-page-title>{{ $event->event_name }}</x-page-title>
+        <x-page-title>{{ $event->band }} at @if ($event->event_name)
+                {{ $event->event_name }}
+            @else
+                {{ $event->venue }}
+            @endif
+        </x-page-title>
 
         <section class="mb-8 flex flex-wrap gap-2 mx-auto">
 
@@ -8,14 +13,16 @@
                 <div class="flex flex-row gap-x-4 sm:flex-col">
                     <div class="flex flex-col justify-end">
                         <x-kv-group class="grid grid-cols-12">
-                            <x-kv-key class="col-span-3 sm:col-span-2">Band:</x-kv-key>
+                            <x-kv-key class="col-span-3 sm:col-span-2">Band(s):</x-kv-key>
                             <x-kv-value class="col-span-9 sm:col-span-10">{{ $event->band }}</x-kv-value>
                         </x-kv-group>
 
-                        <x-kv-group class="grid grid-cols-12">
-                            <x-kv-key class="col-span-3 sm:col-span-2">Venue:</x-kv-key>
-                            <x-kv-value class="col-span-9 sm:col-span-10">{{ $event->venue }}</x-kv-value>
-                        </x-kv-group>
+                        @if ($event->event_name)
+                            <x-kv-group class="grid grid-cols-12">
+                                <x-kv-key class="col-span-3 sm:col-span-2">Event:</x-kv-key>
+                                <x-kv-value class="col-span-9 sm:col-span-10">{{ $event->event_name }}</x-kv-value>
+                            </x-kv-group>
+                        @endif
 
 
                         <x-kv-group class="grid grid-cols-12">
@@ -24,7 +31,7 @@
                         </x-kv-group>
 
                         <x-kv-group class="grid grid-cols-12">
-                            <x-kv-key class="col-span-3 sm:col-span-2">Start Date:</x-kv-key>
+                            <x-kv-key class="col-span-3 sm:col-span-2">Date:</x-kv-key>
                             <x-kv-value
                                 class="col-span-9 sm:col-span-10">{{ $event->start_date->format('M d, Y') }}</x-kv-value>
                         </x-kv-group>
@@ -47,7 +54,10 @@
                         @if ($event->url)
                             <x-kv-group class="grid grid-cols-12">
                                 <x-kv-key class="col-span-3 sm:col-span-2">Event link:</x-kv-key>
-                                <x-kv-value class="col-span-9 sm:col-span-10">{{ $event->url }}</x-kv-value>
+                                <x-kv-value class="col-span-9 sm:col-span-10">
+                                    <a href="{{ $event->url }}" class="border-b border-b-orange-400">Event
+                                        link</a>
+                                </x-kv-value>
                             </x-kv-group>
                         @endif
 
