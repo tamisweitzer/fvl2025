@@ -11,7 +11,8 @@
         <!-- Regular Bar Events -->
         <x-wrapper-narrow>
             <x-page-subtitle class="mb-4 tracking-wide">Live Bands at Bars and Restaurants</x-page-subtitle>
-            <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-scroll">
+            <div
+                class=" bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-y-scroll [&::-webkit-scrollbar]">
                 @if (count($events) > 0)
                     @foreach ($events as $event)
                         <a href="/summer/events/{{ $event->id }}" class="block p-4 border-b  hover:bg-violet-50">
@@ -50,7 +51,8 @@
         <x-wrapper-narrow>
             <!-- Lunchtime Concert Series -->
             <x-page-subtitle class="mb-4">Lunchtime Concerts</x-page-subtitle>
-            <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll">
+            <div
+                class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll [&::-webkit-scrollbar]">
                 @if (count($lunches) > 0)
                     @foreach ($lunches as $lunch)
                         <a href="/summer/events/{{ $lunch->id }}" class="block p-4 border-b  hover:bg-violet-50">
@@ -88,7 +90,8 @@
         <x-wrapper-narrow>
             <!-- Fairs, Fests, and Outdoor Concerts e.g. Rockfest, Winnebago County Fair -->
             <x-page-subtitle class="mb-4">Fairs, Fests, and Outdoor Concerts</x-page-subtitle>
-            <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll">
+            <div
+                class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll [&::-webkit-scrollbar]">
                 @if (count($fairs) > 0)
                     @foreach ($fairs as $fair)
                         <a href="/summer/events/{{ $fair->id }}" class="block p-4 border-b  hover:bg-violet-50">
@@ -126,7 +129,8 @@
         <x-wrapper-narrow>
             <!-- National Acts -->
             <x-page-subtitle class="mb-4">National Acts</x-page-subtitle>
-            <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll">
+            <div
+                class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll [&::-webkit-scrollbar]">
                 @if (count($nationalActs) > 0)
                     @foreach ($nationalActs as $act)
                         <a href="/summer/events/{{ $act->id }}" class="block p-4 border-b  hover:bg-violet-50">
