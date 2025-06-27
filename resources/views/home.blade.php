@@ -11,7 +11,7 @@
         <!-- Regular Bar Events -->
         <x-wrapper-narrow>
             <x-page-subtitle class="mb-4 tracking-wide">Live Bands at Bars and Restaurants</x-page-subtitle>
-            <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-y-scroll">
+            <div class=" bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-scroll">
                 @if (count($events) > 0)
                     @foreach ($events as $event)
                         <a href="/summer/events/{{ $event->id }}" class="block p-4 border-b  hover:bg-violet-50">
