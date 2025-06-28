@@ -20,10 +20,10 @@
                                 {{ $event->venue }}
                             @endif
                         </div>
-                        <div>
+                        <div class="text-gray-500 text-sm">
                             {{ $event->city }}
                         </div>
-                        <div>
+                        <div class="text-gray-500 text-sm">
                             @if ($event->start_date)
                                 {{ $event->start_date->format('M d, Y') }}
                             @endif
