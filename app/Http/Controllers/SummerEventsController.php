@@ -11,7 +11,8 @@ class SummerEventsController extends Controller {
     public function index() {
         $events = SummerEvents::all()
             ->where('start_date', '>=', Date::today())
-            ->sortBy('start_date');
+            ->sortBy('start_date')
+            ->groupBy('start_date');
         return view('summer.events.index', ['events' => $events]);
     }
 
