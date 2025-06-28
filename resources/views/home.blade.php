@@ -13,36 +13,42 @@
             <x-page-subtitle class="mb-4 tracking-wide">Live Bands at Bars and Restaurants</x-page-subtitle>
             <div
                 class=" bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-y-scroll [&::-webkit-scrollbar]">
-                @if (count($events) > 0)
-                    @foreach ($events as $event)
-                        <a href="/summer/events/{{ $event->id }}" class="block p-4 border-b  hover:bg-violet-50">
-                            <div>
-                                <div class="font-bold">{{ $event->band }}</div>
 
-                                <div class="text-gray-500">
+                @if (count($events) > 0)
+                    @foreach ($events as $days)
+                        <div class="px-4 pt-4  tracking-widest">
+                            {{ $days[0]->start_date->format('D M d, Y') }}
+                        </div>
+
+                        @foreach ($days as $event)
+                            <a href="/summer/events/{{ $event->id }}" class="block p-4 border-b  hover:bg-violet-50">
+                                <div>
+                                    <span class="font-bold">{{ $event->band }}</span>
                                     @if ($event->event_name)
-                                        <div class="">{{ $event->event_name }}</div>
+                                        <span class="font-bold">at {{ $event->event_name }}</span>
                                     @endif
-                                    {{ $event->venue }}, {{ $event->city }}
+                                    <div class="text-gray-500">{{ $event->venue }}, {{ $event->city }}
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="text-gray-500">
-                                @if ($event->start_date)
-                                    <span>{{ $event->start_date->format('M d, Y') }}</span>
+                                <div class="text-gray-500">
+                                    @if ($event->start_date)
+                                        <span>{{ $event->start_date->format('M d, Y') }}</span>
+                                    @endif
+                                    @if ($event->start_time)
+                                        --- {{ $event->start_time }}
+                                    @endif
+                                </div>
+                                @if (!$loop->last)
+                                    {{-- <hr> --}}
                                 @endif
-                                @if ($event->start_time)
-                                    --- {{ $event->start_time }}
-                                @endif
-                            </div>
-                            @if (!$loop->last)
-                                {{-- <hr> --}}
-                            @endif
-                        </a>
+                            </a>
+                        @endforeach
                     @endforeach
                 @else
                     <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
                     </div>
                 @endif
+
             </div>
         </x-wrapper-narrow>
     </section>
@@ -53,30 +59,35 @@
             <x-page-subtitle class="mb-4">Lunchtime Concerts</x-page-subtitle>
             <div
                 class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll [&::-webkit-scrollbar]">
+
                 @if (count($lunches) > 0)
-                    @foreach ($lunches as $lunch)
-                        <a href="/summer/events/{{ $lunch->id }}" class="block p-4 border-b  hover:bg-violet-50">
-                            <div>
-                                <div class="font-bold">{{ $lunch->band }}</div>
-                                <div class="text-gray-500">
+                    @foreach ($lunches as $days)
+                        <div class="px-4 pt-4  tracking-widest">
+                            {{ $days[0]->start_date->format('D M d, Y') }}
+                        </div>
+                        @foreach ($days as $lunch)
+                            <a href="/summer/events/{{ $lunch->id }}" class="block p-4 border-b  hover:bg-violet-50">
+                                <div>
+                                    <span class="font-bold">{{ $lunch->band }}</span>
                                     @if ($lunch->event_name)
-                                        <div>{{ $lunch->event_name }}</div>
+                                        <span class="font-bold">at {{ $lunch->event_name }}</span>
                                     @endif
-                                    {{ $lunch->venue }} - {{ $lunch->city }}
+                                    <div class="text-gray-500">{{ $lunch->venue }}, {{ $lunch->city }}
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="text-gray-500">
-                                @if ($lunch->start_date)
-                                    <span>{{ $lunch->start_date->format('M d, Y') }}</span>
+                                <div class="text-gray-500">
+                                    @if ($lunch->start_date)
+                                        <span>{{ $lunch->start_date->format('M d, Y') }}</span>
+                                    @endif
+                                    @if ($lunch->start_time)
+                                        --- {{ $lunch->start_time }}
+                                    @endif
+                                </div>
+                                @if (!$loop->last)
+                                    {{-- <hr> --}}
                                 @endif
-                                @if ($lunch->start_time)
-                                    --- {{ $lunch->start_time }}
-                                @endif
-                            </div>
-                            @if (!$loop->last)
-                                {{-- <hr> --}}
-                            @endif
-                        </a>
+                            </a>
+                        @endforeach
                     @endforeach
                 @else
                     <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
@@ -93,29 +104,34 @@
             <div
                 class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll [&::-webkit-scrollbar]">
                 @if (count($fairs) > 0)
-                    @foreach ($fairs as $fair)
-                        <a href="/summer/events/{{ $fair->id }}" class="block p-4 border-b  hover:bg-violet-50">
-                            <div>
-                                <div class="font-bold">{{ $fair->band }}</div>
-                                <div class="text-gray-500">
+                    @foreach ($fairs as $days)
+                        <div class="px-4 pt-4  tracking-widest">
+                            {{ $days[0]->start_date->format('D M d, Y') }}
+                        </div>
+                        @foreach ($days as $fair)
+                            <a href="/summer/events/{{ $fair->id }}"
+                                class="block p-4 border-b  hover:bg-violet-50">
+                                <div>
+                                    <span class="font-bold">{{ $fair->band }}</span>
                                     @if ($fair->event_name)
-                                        <div>{{ $fair->event_name }}, </div>
+                                        <span class="font-bold">at {{ $fair->event_name }}</span>
                                     @endif
-                                    {{ $fair->venue }}, {{ $fair->city }}
+                                    <div class="text-gray-500">{{ $fair->venue }}, {{ $fair->city }}
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="text-gray-500">
-                                @if ($fair->start_date)
-                                    <span>{{ $fair->start_date->format('M d, Y') }}</span>
+                                <div class="text-gray-500">
+                                    @if ($fair->start_date)
+                                        <span>{{ $fair->start_date->format('M d, Y') }}</span>
+                                    @endif
+                                    @if ($fair->start_time)
+                                        --- {{ $fair->start_time }}
+                                    @endif
+                                </div>
+                                @if (!$loop->last)
+                                    {{-- <hr> --}}
                                 @endif
-                                @if ($fair->start_time)
-                                    --- {{ $fair->start_time }}
-                                @endif
-                            </div>
-                            @if (!$loop->last)
-                                {{-- <hr> --}}
-                            @endif
-                        </a>
+                            </a>
+                        @endforeach
                     @endforeach
                 @else
                     <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
@@ -131,28 +147,36 @@
             <x-page-subtitle class="mb-4">National Acts</x-page-subtitle>
             <div
                 class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll [&::-webkit-scrollbar]">
+
                 @if (count($nationalActs) > 0)
-                    @foreach ($nationalActs as $act)
-                        <a href="/summer/events/{{ $act->id }}" class="block p-4 border-b  hover:bg-violet-50">
-                            <div>
-                                <span class="font-bold">{{ $act->band }}</span>
-                                @if ($act->event_name)
-                                    <span class="font-bold">at {{ $act->event_name }}</span>
+                    @foreach ($nationalActs as $days)
+                        <div class="px-4 pt-4  tracking-widest">
+                            {{ $days[0]->start_date->format('D M d, Y') }}
+                        </div>
+                        @foreach ($days as $nationalact)
+                            <a href="/summer/events/{{ $nationalact->id }}"
+                                class="block p-4 border-b  hover:bg-violet-50">
+                                <div>
+                                    <span class="font-bold">{{ $nationalact->band }}</span>
+                                    @if ($nationalact->event_name)
+                                        <span class="font-bold">at {{ $nationalact->event_name }}</span>
+                                    @endif
+                                    <div class="text-gray-500">{{ $nationalact->venue }}, {{ $nationalact->city }}
+                                    </div>
+                                </div>
+                                <div class="text-gray-500">
+                                    @if ($nationalact->start_date)
+                                        <span>{{ $nationalact->start_date->format('M d, Y') }}</span>
+                                    @endif
+                                    @if ($nationalact->start_time)
+                                        --- {{ $nationalact->start_time }}
+                                    @endif
+                                </div>
+                                @if (!$loop->last)
+                                    {{-- <hr> --}}
                                 @endif
-                                <div class="text-gray-500">{{ $act->venue }}, {{ $act->city }}</div>
-                            </div>
-                            <div class="text-gray-500">
-                                @if ($act->start_date)
-                                    <span>{{ $act->start_date->format('M d, Y') }}</span>
-                                @endif
-                                @if ($act->start_time)
-                                    --- {{ $act->start_time }}
-                                @endif
-                            </div>
-                            @if (!$loop->last)
-                                {{-- <hr> --}}
-                            @endif
-                        </a>
+                            </a>
+                        @endforeach
                     @endforeach
                 @else
                     <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
