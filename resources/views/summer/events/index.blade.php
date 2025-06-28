@@ -3,7 +3,7 @@
     <x-wrapper-narrow class="mt-8 mb-8 mx-auto">
         <x-page-title>Summer Events</x-page-title>
         <p class="-mt-4 mb-12 text-center">The complete list of summer events around the Fox Valley this summer.</p>
-        <p class="text-center mb-2">Click on any listing for more information.</p>
+        <p class="text-center mb-4 text-gray-600 italic text-sm">Click on any listing for more information.</p>
 
         <!-- START TEST display by date -->
         @foreach ($events as $days)
