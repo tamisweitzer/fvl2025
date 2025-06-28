@@ -24,6 +24,13 @@
                             </x-kv-group>
                         @endif
 
+                        @if ($event->venue)
+                            <x-kv-group class="grid grid-cols-12">
+                                <x-kv-key class="col-span-3 sm:col-span-2">Venue:</x-kv-key>
+                                <x-kv-value class="col-span-9 sm:col-span-10">{{ $event->venue }}</x-kv-value>
+                            </x-kv-group>
+                        @endif
+
 
                         <x-kv-group class="grid grid-cols-12">
                             <x-kv-key class="col-span-3 sm:col-span-2">City:</x-kv-key>
@@ -32,17 +39,13 @@
 
                         <x-kv-group class="grid grid-cols-12">
                             <x-kv-key class="col-span-3 sm:col-span-2">Date:</x-kv-key>
-                            <x-kv-value
-                                class="col-span-9 sm:col-span-10">{{ $event->start_date->format('M d, Y') }}</x-kv-value>
+                            <x-kv-value class="col-span-9 sm:col-span-10">
+                                {{ $event->start_date->format('M d, Y') }}
+                                @if ($event->end_date)
+                                    - {{ $event->end_date->format('M d, Y') }}
+                                @endif
+                            </x-kv-value>
                         </x-kv-group>
-
-                        @if ($event->end_date)
-                            <x-kv-group class="grid grid-cols-12">
-                                <x-kv-key class="col-span-3 sm:col-span-2">End Date:</x-kv-key>
-                                <x-kv-value
-                                    class="col-span-9 sm:col-span-10">{{ $event->end_date->format('M d, Y') }}</x-kv-value>
-                            </x-kv-group>
-                        @endif
 
                         @if ($event->start_time)
                             <x-kv-group class="grid grid-cols-12">
