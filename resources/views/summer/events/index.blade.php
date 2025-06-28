@@ -15,9 +15,9 @@
                         </div>
                         <div>
                             @if ($event->event_name)
-                                {{ $event->event_name }}
+                                {{ $event->event_name }}, {{ $event->city }}
                             @else
-                                {{ $event->venue }}
+                                {{ $event->venue }}, {{ $event->city }}
                             @endif
                         </div>
                         <div>
