@@ -13,7 +13,7 @@
                         <div class="font-bold">
                             {{ $event->band }}
                         </div>
-                        <div>
+                        <div class="text-gray-500 text-sm">
                             @if ($event->event_name)
                                 {{ $event->event_name }}
                             @else
