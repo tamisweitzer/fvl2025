@@ -27,8 +27,9 @@
                                     @if ($event->event_name)
                                         <span class="font-bold">at {{ $event->event_name }}</span>
                                     @endif
-                                    <div class="text-gray-500 text-sm">{{ $event->venue }}, {{ $event->city }}
+                                    <div class="text-gray-500 text-sm">{{ $event->venue }}
                                     </div>
+                                    <div class="text-gray-500 text-sm">{{ $event->city }}</div>
                                 </div>
                                 <div class="text-gray-500 text-sm">
                                     @if ($event->start_time)
@@ -69,8 +70,9 @@
                                     @if ($lunch->event_name)
                                         <span class="font-bold">at {{ $lunch->event_name }}</span>
                                     @endif
-                                    <div class="text-gray-500 text-sm">{{ $lunch->venue }}, {{ $lunch->city }}
+                                    <div>{{ $lunch->venue }}
                                     </div>
+                                    <div class="text-gray-500 text-sm">{{ $lunch->city }}</div>
                                 </div>
                                 <div class="text-gray-500 text-sm">
                                     @if ($lunch->start_time)
@@ -110,8 +112,9 @@
                                     @if ($fair->event_name)
                                         <span class="font-bold">at {{ $fair->event_name }}</span>
                                     @endif
-                                    <div class="text-gray-500 text-sm">{{ $fair->venue }}, {{ $fair->city }}
+                                    <div class="text-gray-500 text-sm">{{ $fair->venue }}
                                     </div>
+                                    <div class="text-gray-500 text-sm">{{ $fair->city }}</div>
                                 </div>
                                 <div class="text-gray-500 text-sm">
                                     @if ($fair->start_time)
@@ -152,7 +155,9 @@
                                     @if ($nationalact->event_name)
                                         <span class="font-bold">at {{ $nationalact->event_name }}</span>
                                     @endif
-                                    <div class="text-gray-500 text-sm">{{ $nationalact->venue }},
+                                    <div class="text-gray-500 text-sm">{{ $nationalact->venue }}
+                                    </div>
+                                    <div class="text-gray-500 text-sm">
                                         {{ $nationalact->city }}
                                     </div>
                                 </div>
