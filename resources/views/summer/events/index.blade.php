@@ -15,10 +15,13 @@
                         </div>
                         <div>
                             @if ($event->event_name)
-                                {{ $event->event_name }}, {{ $event->city }}
+                                {{ $event->event_name }}
                             @else
-                                {{ $event->venue }}, {{ $event->city }}
+                                {{ $event->venue }}
                             @endif
+                        </div>
+                        <div>
+                            {{ $event->city }}
                         </div>
                         <div>
                             @if ($event->start_date)
