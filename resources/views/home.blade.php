@@ -27,15 +27,12 @@
                                     @if ($event->event_name)
                                         <span class="font-bold">at {{ $event->event_name }}</span>
                                     @endif
-                                    <div class="text-gray-500">{{ $event->venue }}, {{ $event->city }}
+                                    <div class="text-gray-500 text-sm">{{ $event->venue }}, {{ $event->city }}
                                     </div>
                                 </div>
-                                <div class="text-gray-500">
-                                    @if ($event->start_date)
-                                        <span>{{ $event->start_date->format('M d, Y') }}</span>
-                                    @endif
+                                <div class="text-gray-500 text-sm">
                                     @if ($event->start_time)
-                                        --- {{ $event->start_time }}
+                                        {{ $event->start_time }}
                                     @endif
                                 </div>
                                 @if (!$loop->last)
@@ -72,15 +69,12 @@
                                     @if ($lunch->event_name)
                                         <span class="font-bold">at {{ $lunch->event_name }}</span>
                                     @endif
-                                    <div class="text-gray-500">{{ $lunch->venue }}, {{ $lunch->city }}
+                                    <div class="text-gray-500 text-sm">{{ $lunch->venue }}, {{ $lunch->city }}
                                     </div>
                                 </div>
-                                <div class="text-gray-500">
-                                    @if ($lunch->start_date)
-                                        <span>{{ $lunch->start_date->format('M d, Y') }}</span>
-                                    @endif
+                                <div class="text-gray-500 text-sm">
                                     @if ($lunch->start_time)
-                                        --- {{ $lunch->start_time }}
+                                        {{ $lunch->start_time }}
                                     @endif
                                 </div>
                                 @if (!$loop->last)
@@ -116,15 +110,12 @@
                                     @if ($fair->event_name)
                                         <span class="font-bold">at {{ $fair->event_name }}</span>
                                     @endif
-                                    <div class="text-gray-500">{{ $fair->venue }}, {{ $fair->city }}
+                                    <div class="text-gray-500 text-sm">{{ $fair->venue }}, {{ $fair->city }}
                                     </div>
                                 </div>
-                                <div class="text-gray-500">
-                                    @if ($fair->start_date)
-                                        <span>{{ $fair->start_date->format('M d, Y') }}</span>
-                                    @endif
+                                <div class="text-gray-500 text-sm">
                                     @if ($fair->start_time)
-                                        --- {{ $fair->start_time }}
+                                        {{ $fair->start_time }}
                                     @endif
                                 </div>
                                 @if (!$loop->last)
@@ -161,15 +152,13 @@
                                     @if ($nationalact->event_name)
                                         <span class="font-bold">at {{ $nationalact->event_name }}</span>
                                     @endif
-                                    <div class="text-gray-500">{{ $nationalact->venue }}, {{ $nationalact->city }}
+                                    <div class="text-gray-500 text-sm">{{ $nationalact->venue }},
+                                        {{ $nationalact->city }}
                                     </div>
                                 </div>
-                                <div class="text-gray-500">
-                                    @if ($nationalact->start_date)
-                                        <span>{{ $nationalact->start_date->format('M d, Y') }}</span>
-                                    @endif
+                                <div class="text-gray-500 text-sm">
                                     @if ($nationalact->start_time)
-                                        --- {{ $nationalact->start_time }}
+                                        {{ $nationalact->start_time }}
                                     @endif
                                 </div>
                                 @if (!$loop->last)
