@@ -4,8 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Home for local, live music in the Fox Valley, WI. Extensive list of bar gigs, summer concert series, and lunchtime shows. List of all bands and venues in the area covering the Fox Cities from Appleton to Green Bay.">
+    <meta name="keywords"
+        content="band, bands, music, live music, live band, live bands, concert, concerts, fox valley, fox cities, appleton, green bay, northest wisconson, gigs">
 
-    <title>Fox Valley Live - The best live music in the Fox Valley and beyond.</title>
+    <title>Fox Valley Live - The best live music in the Fox Valley and beyond!
+    </title>
 
     <link rel="icon" href="{{ asset('/images/favicon.ico') }}">
 
