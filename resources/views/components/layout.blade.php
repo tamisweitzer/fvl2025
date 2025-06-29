@@ -9,7 +9,7 @@
     <meta name="keywords"
         content="band, bands, music, live music, live band, live bands, concert, concerts, fox valley, fox cities, appleton, green bay, northest wisconson, gigs">
 
-    <title>Fox Valley Live - The best live music in the Fox Valley and beyond!
+    <title>Fox Valley Live - Wisconsin's home for the best live music in the Fox Valley and beyond!
     </title>
 
     <link rel="icon" href="{{ asset('/images/favicon.ico') }}">
