@@ -3,8 +3,10 @@
         <x-wrapper-narrow class="text-center">
             <x-page-title>Live Music in the Fox Valley</x-page-title>
             <x-page-subtitle class="text-orange-700  font-semibold mb-2">Wisconsin knows music!</x-page-subtitle>
-            <p>Browse below for a sampling of the summer concerts happening now in your area, or <a
-                    href="/summer/events/" class="underline text-orange-700">view all upcoming events here</a>.
+            <p>Browse below for a sampling of the summer concerts happening now in your area. Alternatively, view the
+                extensive list
+                of <a href="/summer/events/" class="underline text-orange-700"> all upcoming events</a>, or <a
+                    href="/cities" class="underline text-orange-700">search for events by city</a>.
             </p>
             <p class="mt-8">Click on any listing below for more information.</p>
         </x-wrapper-narrow>
