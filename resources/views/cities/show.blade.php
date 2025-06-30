@@ -23,14 +23,39 @@
         <hr>
 
         <section class="my-8">
-            <x-page-subtitle>All Bands Playing Here</x-page-subtitle>
+            <x-page-subtitle class="mb-8">All Bands Playing Here</x-page-subtitle>
             <div>
-                TODO
-                {{-- @foreach ($bands as $band)
-                <div class="p-4 mb-2 bg-slate-50 border b-slate-100">
-                    {{ $band['name'] }}
-                </div>
-            @endforeach --}}
+                @if (count($events) > 0)
+                    @foreach ($events as $days)
+                        <div class="px-4 pt-4  tracking-widest">
+                            {{ $days[0]->start_date->format('D M d, Y') }}
+                        </div>
+
+                        @foreach ($days as $event)
+                            <a href="/summer/events/{{ $event->id }}" class="block p-4 border-b  hover:bg-violet-50">
+                                <div>
+                                    <span class="font-bold">{{ $event->band }}</span>
+                                    @if ($event->event_name)
+                                        <span class="font-bold">at {{ $event->event_name }}</span>
+                                    @endif
+                                    <div class="text-gray-500 text-sm">{{ $event->venue }}
+                                    </div>
+                                    <div class="text-gray-500 text-sm">{{ $event->city }}</div>
+                                </div>
+                                <div class="text-gray-500 text-sm">
+                                    @if ($event->start_time)
+                                        {{ $event->start_time }}
+                                    @endif
+                                </div>
+                                @if (!$loop->last)
+                                    {{-- <hr> --}}
+                                @endif
+                            </a>
+                        @endforeach
+                    @endforeach
+                @else
+                    <p class="text-gray-500 italic">There are no bands listed for this city yet.</p>
+                @endif
             </div>
         </section>
 
