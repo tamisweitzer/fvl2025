@@ -32,7 +32,8 @@
                         </div>
 
                         @foreach ($days as $event)
-                            <a href="/summer/events/{{ $event->id }}" class="block p-4 border-b  hover:bg-violet-50">
+                            <a href="/summer/events/{{ $event->id }}" class="block p-4 border-b  hover:bg-violet-50"
+                                title="Live music in {{ $event->city }} from {{ $event->band }} at {{ $event->venue }} @if ($event->event_name) for {{ $event->event_name }} @endif">
                                 <div>
                                     <span class="font-bold">{{ $event->band }}</span>
                                     @if ($event->event_name)
