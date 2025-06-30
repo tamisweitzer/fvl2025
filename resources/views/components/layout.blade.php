@@ -22,6 +22,8 @@
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @endif
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1530233761670435"
+        crossorigin="anonymous"></script>
 </head>
 
 <body class="font-sans antialiased bg-slate-100">
