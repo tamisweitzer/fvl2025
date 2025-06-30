@@ -8,7 +8,8 @@
         @foreach ($events as $days)
             {{ $days[0]->start_date->format('D M d, Y') }}
             @foreach ($days as $event)
-                <a href="/summer/events/{{ $event->id }}" class="block ">
+                <a href="/summer/events/{{ $event->id }}" class="block"
+                    title="Live music in {{ $event->city }} from {{ $event->band }} at {{ $event->venue }} @if ($event->event_name) for {{ $event->event_name }} @endif">
                     <div
                         class="px-4 py-4 hover:bg-orange-50 hover:border-t hover:border-t-orange-300 hover:border-b hover:border-b-orange-300">
                         <div class="font-bold">
