@@ -29,7 +29,8 @@
                             {{ $days[0]->start_date->format('D M d, Y') }}
                         </div>
                         @foreach ($days as $lunch)
-                            <a href="/summer/events/{{ $lunch->id }}" class="block p-4 border-b  hover:bg-violet-50"
+                            <a href="/summer/events/{{ $lunch->id }}"
+                                class="block p-4 border-b hover:bg-orange-50 hover:border-t hover:border-t-orange-300 hover:border-b hover:border-b-orange-300"
                                 title="Live music in {{ $lunch->city }} from {{ $lunch->band }} at {{ $lunch->venue }} @if ($lunch->event_name) for {{ $lunch->event_name }} @endif">
                                 <div class="font-bold">{{ $lunch->band }}</div>
                                 @if ($lunch->event_name)
@@ -74,7 +75,8 @@
                         </div>
 
                         @foreach ($days as $event)
-                            <a href="/summer/events/{{ $event->id }}" class="block p-4 border-b  hover:bg-violet-50"
+                            <a href="/summer/events/{{ $event->id }}"
+                                class="block p-4 border-b hover:bg-orange-50 hover:border-t hover:border-t-orange-300 hover:border-b hover:border-b-orange-300"
                                 title="Live music in {{ $event->city }} from {{ $event->band }} at {{ $event->venue }} @if ($event->event_name) for {{ $event->event_name }} @endif">
                                 <div>
                                     <span class="font-bold">{{ $event->band }}</span>
@@ -121,7 +123,8 @@
                             {{ $days[0]->start_date->format('D M d, Y') }}
                         </div>
                         @foreach ($days as $fair)
-                            <a href="/summer/events/{{ $fair->id }}" class="block p-4 border-b  hover:bg-violet-50"
+                            <a href="/summer/events/{{ $fair->id }}"
+                                class="block p-4 border-b hover:bg-orange-50 hover:border-t hover:border-t-orange-300 hover:border-b hover:border-b-orange-300"
                                 title="Live music in {{ $fair->city }} from {{ $fair->band }} at {{ $fair->venue }} @if ($fair->event_name) for {{ $fair->event_name }} @endif">
                                 <div>
                                     <span class="font-bold">{{ $fair->band }}</span>
@@ -169,7 +172,7 @@
                         </div>
                         @foreach ($days as $nationalact)
                             <a href="/summer/events/{{ $nationalact->id }}"
-                                class="block p-4 border-b  hover:bg-violet-50"
+                                class="block p-4 border-b hover:bg-orange-50 hover:border-t hover:border-t-orange-300 hover:border-b hover:border-b-orange-300"
                                 title="Live music in {{ $nationalact->city }} from {{ $nationalact->band }} at {{ $nationalact->venue }} @if ($nationalact->event_name) for {{ $nationalact->event_name }} @endif">
                                 <div>
                                     <span class="font-bold">{{ $nationalact->band }}</span>
