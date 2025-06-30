@@ -2,9 +2,9 @@
     <section class="pb-4">
         <x-wrapper-narrow class="text-center">
             <x-page-title>Live Music in the Fox Valley</x-page-title>
-            <x-page-subtitle class="text-orange-600  font-semibold mb-2">Wisconsin knows music!</x-page-subtitle>
+            <x-page-subtitle class="text-orange-700  font-semibold mb-2">Wisconsin knows music!</x-page-subtitle>
             <p>Browse below for a sampling of the summer concerts happening now in your area, or <a
-                    href="/summer/events/" class="underline text-orange-600">view all upcoming events here</a>.
+                    href="/summer/events/" class="underline text-orange-700">view all upcoming events here</a>.
             </p>
             <p class="mt-8">Click on any listing below for more information.</p>
         </x-wrapper-narrow>
@@ -15,7 +15,7 @@
         <x-wrapper-narrow>
             <!-- Lunchtime Concert Series -->
             <x-page-subtitle class="mb-4 tracking-wide font-semibold">Lunchtime Concerts</x-page-subtitle>
-            <p class="mb-2 text-sm text-center text-gray-600">These concerts are generally held in a park or patio, and
+            <p class="mb-2 text-sm text-center text-gray-800">These concerts are generally held in a park or patio, and
                 are intended as lunch time entertainment. Often these are acoustic, or softer music. Many of these have
                 food trucks or vendors near by.</p>
             <div
@@ -23,7 +23,7 @@
 
                 @if (count($lunches) > 0)
                     @foreach ($lunches as $days)
-                        <div class="px-4 pt-4  tracking-widest">
+                        <div class="px-4 pt-4 text-gray-800 tracking-widest">
                             {{ $days[0]->start_date->format('D M d, Y') }}
                         </div>
                         @foreach ($days as $lunch)
@@ -35,9 +35,9 @@
                                     @endif
                                     <div>{{ $lunch->venue }}
                                     </div>
-                                    <div class="text-gray-500 text-sm">{{ $lunch->city }}</div>
+                                    <div class="text-gray-800 text-sm">{{ $lunch->city }}</div>
                                 </div>
-                                <div class="text-gray-500 text-sm">
+                                <div class="text-gray-800 text-sm">
                                     @if ($lunch->start_time)
                                         {{ $lunch->start_time }}
                                     @endif
@@ -61,14 +61,14 @@
         <x-wrapper-narrow>
             <x-page-subtitle class="mb-4 tracking-wide font-semibold">Live Bands at Bars and
                 Restaurants</x-page-subtitle>
-            <p class="mb-2 text-sm text-center text-gray-600">The list here includes the typical live band at a bar,
+            <p class="mb-2 text-sm text-center text-gray-800">The list here includes the typical live band at a bar,
                 usually held indoors throughout the year, but may be outside during the summer.</p>
             <div
                 class="bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-y-scroll [&::-webkit-scrollbar]">
 
                 @if (count($events) > 0)
                     @foreach ($events as $days)
-                        <div class="px-4 pt-4  tracking-widest">
+                        <div class="px-4 pt-4 text-gray-800 tracking-widest">
                             {{ $days[0]->start_date->format('D M d, Y') }}
                         </div>
 
@@ -79,11 +79,11 @@
                                     @if ($event->event_name)
                                         <span class="font-bold">at {{ $event->event_name }}</span>
                                     @endif
-                                    <div class="text-gray-500 text-sm">{{ $event->venue }}
+                                    <div class="text-gray-800 text-sm">{{ $event->venue }}
                                     </div>
-                                    <div class="text-gray-500 text-sm">{{ $event->city }}</div>
+                                    <div class="text-gray-800 text-sm">{{ $event->city }}</div>
                                 </div>
-                                <div class="text-gray-500 text-sm">
+                                <div class="text-gray-800 text-sm">
                                     @if ($event->start_time)
                                         {{ $event->start_time }}
                                     @endif
@@ -106,9 +106,9 @@
     <section class="pb-8">
         <x-wrapper-narrow>
             <!-- Fairs, Fests, and Outdoor Concerts e.g. Rockfest, Winnebago County Fair -->
-            <x-page-subtitle class="mb-4 tracking-wide font-semibold">Fairs, Fests, and Outdoor
+            <x-page-subtitle class="mb-4 text-gray-800 tracking-wide font-semibold">Fairs, Fests, and Outdoor
                 Concerts</x-page-subtitle>
-            <p class="mb-2 text-sm text-center text-gray-600">This list contains the yearly fests, fairs, and outdoor
+            <p class="mb-2 text-sm text-center text-gray-800">This list contains the yearly fests, fairs, and outdoor
                 concerts that are not specifically tied to a bar or restaurant.</p>
 
             <div
@@ -126,11 +126,11 @@
                                     @if ($fair->event_name)
                                         <span class="font-bold">at {{ $fair->event_name }}</span>
                                     @endif
-                                    <div class="text-gray-500 text-sm">{{ $fair->venue }}
+                                    <div class="text-gray-800 text-sm">{{ $fair->venue }}
                                     </div>
-                                    <div class="text-gray-500 text-sm">{{ $fair->city }}</div>
+                                    <div class="text-gray-800 text-sm">{{ $fair->city }}</div>
                                 </div>
-                                <div class="text-gray-500 text-sm">
+                                <div class="text-gray-800 text-sm">
                                     @if ($fair->start_time)
                                         {{ $fair->start_time }}
                                     @endif
@@ -152,8 +152,8 @@
     <section class="pb-8">
         <x-wrapper-narrow>
             <!-- National Acts -->
-            <x-page-subtitle class="mb-4 tracking-wide font-semibold">National Acts</x-page-subtitle>
-            <p class="mb-2 text-sm text-center text-gray-600">These are stand-alone concerts specifically for a national
+            <x-page-subtitle class="mb-4 text-gray-800 tracking-wide font-semibold">National Acts</x-page-subtitle>
+            <p class="mb-2 text-sm text-center text-gray-800">These are stand-alone concerts specifically for a national
                 artist. If
                 a national act is playing at Waterfest, for example, that artist would be listed in the fairs and fests
                 section, not here.</p>
@@ -173,13 +173,13 @@
                                     @if ($nationalact->event_name)
                                         <span class="font-bold">at {{ $nationalact->event_name }}</span>
                                     @endif
-                                    <div class="text-gray-500 text-sm">{{ $nationalact->venue }}
+                                    <div class="text-gray-800 text-sm">{{ $nationalact->venue }}
                                     </div>
-                                    <div class="text-gray-500 text-sm">
+                                    <div class="text-gray-800 text-sm">
                                         {{ $nationalact->city }}
                                     </div>
                                 </div>
-                                <div class="text-gray-500 text-sm">
+                                <div class="text-gray-800 text-sm">
                                     @if ($nationalact->start_time)
                                         {{ $nationalact->start_time }}
                                     @endif
