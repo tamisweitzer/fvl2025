@@ -9,7 +9,8 @@
             {{ $days[0]->start_date->format('D M d, Y') }}
             @foreach ($days as $event)
                 <a href="/summer/events/{{ $event->id }}" class="block ">
-                    <div class="px-4 py-4 hover:bg-orange-50">
+                    <div
+                        class="px-4 py-4 hover:bg-orange-50 hover:border-t hover:border-t-orange-300 hover:border-b hover:border-b-orange-300">
                         <div class="font-bold">
                             {{ $event->band }}
                         </div>
