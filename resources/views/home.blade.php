@@ -12,7 +12,7 @@
         <x-wrapper-narrow>
             <x-page-subtitle class="mb-4 tracking-wide">Live Bands at Bars and Restaurants</x-page-subtitle>
             <div
-                class=" bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-y-scroll [&::-webkit-scrollbar]">
+                class="bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-y-scroll [&::-webkit-scrollbar]">
 
                 @if (count($events) > 0)
                     @foreach ($events as $days)
