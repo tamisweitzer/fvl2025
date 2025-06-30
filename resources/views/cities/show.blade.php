@@ -59,7 +59,7 @@
             </div>
         </section>
 
-        <hr>
+        {{-- <hr>
         <section class="my-8">
             <x-page-subtitle>All Venues Located Here</x-page-subtitle>
             TODO
@@ -70,6 +70,6 @@
                 </div>
                 @endforeach
             </div> --}}
-        </section>
+        </section> --}}
     </x-wrapper-narrow>
 </x-layout>
