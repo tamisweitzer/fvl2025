@@ -1,8 +1,12 @@
 <x-layout>
-    <section class="pb-8">
-        <x-wrapper-narrow>
+    <section class="pb-4">
+        <x-wrapper-narrow class="text-center">
             <x-page-title>Live Music in the Fox Valley</x-page-title>
-            <p class="text-center -mt-4 italic text-gray-600">Click on any listing below for more information.</p>
+            <x-page-subtitle class="text-orange-600  font-semibold mb-2">Wisconsin knows music!</x-page-subtitle>
+            <p>Browse below for a sampling of the summer concerts happening now in your area, or <a
+                    href="/summer/events/" class="underline text-orange-600">view all upcoming events here</a>.
+            </p>
+            <p class="mt-8">Click on any listing below for more information.</p>
         </x-wrapper-narrow>
     </section>
 
@@ -10,7 +14,10 @@
     <section class="pb-8">
         <!-- Regular Bar Events -->
         <x-wrapper-narrow>
-            <x-page-subtitle class="mb-4 tracking-wide">Live Bands at Bars and Restaurants</x-page-subtitle>
+            <x-page-subtitle class="mb-4 tracking-wide font-semibold">Live Bands at Bars and
+                Restaurants</x-page-subtitle>
+            <p class="mb-2 text-sm text-center text-gray-600">The list here includes the typical live band at a bar,
+                usually held indoors throughout the year, but may be outside during the summer.</p>
             <div
                 class="bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-y-scroll [&::-webkit-scrollbar]">
 
@@ -54,7 +61,10 @@
     <section class="pb-8">
         <x-wrapper-narrow>
             <!-- Lunchtime Concert Series -->
-            <x-page-subtitle class="mb-4">Lunchtime Concerts</x-page-subtitle>
+            <x-page-subtitle class="mb-4 tracking-wide font-semibold">Lunchtime Concerts</x-page-subtitle>
+            <p class="mb-2 text-sm text-center text-gray-600">These concerts are generally held in a park or patio, and
+                are intended as lunch time entertainment. Often these are acoustic, or softer music. Many of these have
+                food trucks or vendors near by.</p>
             <div
                 class=" bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-y-scroll [&::-webkit-scrollbar]">
 
@@ -96,7 +106,11 @@
     <section class="pb-8">
         <x-wrapper-narrow>
             <!-- Fairs, Fests, and Outdoor Concerts e.g. Rockfest, Winnebago County Fair -->
-            <x-page-subtitle class="mb-4">Fairs, Fests, and Outdoor Concerts</x-page-subtitle>
+            <x-page-subtitle class="mb-4 tracking-wide font-semibold">Fairs, Fests, and Outdoor
+                Concerts</x-page-subtitle>
+            <p class="mb-2 text-sm text-center text-gray-600">This list contains the yearly fests, fairs, and outdoor
+                concerts that are not specifically tied to a bar or restaurant.</p>
+
             <div
                 class=" bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-y-scroll [&::-webkit-scrollbar]">
                 @if (count($fairs) > 0)
@@ -138,7 +152,11 @@
     <section class="pb-8">
         <x-wrapper-narrow>
             <!-- National Acts -->
-            <x-page-subtitle class="mb-4">National Acts</x-page-subtitle>
+            <x-page-subtitle class="mb-4 tracking-wide font-semibold">National Acts</x-page-subtitle>
+            <p class="mb-2 text-sm text-center text-gray-600">These are stand-alone concerts specifically for a national
+                artist. If
+                a national act is playing at Waterfest, for example, that artist would be listed in the fairs and fests
+                section, not here.</p>
             <div
                 class=" bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-y-scroll [&::-webkit-scrollbar]">
 
