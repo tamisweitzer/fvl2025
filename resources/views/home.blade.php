@@ -25,7 +25,7 @@
 
                 @if (count($lunches) > 0)
                     @foreach ($lunches as $days)
-                        <div class="px-4 pt-4 text-gray-800 tracking-widest">
+                        <div class="px-4 pt-4 text-gray-800 tracking-widest border-b border-b-slate-300">
                             {{ $days[0]->start_date->format('D M d, Y') }}
                         </div>
                         @foreach ($days as $lunch)
@@ -70,7 +70,7 @@
 
                 @if (count($events) > 0)
                     @foreach ($events as $days)
-                        <div class="px-4 pt-4 text-gray-800 tracking-widest">
+                        <div class="px-4 pt-4 text-gray-800 tracking-widest border-b border-b-slate-300"">
                             {{ $days[0]->start_date->format('D M d, Y') }}
                         </div>
 
@@ -119,7 +119,7 @@
                 class=" bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-y-scroll [&::-webkit-scrollbar]">
                 @if (count($fairs) > 0)
                     @foreach ($fairs as $days)
-                        <div class="px-4 pt-4  tracking-widest">
+                        <div class="px-4 pt-4  tracking-widest border-b border-b-slate-300"">
                             {{ $days[0]->start_date->format('D M d, Y') }}
                         </div>
                         @foreach ($days as $fair)
@@ -167,7 +167,7 @@
 
                 @if (count($nationalActs) > 0)
                     @foreach ($nationalActs as $days)
-                        <div class="px-4 pt-4  tracking-widest">
+                        <div class="px-4 pt-4  tracking-widest border-b border-b-slate-300"">
                             {{ $days[0]->start_date->format('D M d, Y') }}
                         </div>
                         @foreach ($days as $nationalact)
