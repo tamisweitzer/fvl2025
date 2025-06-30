@@ -63,13 +63,13 @@
         <section class="my-8">
             <x-page-subtitle>All Venues Located Here</x-page-subtitle>
             TODO
-            {{-- <div>
+            <div>
                 @foreach ($venues as $venue)
                 <div class="p-4 mb-2 bg-slate-50 border b-slate-100">
                     {{ $venue['name'] }}
                 </div>
                 @endforeach
-            </div> --}}
+            </div>
         </section> --}}
     </x-wrapper-narrow>
 </x-layout>
