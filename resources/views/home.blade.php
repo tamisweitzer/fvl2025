@@ -27,21 +27,20 @@
                             {{ $days[0]->start_date->format('D M d, Y') }}
                         </div>
                         @foreach ($days as $lunch)
-                            <a href="/summer/events/{{ $lunch->id }}" class="block p-4 border-b  hover:bg-violet-50">
-                                <div>
-                                    <span class="font-bold">{{ $lunch->band }}</span>
-                                    @if ($lunch->event_name)
-                                        <span class="font-bold">at {{ $lunch->event_name }}</span>
-                                    @endif
-                                    <div>{{ $lunch->venue }}
-                                    </div>
-                                    <div class="text-gray-800 text-sm">{{ $lunch->city }}</div>
-                                </div>
-                                <div class="text-gray-800 text-sm">
-                                    @if ($lunch->start_time)
+                            <a href="/summer/events/{{ $lunch->id }}" class="block p-4 border-b  hover:bg-violet-50"
+                                title="Live music in {{ $lunch->city }} from {{ $lunch->band }} at {{ $lunch->venue }} @if ($lunch->event_name) for {{ $lunch->event_name }} @endif">
+                                <div class="font-bold">{{ $lunch->band }}</div>
+                                @if ($lunch->event_name)
+                                    <div class="text-gray-800 text-sm">{{ $lunch->event_name }}</div>
+                                @endif
+                                <div class="text-gray-800 text-sm">{{ $lunch->venue }}</div>
+                                <div class="text-gray-800 text-sm">{{ $lunch->city }}</div>
+                                @if ($lunch->start_time)
+                                    <div class="text-gray-800 text-sm">
                                         {{ $lunch->start_time }}
-                                    @endif
-                                </div>
+                                    </div>
+                                @endif
+
                                 @if (!$loop->last)
                                     {{-- <hr> --}}
                                 @endif
@@ -73,7 +72,8 @@
                         </div>
 
                         @foreach ($days as $event)
-                            <a href="/summer/events/{{ $event->id }}" class="block p-4 border-b  hover:bg-violet-50">
+                            <a href="/summer/events/{{ $event->id }}" class="block p-4 border-b  hover:bg-violet-50"
+                                title="Live music in {{ $event->city }} from {{ $event->band }} at {{ $event->venue }} @if ($event->event_name) for {{ $event->event_name }} @endif">
                                 <div>
                                     <span class="font-bold">{{ $event->band }}</span>
                                     @if ($event->event_name)
@@ -119,8 +119,8 @@
                             {{ $days[0]->start_date->format('D M d, Y') }}
                         </div>
                         @foreach ($days as $fair)
-                            <a href="/summer/events/{{ $fair->id }}"
-                                class="block p-4 border-b  hover:bg-violet-50">
+                            <a href="/summer/events/{{ $fair->id }}" class="block p-4 border-b  hover:bg-violet-50"
+                                title="Live music in {{ $fair->city }} from {{ $fair->band }} at {{ $fair->venue }} @if ($fair->event_name) for {{ $fair->event_name }} @endif">
                                 <div>
                                     <span class="font-bold">{{ $fair->band }}</span>
                                     @if ($fair->event_name)
@@ -167,7 +167,8 @@
                         </div>
                         @foreach ($days as $nationalact)
                             <a href="/summer/events/{{ $nationalact->id }}"
-                                class="block p-4 border-b  hover:bg-violet-50">
+                                class="block p-4 border-b  hover:bg-violet-50"
+                                title="Live music in {{ $nationalact->city }} from {{ $nationalact->band }} at {{ $nationalact->venue }} @if ($nationalact->event_name) for {{ $nationalact->event_name }} @endif">
                                 <div>
                                     <span class="font-bold">{{ $nationalact->band }}</span>
                                     @if ($nationalact->event_name)
