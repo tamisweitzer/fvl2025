@@ -12,6 +12,51 @@
 
     <!-- Start summer events -->
     <section class="pb-8">
+        <x-wrapper-narrow>
+            <!-- Lunchtime Concert Series -->
+            <x-page-subtitle class="mb-4 tracking-wide font-semibold">Lunchtime Concerts</x-page-subtitle>
+            <p class="mb-2 text-sm text-center text-gray-600">These concerts are generally held in a park or patio, and
+                are intended as lunch time entertainment. Often these are acoustic, or softer music. Many of these have
+                food trucks or vendors near by.</p>
+            <div
+                class=" bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-y-scroll [&::-webkit-scrollbar]">
+
+                @if (count($lunches) > 0)
+                    @foreach ($lunches as $days)
+                        <div class="px-4 pt-4  tracking-widest">
+                            {{ $days[0]->start_date->format('D M d, Y') }}
+                        </div>
+                        @foreach ($days as $lunch)
+                            <a href="/summer/events/{{ $lunch->id }}" class="block p-4 border-b  hover:bg-violet-50">
+                                <div>
+                                    <span class="font-bold">{{ $lunch->band }}</span>
+                                    @if ($lunch->event_name)
+                                        <span class="font-bold">at {{ $lunch->event_name }}</span>
+                                    @endif
+                                    <div>{{ $lunch->venue }}
+                                    </div>
+                                    <div class="text-gray-500 text-sm">{{ $lunch->city }}</div>
+                                </div>
+                                <div class="text-gray-500 text-sm">
+                                    @if ($lunch->start_time)
+                                        {{ $lunch->start_time }}
+                                    @endif
+                                </div>
+                                @if (!$loop->last)
+                                    {{-- <hr> --}}
+                                @endif
+                            </a>
+                        @endforeach
+                    @endforeach
+                @else
+                    <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
+                    </div>
+                @endif
+            </div>
+        </x-wrapper-narrow>
+    </section>
+
+    <section class="pb-8">
         <!-- Regular Bar Events -->
         <x-wrapper-narrow>
             <x-page-subtitle class="mb-4 tracking-wide font-semibold">Live Bands at Bars and
@@ -54,51 +99,6 @@
                     </div>
                 @endif
 
-            </div>
-        </x-wrapper-narrow>
-    </section>
-
-    <section class="pb-8">
-        <x-wrapper-narrow>
-            <!-- Lunchtime Concert Series -->
-            <x-page-subtitle class="mb-4 tracking-wide font-semibold">Lunchtime Concerts</x-page-subtitle>
-            <p class="mb-2 text-sm text-center text-gray-600">These concerts are generally held in a park or patio, and
-                are intended as lunch time entertainment. Often these are acoustic, or softer music. Many of these have
-                food trucks or vendors near by.</p>
-            <div
-                class=" bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-y-scroll [&::-webkit-scrollbar]">
-
-                @if (count($lunches) > 0)
-                    @foreach ($lunches as $days)
-                        <div class="px-4 pt-4  tracking-widest">
-                            {{ $days[0]->start_date->format('D M d, Y') }}
-                        </div>
-                        @foreach ($days as $lunch)
-                            <a href="/summer/events/{{ $lunch->id }}" class="block p-4 border-b  hover:bg-violet-50">
-                                <div>
-                                    <span class="font-bold">{{ $lunch->band }}</span>
-                                    @if ($lunch->event_name)
-                                        <span class="font-bold">at {{ $lunch->event_name }}</span>
-                                    @endif
-                                    <div>{{ $lunch->venue }}
-                                    </div>
-                                    <div class="text-gray-500 text-sm">{{ $lunch->city }}</div>
-                                </div>
-                                <div class="text-gray-500 text-sm">
-                                    @if ($lunch->start_time)
-                                        {{ $lunch->start_time }}
-                                    @endif
-                                </div>
-                                @if (!$loop->last)
-                                    {{-- <hr> --}}
-                                @endif
-                            </a>
-                        @endforeach
-                    @endforeach
-                @else
-                    <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
-                    </div>
-                @endif
             </div>
         </x-wrapper-narrow>
     </section>
