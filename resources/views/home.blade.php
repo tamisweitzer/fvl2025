@@ -56,7 +56,7 @@
             <!-- Lunchtime Concert Series -->
             <x-page-subtitle class="mb-4">Lunchtime Concerts</x-page-subtitle>
             <div
-                class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll [&::-webkit-scrollbar]">
+                class=" bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-y-scroll [&::-webkit-scrollbar]">
 
                 @if (count($lunches) > 0)
                     @foreach ($lunches as $days)
@@ -98,7 +98,7 @@
             <!-- Fairs, Fests, and Outdoor Concerts e.g. Rockfest, Winnebago County Fair -->
             <x-page-subtitle class="mb-4">Fairs, Fests, and Outdoor Concerts</x-page-subtitle>
             <div
-                class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll [&::-webkit-scrollbar]">
+                class=" bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-y-scroll [&::-webkit-scrollbar]">
                 @if (count($fairs) > 0)
                     @foreach ($fairs as $days)
                         <div class="px-4 pt-4  tracking-widest">
@@ -140,7 +140,7 @@
             <!-- National Acts -->
             <x-page-subtitle class="mb-4">National Acts</x-page-subtitle>
             <div
-                class=" bg-slate-50 border border-slate-300 shadow rounded max-h-96 overflow-y-scroll [&::-webkit-scrollbar]">
+                class=" bg-slate-50 border border-slate-300 shadow rounded max-h-[450px] overflow-y-scroll [&::-webkit-scrollbar]">
 
                 @if (count($nationalActs) > 0)
                     @foreach ($nationalActs as $days)
