@@ -8,32 +8,28 @@
         @foreach ($events as $days)
             {{ $days[0]->start_date->format('D M d, Y') }}
             @foreach ($days as $event)
-                <a href="/summer/events/{{ $event->id }}" class="block"
+                <a href="/summer/events/{{ $event->id }}"
+                    class="block px-4 py-4 hover:bg-orange-50 hover:border-t hover:border-t-orange-300 hover:border-b hover:border-b-orange-300"
                     title="Live music in {{ $event->city }} from {{ $event->band }} at {{ $event->venue }} @if ($event->event_name) for {{ $event->event_name }} @endif">
-                    <div
-                        class="px-4 py-4 hover:bg-orange-50 hover:border-t hover:border-t-orange-300 hover:border-b hover:border-b-orange-300">
-                        <div class="font-bold">
-                            {{ $event->band }}
-                        </div>
-                        <div class="text-gray-500 text-sm">
-                            @if ($event->event_name)
-                                {{ $event->event_name }}
-                            @else
-                                {{ $event->venue }}
-                            @endif
-                        </div>
-                        <div class="text-gray-500 text-sm">
-                            {{ $event->city }}
-                        </div>
-                        <div class="text-gray-500 text-sm">
-                            @if ($event->start_date)
-                                {{ $event->start_date->format('M d, Y') }}
-                            @endif
-                            @if ($event->start_time)
-                                - {{ $event->start_time }}
-                            @endif
-                        </div>
+                    <div class="font-bold">
+                        {{ $event->band }}
                     </div>
+                    @if ($event->event_name)
+                        <div class="text-gray-800 text-sm">
+                            {{ $event->event_name }}
+                        </div>
+                    @endif
+                    <div class="text-gray-800 text-sm">
+                        {{ $event->venue }}
+                    </div>
+                    <div class="text-gray-800 text-sm">
+                        {{ $event->city }}
+                    </div>
+                    @if ($event->start_time)
+                        <div class="text-gray-800 text-sm">
+                            {{ $event->start_time }}
+                        </div>
+                    @endif
                     @if (!$loop->last)
                         {{-- <hr> --}}
                     @endif
