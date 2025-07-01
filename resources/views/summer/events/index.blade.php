@@ -6,10 +6,12 @@
         <p class="text-center mb-4 text-gray-600 italic text-sm">Click on any listing for more information.</p>
 
         @foreach ($events as $days)
-            {{ $days[0]->start_date->format('D M d, Y') }}
+            <div class="mt-4 border-b border-b-slate-500 text-orange-600 font-extrabold">
+                {{ $days[0]->start_date->format('D M d, Y') }}
+            </div>
             @foreach ($days as $event)
                 <a href="/summer/events/{{ $event->id }}"
-                    class="block px-4 py-4 hover:bg-orange-50 hover:border-t hover:border-t-orange-300 hover:border-b hover:border-b-orange-300"
+                    class="block px-4 py-4 border-t border-b border-t-transparent border-b-transparent hover:bg-orange-50 hover:border-t hover:border-t-orange-300 hover:border-b hover:border-b-orange-300"
                     title="Live music in {{ $event->city }} from {{ $event->band }} at {{ $event->venue }} @if ($event->event_name) for {{ $event->event_name }} @endif">
                     <div class="font-bold">
                         {{ $event->band }}
@@ -32,7 +34,7 @@
                     @endif
                 </a>
             @endforeach
-            <hr class="mb-8">
+            {{-- <hr class="mb-8"> --}}
         @endforeach
     </x-wrapper-narrow>
 </x-layout>
