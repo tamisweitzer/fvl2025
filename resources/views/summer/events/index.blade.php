@@ -30,9 +30,6 @@
                             {{ $event->start_time }}
                         </div>
                     @endif
-                    @if (!$loop->last)
-                        {{-- <hr> --}}
-                    @endif
                 </a>
             @endforeach
             <hr class="mb-8">

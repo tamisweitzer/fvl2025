@@ -46,10 +46,6 @@
                                         {{ $lunch->start_time }}
                                     </div>
                                 @endif
-
-                                @if (!$loop->last)
-                                    {{-- <hr> --}}
-                                @endif
                             </a>
                         @endforeach
                     @endforeach
@@ -95,9 +91,6 @@
                                         {{ $event->start_time }}
                                     @endif
                                 </div>
-                                @if (!$loop->last)
-                                    {{-- <hr> --}}
-                                @endif
                             </a>
                         @endforeach
                     @endforeach
@@ -143,9 +136,6 @@
                                         {{ $fair->start_time }}
                                     @endif
                                 </div>
-                                @if (!$loop->last)
-                                    {{-- <hr> --}}
-                                @endif
                             </a>
                         @endforeach
                     @endforeach
@@ -193,9 +183,6 @@
                                         {{ $nationalact->start_time }}
                                     @endif
                                 </div>
-                                @if (!$loop->last)
-                                    {{-- <hr> --}}
-                                @endif
                             </a>
                         @endforeach
                     @endforeach
