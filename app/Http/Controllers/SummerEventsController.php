@@ -53,7 +53,7 @@ class SummerEventsController extends Controller {
             'event_type' => request('event_type'),
         ]);
 
-        return redirect('/summer/events');
+        return view('summer.events.create', []);
     }
 
 
