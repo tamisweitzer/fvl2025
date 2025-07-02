@@ -14,6 +14,7 @@ class CityController extends Controller {
         return view('cities.index', ['cities' => City::all()]);
     }
 
+    // GET /cities/{id}
     public function show($id): View {
         $city = City::find($id);
         // $bands = Band::all()->where('city_id', $city->id);
@@ -26,5 +27,20 @@ class CityController extends Controller {
         // TODO when venues are set up. $venues = Venue::all()->where('city_id', $city->id);
 
         return view('cities.show', ['city' => $city, 'events' => $events]);
+    }
+
+    // GET /cities/create
+    public function create() {
+        return view('cities.create', []);
+    }
+
+    // POST /cities/create
+    public function store() {
+        return ("store a new city");
+    }
+
+    // GET /cities/
+    public function edit($id) {
+        return ("TODO: edit this city");
     }
 }

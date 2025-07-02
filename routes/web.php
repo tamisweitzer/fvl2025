@@ -89,6 +89,9 @@ Route::get('/events/{id}', [EventController::class, 'show']);
 
 // Cities
 Route::get('/cities', [CityController::class, 'index']);
+Route::get('/cities/create', [CityController::class, 'create']);
+Route::post('/cities/create', [CityController::class, 'store']);
+Route::get('/cities/{id}/edit', [CityController::class, 'edit']);
 Route::get('/cities/{id}', [CityController::class, 'show']);
 
 // States
