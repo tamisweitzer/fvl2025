@@ -43,6 +43,7 @@
                 class="site-branding inline-block  px-4 pt-2 pb-2 mr-auto text-orange-500 hover:text-slate-400 hover:underline text-xl font-bold small-caps">
                 Fox Valley Live
             </a>
+
             <div class="nav-menu mt-3">
                 <x-nav-link href="/summer/events" :active="request()->is('summer/events')">summer events</x-nav-link>
                 @auth
@@ -52,7 +53,7 @@
                 <x-nav-link href="/cities" :active="request()->is('cities')">cities</x-nav-link>
                 <x-nav-link href="/venues" :active="request()->is('venues')">venues</x-nav-link>
 
-                <span class="inline-block mt-8 sm:mt-0 sm:ml-8">
+                <span class="inline-block mt-8 md:mt-0 md:ml-8">
                     @guest
                         {{-- <x-nav-link href="/login" :active="request()->is('login')">Log in</x-nav-link>
                         <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link> --}}
