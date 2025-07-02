@@ -29,7 +29,9 @@
 
             <x-kv-group class="grid grid-cols-12">
                 <x-kv-key class="col-span-3 sm:col-span-2">Website:</x-kv-key>
-                <x-kv-value class="col-span-9 sm:col-span-10">{{ $city->website_url }}</x-kv-value>
+                <x-kv-value class="col-span-9 sm:col-span-10">
+                    <a href="{{ $city->website_url }}">{{ $city->website_url }}</a>
+                </x-kv-value>
             </x-kv-group>
         </section>
 
