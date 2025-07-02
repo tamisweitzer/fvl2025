@@ -100,4 +100,42 @@ class SummerEventsController extends Controller {
         $event->delete();
         return redirect('/summer/events');
     }
+
+
+    // These routes provide additional interactivity until the site can be properly built out.
+    public function barsIndex() {
+        $events = SummerEvents::all()
+            ->where('event_type', 'is_bar_gig')
+            ->where('start_date', '>=', Date::today())
+            ->sortBy('start_date')
+            ->groupBy('start_date');
+        return view('summer.events.barsindex', ['events' => $events]);
+    }
+
+    public function lunchtimeIndex() {
+        $events = SummerEvents::all()
+            ->where('event_type', 'is_lunch_gig')
+            ->where('start_date', '>=', Date::today())
+            ->sortBy('start_date')
+            ->groupBy('start_date');
+        return view('summer.events.lunchesindex', ['events' => $events]);
+    }
+
+    public function fairsIndex() {
+        $events = SummerEvents::all()
+            ->where('event_type', 'is_fair')
+            ->where('start_date', '>=', Date::today())
+            ->sortBy('start_date')
+            ->groupBy('start_date');
+        return view('summer.events.fairsindex', ['events' => $events]);
+    }
+
+    public function nationalIndex() {
+        $events = SummerEvents::all()
+            ->where('event_type', 'is_national_act')
+            ->where('start_date', '>=', Date::today())
+            ->sortBy('start_date')
+            ->groupBy('start_date');
+        return view('summer.events.nationalactsindex', ['events' => $events]);
+    }
 }

@@ -52,10 +52,14 @@ Route::get('/face2', function () {
 
 // Temporary routes to use to quickly add events while the rest of the site if being built out.
 
-// Events - standard bars and restaurants
+// Summer Events - standard bars and restaurants
 Route::get('/summer/events', [SummerEventsController::class, 'index']);
 Route::get('/summer/events/create', [SummerEventsController::class, 'create']);
 Route::post('/summer/events/create', [SummerEventsController::class, 'store']);
+Route::get('/summer/events/lunchtime-concerts', [SummerEventsController::class, 'lunchtimeIndex']);
+Route::get('/summer/events/bars-restaurants', [SummerEventsController::class, 'barsIndex']);
+Route::get('/summer/events/fairs-fests', [SummerEventsController::class, 'fairsIndex']);
+Route::get('/summer/events/national-bands', [SummerEventsController::class, 'nationalIndex']);
 Route::get('/summer/events/{id}', [SummerEventsController::class, 'show']);
 Route::patch('/summer/events/{id}/patch', [SummerEventsController::class, 'patch']);
 Route::get('/summer/events/{id}/edit', [SummerEventsController::class, 'edit']);

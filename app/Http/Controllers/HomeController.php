@@ -14,31 +14,31 @@ class HomeController extends Controller {
             ->where('event_type', '=', 'is_bar_gig')
             ->where('start_date', '>=', Date::today())
             ->sortBy('start_date')->groupBy('start_date')
-            ->take(15);
+            ->take(3);
 
         $lunches = SummerEvents::all()
             ->where('event_type', '=', 'is_lunch_gig')
             ->where('start_date', '>=', Date::today())
             ->sortBy('start_date')->groupBy('start_date')
-            ->take(15);
+            ->take(3);
 
         $series = SummerEvents::all()
             ->where('event_type', '=', 'is_series')
             ->where('start_date', '>=', Date::today())
             ->sortBy('start_date')->groupBy('start_date')
-            ->take(15);
+            ->take(3);
 
         $fairs = SummerEvents::all()
             ->where('event_type', '=', 'is_fair')
             ->where('start_date', '>=', Date::today())
             ->sortBy('start_date')->groupBy('start_date')
-            ->take(15);
+            ->take(3);
 
         $nationalActs = SummerEvents::all()
             ->where('event_type', "=", 'is_national_act')
             ->where('start_date', '>=', Date::today())
             ->sortBy('start_date')->groupBy('start_date')
-            ->take(15);
+            ->take(3);
 
         return view('home', [
             'events' => $events,
