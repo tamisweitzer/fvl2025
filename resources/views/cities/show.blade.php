@@ -1,7 +1,20 @@
 <x-layout>
+    @auth
+        <x-wrapper-narrow class="mt-8 mb-8 clear-both">
+            <a href="/cities/{{ $city->id }}/edit" class="bg-orange-400 rounded px-3 py-2 float-right">Edit City
+                Profile</a>
+        </x-wrapper-narrow>
+    @endauth
+
     <x-wrapper-narrow class="mt-8 mb-8">
+        @if ($city->banner_img)
+            <div class="bg-slate-200 max-h-[506px] mb-8 overflow-hidden">
+                <img class="object-contain object-center w-full" src="{{ asset($city->banner_img) }}"
+                    alt="Banner image for {{ $city->name }}">
+            </div>
+        @endif
+
         <x-page-title>{{ $city->name }}</x-page-title>
-        <div class="-mt-4 mb-12 text-center">{{ $city->excerpt }}</div>
 
         <section class="mb-8">
             <x-kv-group class="grid grid-cols-12">
@@ -10,7 +23,7 @@
             </x-kv-group>
 
             <x-kv-group class="grid grid-cols-12">
-                <x-kv-key class="col-span-3 sm:col-span-2">Bio:</x-kv-key>
+                <x-kv-key class="col-span-3 sm:col-span-2">About:</x-kv-key>
                 <x-kv-value class="col-span-9 sm:col-span-10">{{ $city->bio }}</x-kv-value>
             </x-kv-group>
 

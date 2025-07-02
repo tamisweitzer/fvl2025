@@ -113,7 +113,7 @@
                     @method('DELETE')
                     <p class="text-red-500 text-bold">Caution: Action cannot be undone.</p>
                     <div class="flex items-center justify-end gap-x-6">
-                        <x-form-button-delete-submit>Delete Band</x-form-button-delete-submit>
+                        <x-form-button-delete-submit>Delete City</x-form-button-delete-submit>
                     </div>
                 </form>
             </div>

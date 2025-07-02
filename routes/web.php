@@ -93,6 +93,7 @@ Route::get('/cities/create', [CityController::class, 'create']);
 Route::post('/cities/create', [CityController::class, 'store']);
 Route::get('/cities/{id}/edit', [CityController::class, 'edit']);
 Route::get('/cities/{id}', [CityController::class, 'show']);
+Route::delete('/cities/{id}', [CityController::class, 'delete']);
 
 // States
 Route::get('/states', [StateController::class, 'index']);

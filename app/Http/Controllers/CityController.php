@@ -77,8 +77,8 @@ class CityController extends Controller {
             'website_url' => request('website_url'),
             'lat' => request('lat'),
             'long' => request('long'),
-            'thumbnail_img' => request('thumbnail_img'),
-            'banner_img' => request('banner_img'),
+            'thumbnail_img' => $thumb,
+            'banner_img' => $banner,
         ];
 
         City::create($city);
@@ -90,5 +90,12 @@ class CityController extends Controller {
     public function edit($id) {
         $city = City::findOrFail($id);
         return view('cities.edit', ['city' => $city]);
+    }
+
+    // Destroy /cities/{id}
+    public function delete($id) {
+        $city = City::findOrFail($id);
+        $city->delete();
+        return redirect('/cities');
     }
 }

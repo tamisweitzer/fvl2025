@@ -1,8 +1,10 @@
 <x-layout>
-    <x-wrapper-narrow class="mt-8 mb-8 clear-both">
-        <a href="/bands/{{ $band->id }}/edit" class="bg-orange-400 rounded px-3 py-2 float-right">Edit Band
-            Profile</a>
-    </x-wrapper-narrow>
+    @auth
+        <x-wrapper-narrow class="mt-8 mb-8 clear-both">
+            <a href="/bands/{{ $band->id }}/edit" class="bg-orange-400 rounded px-3 py-2 float-right">Edit Band
+                Profile</a>
+        </x-wrapper-narrow>
+    @endauth
 
     <x-wrapper-narrow class="mt-8 mb-8">
         @if ($band->banner_img)
