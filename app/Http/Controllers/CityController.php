@@ -35,8 +35,55 @@ class CityController extends Controller {
     }
 
     // POST /cities/create
-    public function store() {
-        return ("store a new city");
+    public function store(Request $request) {
+
+        $request->validate([
+            'name' => 'required|max:255|string',
+            'fullname' => 'nullable|max:255|string',
+            'excerpt' => 'nullable|max:255|string',
+            'bio' => 'nullable|max:2000|string',
+            'website_url' => 'nullable|max:255|string',
+            'lat' => 'nullable|max:255|string',
+            'long' => 'nullable|max:255|string',
+            'thumbnail_img' => 'nullable|mimes:jpg,jpeg,png,webp',
+            'banner_img' => 'nullable|mimes:jpg,jpeg,png,webp'
+        ]);
+
+        $thumb = 'images/default-images/deepai-generic-wisconsin-city01.jpeg';
+        if ($request->has('thumbnail_img')) {
+            $thumbnailFile = $request->file('thumbnail_img');
+            $ext = $thumbnailFile->getClientOriginalExtension();
+            $thumbnailFilename = "city_" .  "_thumbnail_" . time() . "." . $ext;
+            $thumbnailPath = 'uploads/cities/';
+            $thumbnailFile->move($thumbnailPath, $thumbnailFilename);
+            $thumb = $thumbnailPath . $thumbnailFilename;
+        }
+
+        $banner = 'images/default-images/deepai-generic-wisconsin-city02.jpeg';
+        if ($request->has('banner_img')) {
+            $bannerFile = $request->file('banner_img');
+            $ext = $bannerFile->getClientOriginalExtension();
+            $bannerFilename = "city_" . "_banner_" . time() . "." . $ext;
+            $bannerPath = 'uploads/cities/';
+            $bannerFile->move($bannerPath, $bannerFilename);
+            $banner = $bannerPath . $bannerFilename;
+        }
+
+        $city = [
+            'name' => request('name'),
+            'fullname' => request('name'),
+            'excerpt' => request('excerpt'),
+            'bio' => request('bio'),
+            'website_url' => request('website_url'),
+            'lat' => request('lat'),
+            'long' => request('long'),
+            'thumbnail_img' => request('thumbnail_img'),
+            'banner_img' => request('banner_img'),
+        ];
+
+        City::create($city);
+
+        return redirect('/cities');
     }
 
     // GET /cities/
