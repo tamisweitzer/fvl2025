@@ -93,6 +93,9 @@ Route::get('/cities/create', [CityController::class, 'create']);
 Route::post('/cities/create', [CityController::class, 'store']);
 Route::get('/cities/{id}/edit', [CityController::class, 'edit']);
 Route::get('/cities/{id}', [CityController::class, 'show']);
+Route::patch('/cities/{id}/profile', [CityController::class, 'patch_profile']);
+Route::patch('/cities/{id}/thumbnail', [CityController::class, 'patch_thumbnail']);
+Route::patch('/cities/{id}/banner', [CityController::class, 'patch_banner']);
 Route::delete('/cities/{id}', [CityController::class, 'delete']);
 
 // States

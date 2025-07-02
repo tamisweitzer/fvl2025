@@ -40,7 +40,7 @@
         <section class="my-8">
             <x-page-subtitle class="mb-8">All Bands Playing Here</x-page-subtitle>
             <div>
-                @if (count($events) > 0)
+                @if ($events != null && count($events) > 0)
                     @foreach ($events as $days)
                         <div class="px-4 pt-4  tracking-widest">
                             {{ $days[0]->start_date->format('D M d, Y') }}

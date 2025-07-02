@@ -2,9 +2,10 @@
     <x-wrapper-narrow>
         <x-page-title>Edit {{ $city->name }}</x-page-title>
         @auth
-
-            <form action="/cities/{id}/edit" method="post" class="mb-12 text-gray-800" enctype="multipart/form-data">
+            <form action="/cities/{{ $city->id }}/profile" method="post" class="mb-12 text-gray-800"
+                enctype="multipart/form-data">
                 @csrf
+                @method('PATCH')
                 <x-form-group>
                     <x-label-default for="name">City Name</x-label-default>
                     <x-input-text id="name" class="text-gray-600" name="name"

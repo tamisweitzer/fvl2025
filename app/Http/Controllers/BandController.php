@@ -7,8 +7,10 @@ use App\Models\City;
 use App\Models\Event;
 use App\Models\State;
 use Illuminate\View\View;
+use App\Models\SummerEvents;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Date;
 
 class BandController extends Controller {
     public function index(): View {
@@ -74,7 +76,7 @@ class BandController extends Controller {
 
     public function show($id): View {
         $band = Band::find($id);
-        $events = Event::all()->where('band_id', $band->id);
+        $events = Event::all()->where('name', $band->name);
         return view('bands.show', ['band' => $band, 'events' => $events]);
     }
 
@@ -107,7 +109,10 @@ class BandController extends Controller {
             'website_url' => request('website_url'),
         ]);
 
-        $events = Event::all()->where('band_id', $band->id);
+        $events = SummerEvents::all()->where('band', $band->name)
+            ->where('start_date', '>=', Date::today())
+            ->sortBy('start_date')
+            ->groupBy('start_date');;
         return view('bands.show', ['band' => $band, 'events' => $events]);
     }
 
@@ -146,7 +151,7 @@ class BandController extends Controller {
         if (request()->has('banner_img')) {
             $bannerFile = request()->file('banner_img');
             $ext = $bannerFile->getClientOriginalExtension();
-            $bannerFilename = "band_" . $id . "_banner_" . time()  . "." .  $ext;
+            $bannerFilename = "band_" . $id . "_banner_" . time()  . "." . $ext;
             $bannerPath = 'uploads/bands/';
             $bannerFile->move($bannerPath, $bannerFilename);
             $banner = $bannerPath . $bannerFilename;

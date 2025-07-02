@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\Date;
 
 class CityController extends Controller {
     public function index(): View {
-        return view('cities.index', ['cities' => City::all()]);
+        $city = City::get();
+        return view('cities.index', ['cities' => $city]);
     }
 
     // GET /cities/{id}
@@ -91,6 +92,42 @@ class CityController extends Controller {
         $city = City::findOrFail($id);
         return view('cities.edit', ['city' => $city]);
     }
+
+
+    // PATCH /cities/{id}/edit
+    public function patch_profile($id) {
+        request()->validate([
+            'name' => 'required|max:255|string',
+            'fullname' => 'nullable|max:255|string',
+            'excerpt' => 'nullable|max:255|string',
+            'bio' => 'nullable|max:2000|string',
+            'website_url' => 'nullable|max:255|string',
+            'lat' => 'nullable|max:255|string',
+            'long' => 'nullable|max:255|string',
+        ]);
+
+        $city = City::findOrFail($id);
+
+        $city->update([
+            'name' => request('name'),
+            'fullname' => request('fullname'),
+            'excerpt' => request('excerpt'),
+            'bio' => request('bio'),
+            'website_url' => request('website_url'),
+            'lat' => request('lat'),
+            'long' => request('long')
+        ]);
+
+        // Grab any events for this city to display.
+        $events = SummerEvents::all()->where('city', $city->name);
+
+        return view('cities.show', ['city' => $city, 'events' => $events]);
+    }
+
+
+    // save for patch images
+    //  'thumbnail_img' => 'nullable|mimes:jpg,jpeg,png,webp',
+    //        'banner_img' => 'nullable|mimes:jpg,jpeg,png,webp'
 
     // Destroy /cities/{id}
     public function delete($id) {

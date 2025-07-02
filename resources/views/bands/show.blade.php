@@ -5,7 +5,7 @@
                 Profile</a>
         </x-wrapper-narrow>
     @endauth
-
+    {{-- @dd($events); --}}
     <x-wrapper-narrow class="mt-8 mb-8">
         @if ($band->banner_img)
             <div class="bg-slate-200 max-h-[506px] mb-8 overflow-hidden">
@@ -14,7 +14,7 @@
             </div>
         @endif
 
-        <x-page-title>{{ $band->fullname }}</x-page-title>
+        <x-page-title>{{ $band->name }}</x-page-title>
 
         <div class="mb-12">{{ $band->bio }}</div>
 
@@ -36,24 +36,43 @@
 
         <section class="mt-8 mb-8">
             <x-page-subtitle>Upcoming Shows</x-page-subtitle>
-            @foreach ($events as $event)
-                <x-card-wrapper-secondary>
-                    <a href="/events/{{ $event->id }}" class="block">
-                        <div class="text-lg font-semibold text-gray-700">
-                            {{ $event->admin_name }}
-                        </div>
-                        <div class="text-gray-700">
-                            {{ $event->venue->fullname }}
-                            <span> in </span>
-                            {{ $event->venue->city->name }}
-                        </div>
-                        <div class="text-gray-500 text-sm">
-                            {{ $event->event_date }}
-                            {{ $event->event_time }}
-                        </div>
-                    </a>
-                </x-card-wrapper-secondary>
-            @endforeach
+
         </section>
+
+        <div>
+            @if ($events != null && count($events) > 0)
+                @foreach ($events as $days)
+                    <div class="px-4 pt-4  tracking-widest">
+                        {{ $days[0]->start_date->format('D M d, Y') }}
+                    </div>
+
+                    @foreach ($days as $event)
+                        <a href="/summer/events/{{ $event->id }}"
+                            class="block p-4 border-b  hover:bg-orange-50 hover:border-t hover:border-t-orange-300 hover:border-b hover:border-b-orange-300"
+                            title="Live music in {{ $event->city }} from {{ $event->band }} at {{ $event->venue }} @if ($event->event_name) for {{ $event->event_name }} @endif">
+                            <div>
+                                <span class="font-bold">{{ $event->band }}</span>
+                                @if ($event->event_name)
+                                    <span class="font-bold">at {{ $event->event_name }}</span>
+                                @endif
+                                <div class="text-gray-500 text-sm">{{ $event->venue }}
+                                </div>
+                                <div class="text-gray-500 text-sm">{{ $event->city }}</div>
+                            </div>
+                            <div class="text-gray-500 text-sm">
+                                @if ($event->start_time)
+                                    {{ $event->start_time }}
+                                @endif
+                            </div>
+                            @if (!$loop->last)
+                                {{-- <hr> --}}
+                            @endif
+                        </a>
+                    @endforeach
+                @endforeach
+            @else
+                <p class="text-gray-500 italic">There are no bands listed for this city yet.</p>
+            @endif
+        </div>
     </x-wrapper-narrow>
 </x-layout>
