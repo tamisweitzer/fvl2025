@@ -78,10 +78,14 @@
                 </div>
             </form>
         @endauth
+
         @guest
-            <p>Email <a href="mailto:foxvalleylive@gmail.com"
-                    class="font-semibold underline underline-offset-2">foxvalleylive@gmail.com</a> to
-                be added to the site. </p>
+            <div class="mt-12 max-w-2xl mx-auto bg-violet-50 border border-violet-200 text-violet-700 px-4 py-8">
+                <p>Sorry, public access is not available at this time. </p>
+                <p class="mt-4">Please email Tami at <a href="mailto:foxvalleylive@gmail.com"
+                        class="font-semibold underline underline-offset-2">foxvalleylive@gmail.com</a> to
+                    be added to the site.</p>
+            </div>
         @endguest
     </x-wrapper-narrow>
 </x-layout>
