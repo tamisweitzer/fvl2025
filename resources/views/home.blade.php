@@ -17,11 +17,12 @@
 
     <!-- Start summer events -->
     <section class="pb-8">
-        <x-wrapper-narrow class="bg-white shadow-inner border border-fuchsia-200 pt-8 pb-12">
+        <x-wrapper-narrow class="bg-white shadow-lg shadow-fuchsia-100 border border-fuchsia-200 pt-8 pb-12">
             <!-- Lunchtime Concert Series -->
             <x-page-subtitle class="mb-4 tracking-wide font-semibold text-fuchsia-700">Lunchtime
                 Concerts</x-page-subtitle>
-            <p class="mb-2 text-sm text-center text-gray-800">These concerts are generally held in a park or patio, and
+            <p class="mb-2 text-sm text-center text-fuchsia-800">These concerts are generally held in a park or patio,
+                and
                 are intended as lunch time entertainment. Often these are acoustic, or softer music. Many of these have
                 food trucks or vendors near by.</p>
             <div class=" ">
@@ -63,10 +64,10 @@
 
     <section class="pb-8 ">
         <!-- Regular Bar Events -->
-        <x-wrapper-narrow class="bg-white shadow-inner border border-blue-200 pt-8 pb-12">
+        <x-wrapper-narrow class="bg-white shadow-lg shadow-blue-100 border border-blue-200 pt-8 pb-12">
             <x-page-subtitle class="mb-4 tracking-wide font-semibold text-blue-700">Live Bands at Bars and
                 Restaurants</x-page-subtitle>
-            <p class="mb-2 text-sm text-center text-gray-800">The list here includes the typical live band at a bar,
+            <p class="mb-2 text-sm text-center text-blue-800">The list here includes the typical live band at a bar,
                 usually held indoors throughout the year, but may be outside during the summer.</p>
             <div class="">
                 @if (count($events) > 0)
@@ -109,12 +110,12 @@
     </section>
 
     <section class="pb-8">
-        <x-wrapper-narrow class="bg-white shadow-inner border border-orange-200 pt-8 pb-12">
+        <x-wrapper-narrow class="bg-white shadow-lg shadow-orange-100 border border-orange-200 pt-8 pb-12">
             <!-- Fairs, Fests, and Outdoor Concerts e.g. Rockfest, Winnebago County Fair -->
             <x-page-subtitle class="mb-4 tracking-wide font-semibold text-orange-700">Fairs, Fests, and
                 Outdoor
                 Concerts</x-page-subtitle>
-            <p class="mb-2 text-sm text-center text-gray-800">This list contains the yearly fests, fairs, and outdoor
+            <p class="mb-2 text-sm text-center text-orange-800">This list contains the yearly fests, fairs, and outdoor
                 concerts that are not specifically tied to a bar or restaurant.</p>
 
             <div class=" ">
@@ -157,11 +158,12 @@
     </section>
 
     <section class="pb-8">
-        <x-wrapper-narrow class="bg-white shadow-inner border border-violet-200 pt-8 pb-12">
+        <x-wrapper-narrow class="bg-white shadow-lg shadow-violet-100 border border-violet-200 pt-8 pb-12">
             <!-- National Acts -->
             <x-page-subtitle class="mb-4 tracking-wide font-semibold text-violet-700">National
                 Acts</x-page-subtitle>
-            <p class="mb-2 text-sm text-center text-gray-800">These are stand-alone concerts specifically for a national
+            <p class="mb-2 text-sm text-center text-violet-800">These are stand-alone concerts specifically for a
+                national
                 artist. If
                 a national act is playing at Waterfest, for example, that artist would be listed in the fairs and fests
                 section, not here.</p>
