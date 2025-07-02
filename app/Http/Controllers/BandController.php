@@ -76,7 +76,12 @@ class BandController extends Controller {
 
     public function show($id): View {
         $band = Band::find($id);
-        $events = Event::all()->where('name', $band->name);
+        $events = SummerEvents::all()
+            ->where('band', $band->name)
+            ->where('start_date', '>=', Date::today())
+            ->sortBy('start_date')
+            ->groupBy('start_date');
+
         return view('bands.show', ['band' => $band, 'events' => $events]);
     }
 
@@ -109,7 +114,7 @@ class BandController extends Controller {
             'website_url' => request('website_url'),
         ]);
 
-        $events = SummerEvents::all()->where('band', $band->name)
+        $events = SummerEvents::all()->where('band', 'like', '%' . $band->name . '%')
             ->where('start_date', '>=', Date::today())
             ->sortBy('start_date')
             ->groupBy('start_date');;
