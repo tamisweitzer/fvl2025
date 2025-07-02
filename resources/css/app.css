@@ -82,7 +82,7 @@ body {
   }
 
   .nav-menu a {
-    @apply text-slate-400 block font-bold active:bg-slate-800;
+    @apply text-slate-200 block font-bold active:bg-slate-800;
   }
 
   .nav-menu.active {
