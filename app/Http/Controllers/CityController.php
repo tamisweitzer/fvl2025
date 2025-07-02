@@ -41,6 +41,7 @@ class CityController extends Controller {
 
     // GET /cities/
     public function edit($id) {
-        return ("TODO: edit this city");
+        $city = City::findOrFail($id);
+        return view('cities.edit', ['city' => $city]);
     }
 }
