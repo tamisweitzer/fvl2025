@@ -173,6 +173,16 @@ class SummerEventsController extends Controller {
         return view('summer.events.listvenues', ['venues' => $venues]);
     }
 
+    public function listEventNames() {
+        $events = SummerEvents::select('id', 'event_name')
+            ->where('start_date', '>=', Date::today())
+            ->orderBy('event_name', 'ASC')
+            ->groupBy('event_name')
+            ->get()
+            ->sortBy('event_name', SORT_NATURAL | SORT_FLAG_CASE);
+
+        return view('summer.events.listeventnames', ['events' => $events]);
+    }
 
     public function showBand($id) {
         $band = SummerEvents::findOrFail($id);
