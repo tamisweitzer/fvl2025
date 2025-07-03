@@ -67,7 +67,7 @@ Route::get('/summer/events/bands/{id}', [SummerEventsController::class, 'showBan
 
 Route::get('/summer/events/event/{id}', [SummerEventsController::class, 'showEvent']);
 Route::get('/summer/events/cities', [SummerEventsController::class, 'listCities']);
-Route::get('/summer/events/city/{id}', [SummerEventsController::class, 'showCity']);
+Route::get('/summer/events/cities/{id}', [SummerEventsController::class, 'showCity']);
 Route::get('/summer/events/venues', [SummerEventsController::class, 'listVenues']);
 Route::get('/summer/events/venue/{id}', [SummerEventsController::class, 'showVenue']);
 

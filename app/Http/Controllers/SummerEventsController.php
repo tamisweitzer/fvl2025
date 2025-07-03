@@ -140,7 +140,50 @@ class SummerEventsController extends Controller {
     }
 
 
+    public function listBands() {
+        $bands = SummerEvents::select('id', 'band')
+            ->where('start_date', '>=', Date::today())
+            ->orderBy('band', 'ASC')
+            ->groupBy('band')
+            ->get()
+            ->sortBy('band', SORT_NATURAL | SORT_FLAG_CASE);
 
+        return view('summer.events.listbands', ['bands' => $bands]);
+    }
+
+    public function listCities() {
+        $cities = SummerEvents::select('id', 'city')
+            ->where('start_date', '>=', Date::today())
+            ->orderBy('city', 'ASC')
+            ->groupBy(groups: 'city')
+            ->get()
+            ->sortBy('city', SORT_NATURAL | SORT_FLAG_CASE);
+
+        return view('summer.events.listcities', ['cities' => $cities]);
+    }
+
+    public function listVenues() {
+        $venues = SummerEvents::select('id', 'venue')
+            ->where('start_date', '>=', Date::today())
+            ->orderBy('venue', 'ASC')
+            ->groupBy('venue')
+            ->get()
+            ->sortBy('city', SORT_NATURAL | SORT_FLAG_CASE);
+
+        return view('summer.events.listvenues', ['venues' => $venues]);
+    }
+
+
+    public function showBand($id) {
+        $band = SummerEvents::findOrFail($id);
+        $events = SummerEvents::all()
+            ->where('band', $band->band)
+            ->where('start_date', '>=', Date::today())
+            ->sortBy('start_date')
+            ->groupBy('start_date');
+
+        return view('summer.events.showband', ['events' => $events]);
+    }
     public function showVenue($id) {
         $venue = SummerEvents::findOrFail($id);
         $events = SummerEvents::all()
