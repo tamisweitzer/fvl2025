@@ -206,7 +206,15 @@
                     </div>
                 @endif
             </div>
+
         </x-wrapper-narrow>
     </section>
     <!-- End summer events -->
+
+    <section class="pb-8">
+        <x-wrapper-narrow>
+            <x-see-more-events></x-see-more-events>
+        </x-wrapper-narrow>
+    </section>
+
 </x-layout>
