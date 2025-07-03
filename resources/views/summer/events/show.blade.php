@@ -94,5 +94,7 @@
                 @endauth
             </x-card-single-wrapper>
         </section>
+
+        <x-see-more-events></x-see-more-events>
     </x-wrapper-narrow>
 </x-layout>

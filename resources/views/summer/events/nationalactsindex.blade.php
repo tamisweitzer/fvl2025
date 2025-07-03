@@ -41,18 +41,6 @@
             @endforeach
         @endforeach
 
-        <div class="mt-12 mb-4">
-            <a href="/summer/events"
-                class="bg-orange-100 border border-orange-300 hover:bg-orange-200 px-3 py-2 rounded inline-block shadow-md">See
-                all events, in
-                all categories</a>
-        </div>
-        <div class="mb-4">
-            <a href="/cities"
-                class="bg-orange-100 border border-orange-300 hover:bg-orange-200 px-3 py-2 rounded inline-block shadow-md">Search
-                for
-                events by
-                city</a>
-        </div>
+        <x-see-more-events></x-see-more-events>
     </x-wrapper-narrow>
 </x-layout>

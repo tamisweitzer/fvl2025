@@ -36,5 +36,7 @@
             @endforeach
             {{-- <hr class="mb-8"> --}}
         @endforeach
+
+        <x-see-more-events></x-see-more-events>
     </x-wrapper-narrow>
 </x-layout>
