@@ -139,7 +139,9 @@ class SummerEventsController extends Controller {
         return view('summer.events.nationalactsindex', ['events' => $events]);
     }
 
-    public function venuesIndex($id) {
+
+
+    public function showVenue($id) {
         $venue = SummerEvents::findOrFail($id);
         $events = SummerEvents::all()
             ->where('venue', $venue->venue)
@@ -147,10 +149,10 @@ class SummerEventsController extends Controller {
             ->sortBy('start_date')
             ->groupBy('start_date');
 
-        return view('summer.events.venuesindex', ['events' => $events]);
+        return view('summer.events.showvenue', ['events' => $events]);
     }
 
-    public function citiesIndex($id) {
+    public function showCity($id) {
         $event = SummerEvents::findOrFail($id);
         $events = SummerEvents::all()
             ->where('city', $event->city)
@@ -158,6 +160,17 @@ class SummerEventsController extends Controller {
             ->sortBy('start_date')
             ->groupBy('start_date');
 
-        return view('summer.events.citiesindex', ['events' => $events]);
+        return view('summer.events.showcity', ['events' => $events]);
+    }
+
+    public function showEvent($id) {
+        $event = SummerEvents::findOrFail($id);
+        $events = SummerEvents::all()
+            ->where('event_name', $event->event_name)
+            ->where('start_date', '>=', Date::today())
+            ->sortBy('start_date')
+            ->groupBy('start_date');
+
+        return view('summer.events.showevent', ['events' => $events]);
     }
 }
