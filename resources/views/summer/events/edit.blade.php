@@ -101,7 +101,7 @@
 
                     <div class="flex items-center justify-between gap-x-6 w-full">
                         <p class="text-red-500 text-bold">Caution: This action cannot be undone.</p>
-                        <x-form-button-submit>Delete Event</x-form-button-submit>
+                        <x-form-button-delete-submit>Delete Event</x-form-button-delete-submit>
                     </div>
                 </form>
             </div>
