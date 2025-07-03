@@ -32,7 +32,7 @@
                             <x-kv-group class="grid grid-cols-12">
                                 <x-kv-key class="col-span-3 sm:col-span-2">Venue:</x-kv-key>
                                 <x-kv-value class="col-span-9 sm:col-span-10">
-                                    <a href="/summer/events/venue/{{ $event->id }}"
+                                    <a href="/summer/events/venues/{{ $event->id }}"
                                         class="inline-block underline decoration decoration-orange-300 hover:bg-orange-100"
                                         title="Search all local, live music at {{ $event->venue }} in {{ $event->city }}, WI this summer.">{{ $event->venue }}</a>
                                 </x-kv-value>
