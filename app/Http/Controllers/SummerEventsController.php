@@ -138,4 +138,15 @@ class SummerEventsController extends Controller {
             ->groupBy('start_date');
         return view('summer.events.nationalactsindex', ['events' => $events]);
     }
+
+    public function venuesIndex($id) {
+        $venue = SummerEvents::findOrFail($id);
+        $events = SummerEvents::all()
+            ->where('venue', $venue->venue)
+            ->where('start_date', '>=', Date::today())
+            ->sortBy('start_date')
+            ->groupBy('start_date');
+
+        return view('summer.events.venuesindex', ['events' => $events]);
+    }
 }
