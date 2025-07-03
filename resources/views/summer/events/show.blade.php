@@ -23,7 +23,7 @@
                                 <x-kv-value class="col-span-9 sm:col-span-10">
                                     <a href="/summer/events/event-name/{{ $event->id }}"
                                         class="inline-block underline decoration decoration-orange-300 hover:bg-orange-100"
-                                        title="Search all local, live music at {{ $event->event_name }}">{{ $event->event_name }}</a>
+                                        title="Search all local, live music at {{ $event->event_name }} in {{ $event->city }} this summer.">{{ $event->event_name }}</a>
                                 </x-kv-value>
                             </x-kv-group>
                         @endif
@@ -34,7 +34,7 @@
                                 <x-kv-value class="col-span-9 sm:col-span-10">
                                     <a href="/summer/events/venue/{{ $event->id }}"
                                         class="inline-block underline decoration decoration-orange-300 hover:bg-orange-100"
-                                        title="Search all local, live music at {{ $event->venue }}">{{ $event->venue }}</a>
+                                        title="Search all local, live music at {{ $event->venue }} in {{ $event->city }}, WI this summer.">{{ $event->venue }}</a>
                                 </x-kv-value>
                             </x-kv-group>
                         @endif
@@ -45,7 +45,7 @@
                             <x-kv-value class="col-span-9 sm:col-span-10">
                                 <a href="/summer/events/city/{{ $event->id }}"
                                     class="inline-block underline decoration decoration-orange-300 hover:bg-orange-100"
-                                    title="Search all local, live music at {{ $event->city }}, WI this summer.">{{ $event->city }}</a>
+                                    title="Search all local, live music in {{ $event->city }}, WI this summer.">{{ $event->city }}</a>
                             </x-kv-value>
                         </x-kv-group>
 
