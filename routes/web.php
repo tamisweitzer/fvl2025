@@ -69,7 +69,7 @@ Route::get('/summer/events/event/{id}', [SummerEventsController::class, 'showEve
 Route::get('/summer/events/cities', [SummerEventsController::class, 'listCities']);
 Route::get('/summer/events/cities/{id}', [SummerEventsController::class, 'showCity']);
 Route::get('/summer/events/venues', [SummerEventsController::class, 'listVenues']);
-Route::get('/summer/events/venue/{id}', [SummerEventsController::class, 'showVenue']);
+Route::get('/summer/events/venues/{id}', [SummerEventsController::class, 'showVenue']);
 
 Route::get('/summer/events/{id}', [SummerEventsController::class, 'show']);
 Route::patch('/summer/events/{id}/patch', [SummerEventsController::class, 'patch']);
