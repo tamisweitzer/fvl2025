@@ -61,6 +61,7 @@ Route::get('/summer/events/bars-restaurants', [SummerEventsController::class, 'b
 Route::get('/summer/events/fairs-fests', [SummerEventsController::class, 'fairsIndex']);
 Route::get('/summer/events/national-bands', [SummerEventsController::class, 'nationalIndex']);
 Route::get('/summer/events/venue/{id}', [SummerEventsController::class, 'venuesIndex']);
+Route::get('/summer/events/city/{id}', [SummerEventsController::class, 'citiesIndex']);
 Route::get('/summer/events/{id}', [SummerEventsController::class, 'show']);
 Route::patch('/summer/events/{id}/patch', [SummerEventsController::class, 'patch']);
 Route::get('/summer/events/{id}/edit', [SummerEventsController::class, 'edit']);

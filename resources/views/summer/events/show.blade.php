@@ -20,21 +20,31 @@
                         @if ($event->event_name)
                             <x-kv-group class="grid grid-cols-12">
                                 <x-kv-key class="col-span-3 sm:col-span-2">Event:</x-kv-key>
-                                <x-kv-value class="col-span-9 sm:col-span-10">{{ $event->event_name }}</x-kv-value>
+                                <x-kv-value class="col-span-9 sm:col-span-10">
+                                    <a href="/summer/events/event-name/{{ $event->id }}"
+                                        class="inline-block underline decoration decoration-orange-300 hover:bg-orange-100"
+                                        title="Search all local, live music at {{ $event->event_name }}">{{ $event->event_name }}</a>
+                                </x-kv-value>
                             </x-kv-group>
                         @endif
 
                         @if ($event->venue)
                             <x-kv-group class="grid grid-cols-12">
                                 <x-kv-key class="col-span-3 sm:col-span-2">Venue:</x-kv-key>
-                                <x-kv-value class="col-span-9 sm:col-span-10">{{ $event->venue }}</x-kv-value>
+                                <x-kv-value class="col-span-9 sm:col-span-10">
+                                    <a href="/summer/events/venue/{{ $event->id }}"
+                                        class="inline-block underline decoration decoration-orange-300 hover:bg-orange-100"
+                                        title="Search all local, live music at {{ $event->venue }}">{{ $event->venue }}</a>
+                                </x-kv-value>
                             </x-kv-group>
                         @endif
 
 
                         <x-kv-group class="grid grid-cols-12">
                             <x-kv-key class="col-span-3 sm:col-span-2">City:</x-kv-key>
-                            <x-kv-value class="col-span-9 sm:col-span-10">{{ $event->city }}</x-kv-value>
+                            <x-kv-value class="col-span-9 sm:col-span-10">
+                                <a href="/summer/events/city/{{ $event->id }}">{{ $event->city }}</a>
+                            </x-kv-value>
                         </x-kv-group>
 
                         <x-kv-group class="grid grid-cols-12">
