@@ -30,22 +30,22 @@
         <a href="/summer/events/lunchtime-concerts"
             class="mb-4 mr-3 bg-orange-50 border border-orange-200 text-orange-700 hover:bg-orange-200 px-3 py-2 rounded inline-block shadow-md"
             title="Filter for live bands playing lunch time concerts.">
-            Sort by lunch time concerts
+            See all lunch time concerts
         </a>
         <a href="/summer/events/bars-restaurants"
             class="mb-4 mr-3 bg-orange-50 border border-orange-200 text-orange-700 hover:bg-orange-200 px-3 py-2 rounded inline-block shadow-md"
             title="Filter for live bands playing at bars or restaurants">
-            Sort by bar gigs
+            See all bar gigs
         </a>
         <a href="/summer/events/fairs-fests"
             class="mb-4 mr-3 bg-orange-50 border border-orange-200 text-orange-700 hover:bg-orange-200 px-3 py-2 rounded inline-block shadow-md"
             title="Filter for live bands playing at fairs, fests, or outdoor concerts.">
-            Sort by fairs and fests
+            See all fairs and fests
         </a>
         <a href="/summer/events/national-bands"
             class="mb-4 mr-3 bg-orange-50 border border-orange-200 text-orange-700 hover:bg-orange-200 px-3 py-2 rounded inline-block shadow-md"
             title="Filter for national recording artists touring Wisconsin.">
-            Sort by national acts
+            See all national acts
         </a>
     </div>
 </div>
