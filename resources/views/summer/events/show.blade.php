@@ -14,7 +14,12 @@
                     <div class="flex flex-col justify-end">
                         <x-kv-group class="grid grid-cols-12">
                             <x-kv-key class="col-span-3 sm:col-span-2">Band(s):</x-kv-key>
-                            <x-kv-value class="col-span-9 sm:col-span-10">{{ $event->band }}</x-kv-value>
+                            <x-kv-value class="col-span-9 sm:col-span-10">
+                                <a href="/summer/events/bands/{{ $event->id }}"
+                                    class="inline-block underline decoration decoration-orange-300 hover:bg-orange-100"
+                                    title="Search all local, live music for {{ $event->band }} in Wisconsin this summer.">{{ $event->band }}
+                                </a>
+                            </x-kv-value>
                         </x-kv-group>
 
                         @if ($event->event_name)
