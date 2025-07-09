@@ -12,8 +12,12 @@
     <title>Fox Valley Live - Wisconsin's home for the best live music in the Fox Valley and beyond!
     </title>
 
+    @if (Str::startsWith($current = url()->current(), 'https://www'))
+        <link rel="canonical" href="{{ str_replace('https://www.', 'https://', $current) }}">
+    @else
+        <link rel="canonical" href="{{ $current }}">
+    @endif
     <link rel="icon" href="{{ asset('/images/favicon.ico') }}">
-
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
