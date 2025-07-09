@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
-        content="Home for local, live music in the Fox Valley, WI. Extensive list of bar gigs, summer concert series, and lunchtime shows. List of all bands and venues in the area covering the Fox Cities from Appleton to Green Bay.">
+        content="Your home for local, live music in Wisconsin's Fox Valley. Browse our extensive list of summer concerts, lunchtime shows, bar gigs, bands, and venues in the area covering the Fox Cities from Appleton to Green Bay, and beyond.">
     <meta name="keywords"
-        content="band, bands, music, live music, live band, live bands, concert, concerts, fox valley, fox cities, appleton, green bay, northest wisconson, gigs">
+        content="band, bands, music, live music, live band, live bands, concert, concerts, fox valley, fox cities, appleton, green bay, northeast wisconson, gigs">
     <meta name="author" content="Tami Sweitzer tamisweitzer.com">
     <title>Fox Valley Live - Wisconsin's home for the best live music in the Fox Valley and beyond!
     </title>
