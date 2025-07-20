@@ -16,7 +16,7 @@
     </section>
 
     <!-- Start summer events -->
-    <section class="pb-8">
+    <section class="pb-8 mx-2">
         <x-wrapper-narrow class="bg-white shadow-lg shadow-fuchsia-100 border border-fuchsia-200 pt-8 pb-12">
             <!-- Lunchtime Concert Series -->
             <x-page-subtitle class="mb-4 tracking-wide font-semibold text-fuchsia-700">Lunchtime
@@ -62,7 +62,7 @@
         </x-wrapper-narrow>
     </section>
 
-    <section class="pb-8 ">
+    <section class="pb-8 mx-2">
         <!-- Regular Bar Events -->
         <x-wrapper-narrow class="bg-white shadow-lg shadow-blue-100 border border-blue-200 pt-8 pb-12">
             <x-page-subtitle class="mb-4 tracking-wide font-semibold text-blue-700">Live Bands at Bars and
@@ -109,7 +109,7 @@
         </x-wrapper-narrow>
     </section>
 
-    <section class="pb-8">
+    <section class="pb-8 mx-2">
         <x-wrapper-narrow class="bg-white shadow-lg shadow-orange-100 border border-orange-200 pt-8 pb-12">
             <!-- Fairs, Fests, and Outdoor Concerts e.g. Rockfest, Winnebago County Fair -->
             <x-page-subtitle class="mb-4 tracking-wide font-semibold text-orange-700">Fairs, Fests, and
@@ -157,7 +157,7 @@
         </x-wrapper-narrow>
     </section>
 
-    <section class="pb-8">
+    <section class="pb-8 mx-2">
         <x-wrapper-narrow class="bg-white shadow-lg shadow-violet-100 border border-violet-200 pt-8 pb-12">
             <!-- National Acts -->
             <x-page-subtitle class="mb-4 tracking-wide font-semibold text-violet-700">National
@@ -211,7 +211,7 @@
     </section>
     <!-- End summer events -->
 
-    <section class="pb-8">
+    <section class="pb-8 mx-2">
         <x-wrapper-narrow>
             <x-see-more-events></x-see-more-events>
         </x-wrapper-narrow>
