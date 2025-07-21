@@ -1,10 +1,6 @@
 <!-- These are the links to "see more events by city, by category.." at the bottom of list pages. -->
 
 <div class="grid grid-cols-2 gap-4 my-12">
-    <x-see-more-link href="/summer/events">
-        <h3 class="text-xl font-bold border-b border-b-white mb-4 pb-4">See the Full List of Upcoming Music</h3>
-        <div>This is the complete list of upcoming live music, sorted by date.</div>
-    </x-see-more-link>
     <x-see-more-link href="/summer/events/lunchtime-concerts">
         <h3 class="text-xl font-bold border-b border-b-inherit-300 mb-4 pb-4">Lunchtime Concerts</h3>
         <div>These concerts are generally held in a park or patio, and are intended as lunch time entertainment.
@@ -51,5 +47,10 @@
     <x-see-more-link href="/summer/events/cities">
         <h3 class="text-xl font-bold border-b border-b-white mb-4 pb-4">Find Music by City</h3>
         <div>See which bands are playing at venues in your city.</div>
+    </x-see-more-link>
+
+    <x-see-more-link href="/summer/events">
+        <h3 class="text-xl font-bold border-b border-b-white mb-4 pb-4">See the Full List of Upcoming Music</h3>
+        <div>This is the complete list of upcoming live music, sorted by date.</div>
     </x-see-more-link>
 </div>
