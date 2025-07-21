@@ -1,5 +1,5 @@
 <x-layout>
-    <x-wrapper-narrow class="mt-8 mb-8 mx-auto">
+    <x-wrapper-narrow class="mt-8 mb-8 mx-auto p-4">
         {{-- @dd($events) --}}
 
         <x-page-title>

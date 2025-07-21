@@ -1,5 +1,5 @@
 <x-layout>
-    <x-wrapper-narrow class="mt-8 mb-8 mx-auto">
+    <x-wrapper-narrow class="mt-8 mb-8 mx-auto p-4">
         <x-page-title>{{ $events->first()->first()->venue }}</x-page-title>
         <p class="-mt-4 mb-12 text-center">The complete list of live bands playing at
             {{ $events->first()->first()->venue }} in {{ $events->first()->first()->city }}, WI this

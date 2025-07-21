@@ -1,5 +1,5 @@
 <x-layout>
-    <x-wrapper-narrow class="mt-8 mb-8 mx-auto">
+    <x-wrapper-narrow class="mt-8 mb-8 mx-auto p-4">
         <x-page-title>{{ $event->band }} at @if ($event->event_name)
                 {{ $event->event_name }}
             @else

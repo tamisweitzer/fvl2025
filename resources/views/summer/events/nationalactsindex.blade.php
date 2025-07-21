@@ -1,6 +1,6 @@
 <x-layout>
     {{-- @dd($events); --}}
-    <x-wrapper-narrow class="mt-8 mb-8 mx-auto">
+    <x-wrapper-narrow class="mt-8 mb-8 mx-auto p-4">
         <x-page-title>National Bands Touring Wisconsin</x-page-title>
         <p class="-mt-4 text-center">The complete list of stand-alone concerts for a national
             artist. .</p>

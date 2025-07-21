@@ -1,5 +1,5 @@
 <x-layout>
-    <x-wrapper-narrow class="mt-8 mb-8 mx-auto">
+    <x-wrapper-narrow class="mt-8 mb-8 mx-auto p-4">
         <x-page-title>Event name list</x-page-title>
         <p class="-mt-4 mb-12 text-center">The complete list of events by event name (e.g. Paperfest).</p>
         <p class="text-center mb-4 text-gray-600 italic text-sm">Click on any listing for more information.</p>

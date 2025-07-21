@@ -1,6 +1,6 @@
 <x-layout>
     {{-- @dd($events); --}}
-    <x-wrapper-narrow class="mt-8 mb-8 mx-auto">
+    <x-wrapper-narrow class="mt-8 mb-8 mx-auto p-4">
         <x-page-title>Fairs, Fests, and
             Outdoor
             Concerts</x-page-title>
