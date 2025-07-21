@@ -109,34 +109,34 @@
     </main>
 
     <footer class="bg-slate-700 text-slate-400 py-16 text-center text-sm dark:text-white/70">
-        {{-- <div class="wrapper max-w-5xl mx-auto ">
+        <div class="wrapper max-w-5xl mx-auto ">
             <div class="flex flex-col sm:flex-row gap-4">
+                {{-- <div class="col flex-1">
+                    <a href="#" class="block p-4">link</a>
+                    <a href="#" class="block p-4">link</a>
+                    <a href="#" class="block p-4">link</a>
+                    <a href="#" class="block p-4">link</a>
+                </div> --}}
+
+                {{-- <div class="mt-4 border-b border-b-slate-600 sm:hidden"></div> --}}
+
+                {{-- <div class="col flex-1">
+                    <a href="#" class="block p-4">link</a>
+                    <a href="#" class="block p-4">link</a>
+                    <a href="#" class="block p-4">link</a>
+                    <a href="#" class="block p-4">link</a>
+                </div> --}}
+
+                {{-- <div class="mt-4 border-b border-b-slate-600 sm:hidden"></div> --}}
+
                 <div class="col flex-1">
-                    <a href="#" class="block p-4">link</a>
-                    <a href="#" class="block p-4">link</a>
-                    <a href="#" class="block p-4">link</a>
-                    <a href="#" class="block p-4">link</a>
-                </div>
-
-                <div class="mt-4 border-b border-b-slate-600 sm:hidden"></div>
-
-                <div class="col flex-1">
-                    <a href="#" class="block p-4">link</a>
-                    <a href="#" class="block p-4">link</a>
-                    <a href="#" class="block p-4">link</a>
-                    <a href="#" class="block p-4">link</a>
-                </div>
-
-                <div class="mt-4 border-b border-b-slate-600 sm:hidden"></div>
-
-                <div class="col flex-1">
-                    <a href="#" class="block p-4">link</a>
-                    <a href="#" class="block p-4">link</a>
-                    <a href="#" class="block p-4">link</a>
-                    <a href="#" class="block p-4">link</a>
+                    <a href="/about" class="block p-4">about</a>
+                    {{-- <a href="/contact" class="block p-4">contact</a> --}}
+                    {{-- <a href="#" class="block p-4">link</a> --}}
+                    {{-- <a href="#" class="block p-4">link</a> --}}
                 </div>
             </div>
-        </div> --}}
+        </div>
     </footer>
     <script>
         const hamburger = document.querySelector(".hamburger");

@@ -1,51 +1,55 @@
 <!-- These are the links to "see more events by city, by category.." at the bottom of list pages. -->
 
-<div {{ $attributes->merge(['class' => 'mt-12']) }}>
-    <div>
-        <a href="/summer/events"
-            class="mb-4 mr-3 bg-orange-50 border border-orange-200 text-orange-700 hover:bg-orange-200 px-3 py-2 rounded inline-block shadow-md"
-            title="View the complete list of live bands playing in the Fox Cities of Wisconsin.">
-            See <em>all</em> live music
-        </a>
-        <a href="/summer/events/bands"
-            class="mb-4 mr-3 bg-orange-50 border border-orange-200 text-orange-700 hover:bg-orange-200 px-3 py-2 rounded inline-block shadow-md"
-            title="Find out where your favorite band is playing this week.">
-            Search by band
-        </a>
-        <a href="/summer/events/cities"
-            class="mb-4 mr-3 bg-orange-50 border border-orange-200 text-orange-700 hover:bg-orange-200 px-3 py-2 rounded inline-block shadow-md"
-            title="Find live music in your city">
-            Search by city
-        </a>
-        <a href="/summer/events/venues"
-            class="mb-4 mr-3 bg-orange-50 border border-orange-200 text-orange-700 hover:bg-orange-200 px-3 py-2 rounded inline-block shadow-md"
-            title="Find live music playing at your favorite bar.">
-            Search by venue
-        </a>
-        <a href="/summer/events/event-names"
-            class="mb-4 mr-3 bg-orange-50 border border-orange-200 text-orange-700 hover:bg-orange-200 px-3 py-2 rounded inline-block shadow-md"
-            title="Find live music at a particular event, such as Paperfest.">
-            Search by event name
-        </a>
-        <a href="/summer/events/lunchtime-concerts"
-            class="mb-4 mr-3 bg-orange-50 border border-orange-200 text-orange-700 hover:bg-orange-200 px-3 py-2 rounded inline-block shadow-md"
-            title="Filter for live bands playing lunch time concerts.">
-            See all lunch time concerts
-        </a>
-        <a href="/summer/events/bars-restaurants"
-            class="mb-4 mr-3 bg-orange-50 border border-orange-200 text-orange-700 hover:bg-orange-200 px-3 py-2 rounded inline-block shadow-md"
-            title="Filter for live bands playing at bars or restaurants">
-            See all bar gigs
-        </a>
-        <a href="/summer/events/fairs-fests"
-            class="mb-4 mr-3 bg-orange-50 border border-orange-200 text-orange-700 hover:bg-orange-200 px-3 py-2 rounded inline-block shadow-md"
-            title="Filter for live bands playing at fairs, fests, or outdoor concerts.">
-            See all fairs and fests
-        </a>
-        <a href="/summer/events/national-bands"
-            class="mb-4 mr-3 bg-orange-50 border border-orange-200 text-orange-700 hover:bg-orange-200 px-3 py-2 rounded inline-block shadow-md"
-            title="Filter for national recording artists touring Wisconsin.">
-            See all national acts
-        </a>
-    </div>
+<div class="grid grid-cols-2 gap-4 my-12">
+    <x-see-more-link href="/summer/events">
+        <h3 class="text-xl font-bold border-b border-b-white mb-4 pb-4">See the Full List of Upcoming Music</h3>
+        <div>This is the complete list of upcoming live music, sorted by date.</div>
+    </x-see-more-link>
+    <x-see-more-link href="/summer/events/lunchtime-concerts">
+        <h3 class="text-xl font-bold border-b border-b-inherit-300 mb-4 pb-4">Lunchtime Concerts</h3>
+        <div>These concerts are generally held in a park or patio, and are intended as lunch time entertainment.
+            Often these are acoustic, or softer music. Many of these have food trucks or vendors near by.</div>
+    </x-see-more-link>
+
+    <x-see-more-link href="/summer/events/fairs-fests">
+        <h3 class="text-xl font-bold border-b border-b-white mb-4 pb-4">Fairs, Fests, and Outdoor Concerts</h3>
+        <div>This list contains the yearly fests, fairs, and outdoor concerts that are not specifically tied to
+            a bar or restaurant.</div>
+    </x-see-more-link>
+
+    <x-see-more-link href="/summer/events/national-bands">
+        <h3 class="text-xl font-bold border-b border-b-white mb-4 pb-4">Bar and
+            Restaurant Gigs</h3>
+        <div>The list here includes the typical live band at a
+            bar,
+            usually held indoors throughout the year, but may be outside during the summer.</div>
+    </x-see-more-link>
+
+    <x-see-more-link href="/summer/events/national-bands">
+        <h3 class="text-xl font-bold border-b border-b-white mb-4 pb-4">National Acts</h3>
+        <div>These are stand-alone concerts specifically for a national artist. </p>
+            <p>If a national act is playing at
+                Waterfest, for example, that artist would be listed in the fairs and fests section, not here.
+        </div>
+    </x-see-more-link>
+
+    <x-see-more-link href="/summer/events/bands">
+        <h3 class="text-xl font-bold border-b border-b-white mb-4 pb-4">Search all Bands</h3>
+        <div>Find where your favorite band is playing next.</div>
+    </x-see-more-link>
+
+    <x-see-more-link href="/summer/events/venues">
+        <h3 class="text-xl font-bold border-b border-b-white mb-4 pb-4">Search all Venues</h3>
+        <div>Find which bands are playing at your favorite bar, park, or concert hall.</div>
+    </x-see-more-link>
+
+    <x-see-more-link href="/summer/events/event-names">
+        <h3 class="text-xl font-bold border-b border-b-white mb-4 pb-4">Search by Event Name</h3>
+        <div>Search for music by event name, e.g. Waterfest.</div>
+    </x-see-more-link>
+
+    <x-see-more-link href="/summer/events/cities">
+        <h3 class="text-xl font-bold border-b border-b-white mb-4 pb-4">Find Music by City</h3>
+        <div>See which bands are playing at venues in your city.</div>
+    </x-see-more-link>
 </div>

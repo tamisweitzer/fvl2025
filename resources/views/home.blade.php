@@ -1,6 +1,6 @@
 <x-layout>
     <section class="pb-4">
-        <x-wrapper-narrow class="">
+        <x-wrapper-narrow class="px-4">
             <x-page-title>Live Music in the Fox Valley</x-page-title>
             <x-page-subtitle class="text-orange-700  font-semibold mb-4">Wisconsin knows music!</x-page-subtitle>
             <p>Browse below for a sampling of the latest summer concerts happening now in your area, or view the
@@ -11,17 +11,59 @@
                 a specific
                 area.
             </p>
-            <p class="mt-4">Click on any listing below for more information.</p>
+            <p class="mt-8 text-gray-700">Click on any listing below for more information.</p>
         </x-wrapper-narrow>
     </section>
 
     <!-- Start summer events -->
     <section class="pb-8 mx-2">
-        <x-wrapper-narrow class="bg-white shadow-lg shadow-fuchsia-100 border border-fuchsia-200 pt-8 pb-12">
+        <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
+            <!-- Live music happening today -->
+            <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-orange-600 text-white rounded-t">Where
+                to find
+                live
+                music
+                today!</x-page-subtitle>
+            <p class="px-4 mb-2 text-sm text-center text-orange-800">Support live, local music!</p>
+
+            <div class="rounded-b">
+                @if (count($eventsToday) > 0)
+                    @foreach ($eventsToday as $eventToday)
+                        <a href="/summer/events/{{ $eventToday->id }}"
+                            class="block px-4 py-2 border-t border-b border-t-transparent border-b-inherit last:border-b-0 hover:bg-orange-50 hover:border-t hover:border-t-orange-300 hover:border-b hover:border-b-orange-300"
+                            title="Live music in {{ $eventToday->city }} from {{ $eventToday->band }} at {{ $eventToday->venue }} @if ($eventToday->event_name) for {{ $eventToday->event_name }} @endif">
+                            <div class="font-bold">{{ $eventToday->band }}</div>
+                            <div class="text-gray-800 text-sm">{{ $eventToday->venue }}, {{ $eventToday->city }}</div>
+                            <div class="text-gray-800 text-sm"></div>
+                        </a>
+                    @endforeach
+                    <a href="/summer/events/"
+                        class="mx-4 mt-8 inline-block text-white rounded px-3 py-2 bg-orange-600 hover:bg-orange-700"
+                        title="See all upcoming live bands">See
+                        <em>all</em> upcoming live music</a>
+                @else
+                    <div class="text-gray-500 italic text-sm mx-auto">There is no live music for today.
+                    </div>
+                @endif
+            </div>
+        </x-wrapper-narrow>
+    </section>
+
+
+    <section class="px-4 py-8">
+        <x-page-subtitle class="mt-4 font-semibold mb-8">Find live music in one of these categories.</x-page-subtitle>
+        <x-wrapper-narrow>
+            <x-see-more-events></x-see-more-events>
+        </x-wrapper-narrow>
+    </section>
+
+    {{-- <section class="pb-8 mx-2">
+        <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
             <!-- Lunchtime Concert Series -->
-            <x-page-subtitle class="mb-4 tracking-wide font-semibold text-fuchsia-700">Lunchtime
+            <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-fuchsia-700 text-white">Lunchtime
                 Concerts</x-page-subtitle>
-            <p class="mb-2 text-sm text-center text-fuchsia-800">These concerts are generally held in a park or patio,
+            <p class="px-4 mb-2 text-sm text-center text-fuchsia-800">These concerts are generally held in a park or
+                patio,
                 and
                 are intended as lunch time entertainment. Often these are acoustic, or softer music. Many of these have
                 food trucks or vendors near by.</p>
@@ -60,14 +102,16 @@
                 @endif
             </div>
         </x-wrapper-narrow>
-    </section>
+    </section> --}}
 
-    <section class="pb-8 mx-2">
+    {{-- <section class="pb-8 mx-2">
         <!-- Regular Bar Events -->
-        <x-wrapper-narrow class="bg-white shadow-lg shadow-blue-100 border border-blue-200 pt-8 pb-12">
-            <x-page-subtitle class="mb-4 tracking-wide font-semibold text-blue-700">Live Bands at Bars and
+        <x-wrapper-narrow class="bg-white shadow-lg border pb-12 ">
+            <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-blue-700 text-white">Live Bands at
+                Bars and
                 Restaurants</x-page-subtitle>
-            <p class="mb-2 text-sm text-center text-blue-800">The list here includes the typical live band at a bar,
+            <p class="px-4 mb-2 text-sm text-center text-blue-800">The list here includes the typical live band at a
+                bar,
                 usually held indoors throughout the year, but may be outside during the summer.</p>
             <div class="">
                 @if (count($events) > 0)
@@ -107,26 +151,28 @@
                 @endif
             </div>
         </x-wrapper-narrow>
-    </section>
+    </section> --}}
 
-    <section class="pb-8 mx-2">
-        <x-wrapper-narrow class="bg-white shadow-lg shadow-orange-100 border border-orange-200 pt-8 pb-12">
+    {{-- <section class="pb-8 mx-2">
+        <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
             <!-- Fairs, Fests, and Outdoor Concerts e.g. Rockfest, Winnebago County Fair -->
-            <x-page-subtitle class="mb-4 tracking-wide font-semibold text-orange-700">Fairs, Fests, and
+            <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-green-700 text-white">Fairs, Fests,
+                and
                 Outdoor
                 Concerts</x-page-subtitle>
-            <p class="mb-2 text-sm text-center text-orange-800">This list contains the yearly fests, fairs, and outdoor
+            <p class="px-4 mb-2 text-sm text-center text-green-800">This list contains the yearly fests, fairs, and
+                outdoor
                 concerts that are not specifically tied to a bar or restaurant.</p>
 
             <div class=" ">
                 @if (count($fairs) > 0)
                     @foreach ($fairs as $days)
-                        <div class="mt-4 px-2 pt-2 border-b border-b-orange-500 text-orange-600 font-extrabold">
+                        <div class="mt-4 px-2 pt-2 border-b border-b-green-500 text-green-600 font-extrabold">
                             {{ $days[0]->start_date->format('D M d, Y') }}
                         </div>
                         @foreach ($days as $fair)
                             <a href="/summer/events/{{ $fair->id }}"
-                                class="block p-4 border-t border-b border-t-transparent border-b-transparent last:border-b-0 hover:bg-orange-50 hover:border-t hover:border-t-orange-300 hover:border-b hover:border-b-orange-300"
+                                class="block p-4 border-t border-b border-t-transparent border-b-transparent last:border-b-0 hover:bg-green-50 hover:border-t hover:border-t-green-300 hover:border-b hover:border-b-green-300"
                                 title="Live music in {{ $fair->city }} from {{ $fair->band }} at {{ $fair->venue }} @if ($fair->event_name) for {{ $fair->event_name }} @endif">
                                 <div>
                                     <span class="font-bold">{{ $fair->band }}</span>
@@ -146,7 +192,7 @@
                         @endforeach
                     @endforeach
                     <a href="/summer/events/fairs-fests"
-                        class="mx-4 mt-8 inline-block text-white rounded px-3 py-2 bg-orange-700 hover:bg-orange-800 shadow-lg"
+                        class="mx-4 mt-8 inline-block text-white rounded px-3 py-2 bg-green-700 hover:bg-green-800 shadow-lg"
                         title="See all live bands playing at fairs, festivals, and outdoor concerts in Wisconsin">See
                         all in Fairs, Fests, and Outdoor Concerts</a>
                 @else
@@ -155,14 +201,14 @@
                 @endif
             </div>
         </x-wrapper-narrow>
-    </section>
+    </section> --}}
 
-    <section class="pb-8 mx-2">
-        <x-wrapper-narrow class="bg-white shadow-lg shadow-violet-100 border border-violet-200 pt-8 pb-12">
+    {{-- <section class="pb-8 mx-2">
+        <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
             <!-- National Acts -->
-            <x-page-subtitle class="mb-4 tracking-wide font-semibold text-violet-700">National
+            <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-violet-700 text-white">National
                 Acts</x-page-subtitle>
-            <p class="mb-2 text-sm text-center text-violet-800">These are stand-alone concerts specifically for a
+            <p class="px-4 mb-2 text-sm text-center text-violet-800">These are stand-alone concerts specifically for a
                 national
                 artist. If
                 a national act is playing at Waterfest, for example, that artist would be listed in the fairs and fests
@@ -208,13 +254,7 @@
             </div>
 
         </x-wrapper-narrow>
-    </section>
+    </section> --}}
     <!-- End summer events -->
-
-    <section class="pb-8 mx-2">
-        <x-wrapper-narrow>
-            <x-see-more-events></x-see-more-events>
-        </x-wrapper-narrow>
-    </section>
 
 </x-layout>
