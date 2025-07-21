@@ -24,10 +24,12 @@
                 live
                 music
                 today!</x-page-subtitle>
-            <p class="px-4 mb-2 text-sm text-center text-orange-800">Support live, local music!</p>
 
             <div class="rounded-b">
                 @if (count($eventsToday) > 0)
+                    <h3 class="mx-4 pb-2 mb-8 text-2xl font-bold text-orange-600 border-b border-orange-500">
+                        {{ $eventsToday->first()->start_date->format('M d, Y') }}
+                    </h3>
                     @foreach ($eventsToday as $eventToday)
                         <a href="/summer/events/{{ $eventToday->id }}"
                             class="block px-4 py-2 border-t border-b border-t-transparent border-b-inherit last:border-b-0 hover:bg-orange-50 hover:border-t hover:border-t-orange-300 hover:border-b hover:border-b-orange-300"
