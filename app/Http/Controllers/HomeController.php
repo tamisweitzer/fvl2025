@@ -9,7 +9,12 @@ use Illuminate\Support\Facades\Date;
 
 class HomeController extends Controller {
     public function index() {
-        // $events = Event::all();
+
+        $eventsToday = SummerEvents::all()
+            ->where('start_date', '=', Date::today())
+            ->sortBy('start_time');
+
+
         $events = SummerEvents::all()
             ->where('event_type', '=', 'is_bar_gig')
             ->where('start_date', '>=', Date::today())
@@ -46,6 +51,7 @@ class HomeController extends Controller {
             ->groupBy('start_date');
 
         return view('home', [
+            'eventsToday' => $eventsToday,
             'events' => $events,
             'lunches' => $lunches,
             'series' => $series,
