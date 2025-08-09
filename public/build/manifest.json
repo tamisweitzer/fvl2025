@@ -1,12 +1,12 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-CtYFQHX9.css",
+    "file": "assets/app-yjdcGcSo.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
-  "resources/images/lita.jpg": {
-    "file": "assets/lita-ClgRml9L.jpg",
-    "src": "resources/images/lita.jpg"
+  "resources/images/lita.webp": {
+    "file": "assets/lita-CXHoTdXO.webp",
+    "src": "resources/images/lita.webp"
   },
   "resources/js/app.js": {
     "file": "assets/app-CqflisoM.js",

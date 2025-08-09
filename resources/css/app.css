@@ -11,7 +11,7 @@ body {
 .hero {
   height: 400px;
   /* background-image: url('./public/images/lita.jpg'); */
-  background-image: url('../images/lita.jpg');
+  background-image: url('../images/lita.webp');
   background-position: center;
   background-size: cover;
   position: relative;
