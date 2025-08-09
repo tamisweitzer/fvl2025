@@ -28,7 +28,7 @@ body {
 }
 
 .text-stroke {
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: .5px;
   -webkit-text-stroke-color: rgb(249 115 22);
   /* -orange-500 */
   font-family: Arial, Helvetica, sans-serif;
