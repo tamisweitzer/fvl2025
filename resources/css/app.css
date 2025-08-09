@@ -27,7 +27,7 @@ body {
   opacity: 0.3;
 }
 
-.text-stroke {
+.fvl-text-stroke {
   -webkit-text-stroke-width: .5px;
   -webkit-text-stroke-color: rgb(249 115 22);
   /* -orange-500 */
