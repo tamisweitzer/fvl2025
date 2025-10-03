@@ -63,7 +63,6 @@
 
 
     <section class="px-4 py-8">
-        <x-page-subtitle class="mt-4 font-semibold mb-8">Find live music in one of these categories.</x-page-subtitle>
         <x-wrapper-narrow>
             <x-see-more-events></x-see-more-events>
         </x-wrapper-narrow>
