@@ -28,7 +28,7 @@
             <div class="rounded-b">
                 @if (count($eventsToday) > 0)
 
-
+                    {{-- @dd($eventsToday) --}}
                     @foreach ($eventsToday as $day)
                         <div class="mb-8 ">
                             <h3

@@ -14,9 +14,9 @@ class HomeController extends Controller {
 
         $eventsToday = SummerEvents::all()
             ->where('start_date', '>=', Date::today())
-            ->sortBy('start_time')
             ->take(15)
-            ->groupBy('start_date');
+            ->groupBy('start_date')
+            ->sortBy('start_time');
 
 
         $events = SummerEvents::all()
