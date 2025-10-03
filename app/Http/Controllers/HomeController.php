@@ -11,8 +11,12 @@ use Illuminate\Support\Facades\Date;
 class HomeController extends Controller {
     public function index() {
 
+        // dd(Carbon::today('America/Chicago'))->startOfDay();
+        $startDate = Carbon::yesterday('America/Chicago')->startOfDay();
+        $endDate = Carbon::today('America/Chicago')->endOfDay()->addDays(1);
+        // dd($startDate, $endDate);
         $eventsToday = SummerEvents::all()
-            ->whereBetween('start_date', [Date::today(), Date::today()->addDays(3)])
+            ->whereBetween('start_date', [$startDate, $endDate])
             ->sortBy('start_date')
             ->take(15)
             ->groupBy('start_date');
