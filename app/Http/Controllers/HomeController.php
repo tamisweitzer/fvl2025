@@ -12,8 +12,8 @@ class HomeController extends Controller {
     public function index() {
 
         $eventsToday = SummerEvents::all()
-            ->where('start_date', '=>', Date::today())
-            ->where('start_date', '<=', Carbon::today()->addDays(3))
+            ->where('start_date', '>=', Date::today())
+            ->where('start_date', '<', Carbon::today()->addDays(4))
             ->sortBy('start_time');
 
 
