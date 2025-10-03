@@ -13,7 +13,7 @@ class HomeController extends Controller {
 
 
         $eventsToday = SummerEvents::all()
-            ->where('start_date', '>=', Carbon::today())
+            ->where('start_date', '>=', Date::today())
             ->where('start_date', '<=', Carbon::today()->addDays(2))
             ->sortBy('start_time')
             ->groupBy('start_date');
