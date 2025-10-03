@@ -8,6 +8,7 @@ body {
   margin: 0;
 }
 
+/* Used for the face1 and face2 routes. */
 .hero {
   height: 400px;
   /* background-image: url('./public/images/lita.jpg'); */

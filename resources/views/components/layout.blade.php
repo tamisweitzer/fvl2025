@@ -95,7 +95,7 @@
 
         <!-- Hero image and welcome text.  -->
         <div
-            class="hero_ p-8 bg-[url('../images/lita.jpg')] bg-cover bg-middle h-[300px] sm:h-[400px] md:h-[500px] lg:h-[700px]">
+            class="p-8 bg-[url('../images/lita.jpg')] bg-cover bg-middle h-[300px] sm:h-[400px] md:h-[500px] lg:h-[700px]">
             <div class="flex flex-col justify-center items-center align-middle max-w-6xl mx-auto mt-4  h-full">
                 <div class="content bg-white opacity-95 max-w-fit px-4 sm:px-10 pt-4 pb-6 font-extrabold text-center">
                     <p class="text-gray-800 font-semibold text-xl sm:text-3xl">The best live music in the Fox Valley

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use App\Models\SummerEvents;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
 
@@ -11,7 +12,8 @@ class HomeController extends Controller {
     public function index() {
 
         $eventsToday = SummerEvents::all()
-            ->where('start_date', '=', Date::today())
+            ->where('start_date', '=>', Date::today())
+            ->where('start_date', '<=', Carbon::today()->addDays(3))
             ->sortBy('start_time');
 
 
