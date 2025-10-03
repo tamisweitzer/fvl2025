@@ -11,10 +11,10 @@ use Illuminate\Support\Facades\Date;
 class HomeController extends Controller {
     public function index() {
 
-
         $eventsToday = SummerEvents::all()
-            ->where('start_date', '=', Date::today())
-            ->sortBy('start_time')
+            ->whereBetween('start_date', [Date::today(), Date::today()->addDays(3)])
+            ->sortBy('start_date')
+            ->take(15)
             ->groupBy('start_date');
 
 
