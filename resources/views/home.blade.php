@@ -27,18 +27,28 @@
 
             <div class="rounded-b">
                 @if (count($eventsToday) > 0)
-                    <h3 class="mx-4 pb-2 mb-8 text-2xl font-bold text-orange-600 border-b border-orange-500">
-                        {{ $eventsToday->first()->start_date->format('M d, Y') }}
-                    </h3>
-                    @foreach ($eventsToday as $eventToday)
-                        <a href="/summer/events/{{ $eventToday->id }}"
-                            class="block px-4 py-2 border-t border-b border-t-transparent border-b-inherit last:border-b-0 hover:bg-orange-50 hover:border-t hover:border-t-orange-300 hover:border-b hover:border-b-orange-300"
-                            title="Live music in {{ $eventToday->city }} from {{ $eventToday->band }} at {{ $eventToday->venue }} @if ($eventToday->event_name) for {{ $eventToday->event_name }} @endif">
-                            <div class="font-bold">{{ $eventToday->band }}</div>
-                            <div class="text-gray-800 text-sm">{{ $eventToday->venue }}, {{ $eventToday->city }}</div>
-                            <div class="text-gray-800 text-sm"></div>
-                        </a>
+
+
+                    @foreach ($eventsToday as $day)
+                        <div class="mb-8 ">
+                            <h3
+                                class="mx-4 pb-0 mb-0 text-2xl font-bold text-orange-600 border-b-transparent border-orange-500">
+                                {{-- {{ $eventsToday->first()->start_date->format('M d, Y') }} --}}
+                                {{ $day[0]->start_date->format('D M d, Y') }}
+                            </h3>
+
+                            @foreach ($day as $eventToday)
+                                <a href="/summer/events/{{ $eventToday->id }}"
+                                    class="block px-4 py-2 mb-0 border-t border-b border-t-transparent border-b-transparent last:border-b-0 hover:bg-orange-50 hover:border-t hover:border-t-orange-300 hover:border-b hover:border-b-orange-300"
+                                    title="Live music in {{ $eventToday->city }} from {{ $eventToday->band }} at {{ $eventToday->venue }} @if ($eventToday->event_name) for {{ $eventToday->event_name }} @endif">
+                                    <div class="font-bold">{{ $eventToday->band }}</div>
+                                    <div class="text-gray-800 text-sm">{{ $eventToday->venue }}, {{ $eventToday->city }}
+                                    </div>
+                                </a>
+                            @endforeach
+                        </div>
                     @endforeach
+
                     <a href="/summer/events/"
                         class="mx-4 mt-8 inline-block text-white rounded px-3 py-2 bg-orange-600 hover:bg-orange-700"
                         title="See all upcoming live bands">See
