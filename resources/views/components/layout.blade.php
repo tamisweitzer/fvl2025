@@ -43,6 +43,7 @@
 </head>
 
 <body class="font-sans antialiased bg-slate-100">
+    main
     <header class="bg-slate-700 text-slate-300">
         @auth
             <nav class=" bg-slate-900 p-0 text-sm">
@@ -61,7 +62,7 @@
             </a>
 
             <div class="nav-menu mt-3">
-                <x-nav-link href="/summer/events" :active="request()->is('summer/events')">summer events</x-nav-link>
+                <x-nav-link href="/summer/events" :active="request()->is('summer/events')">events</x-nav-link>
                 @auth
                     {{-- <x-nav-link href="/events" :active="request()->is('events')">events</x-nav-link>
                     <x-nav-link href="/bands" :active="request()->is('bands')">bands</x-nav-link>
