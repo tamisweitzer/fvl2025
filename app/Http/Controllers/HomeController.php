@@ -15,15 +15,15 @@ class HomeController extends Controller {
         $startDate = Carbon::yesterday('America/Chicago')->startOfDay();
         $endDate = Carbon::today('America/Chicago')->endOfDay()->addDays(1);
         // dd($startDate, $endDate);
-        $eventsToday = SummerEvents::all()
-            ->whereBetween('start_date', [$startDate, $endDate])
-            ->sortBy('start_date')
-            ->take(15)
-            ->groupBy('start_date');
+        // $eventsToday = SummerEvents::all()
+        //     ->whereBetween('start_date', [$startDate, $endDate])
+        //     ->sortBy('start_date')
+        //     ->take(15)
+        //     ->groupBy('start_date');
 
 
         $events = SummerEvents::all()
-            ->where('event_type', '=', 'is_bar_gig')
+            // ->where('event_type', '=', 'is_bar_gig')
             ->where('start_date', '>=', Date::today())
             ->sortBy('start_date')
             ->take(12)
@@ -58,7 +58,7 @@ class HomeController extends Controller {
             ->groupBy('start_date');
 
         return view('home', [
-            'eventsToday' => $eventsToday,
+            // 'eventsToday' => $eventsToday,
             'events' => $events,
             'lunches' => $lunches,
             'series' => $series,

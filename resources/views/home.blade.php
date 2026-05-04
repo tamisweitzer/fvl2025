@@ -68,7 +68,7 @@
         </x-wrapper-narrow> --}}
     </section>
 
-    {{-- <section class="pb-8 mx-2">
+    <section class="pb-8 mx-2">
         <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
             <!-- Lunchtime Concert Series -->
             <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-fuchsia-700 text-white">Lunchtime
@@ -113,9 +113,9 @@
                 @endif
             </div>
         </x-wrapper-narrow>
-    </section> --}}
+    </section>
 
-    {{-- <section class="pb-8 mx-2">
+    <section class="pb-8 mx-2">
         <!-- Regular Bar Events -->
         <x-wrapper-narrow class="bg-white shadow-lg border pb-12 ">
             <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-blue-700 text-white">Live Bands at
@@ -162,9 +162,9 @@
                 @endif
             </div>
         </x-wrapper-narrow>
-    </section> --}}
+    </section>
 
-    {{-- <section class="pb-8 mx-2">
+    <section class="pb-8 mx-2">
         <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
             <!-- Fairs, Fests, and Outdoor Concerts e.g. Rockfest, Winnebago County Fair -->
             <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-green-700 text-white">Fairs, Fests,
@@ -212,9 +212,9 @@
                 @endif
             </div>
         </x-wrapper-narrow>
-    </section> --}}
+    </section>
 
-    {{-- <section class="pb-8 mx-2">
+    <section class="pb-8 mx-2">
         <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
             <!-- National Acts -->
             <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-violet-700 text-white">National
@@ -265,7 +265,7 @@
             </div>
 
         </x-wrapper-narrow>
-    </section> --}}
+    </section>
     <!-- End summer events -->
 
 </x-layout>
