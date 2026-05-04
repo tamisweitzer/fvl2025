@@ -63,15 +63,17 @@
 
             <div class="nav-menu mt-3">
                 <x-nav-link href="/summer/events" :active="request()->is('summer/events')">events</x-nav-link>
+                {{-- <x-nav-link href="/events" :active="request()->is('events')">events</x-nav-link> --}}
+                <x-nav-link href="/bands" :active="request()->is('bands')">bands</x-nav-link>
+                <x-nav-link href="/cities" :active="request()->is('cities')">cities</x-nav-link>
+                <x-nav-link href="/venues" :active="request()->is('venues')">venues</x-nav-link>
+
                 @auth
-                    {{-- <x-nav-link href="/events" :active="request()->is('events')">events</x-nav-link>
-                    <x-nav-link href="/bands" :active="request()->is('bands')">bands</x-nav-link>
-                    <x-nav-link href="/cities" :active="request()->is('cities')">cities</x-nav-link>
-                    <x-nav-link href="/venues" :active="request()->is('venues')">venues</x-nav-link> --}}
+
                 @endauth
-                <x-nav-link href="/summer/events/bands" :active="request()->is('bands')">bands</x-nav-link>
+                {{-- <x-nav-link href="/summer/events/bands" :active="request()->is('bands')">bands</x-nav-link>
                 <x-nav-link href="/summer/events/cities" :active="request()->is('cities')">cities</x-nav-link>
-                <x-nav-link href="/summer/events/venues" :active="request()->is('venues')">venues</x-nav-link>
+                <x-nav-link href="/summer/events/venues" :active="request()->is('venues')">venues</x-nav-link> --}}
 
                 <span class="inline-block mt-8 md:mt-0 md:ml-8">
                     @guest
@@ -95,17 +97,20 @@
         </nav>
 
         <!-- Hero image and welcome text.  -->
-        <div
-            class="p-8 bg-[url('../images/lita.jpg')] bg-cover bg-middle h-[300px] sm:h-[400px] md:h-[500px] lg:h-[700px]">
-            <div class="flex flex-col justify-center items-center align-middle max-w-6xl mx-auto mt-4  h-full">
-                <div class="content bg-white opacity-95 max-w-fit px-4 sm:px-10 pt-4 pb-6 font-extrabold text-center">
-                    <p class="text-gray-800 font-semibold text-xl sm:text-3xl">The best live music in the Fox Valley
-                        <span class="text-orange-700 italic font-bold fvl-text-stroke"><br>...and beyond!</span>
-                    </p>
+        @if (request()->is('/'))
+            <div
+                class="p-8 bg-[url('../images/lita.jpg')] bg-cover bg-middle h-[300px] sm:h-[400px] md:h-[500px] lg:h-[700px]">
+                <div class="flex flex-col justify-center items-center align-middle max-w-6xl mx-auto mt-4  h-full">
+                    <div
+                        class="content bg-white opacity-95 max-w-fit px-4 sm:px-10 pt-4 pb-6 font-extrabold text-center">
+                        <p class="text-gray-800 font-semibold text-xl sm:text-3xl">The best live music in the Fox Valley
+                            <span class="text-orange-700 italic font-bold fvl-text-stroke"><br>...and beyond!</span>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="px-4 py-1 text-right text-sm">Lita Ford, The Watering Hole, Green Bay</div>
+            <div class="px-4 py-1 text-right text-sm">Lita Ford, The Watering Hole, Green Bay</div>
+        @endif
     </header>
 
     <main class="min-h-[calc(100vh-200px)]">
@@ -124,19 +129,19 @@
 
                 {{-- <div class="mt-4 border-b border-b-slate-600 sm:hidden"></div> --}}
 
-                {{-- <div class="col flex-1">
-                    <a href="#" class="block p-4">link</a>
-                    <a href="#" class="block p-4">link</a>
-                    <a href="#" class="block p-4">link</a>
-                    <a href="#" class="block p-4">link</a>
-                </div> --}}
+                <div class="col flex-1">
+                    <a href="/bands" class="block p-4">bands</a>
+                    <a href="/cities" class="block p-4">cities</a>
+                    <a href="/events" class="block p-4">events</a>
+                    <a href="/venues" class="block p-4">venues</a>
+                </div>
 
                 {{-- <div class="mt-4 border-b border-b-slate-600 sm:hidden"></div> --}}
 
                 <div class="col flex-1">
                     <a href="/about" class="block p-4">about</a>
-                    {{-- <a href="/contact" class="block p-4">contact</a> --}}
-                    {{-- <a href="#" class="block p-4">link</a> --}}
+                    <a href="/contact" class="block p-4">contact</a>
+                    <a href="/" class="block p-4">home</a>
                     {{-- <a href="#" class="block p-4">link</a> --}}
                 </div>
             </div>

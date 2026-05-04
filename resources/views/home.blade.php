@@ -26,10 +26,10 @@
                 today!</x-page-subtitle>
 
             <div class="rounded-b">
-                @if (count($eventsToday) > 0)
+                @if (count($events) > 0)
 
                     {{-- @dd($eventsToday) --}}
-                    @foreach ($eventsToday as $day)
+                    @foreach ($events as $day)
                         <div class="mb-8 ">
                             <h3
                                 class="mx-4 pb-0 mb-0 text-2xl font-bold text-orange-600 border-b-transparent border-orange-500">
@@ -37,12 +37,12 @@
                                 {{ $day[0]->start_date->format('D M d, Y') }}
                             </h3>
 
-                            @foreach ($day as $eventToday)
-                                <a href="/summer/events/{{ $eventToday->id }}"
+                            @foreach ($day as $events)
+                                <a href="/summer/events/{{ $events->id }}"
                                     class="block px-4 py-2 mb-0 border-t border-b border-t-transparent border-b-transparent last:border-b-0 hover:bg-orange-50 hover:border-t hover:border-t-orange-300 hover:border-b hover:border-b-orange-300"
-                                    title="Live music in {{ $eventToday->city }} from {{ $eventToday->band }} at {{ $eventToday->venue }} @if ($eventToday->event_name) for {{ $eventToday->event_name }} @endif">
-                                    <div class="font-bold">{{ $eventToday->band }}</div>
-                                    <div class="text-gray-800 text-sm">{{ $eventToday->venue }}, {{ $eventToday->city }}
+                                    title="Live music in {{ $events->city }} from {{ $events->band }} at {{ $events->venue }} @if ($events->event_name) for {{ $events->event_name }} @endif">
+                                    <div class="font-bold">{{ $events->band }}</div>
+                                    <div class="text-gray-800 text-sm">{{ $events->venue }}, {{ $events->city }}
                                     </div>
                                 </a>
                             @endforeach
@@ -63,12 +63,12 @@
 
 
     <section class="px-4 py-8">
-        <x-wrapper-narrow>
+        {{-- <x-wrapper-narrow>
             <x-see-more-events></x-see-more-events>
-        </x-wrapper-narrow>
+        </x-wrapper-narrow> --}}
     </section>
 
-    {{-- <section class="pb-8 mx-2">
+    <section class="pb-8 mx-2">
         <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
             <!-- Lunchtime Concert Series -->
             <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-fuchsia-700 text-white">Lunchtime
@@ -113,9 +113,9 @@
                 @endif
             </div>
         </x-wrapper-narrow>
-    </section> --}}
+    </section>
 
-    {{-- <section class="pb-8 mx-2">
+    <section class="pb-8 mx-2">
         <!-- Regular Bar Events -->
         <x-wrapper-narrow class="bg-white shadow-lg border pb-12 ">
             <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-blue-700 text-white">Live Bands at
@@ -162,9 +162,9 @@
                 @endif
             </div>
         </x-wrapper-narrow>
-    </section> --}}
+    </section>
 
-    {{-- <section class="pb-8 mx-2">
+    <section class="pb-8 mx-2">
         <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
             <!-- Fairs, Fests, and Outdoor Concerts e.g. Rockfest, Winnebago County Fair -->
             <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-green-700 text-white">Fairs, Fests,
@@ -212,9 +212,9 @@
                 @endif
             </div>
         </x-wrapper-narrow>
-    </section> --}}
+    </section>
 
-    {{-- <section class="pb-8 mx-2">
+    <section class="pb-8 mx-2">
         <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
             <!-- National Acts -->
             <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-violet-700 text-white">National
@@ -265,7 +265,7 @@
             </div>
 
         </x-wrapper-narrow>
-    </section> --}}
+    </section>
     <!-- End summer events -->
 
 </x-layout>
