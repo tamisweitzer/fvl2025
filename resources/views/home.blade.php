@@ -37,12 +37,12 @@
                                 {{ $day[0]->start_date->format('D M d, Y') }}
                             </h3>
 
-                            @foreach ($day as $eventToday)
-                                <a href="/summer/events/{{ $eventToday->id }}"
+                            @foreach ($day as $events)
+                                <a href="/summer/events/{{ $events->id }}"
                                     class="block px-4 py-2 mb-0 border-t border-b border-t-transparent border-b-transparent last:border-b-0 hover:bg-orange-50 hover:border-t hover:border-t-orange-300 hover:border-b hover:border-b-orange-300"
-                                    title="Live music in {{ $eventToday->city }} from {{ $eventToday->band }} at {{ $eventToday->venue }} @if ($eventToday->event_name) for {{ $eventToday->event_name }} @endif">
-                                    <div class="font-bold">{{ $eventToday->band }}</div>
-                                    <div class="text-gray-800 text-sm">{{ $eventToday->venue }}, {{ $eventToday->city }}
+                                    title="Live music in {{ $events->city }} from {{ $events->band }} at {{ $events->venue }} @if ($events->event_name) for {{ $events->event_name }} @endif">
+                                    <div class="font-bold">{{ $events->band }}</div>
+                                    <div class="text-gray-800 text-sm">{{ $events->venue }}, {{ $events->city }}
                                     </div>
                                 </a>
                             @endforeach
@@ -63,9 +63,9 @@
 
 
     <section class="px-4 py-8">
-        <x-wrapper-narrow>
+        {{-- <x-wrapper-narrow>
             <x-see-more-events></x-see-more-events>
-        </x-wrapper-narrow>
+        </x-wrapper-narrow> --}}
     </section>
 
     {{-- <section class="pb-8 mx-2">
