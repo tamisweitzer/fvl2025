@@ -12,14 +12,16 @@ class HomeController extends Controller {
     public function index() {
 
         // dd(Carbon::today('America/Chicago'))->startOfDay();
+
         $startDate = Carbon::yesterday('America/Chicago')->startOfDay();
         $endDate = Carbon::today('America/Chicago')->endOfDay()->addDays(1);
         // dd($startDate, $endDate);
-        // $eventsToday = SummerEvents::all()
-        //     ->whereBetween('start_date', [$startDate, $endDate])
-        //     ->sortBy('start_date')
-        //     ->take(15)
-        //     ->groupBy('start_date');
+
+        $eventsToday = SummerEvents::all()
+            ->whereBetween('start_date', [$startDate, $endDate])
+            ->sortBy('start_date')
+            ->take(15)
+            ->groupBy('start_date');
 
 
         $events = SummerEvents::all()
@@ -58,7 +60,7 @@ class HomeController extends Controller {
             ->groupBy('start_date');
 
         return view('home', [
-            // 'eventsToday' => $eventsToday,
+            'eventsToday' => $eventsToday,
             'events' => $events,
             'lunches' => $lunches,
             'series' => $series,

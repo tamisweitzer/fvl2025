@@ -26,10 +26,10 @@
                 today!</x-page-subtitle>
 
             <div class="rounded-b">
-                @if (count($events) > 0)
+                @if (count($eventsToday) > 0)
 
                     {{-- @dd($eventsToday) --}}
-                    @foreach ($events as $day)
+                    @foreach ($eventsToday as $day)
                         <div class="mb-8 ">
                             <h3
                                 class="mx-4 pb-0 mb-0 text-2xl font-bold text-orange-600 border-b-transparent border-orange-500">
