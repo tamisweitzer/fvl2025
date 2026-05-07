@@ -28,7 +28,7 @@ class HomeController extends Controller {
             ->where('event_type', '=', 'is_bar_gig')
             ->where('start_date', '>=', Date::today())
             ->sortBy('start_date')
-            ->take(12)
+            ->take(3)
             ->groupBy('start_date');
 
         $lunches = SummerEvents::all()
