@@ -227,7 +227,7 @@
                 section, not here.</p>
             <div class=" ">
 
-                @if (is_countable($nationalActs) && $nationalActs > 0)
+                @if (is_countable($nationalActs) && count($nationalActs) > 0)
                     @foreach ($nationalActs as $days)
                         <div class="mt-4 px-2 pt-2 border-b border-b-violet-500 text-violet-600 font-extrabold">
                             {{ $days[0]->start_date->format('D M d, Y') }}
