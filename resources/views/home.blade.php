@@ -125,7 +125,8 @@
                 bar,
                 usually held indoors throughout the year, but may be outside during the summer.</p>
             <div class="">
-                @if (count($events) > 0)
+
+                @if (is_countable($events) && count($events) > 0)
                     @foreach ($events as $days)
                         <div class="mt-4 px-2 pt-2 border-b border-b-blue-500 text-blue-600 font-extrabold">
                             {{ $days[0]->start_date->format('D M d, Y') }}
