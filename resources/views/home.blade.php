@@ -26,7 +26,7 @@
                 today!</x-page-subtitle>
 
             <div class="rounded-b">
-                @if (count($eventsToday) > 0)
+                @if (is_countable($eventsToday) && count($eventsToday) > 0)
 
                     {{-- @dd($eventsToday) --}}
                     @foreach ($eventsToday as $day)
@@ -80,7 +80,7 @@
                 food trucks or vendors near by.</p>
             <div class=" ">
 
-                @if (count($lunches) > 0)
+                @if (is_countable($lunches) && count($lunches) > 0)
                     @foreach ($lunches as $days)
                         <div class="mt-4 px-2 pt-2 border-b border-b-fuchsia-500 text-fuchsia-600 font-extrabold">
                             {{ $days[0]->start_date->format('D M d, Y') }}
@@ -177,7 +177,7 @@
                 concerts that are not specifically tied to a bar or restaurant.</p>
 
             <div class=" ">
-                @if (count($fairs) > 0)
+                @if (is_countable($fairs) && count($fairs) > 0)
                     @foreach ($fairs as $days)
                         <div class="mt-4 px-2 pt-2 border-b border-b-green-500 text-green-600 font-extrabold">
                             {{ $days[0]->start_date->format('D M d, Y') }}
@@ -227,7 +227,7 @@
                 section, not here.</p>
             <div class=" ">
 
-                @if (count($nationalActs) > 0)
+                @if (is_countable($nationalActs) && $nationalActs > 0)
                     @foreach ($nationalActs as $days)
                         <div class="mt-4 px-2 pt-2 border-b border-b-violet-500 text-violet-600 font-extrabold">
                             {{ $days[0]->start_date->format('D M d, Y') }}
