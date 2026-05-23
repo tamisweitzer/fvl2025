@@ -155,9 +155,9 @@
     <!-- National Acts -->
     <section class="pb-8 mx-2">
         <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
-            <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-violet-700 text-white">National
+            <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-orange-600 text-white">National
                 Acts</x-page-subtitle>
-            <p class="px-4 mb-2 text-sm text-center text-violet-800">These are stand-alone concerts specifically for a
+            <p class="px-4 mb-2 text-sm text-center text-orange-800">These are stand-alone concerts specifically for a
                 national
                 artist. If
                 a national act is playing at Waterfest, for example, that artist would be listed in the fairs and fests
