@@ -15,10 +15,12 @@
         </x-wrapper-narrow>
     </section>
 
-    <!-- Start summer events -->
+    {{-- @dd($events, $eventsToday, $lunches, $fairs, $nationalActs); --}}
+    {{-- @dd(is_countable($events), is_countable($eventsToday), is_countable($lunches), is_countable($nationalActs)); --}}
+
+    <!-- Live music happening today -->
     <section class="pb-8 mx-2">
         <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
-            <!-- Live music happening today -->
             <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-orange-600 text-white rounded-t">Where
                 to find
                 live
@@ -37,12 +39,12 @@
                                 {{ $day[0]->start_date->format('D M d, Y') }}
                             </h3>
 
-                            @foreach ($day as $events)
-                                <a href="/summer/events/{{ $events->id }}"
+                            @foreach ($day as $event)
+                                <a href="/summer/events/{{ $event->id }}"
                                     class="block px-4 py-2 mb-0 border-t border-b border-t-transparent border-b-transparent last:border-b-0 hover:bg-orange-50 hover:border-t hover:border-t-orange-300 hover:border-b hover:border-b-orange-300"
-                                    title="Live music in {{ $events->city }} from {{ $events->band }} at {{ $events->venue }} @if ($events->event_name) for {{ $events->event_name }} @endif">
-                                    <div class="font-bold">{{ $events->band }}</div>
-                                    <div class="text-gray-800 text-sm">{{ $events->venue }}, {{ $events->city }}
+                                    title="Live music in {{ $event->city }} from {{ $event->band }} at {{ $event->venue }} @if ($event->event_name) for {{ $event->event_name }} @endif">
+                                    <div class="font-bold">{{ $event->band }}</div>
+                                    <div class="text-gray-800 text-sm">{{ $event->venue }}, {{ $event->city }}
                                     </div>
                                 </a>
                             @endforeach
@@ -61,16 +63,10 @@
         </x-wrapper-narrow>
     </section>
 
-
-    <section class="px-4 py-8">
-        {{-- <x-wrapper-narrow>
-            <x-see-more-events></x-see-more-events>
-        </x-wrapper-narrow> --}}
-    </section>
-
+    {{-- @dd($events); --}}
+    <!-- Lunchtime Concert Series -->
     <section class="pb-8 mx-2">
         <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
-            <!-- Lunchtime Concert Series -->
             <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-fuchsia-700 text-white">Lunchtime
                 Concerts</x-page-subtitle>
             <p class="px-4 mb-2 text-sm text-center text-fuchsia-800">These concerts are generally held in a park or
@@ -115,8 +111,9 @@
         </x-wrapper-narrow>
     </section>
 
+
+    <!-- Regular Bar Events -->
     <section class="pb-8 mx-2">
-        <!-- Regular Bar Events -->
         <x-wrapper-narrow class="bg-white shadow-lg border pb-12 ">
             <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-blue-700 text-white">Live Bands at
                 Bars and
@@ -126,11 +123,15 @@
                 usually held indoors throughout the year, but may be outside during the summer.</p>
             <div class="">
 
+                {{-- @dd($events) --}}
+
                 @if (is_countable($events) && count($events) > 0)
                     @foreach ($events as $days)
                         <div class="mt-4 px-2 pt-2 border-b border-b-blue-500 text-blue-600 font-extrabold">
                             {{ $days[0]->start_date->format('D M d, Y') }}
                         </div>
+
+                        {{-- @dd($days); --}}
 
                         @foreach ($days as $event)
                             <a href="/summer/events/{{ $event->id }}"
@@ -165,9 +166,10 @@
         </x-wrapper-narrow>
     </section>
 
+
+    <!-- Fairs, Fests, and Outdoor Concerts e.g. Rockfest, Winnebago County Fair -->
     <section class="pb-8 mx-2">
         <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
-            <!-- Fairs, Fests, and Outdoor Concerts e.g. Rockfest, Winnebago County Fair -->
             <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-green-700 text-white">Fairs, Fests,
                 and
                 Outdoor
@@ -215,9 +217,10 @@
         </x-wrapper-narrow>
     </section>
 
+
+    <!-- National Acts -->
     <section class="pb-8 mx-2">
         <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
-            <!-- National Acts -->
             <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-violet-700 text-white">National
                 Acts</x-page-subtitle>
             <p class="px-4 mb-2 text-sm text-center text-violet-800">These are stand-alone concerts specifically for a
