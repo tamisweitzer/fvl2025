@@ -14,7 +14,7 @@ class HomeController extends Controller {
         // dd(Carbon::today('America/Chicago'))->startOfDay();
 
         $startDate = Carbon::yesterday('America/Chicago')->startOfDay();
-        $endDate = Carbon::today('America/Chicago')->endOfDay()->addDays(1);
+        $endDate = Carbon::today('America/Chicago')->endOfDay()->addDays(6);
         // dd($startDate, $endDate);
 
         $eventsToday = SummerEvents::all()
