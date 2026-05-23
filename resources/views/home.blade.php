@@ -21,11 +21,8 @@
     <!-- Live music happening today -->
     <section class="pb-8 mx-2">
         <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
-            <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-orange-600 text-white rounded-t">Where
-                to find
-                live
-                music
-                today!</x-page-subtitle>
+            <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-orange-600 text-white rounded-t">Live
+                music this week!</x-page-subtitle>
 
             <div class="rounded-b">
                 @if (is_countable($eventsToday) && count($eventsToday) > 0)
@@ -33,28 +30,18 @@
                     {{-- @dd($eventsToday) --}}
                     @foreach ($eventsToday as $day)
                         <div class="mb-8 ">
-                            <h3
-                                class="mx-4 pb-0 mb-0 text-2xl font-bold text-orange-600 border-b-transparent border-orange-500">
-                                {{-- {{ $eventsToday->first()->start_date->format('M d, Y') }} --}}
-                                {{ $day[0]->start_date->format('D M d, Y') }}
-                            </h3>
+                            <x-eventlist-header>{{ $day[0]->start_date->format('D M d, Y') }}</x-eventlist-header>
 
                             @foreach ($day as $event)
-                                <a href="/summer/events/{{ $event->id }}"
-                                    class="block px-4 py-2 mb-0 border-t border-b border-t-transparent border-b-transparent last:border-b-0 hover:bg-orange-50 hover:border-t hover:border-t-orange-300 hover:border-b hover:border-b-orange-300"
-                                    title="Live music in {{ $event->city }} from {{ $event->band }} at {{ $event->venue }} @if ($event->event_name) for {{ $event->event_name }} @endif">
-                                    <div class="font-bold">{{ $event->band }}</div>
-                                    <div class="text-gray-800 text-sm">{{ $event->venue }}, {{ $event->city }}
-                                    </div>
-                                </a>
+                                <x-eventlist-item :event=$event path="/summer/events/"
+                                    color="purple"></x-eventlist-item>
                             @endforeach
                         </div>
                     @endforeach
 
-                    <a href="/summer/events/"
-                        class="mx-4 mt-8 inline-block text-white rounded px-3 py-2 bg-orange-600 hover:bg-orange-700"
-                        title="See all upcoming live bands">See
-                        <em>all</em> upcoming live music</a>
+                    <x-eventlist-view-more-button href="/summer/events/"
+                        title="See all live bands playing lunchtime concerts">See
+                        <em>all</em> upcoming live music</x-eventlist-view-more-button>
                 @else
                     <div class="text-gray-500 italic text-sm mx-auto">There is no live music for today.
                     </div>
@@ -67,9 +54,9 @@
     <!-- Lunchtime Concert Series -->
     <section class="pb-8 mx-2">
         <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
-            <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-fuchsia-700 text-white">Lunchtime
+            <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-orange-600 text-white">Lunchtime
                 Concerts</x-page-subtitle>
-            <p class="px-4 mb-2 text-sm text-center text-fuchsia-800">These concerts are generally held in a park or
+            <p class="px-4 mb-2 text-sm text-center text-orange-800">These concerts are generally held in a park or
                 patio,
                 and
                 are intended as lunch time entertainment. Often these are acoustic, or softer music. Many of these have
@@ -78,33 +65,19 @@
 
                 @if (is_countable($lunches) && count($lunches) > 0)
                     @foreach ($lunches as $days)
-                        <div class="mt-4 px-2 pt-2 border-b border-b-fuchsia-500 text-fuchsia-600 font-extrabold">
-                            {{ $days[0]->start_date->format('D M d, Y') }}
-                        </div>
+                        <x-eventlist-header>{{ $days[0]->start_date->format('D M d, Y') }}</x-eventlist-header>
+
                         @foreach ($days as $lunch)
-                            <a href="/summer/events/{{ $lunch->id }}"
-                                class="block px-4 py-4 border-t border-b border-t-transparent border-b-transparent last:border-b-0 hover:bg-fuchsia-50 hover:border-t hover:border-t-fuchsia-300 hover:border-b hover:border-b-fuchsia-300"
-                                title="Live music in {{ $lunch->city }} from {{ $lunch->band }} at {{ $lunch->venue }} @if ($lunch->event_name) for {{ $lunch->event_name }} @endif">
-                                <div class="font-bold">{{ $lunch->band }}</div>
-                                @if ($lunch->event_name)
-                                    <div class="text-gray-800 text-sm">{{ $lunch->event_name }}</div>
-                                @endif
-                                <div class="text-gray-800 text-sm">{{ $lunch->venue }}</div>
-                                <div class="text-gray-800 text-sm">{{ $lunch->city }}</div>
-                                @if ($lunch->start_time)
-                                    <div class="text-gray-800 text-sm">
-                                        {{ $lunch->start_time }}
-                                    </div>
-                                @endif
-                            </a>
+                            <x-eventlist-item :event=$lunch path="/summer/events/" color="purple"></x-eventlist-item>
                         @endforeach
                     @endforeach
-                    <a href="/summer/events/lunchtime-concerts"
-                        class="mx-4 mt-8 inline-block text-white rounded px-3 py-2 bg-fuchsia-700 hover:bg-fuchsia-800 shadow-lg"
+
+                    <x-eventlist-view-more-button href="/summer/events/lunchtime-concerts"
                         title="See all live bands playing lunchtime concerts">See
-                        all in Lunchtime Concerts</a>
+                        all in Lunchtime Concerts</x-eventlist-view-more-button>
                 @else
-                    <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
+                    <div class="px-4 py-4 text-gray-500 italic text-sm mx-auto">There are no results yet for this
+                        category.
                     </div>
                 @endif
             </div>
@@ -115,10 +88,10 @@
     <!-- Regular Bar Events -->
     <section class="pb-8 mx-2">
         <x-wrapper-narrow class="bg-white shadow-lg border pb-12 ">
-            <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-blue-700 text-white">Live Bands at
+            <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-orange-600 text-white">Live Bands at
                 Bars and
                 Restaurants</x-page-subtitle>
-            <p class="px-4 mb-2 text-sm text-center text-blue-800">The list here includes the typical live band at a
+            <p class="px-4 mb-2 text-sm text-center text-orange-800">The list here includes the typical live band at a
                 bar,
                 usually held indoors throughout the year, but may be outside during the summer.</p>
             <div class="">
@@ -127,37 +100,16 @@
 
                 @if (is_countable($events) && count($events) > 0)
                     @foreach ($events as $days)
-                        <div class="mt-4 px-2 pt-2 border-b border-b-blue-500 text-blue-600 font-extrabold">
-                            {{ $days[0]->start_date->format('D M d, Y') }}
-                        </div>
-
-                        {{-- @dd($days); --}}
+                        <x-eventlist-header>{{ $days[0]->start_date->format('D M d, Y') }}</x-eventlist-header>
 
                         @foreach ($days as $event)
-                            <a href="/summer/events/{{ $event->id }}"
-                                class="block p-4 border-t border-b border-t-transparent border-b-transparent last:border-b-0 hover:bg-blue-50 hover:border-t hover:border-t-blue-300 hover:border-b hover:border-b-blue-300"
-                                title="Live music in {{ $event->city }} from {{ $event->band }} at {{ $event->venue }} @if ($event->event_name) for {{ $event->event_name }} @endif">
-                                <div>
-                                    <span class="font-bold">{{ $event->band }}</span>
-                                    @if ($event->event_name)
-                                        <span class="font-bold">at {{ $event->event_name }}</span>
-                                    @endif
-                                    <div class="text-gray-800 text-sm">{{ $event->venue }}
-                                    </div>
-                                    <div class="text-gray-800 text-sm">{{ $event->city }}</div>
-                                </div>
-                                <div class="text-gray-800 text-sm">
-                                    @if ($event->start_time)
-                                        {{ $event->start_time }}
-                                    @endif
-                                </div>
-                            </a>
+                            <x-eventlist-item :event=$event path="/summer/events/"></x-eventlist-item>
                         @endforeach
                     @endforeach
-                    <a href="/summer/events/bars-restaurants?"
-                        class="mx-4 mt-8 inline-block text-white rounded px-3 py-2 bg-blue-700 hover:bg-blue-800"
-                        title="See all live bands playing at bars and restaurants">See
-                        all in Bars & Restaurants </a>
+
+                    <x-eventlist-view-more-button href="/summer/events/bars-restaurants"
+                        title="See all live bands playing lunchtime concerts">See
+                        all in Bars & Restaurants</x-eventlist-view-more-button>
                 @else
                     <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
                     </div>
@@ -170,45 +122,27 @@
     <!-- Fairs, Fests, and Outdoor Concerts e.g. Rockfest, Winnebago County Fair -->
     <section class="pb-8 mx-2">
         <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
-            <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-green-700 text-white">Fairs, Fests,
+            <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-orange-600 text-white">Fairs, Fests,
                 and
                 Outdoor
                 Concerts</x-page-subtitle>
-            <p class="px-4 mb-2 text-sm text-center text-green-800">This list contains the yearly fests, fairs, and
+            <p class="px-4 mb-2 text-sm text-center text-orange-800">This list contains the yearly fests, fairs, and
                 outdoor
                 concerts that are not specifically tied to a bar or restaurant.</p>
 
             <div class=" ">
                 @if (is_countable($fairs) && count($fairs) > 0)
                     @foreach ($fairs as $days)
-                        <div class="mt-4 px-2 pt-2 border-b border-b-green-500 text-green-600 font-extrabold">
-                            {{ $days[0]->start_date->format('D M d, Y') }}
-                        </div>
+                        <x-eventlist-header>{{ $days[0]->start_date->format('D M d, Y') }}</x-eventlist-header>
+
                         @foreach ($days as $fair)
-                            <a href="/summer/events/{{ $fair->id }}"
-                                class="block p-4 border-t border-b border-t-transparent border-b-transparent last:border-b-0 hover:bg-green-50 hover:border-t hover:border-t-green-300 hover:border-b hover:border-b-green-300"
-                                title="Live music in {{ $fair->city }} from {{ $fair->band }} at {{ $fair->venue }} @if ($fair->event_name) for {{ $fair->event_name }} @endif">
-                                <div>
-                                    <span class="font-bold">{{ $fair->band }}</span>
-                                    @if ($fair->event_name)
-                                        <span class="font-bold">at {{ $fair->event_name }}</span>
-                                    @endif
-                                    <div class="text-gray-800 text-sm">{{ $fair->venue }}
-                                    </div>
-                                    <div class="text-gray-800 text-sm">{{ $fair->city }}</div>
-                                </div>
-                                <div class="text-gray-800 text-sm">
-                                    @if ($fair->start_time)
-                                        {{ $fair->start_time }}
-                                    @endif
-                                </div>
-                            </a>
+                            <x-eventlist-item :event=$fair path="/summer/events/"></x-eventlist-item>
                         @endforeach
                     @endforeach
-                    <a href="/summer/events/fairs-fests"
-                        class="mx-4 mt-8 inline-block text-white rounded px-3 py-2 bg-green-700 hover:bg-green-800 shadow-lg"
-                        title="See all live bands playing at fairs, festivals, and outdoor concerts in Wisconsin">See
-                        all in Fairs, Fests, and Outdoor Concerts</a>
+
+                    <x-eventlist-view-more-button href="/summer/events/fairs-fests"
+                        title="See all live bands playing lunchtime concerts">See
+                        all in Fairs, Fests, and Outdoor Concerts</x-eventlist-view-more-button>
                 @else
                     <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
                     </div>
@@ -232,36 +166,16 @@
 
                 @if (is_countable($nationalActs) && count($nationalActs) > 0)
                     @foreach ($nationalActs as $days)
-                        <div class="mt-4 px-2 pt-2 border-b border-b-violet-500 text-violet-600 font-extrabold">
-                            {{ $days[0]->start_date->format('D M d, Y') }}
-                        </div>
+                        <x-eventlist-header>{{ $days[0]->start_date->format('D M d, Y') }}</x-eventlist-header>
+
                         @foreach ($days as $nationalact)
-                            <a href="/summer/events/{{ $nationalact->id }}"
-                                class="block p-4 border-t border-b border-t-transparent border-b-transparent last:border-b-0 hover:bg-violet-50 hover:border-t hover:border-t-violet-300 hover:border-b hover:border-b-violet-300"
-                                title="Live music in {{ $nationalact->city }} from {{ $nationalact->band }} at {{ $nationalact->venue }} @if ($nationalact->event_name) for {{ $nationalact->event_name }} @endif">
-                                <div>
-                                    <span class="font-bold">{{ $nationalact->band }}</span>
-                                    @if ($nationalact->event_name)
-                                        <span class="font-bold">at {{ $nationalact->event_name }}</span>
-                                    @endif
-                                    <div class="text-gray-800 text-sm">{{ $nationalact->venue }}
-                                    </div>
-                                    <div class="text-gray-800 text-sm">
-                                        {{ $nationalact->city }}
-                                    </div>
-                                </div>
-                                <div class="text-gray-800 text-sm">
-                                    @if ($nationalact->start_time)
-                                        {{ $nationalact->start_time }}
-                                    @endif
-                                </div>
-                            </a>
+                            <x-eventlist-item :event=$nationalact path="/summer/events/"></x-eventlist-item>
                         @endforeach
                     @endforeach
-                    <a href="/summer/events/national-bands"
-                        class="mx-4 mt-8 inline-block text-white rounded px-3 py-2 bg-violet-700 hover:bg-violet-800 shadow-lg"
-                        title="See all national bands touring in Wisconsin this summer ">See
-                        all in National Acts</a>
+
+                    <x-eventlist-view-more-button href="/summer/events/national-bands"
+                        title="See all live bands playing lunchtime concerts">See
+                        all in National Acts</x-eventlist-view-more-button>
                 @else
                     <div class="text-gray-500 italic text-sm mx-auto">There are no results yet for this category.
                     </div>
