@@ -19,6 +19,41 @@
     {{-- @dd(is_countable($events), is_countable($eventsToday), is_countable($lunches), is_countable($nationalActs)); --}}
 
     <!-- Live music happening today -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="mb-4 font-semibold text-2xl leading-tight">
+            Live Music in the Fox Cities This Week
+        </h2>
+
+
+        <div>
+            @if (is_countable($eventsToday) && count($eventsToday) > 0)
+
+                {{-- @dd($eventsToday) --}}
+                @foreach ($eventsToday as $day)
+                    <div class="">
+                        <x-eventlist-header>{{ $day[0]->start_date->format('D M d, Y') }}</x-eventlist-header>
+
+                        @foreach ($day as $event)
+                            <x-eventlist-item :event=$event href="/summer/events/{{ $event->id }}"
+                                class="mb-4 bg-gray-800 rounded-lg overflow-y-auto shadow hover:shadow-lg transition "></x-eventlist-item>
+                        @endforeach
+                    </div>
+                @endforeach
+
+                <x-eventlist-view-more-button href="/summer/events/" title="See all live bands playing this week.">See
+                    more live music</x-eventlist-view-more-button>
+            @else
+                <div class="mb-4 bg-gray-800 rounded-lg overflow-y-auto shadow hover:shadow-lg transition ">There is no
+                    live music for today.
+                </div>
+            @endif
+        </div>
+
+    </section>
+
+    ...
+    </div>
+
     <section class="pb-8 mx-2">
         <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
             <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-orange-600 text-white rounded-t">Live
