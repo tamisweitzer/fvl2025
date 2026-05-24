@@ -40,8 +40,8 @@
     @endif
 </head>
 
-<body class="font-sans antialiased bg-slate-100">
-    <header class="bg-slate-700 text-slate-300">
+<body class="font-sans antialiased bg-gray-900 ">
+    <header class="text-gray-300" style="box-shadow: 3px 5px 7px 7px rgba(0,0,0,0.3)">
         @auth
             <nav class=" bg-slate-900 p-0 text-sm">
                 <div class="secondary-nav-menu max-w-5xl mx-auto flex justify-end gap-2 p-0">
@@ -52,9 +52,9 @@
                 </div>
             </nav>
         @endauth
-        <nav class="max-w-5xl mx-auto pr-4 flex justify-end gap-2 p-0 text-slate-200">
+        <nav class="max-w-5xl mx-auto pr-4 flex justify-end gap-2 p-0 text-gray-200">
             <a href="/"
-                class="site-branding inline-block  px-4 pt-2 pb-2 mr-auto text-orange-500 hover:text-slate-400 hover:underline text-xl font-bold small-caps">
+                class="site-branding inline-block  px-4 pt-2 pb-2 mr-auto text-orange-600 hover:text-amber-600 hover:underline hover:underline-offset-4 text-xl font-bold small-caps">
                 Fox Valley Live
             </a>
 
@@ -95,7 +95,7 @@
 
         <!-- Hero image and welcome text.  -->
         @if (request()->is('/'))
-            <div
+            {{-- <div
                 class="p-8 bg-[url('../images/lita.jpg')] bg-cover bg-middle h-[300px] sm:h-[400px] md:h-[500px] lg:h-[700px]">
                 <div class="flex flex-col justify-center items-center align-middle max-w-6xl mx-auto mt-4  h-full">
                     <div
@@ -106,7 +106,7 @@
                     </div>
                 </div>
             </div>
-            <div class="px-4 py-1 text-right text-sm">Lita Ford, The Watering Hole, Green Bay</div>
+            <div class="px-4 py-1 text-right text-sm">Lita Ford, The Watering Hole, Green Bay</div> --}}
         @endif
     </header>
 

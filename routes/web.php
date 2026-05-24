@@ -132,3 +132,7 @@ Route::post('/logout', [SessionController::class, 'destroy']);
 // Form on front page to get added to email list.
 Route::get('/email-signup', [EmailSignupController::class, 'index']);
 Route::post('/email-signup', [EmailSignupController::class, 'store']);
+
+Route::get('/branding', function () {
+    return view('branding');
+});
