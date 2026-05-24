@@ -15,10 +15,9 @@
                     <x-kv-group class="grid grid-cols-12">
                         <x-kv-key class="col-span-3 sm:col-span-2">Band(s):</x-kv-key>
                         <x-kv-value class="col-span-9 sm:col-span-10">
-                            <a href="/summer/events/bands/{{ $event->id }}"
-                                class="inline-block underline decoration decoration-orange-300 hover:bg-orange-100"
-                                title="Search all local, live music for {{ $event->band }} in Wisconsin this summer.">{{ $event->band }}
-                            </a>
+
+                            <x-a-inline-link-primary href="/summer/events/bands/{{ $event->id }}"
+                                title="Search all local, live music for {{ $event->band }} in Wisconsin this summer.">{{ $event->band }}</x-a-inline-link-primary>
                         </x-kv-value>
                     </x-kv-group>
 
@@ -26,9 +25,8 @@
                         <x-kv-group class="grid grid-cols-12">
                             <x-kv-key class="col-span-3 sm:col-span-2">Event:</x-kv-key>
                             <x-kv-value class="col-span-9 sm:col-span-10">
-                                <a href="/summer/events/event/{{ $event->id }}"
-                                    class="inline-block underline decoration decoration-orange-300 hover:bg-orange-100"
-                                    title="Search all local, live music at {{ $event->event_name }} in {{ $event->city }} this summer.">{{ $event->event_name }}</a>
+                                <x-a-inline-link-primary href="/summer/events/event/{{ $event->id }}"
+                                    title="Search all local, live music at {{ $event->event_name }} in {{ $event->city }}, Wisconsin this summer.">{{ $event->event_name }}</x-a-inline-link-primary>
                             </x-kv-value>
                         </x-kv-group>
                     @endif
@@ -37,9 +35,8 @@
                         <x-kv-group class="grid grid-cols-12">
                             <x-kv-key class="col-span-3 sm:col-span-2">Venue:</x-kv-key>
                             <x-kv-value class="col-span-9 sm:col-span-10">
-                                <a href="/summer/events/venues/{{ $event->id }}"
-                                    class="inline-block underline decoration decoration-orange-300 hover:bg-orange-100"
-                                    title="Search all local, live music at {{ $event->venue }} in {{ $event->city }}, WI this summer.">{{ $event->venue }}</a>
+                                <x-a-inline-link-primary href="/summer/events/venues/{{ $event->id }}"
+                                    title="Search all local, live music at {{ $event->venue }} in {{ $event->city }}, WI this summer.">{{ $event->venue }}</x-a-inline-link-primary>
                             </x-kv-value>
                         </x-kv-group>
                     @endif
@@ -48,9 +45,8 @@
                     <x-kv-group class="grid grid-cols-12">
                         <x-kv-key class="col-span-3 sm:col-span-2">City:</x-kv-key>
                         <x-kv-value class="col-span-9 sm:col-span-10">
-                            <a href="/summer/events/cities/{{ $event->id }}"
-                                class="inline-block underline decoration decoration-orange-300 hover:bg-orange-100"
-                                title="Search all local, live music in {{ $event->city }}, WI this summer.">{{ $event->city }}</a>
+                            <x-a-inline-link-primary href="/summer/events/cities/{{ $event->id }}"
+                                title="Search all local, live music at {{ $event->venue }} in {{ $event->city }}, WI this summer.">{{ $event->city }}</x-a-inline-link-primary>
                         </x-kv-value>
                     </x-kv-group>
 
