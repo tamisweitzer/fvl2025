@@ -7,7 +7,7 @@
             <p class="mt-8">Browse below for a sampling of the latest summer concerts happening now in your area, or
                 view the
                 extensive list
-                of <x-a-inline-link-primary>all upcoming
+                of <x-a-inline-link-primary href="/summer/events">all upcoming
                     events</x-a-inline-link-primary>.
             </p>
         </x-wrapper-narrow>
