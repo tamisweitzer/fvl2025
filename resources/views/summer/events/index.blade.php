@@ -2,7 +2,8 @@
     {{-- @dd($events); --}}
     <x-wrapper-narrow class="mt-8 mb-8 mx-auto p-4">
         <x-page-title>The Complete List of Live Music</x-page-title>
-        <p class="-mt-4 mb-12 text-center">The complete list of summer events around the Fox Valley this summer.</p>
+
+        <p class=" mb-12 text-center">The complete list of summer events around the Fox Valley this summer.</p>
 
         <x-see-more-events-small class="mb-12"></x-see-more-events-small>
 
