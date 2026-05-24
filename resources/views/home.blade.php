@@ -41,7 +41,7 @@
                 <x-eventlist-view-more-button href="/summer/events/" title="See all live bands playing this week.">See
                     more live music</x-eventlist-view-more-button>
             @else
-                <div class="my-4">There is no
+                <div class="my-4 p-4 italic text-sm">There is no
                     live music for today.
                 </div>
             @endif
@@ -80,7 +80,7 @@
                     title="See all live bands playing lunchtime concerts">See
                     all in Lunchtime Concerts</x-eventlist-view-more-button>
             @else
-                <div class="mb-4">There are no results yet for this category.
+                <div class="mb-4 p-4 italic text-sm">There are no results yet for this category.
                 </div>
             @endif
         </div>
@@ -116,7 +116,7 @@
                     title="See all live bands playing lunchtime concerts">See
                     all in Bars & Restaurants</x-eventlist-view-more-button>
             @else
-                <div class="my-4">There are no results yet for this category.
+                <div class="my-4 p-4 italic text-sm">There are no results yet for this category.
                 </div>
             @endif
         </div>
@@ -153,7 +153,7 @@
                     title="See all live bands playing lunchtime concerts">See
                     all in Fairs, Fests, and Outdoor Concerts</x-eventlist-view-more-button>
             @else
-                <div class="my-4">There are no results yet for this category.
+                <div class="my-4 p-4 italic text-sm">There are no results yet for this category.
                 </div>
             @endif
         </div>
@@ -192,7 +192,7 @@
                     title="See all live bands playing lunchtime concerts">See
                     all in National Acts</x-eventlist-view-more-button>
             @else
-                <div class="my-4">There are no results yet for this category.
+                <div class="my-4 p-4 italic text-sm">There are no results yet for this category.
                 </div>
             @endif
         </div>
