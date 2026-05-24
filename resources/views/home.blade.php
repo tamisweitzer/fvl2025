@@ -15,17 +15,13 @@
         </x-wrapper-narrow>
     </section>
 
-    {{-- @dd($events, $eventsToday, $lunches, $fairs, $nationalActs); --}}
-    {{-- @dd(is_countable($events), is_countable($eventsToday), is_countable($lunches), is_countable($nationalActs)); --}}
-
     <!-- Live music happening today -->
     <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="mb-4 font-semibold text-2xl leading-tight">
             Live Music in the Fox Cities This Week
         </h2>
 
-
-        <div>
+        <div class="pb-8 max-h- 96 overflow-auto" style="scrollbar-color: #888 #f1f1f1">
             @if (is_countable($eventsToday) && count($eventsToday) > 0)
 
                 {{-- @dd($eventsToday) --}}
@@ -48,44 +44,9 @@
                 </div>
             @endif
         </div>
-
     </section>
 
-    ...
-    </div>
 
-    <section class="pb-8 mx-2">
-        <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
-            <x-page-subtitle class="px-4 py-6 mb-8 tracking-wide font-semibold bg-orange-600 text-white rounded-t">Live
-                music this week!</x-page-subtitle>
-
-            <div class="rounded-b">
-                @if (is_countable($eventsToday) && count($eventsToday) > 0)
-
-                    {{-- @dd($eventsToday) --}}
-                    @foreach ($eventsToday as $day)
-                        <div class="mb-8 ">
-                            <x-eventlist-header>{{ $day[0]->start_date->format('D M d, Y') }}</x-eventlist-header>
-
-                            @foreach ($day as $event)
-                                <x-eventlist-item :event=$event path="/summer/events/"
-                                    color="purple"></x-eventlist-item>
-                            @endforeach
-                        </div>
-                    @endforeach
-
-                    <x-eventlist-view-more-button href="/summer/events/"
-                        title="See all live bands playing lunchtime concerts">See
-                        <em>all</em> upcoming live music</x-eventlist-view-more-button>
-                @else
-                    <div class="text-gray-500 italic text-sm mx-auto">There is no live music for today.
-                    </div>
-                @endif
-            </div>
-        </x-wrapper-narrow>
-    </section>
-
-    {{-- @dd($events); --}}
     <!-- Lunchtime Concert Series -->
     <section class="pb-8 mx-2">
         <x-wrapper-narrow class="bg-white shadow-lg border pb-12">
