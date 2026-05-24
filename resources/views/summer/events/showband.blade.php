@@ -1,7 +1,7 @@
 <x-layout>
     <x-wrapper-narrow class="mt-8 mb-8 mx-auto p-4">
         {{-- @dd($events) --}}
-
+        show band
         <x-page-title>
             @if (count($events) > 0)
                 {{ $events->first()->first()->band }}

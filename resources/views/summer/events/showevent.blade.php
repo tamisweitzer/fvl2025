@@ -1,4 +1,5 @@
 <x-layout>
+    show event
     <x-wrapper-narrow class="mt-8 mb-8 mx-auto p-4">
         <x-page-title>{{ $events->first()->first()->event_name }}</x-page-title>
         <p class="-mt-4 mb-12 text-center">The complete list of live bands playing at
@@ -36,7 +37,5 @@
                 </a>
             @endforeach
         @endforeach
-
-        <x-see-more-events></x-see-more-events>
     </x-wrapper-narrow>
 </x-layout>

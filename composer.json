@@ -7,6 +7,10 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "andreiio/blade-remix-icon": "^3.9",
+        "codeat3/blade-eos-icons": "^1.16",
+        "codeat3/blade-forkawesome": "^1.12",
+        "codeat3/blade-google-material-design-icons": "^1.21",
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9"
     },
