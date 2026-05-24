@@ -114,7 +114,8 @@
         {{ $slot }}
     </main>
 
-    <footer class="bg-slate-700 text-slate-400 py-16 text-center text-sm dark:text-white/70">
+    <footer class="mt-12 text-slate-400 py-16 text-center text-sm dark:text-white/70"
+        style="box-shadow: -3px -5px 7px 7px rgba(0,0,0,0.3)">
         <div class="wrapper max-w-5xl mx-auto ">
             <div class="flex flex-col sm:flex-row gap-4">
                 {{-- <div class="col flex-1">
