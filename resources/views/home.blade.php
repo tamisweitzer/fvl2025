@@ -1,17 +1,17 @@
 <x-layout>
     <section class="pb-4">
-        <x-wrapper-narrow class="px-4">
-            <x-page-title>Live Music in the Fox Valley</x-page-title>
-            <x-page-subtitle class="text-orange-700  font-semibold mb-4">Wisconsin knows music!</x-page-subtitle>
-            <p>Browse below for a sampling of the latest summer concerts happening now in your area, or view the
+        <x-wrapper-narrow class="px-4 mt-8 mb-8">
+            <x-page-title class=" text-amber-400 italic">Live, local music</x-page-title>
+            <x-page-subtitle class="mt-4 mb-4 text-orange-600 text-2xl italic">The hottest live music in Wisconsin's Fox
+                Valley</x-page-subtitle>
+            <p class="mt-8">Browse below for a sampling of the latest summer concerts happening now in your area, or
+                view the
                 extensive list
-                of <a href="/summer/events/" class="underline text-orange-700"> all upcoming events</a>. </p>
-            <p class="mt-4">You can even <a href="/cities" class="underline text-orange-700">search by city</a> for
-                events filtered to
-                a specific
-                area.
+                of <x-a-inline-link-primary>all upcoming
+                    events</x-a-inline-link-primary>.
             </p>
-            <p class="mt-8 text-gray-700">Click on any listing below for more information.</p>
+
+            <p class="mt-8">Click on any listing below for more information.</p>
         </x-wrapper-narrow>
     </section>
 
