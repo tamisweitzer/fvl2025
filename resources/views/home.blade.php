@@ -10,8 +10,6 @@
                 of <x-a-inline-link-primary>all upcoming
                     events</x-a-inline-link-primary>.
             </p>
-
-            <p class="mt-8">Click on any listing below for more information.</p>
         </x-wrapper-narrow>
     </section>
 
@@ -19,6 +17,10 @@
     <section class="max-w-5xl mx-auto mb-8">
 
         <x-eventlist-section-header>Live Music This Week</x-eventlist-section-header>
+
+        <div class="mb-2 px-4 text-sm">
+            <p>Click on any listing below for more information.</p>
+        </div>
 
         <div class="pb-8 mx-2 sm:mx-4 max-h- 96 bg-gray-800 rounded-lg overflow-y-auto">
             @if (is_countable($eventsToday) && count($eventsToday) > 0) {{-- @dd($eventsToday) --}}
