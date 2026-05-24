@@ -97,5 +97,8 @@
 
     </section>
 
-    <x-see-more-events></x-see-more-events>
+    <div class="mx-4">
+        <x-see-more-events></x-see-more-events>
+    </div>
+
 </x-layout>
