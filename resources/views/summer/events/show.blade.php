@@ -1,6 +1,6 @@
 <x-layout>
-    <section class="mt-12 max-w-5xl mx-auto mb-8">
-        <x-card-single-wrapper class="w-full">
+    <section class="mx-2 mt-12 mb-8 max-w-5xl">
+        <x-card-single-wrapper>
             <x-eventlist-section-header class="text-3xl">{{ $event->band }} at @if ($event->event_name)
                     {{ $event->event_name }}
                 @else
