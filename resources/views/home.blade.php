@@ -14,7 +14,7 @@
     </section>
 
     <!-- Live music happening today -->
-    <section class="max-w-5xl mx-auto mb-8">
+    <section class="mb-8">
 
         <x-eventlist-section-header>Live Music This Week</x-eventlist-section-header>
 
@@ -50,7 +50,7 @@
 
 
     <!-- Lunchtime Concert Series -->
-    <section class="max-w-5xl mx-auto mb-8">
+    <section class="mb-8">
         <x-eventlist-section-header>Lunchtime Concerts</x-eventlist-section-header>
 
         <div class="mb-2 px-4 text-sm">
@@ -88,7 +88,7 @@
 
 
     <!-- Regular Bar Events -->
-    <section class="max-w-5xl mx-auto mb-8">
+    <section class="mb-8">
 
         <x-eventlist-section-header>Bars and Restaurants</x-eventlist-section-header>
 
@@ -124,7 +124,7 @@
 
 
     <!-- Fairs, Fests, and Outdoor Concerts e.g. Rockfest, Winnebago County Fair -->
-    <section class="max-w-5xl mx-auto mb-8">
+    <section class="mb-8">
 
         <x-eventlist-section-header>Fairs, Fests, and Outdoor Concerts</x-eventlist-section-header>
 
@@ -161,7 +161,7 @@
 
 
     <!-- National Acts -->
-    <section class="max-w-5xl mx-auto mb-8">
+    <section class="mb-8">
 
         <x-eventlist-section-header>National Acts</x-eventlist-section-header>
 
@@ -192,7 +192,7 @@
                     title="See all live bands playing lunchtime concerts">See
                     all in National Acts</x-eventlist-view-more-button>
             @else
-                <div class="my-4 p-4 italic text-sm">There are no results yet for this category.
+                <div class="my-4">There are no results yet for this category.
                 </div>
             @endif
         </div>
