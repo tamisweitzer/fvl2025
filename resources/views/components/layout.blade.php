@@ -42,7 +42,7 @@
 
 <body class="font-sans antialiased bg-gray-900 ">
     <header class="text-gray-300" style="box-shadow: 3px 5px 7px 7px rgba(0,0,0,0.3)">
-        <div class="max-w-4xl mx-auto">
+        <div class="px-2 sm:px-4 max-w-4xl mx-auto">
             @auth
                 <nav class=" bg-slate-900 p-0 text-sm">
                     <div class="secondary-nav-menu   flex justify-end gap-2 p-0">
@@ -99,7 +99,7 @@
     <!-- Hero image and welcome text.  -->
     @if (request()->is('/'))
         <div
-            class="p-8 bg-[url('../images/lita.jpg')] bg-cover bg-middle h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]">
+            class="px-2 sm:px-4 bg-[url('../images/lita.jpg')] bg-cover bg-middle h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]">
             {{-- <div class="flex flex-col justify-center items-center align-middle max-w-6xl mx-auto mt-4  h-full">
                     <div
                         class="content bg-white opacity-95 max-w-fit px-4 sm:px-10 pt-4 pb-6 font-extrabold text-center">
@@ -113,12 +113,12 @@
     @endif
 
     <main class="min-h-[calc(100vh-200px)] text-gray-300">
-        <div class="max-w-4xl mx-auto">{{ $slot }}</div>
+        <div class="px-2 sm:px-4 max-w-4xl mx-auto">{{ $slot }}</div>
     </main>
 
-    <footer class="mt-12 text-slate-400 py-16 text-center text-sm dark:text-white/70"
+    <footer class="mt-12 px-4 text-slate-400 text-center text-sm dark:text-white/70"
         style="box-shadow: -3px -5px 7px 7px rgba(0,0,0,0.3)">
-        <div class="max-w-4xl mx-auto">
+        <div class="px-2 sm:px-4 max-w-4xl mx-auto">
             <div class="flex flex-col sm:flex-row gap-4">
                 {{-- <div class="col flex-1">
                     <a href="#" class="block p-4">link</a>
