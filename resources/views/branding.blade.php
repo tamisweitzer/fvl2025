@@ -1,14 +1,32 @@
 <x-layout>
-    <div class="p-4 m-4">
-        <h1>Branding for Fox Valley Live v1.0_sqlite</h1>
 
-        <section class=my-8>
-            <h2>Surface colors</h2>
-            <div>
-                <div class="bg-gray-900 p-4 w-32 h-24"></div>
-                <p>bg-gray-900</p>
+    <div class="bg-white text-gray-900">
+        <div class="p-4 m-4">
+            <h1 class="text-3xl">Branding for Fox Valley Live v1.0_sqlite</h1>
+
+            <div class=my-8>
+                <h2>Surface colors</h2>
+                <div>
+                    <x-branding.color-swatch class="bg-gray-900"></x-brandingcolor-swatch>
+                        <p>bg-gray-900</p>
+                </div>
+                <div>
+                    <x-branding.color-swatch class="bg-gray-800"></x-brandingcolor-swatch>
+                        <p>bg-gray-800</p>
+                </div>
+                <div>
+                    <x-branding.color-swatch class="bg-gray-700"></x-brandingcolor-swatch>
+                        <p>bg-gray-700</p>
+                </div>
+                <div>
+                    <x-branding.color-swatch class="bg-gray-900"></x-brandingcolor-swatch>
+                        <p>bg-gray-900</p>
+                </div>
             </div>
-        </section>
+
+
+        </div>
     </div>
+
 
 </x-layout>
