@@ -4,6 +4,7 @@
 use App\Models\Event;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BandController;
+use App\Http\Controllers\BrandingController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
@@ -133,6 +134,4 @@ Route::post('/logout', [SessionController::class, 'destroy']);
 Route::get('/email-signup', [EmailSignupController::class, 'index']);
 Route::post('/email-signup', [EmailSignupController::class, 'store']);
 
-Route::get('/branding', function () {
-    return view('branding');
-});
+Route::get('/branding', [BrandingController::class, 'index']);

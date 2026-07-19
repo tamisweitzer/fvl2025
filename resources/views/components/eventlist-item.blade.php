@@ -1,7 +1,9 @@
+{{-- Each individual listing on home page --}}
+
 @props(['path', 'color' => 'orange', 'event'])
 
 
-<a {{ $attributes->merge(['class' => 'px-4 block bg-gray-800 rounded-lg overflow-y-auto border border-transparent hover:bg-gray-600']) }}
+<a {{ $attributes->merge(['class' => 'px-4 block bg-gray-800 overflow-y-auto border border-transparent hover:bg-gray-600']) }}
     title="Live music in {{ $event->city }} from {{ $event->band }} at {{ $event->venue }} @if ($event->event_name) for {{ $event->event_name }} @endif">
 
     <div class="text-lg font-bold">{{ $event->band }}</div>

@@ -22,7 +22,7 @@
             <p>Click on any listing below for more information.</p>
         </div>
 
-        <div class="pb-8 mx-2 sm:mx-4 max-h- 96 bg-gray-800 rounded-lg overflow-y-auto">
+        <div class="pb-8 mx-2 sm:mx-4 max-h-96 bg-gray-800 rounded-lg overflow-y-auto">
             @if (is_countable($eventsToday) && count($eventsToday) > 0) {{-- @dd($eventsToday) --}}
                 @foreach ($eventsToday as $day)
                     <x-eventlist-item-header>{{ $day[0]->start_date->format('D M d, Y') }}</x-eventlist-item-header>
