@@ -4,10 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\Band;
+use App\Models\Venue;
 
 class EventController extends Controller {
   public function index() {
-    return view('events.index', ['events' => Event::all()]);
+    $_events = Event::with(['band', 'venue'])->get();
+
+    $events = $_events->sortBy('event_date')
+      ->groupBy('event_date');
+
+    // dd($events);
+
+    return view('events.index', ['events' => $events]);
   }
 
   public function show($id) {

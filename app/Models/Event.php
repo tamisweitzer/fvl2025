@@ -25,4 +25,10 @@ class Event extends Model {
   public function venue() {
     return $this->belongsTo(Venue::class);
   }
+
+  protected function casts() {
+    return [
+      'event_date' => 'datetime:m-d-YYYY',
+    ];
+  }
 }
