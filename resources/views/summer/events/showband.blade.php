@@ -17,11 +17,11 @@
         <div class="pb-8 mx-2 sm:mx-4 max-h- 96 bg-gray-800 rounded-lg overflow-y-auto">
             @if (is_countable($events) && count($events) > 0)
                 @foreach ($events as $days)
-                    <x-eventlist-item-header>{{ $days[0]->start_date->format('D M d, Y') }}</x-eventlist-item-header>
+                    <x-event.list-item-header>{{ $days[0]->start_date->format('D M d, Y') }}</x-event.list-item-header>
 
                     @foreach ($days as $event)
-                        <x-eventlist-item :event=$event href="/summer/events/{{ $event->id }}"
-                            class="mb-4"></x-eventlist-item>
+                        <x-event.list-item :event=$event href="/summer/events/{{ $event->id }}"
+                            class="mb-4"></x-event.list-item>
                     @endforeach
                 @endforeach
             @endif

@@ -33,21 +33,21 @@
     <div class="pb-8 mx-2 sm:mx-4 bg-gray-800 rounded-lg overflow-y-auto">
         @if (is_countable($eventsToday) && count($eventsToday) > 0) {{-- @dd($eventsToday) --}}
             @foreach ($eventsToday as $day)
-                <x-eventlist-item-header>{{ $day[0]->start_date->format('D M d, Y') }}</x-eventlist-item-header>
+                <x-event.list-item-header>{{ $day[0]->start_date->format('D M d, Y') }}</x-event.list-item-header>
 
                 @foreach ($day as $event)
-                    <x-eventlist-item :event=$event href="/summer/events/{{ $event->id }}"
-                        class="mb-4"></x-eventlist-item>
+                    <x-event.list-item :event=$event href="/summer/events/{{ $event->id }}"
+                        class="mb-4"></x-event.list-item>
                 @endforeach
 
                 @if (!$loop->last)
-                    <x-eventlist-item-divider></x-eventlist-item-divider>
+                    <x-event.list-item-divider></x-event.list-item-divider>
                 @endif
             @endforeach
 
 
-            <x-eventlist-view-more-button href="/summer/events/" title="See all live bands playing this week.">See
-                more live music</x-eventlist-view-more-button>
+            <x-event.list-view-more-button href="/summer/events/" title="See all live bands playing this week.">See
+                more live music</x-event.list-view-more-button>
         @else
             <div class="my-4 p-4 italic text-sm">There is no
                 live music for today.

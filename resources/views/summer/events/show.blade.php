@@ -1,14 +1,16 @@
 <x-layout>
     <section class="mx-2 mt-12 mb-8 max-w-5xl">
-        <x-card-single-wrapper>
-            <x-eventlist-section-header class="text-3xl">{{ $event->band }} at @if ($event->event_name)
-                    {{ $event->event_name }}
-                @else
-                    {{ $event->venue }}
-                @endif
-            </x-eventlist-section-header>
+        <x-event.list-section-header class="text-3xl">{{ $event->band }} at @if ($event->event_name)
+                {{ $event->event_name }}
+            @else
+                {{ $event->venue }}
+            @endif
+        </x-event.list-section-header>
 
-            <x-eventlist-item-divider class="pb-4"></x-eventlist-item-divider>
+        <x-card-single-wrapper>
+
+
+            <x-event.list-item-divider class="pb-4"></x-event.list-item-divider>
 
             <div class="px-4 flex flex-row gap-x-4 sm:flex-col">
                 <div class="flex flex-col justify-end">
