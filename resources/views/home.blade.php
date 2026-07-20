@@ -23,28 +23,9 @@
         </div>
 
         <x-container>
-            @if (is_countable($eventsToday) && count($eventsToday) > 0) {{-- @dd($eventsToday) --}}
-                @foreach ($eventsToday as $day)
-                    <x-eventlist-item-header>{{ $day[0]->start_date->format('D M d, Y') }}</x-eventlist-item-header>
-
-                    @foreach ($day as $event)
-                        <x-eventlist-item :event=$event href="/summer/events/{{ $event->id }}"
-                            class="mb-4"></x-eventlist-item>
-                    @endforeach
-
-                    @if (!$loop->last)
-                        <x-eventlist-item-divider></x-eventlist-item-divider>
-                    @endif
-                @endforeach
-
-
-                <x-eventlist-view-more-button href="/summer/events/" title="See all live bands playing this week.">See
-                    more live music</x-eventlist-view-more-button>
-            @else
-                <div class="my-4 p-4 italic text-sm">There is no
-                    live music for today.
-                </div>
-            @endif
+            <x-event.list-group :events="$eventsToday" :eventsUrl="'/summer/events/'"
+                viewMoreHoverText="See all live bands playing this week." viewMoreLinkText="See more live music"
+                noResultsText="There is no live music for today."></x-event.list-group>
         </x-container>
     </section>
 
@@ -61,28 +42,11 @@
                 food trucks or vendors near by.</p>
         </div>
 
-
         <x-container>
-            @if (is_countable($lunches) && count($lunches) > 0)
-                @foreach ($lunches as $days)
-                    <x-eventlist-item-header>{{ $days[0]->start_date->format('D M d, Y') }}</x-eventlist-item-header>
-
-                    @foreach ($days as $lunch)
-                        <x-eventlist-item :event=$lunch path="/summer/events/" class="mb-4"></x-eventlist-item>
-                    @endforeach
-
-                    @if (!$loop->last)
-                        <x-eventlist-item-divider></x-eventlist-item-divider>
-                    @endif
-                @endforeach
-
-                <x-eventlist-view-more-button href="/summer/events/lunchtime-concerts"
-                    title="See all live bands playing lunchtime concerts">See
-                    all in Lunchtime Concerts</x-eventlist-view-more-button>
-            @else
-                <div class="mb-4 p-4 italic text-sm">There are no results yet for this category.
-                </div>
-            @endif
+            <x-event.list-group :events="$lunches" :eventsUrl="'/summer/events/lunchtime-concerts'"
+                viewMoreHoverText="See all live bands playing lunchtime concerts this week."
+                viewMoreLinkText="See all in Lunchtime Concerts"
+                noResultsText="There are no results yet for this category."></x-event.list-group>
         </x-container>
     </section>
 
@@ -99,26 +63,10 @@
         </div>
 
         <x-container>
-            @if (is_countable($events) && count($events) > 0)
-                @foreach ($events as $days)
-                    <x-eventlist-item-header>{{ $days[0]->start_date->format('D M d, Y') }}</x-eventlist-item-header>
-
-                    @foreach ($days as $event)
-                        <x-eventlist-item :event=$event path="/summer/events/" class="mb-4"></x-eventlist-item>
-                    @endforeach
-
-                    @if (!$loop->last)
-                        <x-eventlist-item-divider></x-eventlist-item-divider>
-                    @endif
-                @endforeach
-
-                <x-eventlist-view-more-button href="/summer/events/bars-restaurants"
-                    title="See all live bands playing lunchtime concerts">See
-                    all in Bars & Restaurants</x-eventlist-view-more-button>
-            @else
-                <div class="my-4 p-4 italic text-sm">There are no results yet for this category.
-                </div>
-            @endif
+            <x-event.list-group :events="$events" :eventsUrl="'/summer/events/bars-restaurants'"
+                viewMoreHoverText="See all live bands playing Bars & Restaurants this week."
+                viewMoreLinkText="See all in Bars & Restaurants"
+                noResultsText="There are no results yet for this category."></x-event.list-group>
         </x-container>
     </section>
 
@@ -134,28 +82,11 @@
                 concerts that are not specifically tied to a bar or restaurant.</p>
         </div>
 
-
         <x-container>
-            @if (is_countable($fairs) && count($fairs) > 0)
-                @foreach ($fairs as $days)
-                    <x-eventlist-item-header>{{ $days[0]->start_date->format('D M d, Y') }}</x-eventlist-item-header>
-
-                    @foreach ($days as $fair)
-                        <x-eventlist-item :event=$fair path="/summer/events/" class="mb-4"></x-eventlist-item>
-                    @endforeach
-
-                    @if (!$loop->last)
-                        <x-eventlist-item-divider></x-eventlist-item-divider>
-                    @endif
-                @endforeach
-
-                <x-eventlist-view-more-button href="/summer/events/fairs-fests"
-                    title="See all live bands playing lunchtime concerts">See
-                    all in Fairs, Fests, and Outdoor Concerts</x-eventlist-view-more-button>
-            @else
-                <div class="my-4 p-4 italic text-sm">There are no results yet for this category.
-                </div>
-            @endif
+            <x-event.list-group :events="$fairs" :eventsUrl="'/summer/events/fairs-fests'"
+                viewMoreHoverText="See all live bands playing Fairs, Fests, and Outdoor Concerts this week."
+                viewMoreLinkText="See all in Fairs, Fests, and Outdoor Concerts"
+                noResultsText="There are no results yet for this category."></x-event.list-group>
         </x-container>
     </section>
 
@@ -174,27 +105,10 @@
         </div>
 
         <x-container class="pb-8 mx-2 sm:mx-4 max-h- 96 bg-gray-800 rounded-lg overflow-y-auto">
-
-            @if (is_countable($nationalActs) && count($nationalActs) > 0)
-                @foreach ($nationalActs as $days)
-                    <x-eventlist-item-header>{{ $days[0]->start_date->format('D M d, Y') }}</x-eventlist-item-header>
-
-                    @foreach ($days as $nationalact)
-                        <x-eventlist-item :event=$nationalact path="/summer/events/"></x-eventlist-item>
-                    @endforeach
-
-                    @if (!$loop->last)
-                        <x-eventlist-item-divider></x-eventlist-item-divider>
-                    @endif
-                @endforeach
-
-                <x-eventlist-view-more-button href="/summer/events/national-bands"
-                    title="See all live bands playing lunchtime concerts">See
-                    all in National Acts</x-eventlist-view-more-button>
-            @else
-                <div class="my-4">There are no results yet for this category.
-                </div>
-            @endif
+            <x-event.list-group :events="$nationalActs" :eventsUrl="'/summer/events/national-bands'"
+                viewMoreHoverText="See all live bands playing National Acts this week."
+                viewMoreLinkText="See all in National Acts"
+                noResultsText="There are no results yet for this category."></x-event.list-group>
         </x-container>
     </section>
     <!-- End summer events -->
