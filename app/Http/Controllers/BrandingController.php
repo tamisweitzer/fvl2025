@@ -11,6 +11,7 @@ class BrandingController extends Controller {
         $events = SummerEvents::all()
             ->where('start_date', '>=', Date::today())
             ->sortBy('start_date')
+            ->take(7)
             ->groupBy('start_date');
         return view('branding.index', ['eventsToday' => $events]);
     }
