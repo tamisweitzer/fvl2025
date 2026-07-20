@@ -8,16 +8,12 @@
             <p class="text-center mb-4 mt-12 text-gray-400 italic text-sm">Click on any listing for more information, or
                 select a
                 button to filter results.</p>
-            {{-- @dd($events) --}}
-
-
-
 
             @if (is_countable($events) && count($events) > 0)
                 @foreach ($events as $day)
                     <x-event-list.item-header>{{ $day[0]->event_date->format('M d Y') }}</x-event-list.item-header>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
                         @foreach ($day as $event)
                             <a href="/events/{{ $event->id }}"
                                 class='px-4 py-4 block bg-gray-800 overflow-y-auto border border-transparent hover:bg-gray-600 rounded-lg overflow-hidden shadow hover:shadow-lg transition'
