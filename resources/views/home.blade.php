@@ -22,7 +22,7 @@
             <p>Click on any listing below for more information.</p>
         </div>
 
-        <div class="pb-8 mx-2 sm:mx-4 max-h-96 bg-gray-800 rounded-lg overflow-y-auto">
+        <x-container>
             @if (is_countable($eventsToday) && count($eventsToday) > 0) {{-- @dd($eventsToday) --}}
                 @foreach ($eventsToday as $day)
                     <x-eventlist-item-header>{{ $day[0]->start_date->format('D M d, Y') }}</x-eventlist-item-header>
@@ -45,7 +45,7 @@
                     live music for today.
                 </div>
             @endif
-        </div>
+        </x-container>
     </section>
 
 
@@ -62,7 +62,7 @@
         </div>
 
 
-        <div class="pb-8 mx-2 sm:mx-4 max-h- 96 bg-gray-800 rounded-lg overflow-y-auto">
+        <x-container>
             @if (is_countable($lunches) && count($lunches) > 0)
                 @foreach ($lunches as $days)
                     <x-eventlist-item-header>{{ $days[0]->start_date->format('D M d, Y') }}</x-eventlist-item-header>
@@ -83,7 +83,7 @@
                 <div class="mb-4 p-4 italic text-sm">There are no results yet for this category.
                 </div>
             @endif
-        </div>
+        </x-container>
     </section>
 
 
@@ -98,7 +98,7 @@
                 usually held indoors throughout the year, but may be outside during the summer.</p>
         </div>
 
-        <div class="pb-8 mx-2 sm:mx-4 max-h- 96 bg-gray-800 rounded-lg overflow-y-auto">
+        <x-container>
             @if (is_countable($events) && count($events) > 0)
                 @foreach ($events as $days)
                     <x-eventlist-item-header>{{ $days[0]->start_date->format('D M d, Y') }}</x-eventlist-item-header>
@@ -119,7 +119,7 @@
                 <div class="my-4 p-4 italic text-sm">There are no results yet for this category.
                 </div>
             @endif
-        </div>
+        </x-container>
     </section>
 
 
@@ -135,7 +135,7 @@
         </div>
 
 
-        <div class="pb-8 mx-2 sm:mx-4 max-h- 96 bg-gray-800 rounded-lg overflow-y-auto">
+        <x-container>
             @if (is_countable($fairs) && count($fairs) > 0)
                 @foreach ($fairs as $days)
                     <x-eventlist-item-header>{{ $days[0]->start_date->format('D M d, Y') }}</x-eventlist-item-header>
@@ -156,7 +156,7 @@
                 <div class="my-4 p-4 italic text-sm">There are no results yet for this category.
                 </div>
             @endif
-        </div>
+        </x-container>
     </section>
 
 
@@ -173,7 +173,7 @@
                 section, not here.</p>
         </div>
 
-        <div class="pb-8 mx-2 sm:mx-4 max-h- 96 bg-gray-800 rounded-lg overflow-y-auto">
+        <x-container class="pb-8 mx-2 sm:mx-4 max-h- 96 bg-gray-800 rounded-lg overflow-y-auto">
 
             @if (is_countable($nationalActs) && count($nationalActs) > 0)
                 @foreach ($nationalActs as $days)
@@ -195,7 +195,7 @@
                 <div class="my-4">There are no results yet for this category.
                 </div>
             @endif
-        </div>
+        </x-container>
     </section>
     <!-- End summer events -->
 
