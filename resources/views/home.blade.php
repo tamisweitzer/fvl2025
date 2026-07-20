@@ -16,7 +16,7 @@
     <!-- Live music happening today -->
     <section class="mb-8">
 
-        <x-eventlist-section-header>Live Music This Week</x-eventlist-section-header>
+        <x-heading-secondary>Live Music This Week</x-heading-secondary>
 
         <div class="mb-2 px-4 text-sm">
             <p>Click on any listing below for more information.</p>
@@ -51,7 +51,7 @@
 
     <!-- Lunchtime Concert Series -->
     <section class="mb-8">
-        <x-eventlist-section-header>Lunchtime Concerts</x-eventlist-section-header>
+        <x-heading-secondary>Lunchtime Concerts</x-heading-secondary>
 
         <div class="mb-2 px-4 text-sm">
             <p>These concerts are generally held in a park or
@@ -90,7 +90,7 @@
     <!-- Regular Bar Events -->
     <section class="mb-8">
 
-        <x-eventlist-section-header>Bars and Restaurants</x-eventlist-section-header>
+        <x-heading-secondary>Bars and Restaurants</x-heading-secondary>
 
         <div class="mb-2 px-4 text-sm">
             <p>The list here includes the typical live band at a
@@ -126,7 +126,7 @@
     <!-- Fairs, Fests, and Outdoor Concerts e.g. Rockfest, Winnebago County Fair -->
     <section class="mb-8">
 
-        <x-eventlist-section-header>Fairs, Fests, and Outdoor Concerts</x-eventlist-section-header>
+        <x-heading-secondary>Fairs, Fests, and Outdoor Concerts</x-heading-secondary>
 
         <div class="mb-2 px-4 text-sm">
             <p>This list contains the yearly fests, fairs, and
@@ -163,7 +163,7 @@
     <!-- National Acts -->
     <section class="mb-8">
 
-        <x-eventlist-section-header>National Acts</x-eventlist-section-header>
+        <x-heading-secondary>National Acts</x-heading-secondary>
 
         <div class="mb-2 px-4 text-sm">
             <p>These are stand-alone concerts specifically for a
