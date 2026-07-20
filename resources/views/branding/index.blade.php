@@ -1,5 +1,5 @@
 <x-layout>
-
+    {{-- Site styles and component samples. --}}
     <div class="bg-white text-gray-900">
         <div class="p-4 m-4">
             <h1 class="text-3xl">Branding for Fox Valley Live v1.0_sqlite</h1>
