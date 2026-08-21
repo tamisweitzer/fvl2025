@@ -7,7 +7,7 @@
         @foreach ($venues as $venue)
             <div class="mb-2">
                 <a href="/summer/events/venues/{{ $venue->id }}"
-                    class="inline-block underline decoration decoration-orange-300 hover:bg-orange-100">
+                    class="inline-block underline decoration decoration-orange-300 hover:bg-gray-600">
                     {{ $venue->venue }}</a>
             </div>
         @endforeach
