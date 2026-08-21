@@ -59,6 +59,8 @@ class HomeController extends Controller {
             ->take(3)
             ->groupBy('start_date');
 
+        // dd('eventsToday', $eventsToday, 'events', $events, 'lunches', $lunches, 'fairs', $fairs, 'nationalActs', $nationalActs);
+
         return view('home', [
             'eventsToday' => $eventsToday,
             'events' => $events,

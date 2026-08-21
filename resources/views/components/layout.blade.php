@@ -21,6 +21,7 @@
     <meta name="keywords"
         content="band, bands, music, live music, live band, live bands, concert, concerts, fox valley, fox cities, appleton, green bay, northeast wisconson, gigs">
     <meta name="author" content="Tami Sweitzer tamisweitzer.com">
+    <meta name="version" content="v1.0_s...te">
     <title>Fox Valley Live - Wisconsin's home for the best live music in the Fox Valley and beyond!
     </title>
 
@@ -38,6 +39,7 @@
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @endif
+
 </head>
 
 <body class="font-sans antialiased bg-gray-900 ">
