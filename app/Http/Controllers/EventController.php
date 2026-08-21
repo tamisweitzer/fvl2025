@@ -14,8 +14,6 @@ class EventController extends Controller {
     $events = $_events->sortBy('event_date')
       ->groupBy('event_date');
 
-    // dd($events);
-
     return view('events.index', ['events' => $events]);
   }
 
