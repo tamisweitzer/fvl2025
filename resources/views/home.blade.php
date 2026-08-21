@@ -15,7 +15,6 @@
 
     <!-- Live music happening today -->
     <section class="mb-8">
-
         <x-heading-secondary>Live Music This Week</x-heading-secondary>
 
         <div class="mb-2 px-4 text-sm">
@@ -23,8 +22,9 @@
         </div>
 
         <x-container>
-            <x-event.list-group :events="$eventsToday" :eventsUrl="'/summer/events'"
-                viewMoreHoverText="See all live bands playing this week." viewMoreLinkText="See more live music"
+            <x-event.list-group :events="$eventsToday" :eventUrl="'/summer/events'"
+                viewMoreHoverText="See all live bands playing this week." viewMoreLink="/summer/events"
+                viewMoreLinkText="See more live music"
                 noResultsText="There is no live music for today."></x-event.list-group>
         </x-container>
     </section>
@@ -43,9 +43,9 @@
         </div>
 
         <x-container>
-            <x-event.list-group :events="$lunches" :eventsUrl="'/summer/events'"
+            <x-event.list-group :events="$lunches" :eventUrl="'/summer/events'"
                 viewMoreHoverText="See all live bands playing lunchtime concerts this week."
-                viewMoreLinkText="See all in Lunchtime Concerts"
+                viewMoreLink="/summer/events/lunchtime-concerts" viewMoreLinkText="See all in Lunchtime Concerts"
                 noResultsText="There are no results yet for this category."></x-event.list-group>
         </x-container>
     </section>
@@ -63,9 +63,9 @@
         </div>
 
         <x-container>
-            <x-event.list-group :events="$events" :eventsUrl="'/summer/events'"
+            <x-event.list-group :events="$events" :eventUrl="'/summer/events'"
                 viewMoreHoverText="See all live bands playing Bars & Restaurants this week."
-                viewMoreLinkText="See all in Bars & Restaurants"
+                viewMoreLink="/summer/events/bars-restaurants" viewMoreLinkText="See all in Bars & Restaurants"
                 noResultsText="There are no results yet for this category."></x-event.list-group>
         </x-container>
     </section>
@@ -83,8 +83,9 @@
         </div>
 
         <x-container>
-            <x-event.list-group :events="$fairs" :eventsUrl="'/summer/events'"
+            <x-event.list-group :events="$fairs" :eventUrl="'/summer/events'"
                 viewMoreHoverText="See all live bands playing Fairs, Fests, and Outdoor Concerts this week."
+                viewMoreLink="/summer/events/fairs-fests"
                 viewMoreLinkText="See all in Fairs, Fests, and Outdoor Concerts"
                 noResultsText="There are no results yet for this category."></x-event.list-group>
         </x-container>
@@ -105,9 +106,9 @@
         </div>
 
         <x-container class="pb-8 mx-2 sm:mx-4 max-h- 96 bg-gray-800 rounded-lg overflow-y-auto">
-            <x-event.list-group :events="$nationalActs" :eventsUrl="'/summer/events'"
+            <x-event.list-group :events="$nationalActs" :eventUrl="'/summer/events'"
                 viewMoreHoverText="See all live bands playing National Acts this week."
-                viewMoreLinkText="See all in National Acts"
+                viewMoreLink="/summer/events/national-bands" viewMoreLinkText="See all in National Acts"
                 noResultsText="There are no results yet for this category."></x-event.list-group>
         </x-container>
     </section>
