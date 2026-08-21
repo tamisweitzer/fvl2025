@@ -45,7 +45,7 @@
         </div>
     </x-see-more-link>
 
-    <x-see-more-link class="flex flex-col justify-between" href="/summer/events/national-bands">
+    <x-see-more-link class="flex flex-col justify-between" href="/summer/events/bars-restaurants">
         <div>
             <x-see-more-event-heading>Bar and
                 Restaurant Gigs</x-see-more-event-heading>

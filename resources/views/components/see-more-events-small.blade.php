@@ -25,7 +25,7 @@
             Concerts</h3>
     </x-see-more-link-small>
 
-    <x-see-more-link-small href="/summer/events/national-bands"
+    <x-see-more-link-small href="/summer/events/bars-restaurants"
         title="The list here includes the typical live band at a
             bar,
             usually held indoors throughout the year, but may be outside during the summer.">
