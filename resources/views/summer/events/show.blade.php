@@ -1,3 +1,11 @@
+@php
+    $eventType = [
+        'is_bar_gig' => 'bars-restaurants',
+        'is_lunch_gig' => 'lunchtime-concerts',
+        'is_fair' => 'fairs-fests',
+        'is_national_act' => 'national-bands',
+    ];
+@endphp
 <x-layout>
     <section class="mx-2 mt-12 mb-8 max-w-5xl">
         <x-event.list-section-header class="text-3xl">{{ $event->band }} at @if ($event->event_name)
@@ -10,7 +18,7 @@
         <x-card-single-wrapper>
 
 
-            <x-event.list-item-divider class="pb-4"></x-event.list-item-divider>
+            {{-- <x-event.list-item-divider class="pb-4"></x-event.list-item-divider> --}}
 
             <div class="px-4 flex flex-row gap-x-4 sm:flex-col">
                 <div class="flex flex-col justify-end">
@@ -73,8 +81,9 @@
                         <x-kv-group class="grid grid-cols-12">
                             <x-kv-key class="col-span-3 sm:col-span-2">Event link:</x-kv-key>
                             <x-kv-value class="col-span-9 sm:col-span-10">
-                                <a href="{{ $event->url }}" class="border-b border-b-orange-400">Event
-                                    link</a>
+                                <x-a-inline-link-primary href="{{ $event->url }}"
+                                    title="External link to read more about this event.">Event
+                                    Link</x-a-inline-link-primary>
                             </x-kv-value>
                         </x-kv-group>
                     @endif
@@ -85,13 +94,24 @@
                             <x-kv-value class="col-span-9 sm:col-span-10">{{ $event->notes }}</x-kv-value>
                         </x-kv-group>
                     @endif
+
+                    @if ($event->event_type)
+                        <x-kv-group class="grid grid-cols-12">
+                            <x-kv-key class="col-span-3 sm:col-span-2">Event Type:</x-kv-key>
+                            <x-kv-value class="col-span-9 sm:col-span-10">
+                                <x-a-inline-link-primary href="/summer/events/{{ $eventType[$event->event_type] }}"
+                                    title="Search all local, live music in {{ $eventType[$event->event_type] }}.">{{ $eventType[$event->event_type] }}</x-a-inline-link-primary>
+                            </x-kv-value>
+                        </x-kv-group>
+                    @endif
                 </div>
             </div>
             @auth
                 <div class="mt-12 flex flex-row">
                     <div>
                         <a href="/summer/events/{{ $event->id }}/edit"
-                            class="bg-orange-300 border border-orange-400 px-3 py-2 rounded ">Edit Event</a>
+                            class="text-white font-semibold stroke-black bg-orange-500 border border-orange-400 px-3 py-2 rounded ">Edit
+                            Event</a>
                     </div>
                 </div>
             @endauth
