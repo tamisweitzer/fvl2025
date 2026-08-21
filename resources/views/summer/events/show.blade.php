@@ -16,10 +16,6 @@
         </x-event.list-section-header>
 
         <x-card-single-wrapper>
-
-
-            {{-- <x-event.list-item-divider class="pb-4"></x-event.list-item-divider> --}}
-
             <div class="px-4 flex flex-row gap-x-4 sm:flex-col">
                 <div class="flex flex-col justify-end">
                     <x-kv-group class="grid grid-cols-12">
