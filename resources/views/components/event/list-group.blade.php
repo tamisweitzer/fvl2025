@@ -5,7 +5,8 @@
         <x-event.list-item-header>{{ $day[0]->start_date->format('D M d, Y') }}</x-event.list-item-header>
 
         @foreach ($day as $event)
-            <x-event.list-item :event=$event href="{{ $eventsUrl }}{{ $event->id }}"
+            {{-- @dd($eventsUrl) --}}
+            <x-event.list-item :event=$event href="{{ $eventsUrl }}/{{ $event->id }}"
                 class="mb-4"></x-event.list-item>
         @endforeach
 

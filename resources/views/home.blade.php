@@ -23,7 +23,7 @@
         </div>
 
         <x-container>
-            <x-event.list-group :events="$eventsToday" :eventsUrl="'/summer/events/'"
+            <x-event.list-group :events="$eventsToday" :eventsUrl="'/summer/events'"
                 viewMoreHoverText="See all live bands playing this week." viewMoreLinkText="See more live music"
                 noResultsText="There is no live music for today."></x-event.list-group>
         </x-container>
@@ -43,7 +43,7 @@
         </div>
 
         <x-container>
-            <x-event.list-group :events="$lunches" :eventsUrl="'/summer/events/lunchtime-concerts'"
+            <x-event.list-group :events="$lunches" :eventsUrl="'/summer/events'"
                 viewMoreHoverText="See all live bands playing lunchtime concerts this week."
                 viewMoreLinkText="See all in Lunchtime Concerts"
                 noResultsText="There are no results yet for this category."></x-event.list-group>
@@ -63,7 +63,7 @@
         </div>
 
         <x-container>
-            <x-event.list-group :events="$events" :eventsUrl="'/summer/events/bars-restaurants'"
+            <x-event.list-group :events="$events" :eventsUrl="'/summer/events'"
                 viewMoreHoverText="See all live bands playing Bars & Restaurants this week."
                 viewMoreLinkText="See all in Bars & Restaurants"
                 noResultsText="There are no results yet for this category."></x-event.list-group>
@@ -83,7 +83,7 @@
         </div>
 
         <x-container>
-            <x-event.list-group :events="$fairs" :eventsUrl="'/summer/events/fairs-fests'"
+            <x-event.list-group :events="$fairs" :eventsUrl="'/summer/events'"
                 viewMoreHoverText="See all live bands playing Fairs, Fests, and Outdoor Concerts this week."
                 viewMoreLinkText="See all in Fairs, Fests, and Outdoor Concerts"
                 noResultsText="There are no results yet for this category."></x-event.list-group>
@@ -105,7 +105,7 @@
         </div>
 
         <x-container class="pb-8 mx-2 sm:mx-4 max-h- 96 bg-gray-800 rounded-lg overflow-y-auto">
-            <x-event.list-group :events="$nationalActs" :eventsUrl="'/summer/events/national-bands'"
+            <x-event.list-group :events="$nationalActs" :eventsUrl="'/summer/events'"
                 viewMoreHoverText="See all live bands playing National Acts this week."
                 viewMoreLinkText="See all in National Acts"
                 noResultsText="There are no results yet for this category."></x-event.list-group>
