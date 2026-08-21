@@ -8,7 +8,7 @@
         <x-see-more-events-small class="mb-12"></x-see-more-events-small>
 
         <div>
-            <p class="text-center mb-4 mt-12  text-gray-600 italic text-sm">Click on any listing for more information, or
+            <p class="text-center mb-4 mt-12  text-gray-400 italic text-sm">Click on any listing for more information, or
                 select a
                 button to filter results.</p>
             @foreach ($events as $days)
@@ -23,18 +23,18 @@
                             {{ $event->band }}
                         </div>
                         @if ($event->event_name)
-                            <div class="text-gray-800 text-sm">
+                            <div class="text-sm">
                                 {{ $event->event_name }}
                             </div>
                         @endif
-                        <div class="text-gray-800 text-sm">
+                        <div class="text-sm">
                             {{ $event->venue }}
                         </div>
-                        <div class="text-gray-800 text-sm">
+                        <div class="text-sm">
                             {{ $event->city }}
                         </div>
                         @if ($event->start_time)
-                            <div class="text-gray-800 text-sm">
+                            <div class="text-sm">
                                 {{ $event->start_time }}
                             </div>
                         @endif

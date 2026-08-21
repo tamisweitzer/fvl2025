@@ -4,7 +4,7 @@
         <p class="-mt-4 mb-12 text-center">The complete list of live bands playing at
             {{ $events->first()->first()->venue }} in {{ $events->first()->first()->city }}, WI this
             summer.</p>
-        <p class="text-center mb-4 text-gray-600 italic text-sm">Click on any listing for more information.</p>
+        <p class="text-center mb-4 text-gray-400 italic text-sm">Click on any listing for more information.</p>
 
         @foreach ($events as $days)
             <div class="mt-4 border-b border-b-slate-500 text-orange-600 font-extrabold">
@@ -18,18 +18,18 @@
                         {{ $event->band }}
                     </div>
                     @if ($event->event_name)
-                        <div class="text-gray-800 text-sm">
+                        <div class="text-sm">
                             {{ $event->event_name }}
                         </div>
                     @endif
-                    <div class="text-gray-800 text-sm">
+                    <div class="text-sm">
                         {{ $event->venue }}
                     </div>
-                    <div class="text-gray-800 text-sm">
+                    <div class="text-sm">
                         {{ $event->city }}
                     </div>
                     @if ($event->start_time)
-                        <div class="text-gray-800 text-sm">
+                        <div class="text-sm">
                             {{ $event->start_time }}
                         </div>
                     @endif
