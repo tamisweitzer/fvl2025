@@ -4,55 +4,58 @@
         <div class="px-4">
 
             @auth
-                <form action="/summer/events/create" method="post" class="mb-12" enctype="multipart/form-data">
+                <form action="/summer/events/create" method="post" class="mb-12 " enctype="multipart/form-data">
                     @csrf
 
                     <x-form-group>
                         <x-label-default for="start_date">Start date</x-label-default>
-                        <x-input-date name="start_date" id="start_date"></x-input-date>
+                        <x-input-date name="start_date" id="start_date" class="text-gray-600"></x-input-date>
                     </x-form-group>
 
                     <x-form-group>
                         <x-label-default for="end_date">End date</x-label-default>
-                        <x-input-date name="end_date" id="end_date"></x-input-date>
+                        <x-input-date name="end_date" id="end_date" class="text-gray-600"></x-input-date>
                     </x-form-group>
 
                     <x-form-group>
                         <x-label-default for="start_time">Start time</x-label-default>
-                        <x-input-text name="start_time" id="start_time"></x-input-text>
+                        <x-input-text name="start_time" id="start_time" class="text-gray-600"></x-input-text>
                     </x-form-group>
 
                     <x-form-group>
                         <x-label-default for="band">Band or band list</x-label-default>
-                        <x-input-text name="band" id="band" placeholder="The band, or list of bands"></x-input-text>
+                        <x-input-text name="band" id="band" placeholder="The band, or list of bands"
+                            class="text-gray-600"></x-input-text>
                     </x-form-group>
 
                     <x-form-group>
                         <x-label-default for="event_name">Event name</x-label-default>
                         <x-input-text id="event_name" name="event_name"
-                            placeholder="e.g. Heid Music in the Park, or Brown County Fair"></x-input-text>
+                            placeholder="e.g. Heid Music in the Park, or Brown County Fair"
+                            class="text-gray-600"></x-input-text>
                     </x-form-group>
 
                     <x-form-group>
                         <x-label-default for="venue">Venue</x-label-default>
-                        <x-input-text name="venue" id="venue"
-                            placeholder="Name of bar, fairgrounds, etc."></x-input-text>
+                        <x-input-text name="venue" id="venue" placeholder="Name of bar, fairgrounds, etc."
+                            class="text-gray-600"></x-input-text>
                     </x-form-group>
 
                     <x-form-group>
                         <x-label-default for="city">City</x-label-default>
-                        <x-input-text name="city" id="city"></x-input-text>
+                        <x-input-text name="city" id="city" class="text-gray-600"></x-input-text>
                     </x-form-group>
 
                     <x-form-group>
                         <x-label-default for="url">Url</x-label-default>
-                        <x-input-text name="url" id="url"></x-input-text>
+                        <x-input-text name="url" id="url" class="text-gray-600"></x-input-text>
                     </x-form-group>
 
                     <x-form-group>
                         <x-label-default for="notes">Notes</x-label-default>
                         <x-input-text-area name="notes" id="notes"
-                            placeholder="Additional notes regarding entry rules, cover charge, etc."></x-input-text-area>
+                            placeholder="Additional notes regarding entry rules, cover charge, etc."
+                            class="text-gray-600"></x-input-text-area>
                     </x-form-group>
 
                     <h2 class=" mb-2">Select one event type</h2>
