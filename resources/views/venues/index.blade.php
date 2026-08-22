@@ -2,7 +2,7 @@
     <x-wrapper-narrow class="mt-8 mb-8">
         <x-page-title>All Live Music Venues</x-page-title>
 
-        <section class="mb-8">
+        <section class="mb-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
             @foreach ($venues as $venue)
                 <x-card-wrapper>
                     <a href="/venues/{{ $venue->id }}" class="block">
