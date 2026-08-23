@@ -26,7 +26,7 @@
 
                             @if ($event->event_name)
                                 <div class="text-sm text-gray-400">
-                                    {{ $event->event_name }} at
+                                    {{ $event->event_name }}
                                 </div>
                             @endif
 
