@@ -1,6 +1,6 @@
 <x-layout>
     <section class="pb-4">
-        <x-wrapper-narrow class="px-4 mt-8 mb-8">
+        <div class="px-4 mt-8 mb-8 max-w-3xl mx-auto">
             <x-page-title class=" text-amber-400 italic">Live, local music</x-page-title>
             <x-page-subtitle class="mt-4 mb-4 text-orange-600 text-2xl italic">The hottest live music in Wisconsin's Fox
                 Valley</x-page-subtitle>
@@ -10,7 +10,7 @@
                 of <x-a-inline-link-primary href="/summer/events">all upcoming
                     events</x-a-inline-link-primary>.
             </p>
-        </x-wrapper-narrow>
+        </div>
     </section>
 
     <!-- Live music happening today -->
