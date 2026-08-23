@@ -25,8 +25,11 @@
         <div>
             <x-event.list-group :events="$eventsToday" :eventUrl="'/summer/events'"
                 viewMoreHoverText="See all live bands playing this week." viewMoreLink="/summer/events"
-                viewMoreLinkText="See more live music"
-                noResultsText="There is no live music for today."></x-event.list-group>
+                viewMoreLinkText="See more live music" noResultsText="There is no live music for today.">
+
+            </x-event.list-group>
+
+            <x-see-more-link href="/summer/events">See all live music listings</x-see-more-link>
         </div>
     </section>
 
@@ -49,6 +52,7 @@
             viewMoreLink="/summer/events/lunchtime-concerts" viewMoreLinkText="See all in Lunchtime Concerts"
             noResultsText="There are no results yet for this category."></x-event.list-group>
 
+        <x-see-more-link href="/summer/events/lunchtime-concerts">See all lunchtime concerts</x-see-more-link>
     </section>
 
 
@@ -69,6 +73,7 @@
             viewMoreLink="/summer/events/bars-restaurants" viewMoreLinkText="See all in Bars & Restaurants"
             noResultsText="There are no results yet for this category."></x-event.list-group>
 
+        <x-see-more-link href="/summer/events/bars-restaurants">See all bars shows</x-see-more-link>
     </section>
 
 
@@ -89,6 +94,7 @@
             viewMoreLink="/summer/events/fairs-fests" viewMoreLinkText="See all in Fairs, Fests, and Outdoor Concerts"
             noResultsText="There are no results yet for this category."></x-event.list-group>
 
+        <x-see-more-link href="/summer/events/fairs-fests">See all outdoor concerts</x-see-more-link>
     </section>
 
 
@@ -110,6 +116,7 @@
             viewMoreLink="/summer/events/national-bands" viewMoreLinkText="See all in National Acts"
             noResultsText="There are no results yet for this category."></x-event.list-group>
 
+        <x-see-more-link href="/summer/events/national-bands">See all national acts</x-see-more-link>
     </section>
     <!-- End summer events -->
 
