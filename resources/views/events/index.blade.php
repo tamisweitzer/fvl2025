@@ -12,7 +12,7 @@
             @foreach ($events as $day)
                 <x-event-list.item-header>{{ $day[0]->event_date->format('M d Y') }}</x-event-list.item-header>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-2">
                     @foreach ($day as $event)
                         <a href="/events/{{ $event->id }}"
                             class='px-4 py-4 block bg-gray-800 overflow-y-auto border border-transparent hover:bg-gray-600 rounded-lg overflow-hidden shadow hover:shadow-lg transition'
