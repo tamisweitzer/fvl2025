@@ -9,37 +9,45 @@
         <p class="text-center mb-4 mt-12  text-gray-400 italic text-sm">Click on any listing for more information, or
             select a
             button to filter results.</p>
-        @foreach ($events as $days)
-            <div class="mt-4 border-b border-b-slate-500 text-orange-600 font-extrabold">
-                {{ $days[0]->start_date->format('D M d, Y') }}
-            </div>
-            @foreach ($days as $event)
-                <a href="/summer/events/{{ $event->id }}"
-                    class="block px-4 py-4 border-t border-b border-t-transparent border-b-transparent hover:bg-gray-600"
-                    title="Live music in {{ $event->city }} from {{ $event->band }} at {{ $event->venue }} @if ($event->event_name) for {{ $event->event_name }} @endif">
-                    <div class="font-bold">
-                        {{ $event->band }}
-                    </div>
-                    @if ($event->event_name)
-                        <div class="text-sm">
-                            {{ $event->event_name }}
+
+        @if (is_countable($events) && count($events) > 0)
+            @foreach ($events as $days)
+                <div class="mt-4 border-b border-b-slate-500 text-orange-600 font-extrabold">
+                    {{ $days[0]->start_date->format('D M d, Y') }}
+                </div>
+                @foreach ($days as $event)
+                    <a href="/summer/events/{{ $event->id }}"
+                        class="block px-4 py-4 border-t border-b border-t-transparent border-b-transparent hover:bg-gray-600"
+                        title="Live music in {{ $event->city }} from {{ $event->band }} at {{ $event->venue }} @if ($event->event_name) for {{ $event->event_name }} @endif">
+                        <div class="font-bold">
+                            {{ $event->band }}
                         </div>
-                    @endif
-                    <div class="text-sm">
-                        {{ $event->venue }}
-                    </div>
-                    <div class="text-sm">
-                        {{ $event->city }}
-                    </div>
-                    @if ($event->start_time)
+                        @if ($event->event_name)
+                            <div class="text-sm">
+                                {{ $event->event_name }}
+                            </div>
+                        @endif
                         <div class="text-sm">
-                            {{ $event->start_time }}
+                            {{ $event->venue }}
                         </div>
-                    @endif
-                </a>
+                        <div class="text-sm">
+                            {{ $event->city }}
+                        </div>
+                        @if ($event->start_time)
+                            <div class="text-sm">
+                                {{ $event->start_time }}
+                            </div>
+                        @endif
+                    </a>
+                @endforeach
+                {{-- <hr class="mb-8"> --}}
             @endforeach
-            {{-- <hr class="mb-8"> --}}
-        @endforeach
+        @else
+            <div class="my-4 p-4 italic text-sm">
+                {{ $noResultsText }}
+            </div>
+        @endif
+
         <x-see-more-events></x-see-more-events>
     </div>
 </x-layout>
