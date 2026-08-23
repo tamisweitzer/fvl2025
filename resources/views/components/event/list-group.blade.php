@@ -8,7 +8,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-2">
             @foreach ($day as $event)
                 <x-event.list-item :event=$event href="{{ $eventUrl }}/{{ $event->id }}"
-                    class="mb-4"></x-event.list-item>
+                    class=""></x-event.list-item>
             @endforeach
         </div>
 
