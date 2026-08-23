@@ -1,7 +1,7 @@
 <header class="text-gray-300" style="box-shadow: 3px 5px 7px 7px rgba(0,0,0,0.3)">
     <div class="px-2 sm:px-4 max-w-4xl mx-auto">
         @auth
-            <nav class=" bg-slate-900 p-0 text-sm">
+            <nav class=" bg-slate-900  border-b border-b-slate-950 shadow-xl p-0 text-sm">
                 <div class="secondary-nav-menu   flex justify-end gap-2 p-0">
                     <x-nav-link href="/summer/events/create" :active="request()->is('/summer/events/create/')">Add Summer Event</x-nav-link>
                     {{-- <x-nav-link href="/bands/create" :active="request()->is('/bands/create/')">Add Band</x-nav-link>
