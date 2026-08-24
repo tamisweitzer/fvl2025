@@ -14,13 +14,13 @@ class HomeController extends Controller {
         // dd(Carbon::today('America/Chicago'))->startOfDay();
 
         $startDate = Carbon::yesterday('America/Chicago')->startOfDay();
-        $endDate = Carbon::today('America/Chicago')->endOfDay()->addDays(6);
+        $endDate = Carbon::today('America/Chicago')->endOfDay()->addDays(4);
         // dd($startDate, $endDate);
 
         $eventsToday = SummerEvents::all()
             ->whereBetween('start_date', [$startDate, $endDate])
             ->sortBy('start_date')
-            ->take(15)
+            ->take(6)
             ->groupBy('start_date');
 
 
@@ -28,35 +28,35 @@ class HomeController extends Controller {
             ->where('event_type', '=', 'is_bar_gig')
             ->where('start_date', '>=', Date::today())
             ->sortBy('start_date')
-            ->take(3)
+            ->take(6)
             ->groupBy('start_date');
 
         $lunches = SummerEvents::all()
             ->where('event_type', '=', 'is_lunch_gig')
             ->where('start_date', '>=', Date::today())
             ->sortBy('start_date')
-            ->take(3)
+            ->take(6)
             ->groupBy('start_date');
 
         $series = SummerEvents::all()
             ->where('event_type', '=', 'is_series')
             ->where('start_date', '>=', Date::today())
             ->sortBy('start_date')
-            ->take(3)
+            ->take(6)
             ->groupBy('start_date');
 
         $fairs = SummerEvents::all()
             ->where('event_type', '=', 'is_fair')
             ->where('start_date', '>=', Date::today())
             ->sortBy('start_date')
-            ->take(3)
+            ->take(6)
             ->groupBy('start_date');
 
         $nationalActs = SummerEvents::all()
             ->where('event_type', "=", 'is_national_act')
             ->where('start_date', '>=', Date::today())
             ->sortBy('start_date')
-            ->take(3)
+            ->take(6)
             ->groupBy('start_date');
 
         // dd('eventsToday', $eventsToday, 'events', $events, 'lunches', $lunches, 'fairs', $fairs, 'nationalActs', $nationalActs);
