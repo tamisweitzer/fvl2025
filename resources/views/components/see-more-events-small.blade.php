@@ -21,7 +21,7 @@
             <x-eos-festival-o />
         </x-see-more-event-image> --}}
 
-        <h3 class="text-xs text-center font-bold"><span class="sr-only">See all </span>Fairs, Fests, and
+        <h3 class="text-xs text-center font-bold"><span class="sr-only">See all </span>
             Outdoor
             Concerts</h3>
     </x-see-more-events-small-link>
