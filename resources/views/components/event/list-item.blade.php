@@ -12,11 +12,13 @@
         <div class="text-sm text-gray-400">{{ $event->event_name }}</div>
     @endif
 
-    <div class="font-semibold text-sm">{{ $event->venue }}, {{ $event->city }}</div>
-
     @if ($event->start_time)
-        <div class="text-sm">
+        <div class="text-sm text-gray-400">
             {{ $event->start_time }}
         </div>
     @endif
+
+    <div class="font-semibold text-sm">{{ $event->venue }}, {{ $event->city }}</div>
+
+
 </a>
