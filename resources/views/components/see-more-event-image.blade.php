@@ -10,4 +10,4 @@
 
 @endphp
 
-<div class="{{ $width }} {{ $textcolor }} mx-auto">{{ $slot }}</div>
+<div class="{{ $width }} {{ $textcolor }} mx-auto mb-2">{{ $slot }}</div>

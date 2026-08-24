@@ -2,14 +2,14 @@
 
 <h3 class="border-t mb-8 mt-12 pt-8 text-center text-2xl ">Search live music by category</h3>
 
-<div class="grid col-1 sm:grid-cols-2 gap-4 mt-4 mb-12">
-    <x-see-more-link class="flex flex-col justify-between" href="/summer/events/lunchtime-concerts">
+<div class="grid col-1 sm:grid-cols-2 gap-4 mt-4 mb-12 text-sm">
+    <x-see-more-events-link class="flex flex-col justify-between" href="/summer/events/lunchtime-concerts">
         <div>
-            <x-see-more-event-heading>Lunchtime Concerts</x-see-more-event-heading>
-
             <x-see-more-event-image>
                 <x-eos-dining-o />
             </x-see-more-event-image>
+
+            <x-see-more-event-heading>Lunchtime Concerts</x-see-more-event-heading>
 
             <x-see-more-event-divider></x-see-more-event-divider>
 
@@ -21,17 +21,19 @@
         </div>
 
         <div>
-            <x-see-more-event-button>See more <span class="sr-only">lunchtime concerts.</span></x-see-more-event-button>
+            <x-see-more-event-button class="text-xs">See all lunchtime
+                concerts</x-see-more-event-button>
         </div>
-    </x-see-more-link>
+    </x-see-more-events-link>
 
-    <x-see-more-link class="flex flex-col justify-between" href="/summer/events/fairs-fests">
+    <x-see-more-events-link class="flex flex-col justify-between" href="/summer/events/fairs-fests">
         <div>
-            <x-see-more-event-heading>Fairs, Fests, and Outdoor Concerts</x-see-more-event-heading>
 
             <x-see-more-event-image>
                 <x-gmdi-festival-o />
             </x-see-more-event-image>
+
+            <x-see-more-event-heading>Fairs, Fests, and Outdoor Concerts</x-see-more-event-heading>
 
             <x-see-more-event-divider></x-see-more-event-divider>
 
@@ -41,18 +43,18 @@
         </div>
 
         <div>
-            <x-see-more-event-button>See more <span class="sr-only">xxx.</span></x-see-more-event-button>
+            <x-see-more-event-button class="text-xs">See all outdoor concerts</x-see-more-event-button>
         </div>
-    </x-see-more-link>
+    </x-see-more-events-link>
 
-    <x-see-more-link class="flex flex-col justify-between" href="/summer/events/bars-restaurants">
+    <x-see-more-events-link class="flex flex-col justify-between" href="/summer/events/bars-restaurants">
         <div>
-            <x-see-more-event-heading>Bar and
-                Restaurant Gigs</x-see-more-event-heading>
-
             <x-see-more-event-image>
                 <x-ri-beer-line />
             </x-see-more-event-image>
+
+            <x-see-more-event-heading>Bar and
+                Restaurant Gigs</x-see-more-event-heading>
 
             <x-see-more-event-divider></x-see-more-event-divider>
 
@@ -63,18 +65,17 @@
         </div>
 
         <div>
-            <x-see-more-event-button>See more <span class="sr-only">xxx.</span></x-see-more-event-button>
+            <x-see-more-event-button class="text-xs">See all bar gigs</x-see-more-event-button>
         </div>
-    </x-see-more-link>
+    </x-see-more-events-link>
 
-    <x-see-more-link class="flex flex-col justify-between" href="/summer/events/national-bands">
+    <x-see-more-events-link class="flex flex-col justify-between" href="/summer/events/national-bands">
         <div>
-
-            <x-see-more-event-heading>National Acts</x-see-more-event-heading>
-
             <x-see-more-event-image>
                 <x-forkawesome-music />
             </x-see-more-event-image>
+
+            <x-see-more-event-heading>National Acts</x-see-more-event-heading>
 
             <x-see-more-event-divider></x-see-more-event-divider>
 
@@ -85,27 +86,27 @@
         </div>
 
         <div>
-            <x-see-more-event-button>See more <span class="sr-only">xxx.</span></x-see-more-event-button>
+            <x-see-more-event-button class="text-xs">See all national acts</x-see-more-event-button>
         </div>
-    </x-see-more-link>
+    </x-see-more-events-link>
 
-    {{-- <x-see-more-link href="/summer/events/bands">
+    {{-- <x-see-more-events-link href="/summer/events/bands">
         <h3 class="text-sm text-center font-bold border-b border-b-transparent">Search all Bands</h3>
-    </x-see-more-link>
+    </x-see-more-events-link>
 
-    <x-see-more-link href="/summer/events/venues">
+    <x-see-more-events-link href="/summer/events/venues">
         <h3 class="text-sm text-center font-bold border-b border-b-transparent">Search all Venues</h3>
-    </x-see-more-link>
+    </x-see-more-events-link>
 
-    <x-see-more-link href="/summer/events/event-names">
+    <x-see-more-events-link href="/summer/events/event-names">
         <h3 class="text-sm text-center font-bold border-b border-b-transparent">Search by Event Name</h3>
-    </x-see-more-link>
+    </x-see-more-events-link>
 
-    <x-see-more-link href="/summer/events/cities">
+    <x-see-more-events-link href="/summer/events/cities">
         <h3 class="text-sm text-center font-bold border-b border-b-transparent">Find Music by City</h3>
-    </x-see-more-link>
+    </x-see-more-events-link>
 
-    <x-see-more-link href="/summer/events">
+    <x-see-more-events-link href="/summer/events">
         <h3 class="text-sm text-center font-bold border-b border-b-transparent">See the Full List of Upcoming Music</h3>
-    </x-see-more-link> --}}
+    </x-see-more-events-link> --}}
 </div>
